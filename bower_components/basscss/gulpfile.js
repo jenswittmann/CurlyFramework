@@ -1,40 +1,77 @@
 
 var gulp = require('gulp');
-var rename = require('gulp-rename');
-var mincss = require('gulp-minify-css');
-var gzip = require('gulp-gzip');
-var header = require('gulp-header');
-var bump = require('gulp-bump');
 
 // Custom Rework wrapper
 var basswork = require('gulp-basswork');
 
 gulp.task('default', ['basswork']);
 
-gulp.task('basswork', function() {
-  var data = require('./package.json');
-  var meta = '/*\n\n' +
-             '    Basscss v' + data.version + '\n\n' +
-             '    ' + data.description + '\n' +
-             '    http://basscss.com' + '\n\n*/\n\n';
-  gulp.src('./src/*.css')
-    .pipe(basswork())
-    .pipe(header(meta))
-    .pipe(gulp.dest('./css'))
-    .pipe(mincss())
-    .pipe(rename({ extname: '.min.css' }))
-    .pipe(gulp.dest('./css'))
-    .pipe(gzip())
-    .pipe(gulp.dest('./css'));
-});
+// Compile source modules to production CSS
+gulp.task('basswork', require('./tasks/basswork'));
 
-gulp.task('bump', function() {
-  var version = require('./package.json').version;
-  gulp.src('./bower.json')
-    .pipe(bump({version: version}))
-    .pipe(gulp.dest('.'));
-});
+// Bump Bower version because Bower makes no sense
+gulp.task('bump', require('./tasks/bump'));
+
+// Upload versioned assets to S3. (Requires creditials)
+gulp.task('s3', require('./tasks/s3'));
+
+// Convert CSS syntax to SCSS
+gulp.task('sassify', require('./tasks/sassify'));
+
+// Create download packages
+gulp.task('zip', require('./tasks/zip'));
+
+// Build for new release ['bump', 's3', 
+gulp.task('release', ['bump', 's3', 'sassify', 'zip']);
+
 
 // Site-specific tasks
-require('./gulp/docs-tasks');
+
+// Run webserver
+gulp.task('serve', require('./tasks/serve'));
+
+// Compile Swig templates
+gulp.task('swig', require('./tasks/swig'));
+
+// Compile CSS for docs site
+gulp.task('site-basswork', require('./tasks/site-basswork'));
+
+// Autogenerate docs for modules
+gulp.task('module-docs', require('./tasks/module-docs'));
+
+// Create favicons
+gulp.task('favicon', require('./tasks/favicon'));
+
+// Optimize Showcase images
+gulp.task('images', require('./tasks/images'));
+
+// Upload Showcase images to S3
+gulp.task('s3-images', require('./tasks/s3-images'));
+
+// Create data json file for custom-css
+gulp.task('customizer-data', require('./tasks/customizer-data'));
+
+// Compile JS for customizer
+gulp.task('customizer-js', require('./tasks/customizer-js'));
+
+
+// Site development
+gulp.task('dev', ['watch-templates', 'watch-css', 'watch-js', 'serve']);
+
+// Watch for changes
+gulp.task('watch-css', ['basswork', 'site-basswork', 'customizer-data'], function() {
+  gulp.watch(['./src/**/*.css', './docs/src/css/**/*.css'], ['basswork', 'site-basswork', 'customizer-data']);
+});
+
+gulp.task('watch-templates', ['module-docs', 'swig'], function() {
+  gulp.watch([
+      './docs/src/templates/**/*',
+      '!./docs/src/templates/docs/modules/**/*',
+      './docs/src/model.js'
+    ], ['swig']);
+});
+
+gulp.task('watch-js', ['customizer-js'], function() {
+  gulp.watch(['./docs/src/js/**/*'], ['customizer-js']);
+});
 

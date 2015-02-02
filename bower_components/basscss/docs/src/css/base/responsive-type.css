@@ -1,0 +1,8 @@
+
+@media (--breakpoint-md) {
+  .md-h1 { font-size: 3rem }
+}
+
+@media (--breakpoint-lg) {
+  .lg-h1 { font-size: 4rem }
+}
