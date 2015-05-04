@@ -37,9 +37,9 @@
 
 // Device check
 .check-device { font-size: 1px !important; }
-@include breakpoint($tablet) { //tablet
+@include breakpoint($breakpoint-md) { //tablet
 	.check-device { font-size: 2px !important; }
 }
-@include breakpoint($desktop) { //desktop
+@include breakpoint($breakpoint-lg) { //desktop
 	.check-device { font-size: 3px !important; }
 }
