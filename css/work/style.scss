@@ -1,39 +1,10 @@
-// BASSCSS
-@import 'colors';
-@import 'defaults';
-@import 'base-reset';
-//@import 'base-forms';
-@import 'base-buttons';
-//@import 'base-tables';
-@import 'base-typography';
-@import 'utility-layout';
-@import 'utility-typography';
-@import 'utility-white-space';
-@import 'utility-responsive-states';
-@import 'positions';
-//@import 'ui-utility-button-sizes';
-@import 'grid';
-//@import 'flex-object'; /* New */
-@import 'color-base';
-//@import 'color-forms';
-//@import 'color-forms-dark';
-//@import 'input-range';
-//@import 'progress';
-//@import 'color-tables';
-//@import 'button-outline'; /* New */
-//@import 'button-transparent'; /* New */
-//@import 'background-images'; /* New */
-//@import 'color-borders';
-
-@import "variables";
-@import "mixins";
-@import "slick";
-@import "boxer";
-@import "icons";
-@import "font";
-@import "nav";
-@import "styling";
-@import "markdown";
+@import 'basscss';
+@import 'vars';
+@import 'mixins';
+@import 'font';
+@import 'nav';
+@import 'styling';
+//@import 'slick';
 
 // Device check
 .check-device { font-size: 1px !important; }

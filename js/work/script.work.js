@@ -3,9 +3,9 @@ $(document).ready(function() {
 	// set mobile status
 	var mobile = 1;
 	function detectMobile() {
-		if ($('.check-device ').css('fontSize') == '1px') {
+		if ($('.check-device').css('fontSize') == '1px') {
 			mobile = 1; // phone
-		} else if ($('.check-device ').css('fontSize') == '2px') {
+		} else if ($('.check-device').css('fontSize') == '2px') {
 			mobile = 2; // tablet
 		} else {
 			mobile = 0; // desktop
@@ -49,18 +49,6 @@ $(document).ready(function() {
 				}
 			}
 		]
-	});
-		
-	// Boxer
-	$('.boxer').boxer({
-		fixed: true,
-		mobile: true,
-		labels: {
-			close: 'schließen',
-			count: 'von',
-			next: 'zurück',
-			previous: 'weiter'
-		}
 	});
 	
 });
