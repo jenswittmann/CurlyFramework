@@ -1,10 +1,11 @@
-@import 'basscss';
+@import 'basscss/basscss.scss';
+@import 'basscss/basscss-addons.scss';
 @import 'vars';
 @import 'mixins';
 @import 'font';
 @import 'nav';
 @import 'styling';
-//@import 'slick';
+@import 'slick';
 
 // Device check
 .check-device { font-size: 1px !important; }
