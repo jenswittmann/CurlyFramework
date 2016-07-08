@@ -19,8 +19,6 @@
 	-ms-interpolation-mode: bicubic;
 }
 
-// ###Mixins
-
 // Vertical Align
 @mixin vertical-align {
   -webkit-transform: translateY(-50%);

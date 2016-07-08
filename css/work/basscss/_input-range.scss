@@ -1,20 +1,3 @@
-
-// Converted Variables
-
-$form-field-padding-x: .5rem !default;
-$form-field-padding-y: .5rem !default;
-$form-field-height: 2.25rem !default;
-$border-radius: 3px !default;
-$darken-3: rgba(0, 0, 0, .25) !default;
-$range-thumb-width: $form-field-padding-x !default;
-$range-thumb-height: ( $form-field-height - ($form-field-padding-y * 2) ) !default;
-$range-track-height: ( $form-field-padding-y / 2 ) !default;
-$range-thumb-offset: ( $range-thumb-height / -2 + ($range-track-height / 2) ) !default;
-$range-thumb-pseudo-size: $form-field-height !default;
-
-// Custom Media Query Variables
-
-
 /* Basscss Input Range */
 
 .input-range {
