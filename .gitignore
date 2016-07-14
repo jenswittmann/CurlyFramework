@@ -1,2 +1,5 @@
-css/.DS_Store
 .DS_Store
+assets/components/phpthumbof/cache/
+core/cache/
+config.core.php
+core/config/config.inc.php
