@@ -1,17 +1,16 @@
-$(document).ready(function() {
-	
-	// set mobile status
-	var mobile = 1;
-	function detectMobile() {
-		if ($('.check-device').css('fontSize') == '1px') {
-			mobile = 1; // phone
-		} else if ($('.check-device').css('fontSize') == '2px') {
-			mobile = 2; // tablet
-		} else {
-			mobile = 0; // desktop
-		}
+// set mobile status
+var mobile = (function(){		
+	if ($('.check-device').css('fontSize') == '1px') {
+		mobile = 1; // phone
+	} else if ($('.check-device').css('fontSize') == '2px') {
+		mobile = 2; // tablet
+	} else {
+		mobile = 0; // desktop
 	}
-	detectMobile();
+	return mobile;
+}());
+
+$(document).ready(function() {
 	
 	// mobile nav
 	var nav = $('.head-nav');
