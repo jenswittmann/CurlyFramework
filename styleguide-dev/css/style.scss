@@ -12,10 +12,10 @@
 @import 'modaal';
 
 // Device check
-.check-device { font-size: 1px !important; }
+.check-device { font-size: 20px !important; }
 @include breakpoint($breakpoint-md) { //tablet
-	.check-device { font-size: 2px !important; }
+	.check-device { font-size: 30px !important; }
 }
 @include breakpoint($breakpoint-lg) { //desktop
-	.check-device { font-size: 3px !important; }
+	.check-device { font-size: 40px !important; }
 }

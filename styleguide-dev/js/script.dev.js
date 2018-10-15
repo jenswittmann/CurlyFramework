@@ -1,8 +1,8 @@
 // set mobile status
 var mobile = (function(){		
-	if ($('.check-device').css('fontSize') == '1px') {
+	if ($('.check-device').css('fontSize') == '20px') {
 		mobile = 1; // phone
-	} else if ($('.check-device').css('fontSize') == '2px') {
+	} else if ($('.check-device').css('fontSize') == '30px') {
 		mobile = 2; // tablet
 	} else {
 		mobile = 0; // desktop
