@@ -9,16 +9,10 @@
 }
 
 body {
-	font-family: 'Gotham A', 'Gotham B';
+	font-family: '';
 	font-style: normal;
 	font-weight: 400;
 	font-size: $font-size-5;
 	line-height: 1.5;
 	color: $near-black;
-}
-
-.bold {
-	font-family: 'Gotham A', 'Gotham B';
-	font-style: normal;
-	font-weight: 500;
 }
