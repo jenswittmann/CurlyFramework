@@ -1,0 +1,40 @@
+.logo {
+	position: fixed;
+	top: $spacing-medium;
+	left: $spacing-medium;
+	z-index: 0;
+	width: 7rem;
+	
+	@media #{$breakpoint-not-small} {
+		width: 12rem;
+	}
+	
+	&[data-color='green'] {		
+	
+		path {
+			fill: $green;
+		}
+	}
+	
+	&[data-color='white'] {		
+	
+		path {
+			fill: $white;
+		}
+	}
+}
+
+.nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	transform: translateX(-100%);
+	transition: $nav-transition;
+	
+	&.is-active {
+		transform: translateX(0);
+	}
+}

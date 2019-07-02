@@ -1,39 +1,24 @@
-/*
-//@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-@font-face {
-    font-family: 'robotoregular';
-    src: url('font/roboto_regular_macroman/Roboto-Regular-webfont.eot');
-    src: url('font/roboto_regular_macroman/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('font/roboto_regular_macroman/Roboto-Regular-webfont.woff') format('woff'),
-         url('font/roboto_regular_macroman/Roboto-Regular-webfont.ttf') format('truetype'),
-         url('font/roboto_regular_macroman/Roboto-Regular-webfont.svg#robotoregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+* {
+	font-family: inherit;
+	font-style: normal;
+	font-weight: inherit;
+	font-size: inherit;
+	text-decoration: inherit;
+	color: inherit;
+	-webkit-font-smoothing: antialiased;
 }
-*/
 
-$font-regular: 'robotoregular', sans-serif;
-$font-bold: 'robotobold', sans-serif;
-
-h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
-	font-family: $font-regular !important;
-} 
-
-.regular {
-	font-family: $font-regular;
+body {
+	font-family: 'Gotham A', 'Gotham B';
+	font-style: normal;
+	font-weight: 400;
+	font-size: $font-size-5;
+	line-height: 1.5;
+	color: $near-black;
 }
 
 .bold {
-	font-family: $font-bold;
-}
-
-.uppercase {
-	text-transform: uppercase;
-}
-
-* {
-	font-family: $font-regular;
+	font-family: 'Gotham A', 'Gotham B';
 	font-style: normal;
-	line-height: 150%;
-	color: $black;
+	font-weight: 500;
 }

@@ -1,0 +1,42 @@
+.slider {
+	position: relative;
+}
+
+.slick-dots {
+	list-style: none;
+	text-align: center;
+	transform: translateY(-75%);
+	
+	li {
+		display: inline-block;				
+		width: .5rem;
+		height: .5rem;
+		margin-left: .5rem;
+		margin-right: .5rem;
+		background-color: $near-black;
+		border-radius: 50%;
+			
+		&.slick-active {
+			background-color: $green;
+		}
+			
+		button {
+			display: none;
+		}
+	}
+}
+
+.slider-arrow {
+	position: absolute;
+	top: 50%;
+	z-index: 1;
+	transform: translateY(-50%);
+	
+	&.slider-arrow-prev {
+		left: 0;
+	}
+	
+	&.slider-arrow-next {
+		right: 0;
+	}
+}

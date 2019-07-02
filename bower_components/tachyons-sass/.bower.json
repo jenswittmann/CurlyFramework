@@ -1,0 +1,14 @@
+{
+  "name": "tachyons-sass",
+  "homepage": "https://github.com/tachyons-css/tachyons-sass",
+  "version": "4.9.5",
+  "_release": "4.9.5",
+  "_resolution": {
+    "type": "version",
+    "tag": "v4.9.5",
+    "commit": "39a22f9592f55fdca17dd162c57528a08bea64c5"
+  },
+  "_source": "https://github.com/tachyons-css/tachyons-sass.git",
+  "_target": "^4.9.5",
+  "_originalSource": "tachyons-sass"
+}

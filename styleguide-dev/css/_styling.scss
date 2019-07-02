@@ -1,0 +1,31 @@
+html {
+	font-size: 90%;
+	
+	@media #{$breakpoint-large} {
+		font-size: 100%;
+	}
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	scroll-behavior: smooth;
+}
+
+.hyphens-auto {
+	hyphens: auto;
+}
+
+.content.bg-green {
+	position: relative;
+	z-index: 1;
+	background-attachment: fixed;
+	background-size: 7rem auto;
+	background-position: 1rem 1rem;
+	background-repeat: no-repeat;
+	background-image: url(../img/logo-nora-buettner.svg);
+	
+	@media #{$breakpoint-not-small} {
+		background-size: 12rem auto;
+	}
+}

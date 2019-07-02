@@ -1,22 +1,58 @@
 .icon {
 	display: inline-block;
-	background-position: center center;
-	background-size: contain;
-	background-repeat: no-repeat;
 	border: 0 !important;
+	
+	svg {
+		width: 100%;
+		height: auto;
+		fill: currentColor;
+	}
 }
 
-.icon-sm {
-	width: .75rem;
-	height: .75rem;
+.icon1 { width:    .5rem; height:    .5rem; }
+.icon2 { width:   .75rem; height:   .75rem; }
+.icon3 { width:  1.25rem; height:  1.25rem; }
+.icon4 { width:   1.5rem; height:   1.5rem; }
+.icon5 { width:   2.5rem; height:   2.5rem; }
+.icon6 { width:     3rem; height:     3rem; }
+.icon7 { width:     4rem; height:     4rem; }
+
+.icon--blue {
+	
+	path,
+	rect,
+	polygon {
+		fill: $blue;
+	}
 }
 
-.icon-md {
-	width: 1.25rem;
-	height: 1.25rem;
+.icon--gray {
+	
+	path,
+	rect,
+	polygon {
+		fill: $near-black;
+	}
 }
 
-.icon-lg {
-	width: 2rem;
-	height: 2rem;
+.icon--green {
+	
+	path,
+	rect,
+	polygon {
+		fill: $green;
+	}
+}
+
+.icon--white {
+	
+	path,
+	rect,
+	polygon {
+		fill: white;
+	}
+}
+
+.icon--rotate-180 {
+	transform: scaleX(-1);
 }

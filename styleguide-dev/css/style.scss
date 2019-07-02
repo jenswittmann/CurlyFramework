@@ -1,21 +1,76 @@
 @import 'vars';
-@import 'basscss/basscss.scss';
-@import 'basscss/basscss-addons.scss';
+@import '../../bower_components/slick-carousel/slick/slick.scss';
+	
+@import '../../bower_components/tachyons-sass/scss/normalize';
+@import '../../bower_components/tachyons-sass/scss/debug-children';
+@import '../../bower_components/tachyons-sass/scss/debug-grid';
+@import '../../bower_components/tachyons-sass/scss/box-sizing';
+@import '../../bower_components/tachyons-sass/scss/aspect-ratios';
+@import '../../bower_components/tachyons-sass/scss/images';
+@import '../../bower_components/tachyons-sass/scss/background-size';
+@import '../../bower_components/tachyons-sass/scss/background-position';
+@import '../../bower_components/tachyons-sass/scss/outlines';
+@import '../../bower_components/tachyons-sass/scss/borders';
+@import '../../bower_components/tachyons-sass/scss/border-colors';
+@import '../../bower_components/tachyons-sass/scss/border-radius';
+@import '../../bower_components/tachyons-sass/scss/border-style';
+@import '../../bower_components/tachyons-sass/scss/border-widths';
+@import '../../bower_components/tachyons-sass/scss/box-shadow';
+//@import '../../bower_components/tachyons-sass/scss/code';
+@import '../../bower_components/tachyons-sass/scss/coordinates';
+@import '../../bower_components/tachyons-sass/scss/clears';
+@import '../../bower_components/tachyons-sass/scss/flexbox';
+@import '../../bower_components/tachyons-sass/scss/display';
+@import '../../bower_components/tachyons-sass/scss/floats';
+@import '../../bower_components/tachyons-sass/scss/font-family';
+@import '../../bower_components/tachyons-sass/scss/font-style';
+@import '../../bower_components/tachyons-sass/scss/font-weight';
+@import '../../bower_components/tachyons-sass/scss/forms';
+@import '../../bower_components/tachyons-sass/scss/heights';
+@import '../../bower_components/tachyons-sass/scss/letter-spacing';
+@import '../../bower_components/tachyons-sass/scss/line-height';
+@import '../../bower_components/tachyons-sass/scss/links';
+@import '../../bower_components/tachyons-sass/scss/lists';
+@import '../../bower_components/tachyons-sass/scss/max-widths';
+@import '../../bower_components/tachyons-sass/scss/widths';
+@import '../../bower_components/tachyons-sass/scss/overflow';
+@import '../../bower_components/tachyons-sass/scss/position';
+@import '../../bower_components/tachyons-sass/scss/opacity';
+@import '../../bower_components/tachyons-sass/scss/rotations';
+@import '../../bower_components/tachyons-sass/scss/skins';
+@import '../../bower_components/tachyons-sass/scss/skins-pseudo';
+@import '../../bower_components/tachyons-sass/scss/spacing';
+@import '../../bower_components/tachyons-sass/scss/negative-margins';
+@import '../../bower_components/tachyons-sass/scss/tables';
+@import '../../bower_components/tachyons-sass/scss/text-decoration';
+@import '../../bower_components/tachyons-sass/scss/text-align';
+@import '../../bower_components/tachyons-sass/scss/text-transform';
+@import '../../bower_components/tachyons-sass/scss/type-scale';
+@import '../../bower_components/tachyons-sass/scss/typography';
+@import '../../bower_components/tachyons-sass/scss/utilities';
+@import '../../bower_components/tachyons-sass/scss/visibility';
+@import '../../bower_components/tachyons-sass/scss/white-space';
+@import '../../bower_components/tachyons-sass/scss/vertical-align';
+@import '../../bower_components/tachyons-sass/scss/hovers';
+@import '../../bower_components/tachyons-sass/scss/z-index';
+@import '../../bower_components/tachyons-sass/scss/nested';
+@import '../../bower_components/tachyons-sass/scss/styles';
+
 @import 'mixins';
 @import 'icons';
 @import 'typo';
 @import 'head';
 @import 'btn';
+@import 'slider';
+@import 'contentblocks';
+@import 'form';
 @import 'styling';
-@import 'wysiwyg';
-@import 'slick';
-@import 'modaal';
-
+	
 // Device check
 .check-device { font-size: 20px !important; }
-@include breakpoint($breakpoint-md) { //tablet
+@media #{$breakpoint-medium} { // tablet
 	.check-device { font-size: 30px !important; }
 }
-@include breakpoint($breakpoint-lg) { //desktop
+@media #{$breakpoint-large} { // desktop
 	.check-device { font-size: 40px !important; }
 }
