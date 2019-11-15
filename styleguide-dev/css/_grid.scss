@@ -1,0 +1,42 @@
+.grid {
+	z-index: -1;
+	pointer-events: none;
+}
+
+@for $i from 1 through 12 {
+	
+	.w-twelve-#{$i} {
+		width: ( 100 / 12 ) * $i * 1%;
+	}
+	
+}
+
+@for $i from 1 through 12 {	
+	
+	@media #{$breakpoint-not-small} {
+		.w-twelve-#{$i}-ns {
+			width: ( 100 / 12 ) * $i * 1%;
+		}
+	}
+	
+}
+
+@for $i from 1 through 12 {
+	
+	@media #{$breakpoint-medium} {
+		.w-twelve-#{$i}-m {
+			width: ( 100 / 12 ) * $i * 1%;
+		}
+	}
+	
+}
+
+@for $i from 1 through 12 {
+	
+	@media #{$breakpoint-large} {
+		.w-twelve-#{$i}-l {
+			width: ( 100 / 12 ) * $i * 1%;
+		}
+	}
+	
+}
