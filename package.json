@@ -1,0 +1,13 @@
+{
+  "name": "codekit-project",
+  "version": "1.0.0",
+  "description": "CodeKit created this starter package.json file. You should customize it appropriately.",
+  "scripts": {},
+  "author": "",
+  "license": "UNLICENSED",
+  "repository": {},
+  "dependencies": {
+    "lazysizes": "^5.2.0-beta1",
+    "tachyons-sass": "^4.9.5"
+  }
+}

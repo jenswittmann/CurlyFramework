@@ -1,0 +1,141 @@
+/*
+
+   BORDER COLORS
+   Docs: http://tachyons.io/docs/themes/borders/
+
+   Border colors can be used to extend the base
+   border classes ba,bt,bb,br,bl found in the _borders.css file.
+
+   The base border class by default will set the color of the border
+   to that of the current text color. These classes are for the cases
+   where you desire for the text and border colors to be different.
+
+   Base:
+     b = border
+
+   Modifiers:
+   --color-name = each color variable name is also a border color name
+
+*/
+
+.b--black {        border-color: var(--black); }
+.b--near-black {   border-color: var(--near-black); }
+.b--dark-gray {    border-color: var(--dark-gray); }
+.b--mid-gray {     border-color: var(--mid-gray); }
+.b--gray {         border-color: var(--gray); }
+.b--silver {       border-color: var(--silver); }
+.b--light-silver { border-color: var(--light-silver); }
+.b--moon-gray {    border-color: var(--moon-gray); }
+.b--light-gray {   border-color: var(--light-gray); }
+.b--near-white {   border-color: var(--near-white); }
+.b--white {        border-color: var(--white); }
+
+.b--white-90 {   border-color: var(--white-90); }
+.b--white-80 {   border-color: var(--white-80); }
+.b--white-70 {   border-color: var(--white-70); }
+.b--white-60 {   border-color: var(--white-60); }
+.b--white-50 {   border-color: var(--white-50); }
+.b--white-40 {   border-color: var(--white-40); }
+.b--white-30 {   border-color: var(--white-30); }
+.b--white-20 {   border-color: var(--white-20); }
+.b--white-10 {   border-color: var(--white-10); }
+.b--white-05 {   border-color: var(--white-05); }
+.b--white-025 {   border-color: var(--white-025); }
+.b--white-0125 {   border-color: var(--white-0125); }
+
+.b--black-90 {   border-color: var(--black-90); }
+.b--black-80 {   border-color: var(--black-80); }
+.b--black-70 {   border-color: var(--black-70); }
+.b--black-60 {   border-color: var(--black-60); }
+.b--black-50 {   border-color: var(--black-50); }
+.b--black-40 {   border-color: var(--black-40); }
+.b--black-30 {   border-color: var(--black-30); }
+.b--black-20 {   border-color: var(--black-20); }
+.b--black-10 {   border-color: var(--black-10); }
+.b--black-05 {   border-color: var(--black-05); }
+.b--black-025 {   border-color: var(--black-025); }
+.b--black-0125 {   border-color: var(--black-0125); }
+
+.b--red-0 { border-color: var(--red-000); }
+.b--red-1 { border-color: var(--red-100); }
+.b--red-2 { border-color: var(--red-200); }
+.b--red-3 { border-color: var(--red-300); }
+.b--red-4 { border-color: var(--red-400); }
+.b--red-5 { border-color: var(--red-500); }
+.b--red-6 { border-color: var(--red-600); }
+.b--red-7 { border-color: var(--red-700); }
+.b--red-8 { border-color: var(--red-800); }
+.b--red-9 { border-color: var(--red-900); }
+.b--gold-0 { border-color: var(--gold-000); }
+.b--gold-1 { border-color: var(--gold-100); }
+.b--gold-2 { border-color: var(--gold-200); }
+.b--gold-3 { border-color: var(--gold-300); }
+.b--gold-4 { border-color: var(--gold-400); }
+.b--gold-5 { border-color: var(--gold-500); }
+.b--gold-6 { border-color: var(--gold-600); }
+.b--gold-7 { border-color: var(--gold-700); }
+.b--gold-8 { border-color: var(--gold-800); }
+.b--gold-9 { border-color: var(--gold-900); }
+.b--green-0 { border-color: var(--green-000); }
+.b--green-1 { border-color: var(--green-100); }
+.b--green-2 { border-color: var(--green-200); }
+.b--green-3 { border-color: var(--green-300); }
+.b--green-4 { border-color: var(--green-400); }
+.b--green-5 { border-color: var(--green-500); }
+.b--green-6 { border-color: var(--green-600); }
+.b--green-7 { border-color: var(--green-700); }
+.b--green-8 { border-color: var(--green-800); }
+.b--green-9 { border-color: var(--green-900); }
+.b--teal-0 { border-color: var(--teal-000); }
+.b--teal-1 { border-color: var(--teal-100); }
+.b--teal-2 { border-color: var(--teal-200); }
+.b--teal-3 { border-color: var(--teal-300); }
+.b--teal-4 { border-color: var(--teal-400); }
+.b--teal-5 { border-color: var(--teal-500); }
+.b--teal-6 { border-color: var(--teal-600); }
+.b--teal-7 { border-color: var(--teal-700); }
+.b--teal-8 { border-color: var(--teal-800); }
+.b--teal-9 { border-color: var(--teal-900); }
+.b--blue-0 { border-color: var(--blue-000); }
+.b--blue-1 { border-color: var(--blue-100); }
+.b--blue-2 { border-color: var(--blue-200); }
+.b--blue-3 { border-color: var(--blue-300); }
+.b--blue-4 { border-color: var(--blue-400); }
+.b--blue-5 { border-color: var(--blue-500); }
+.b--blue-6 { border-color: var(--blue-600); }
+.b--blue-7 { border-color: var(--blue-700); }
+.b--blue-8 { border-color: var(--blue-800); }
+.b--blue-9 { border-color: var(--blue-900); }
+.b--indigo-0 { border-color: var(--indigo-000); }
+.b--indigo-1 { border-color: var(--indigo-100); }
+.b--indigo-2 { border-color: var(--indigo-200); }
+.b--indigo-3 { border-color: var(--indigo-300); }
+.b--indigo-4 { border-color: var(--indigo-400); }
+.b--indigo-5 { border-color: var(--indigo-500); }
+.b--indigo-6 { border-color: var(--indigo-600); }
+.b--indigo-7 { border-color: var(--indigo-700); }
+.b--indigo-8 { border-color: var(--indigo-800); }
+.b--indigo-9 { border-color: var(--indigo-900); }
+.b--violet-0 { border-color: var(--violet-000); }
+.b--violet-1 { border-color: var(--violet-100); }
+.b--violet-2 { border-color: var(--violet-200); }
+.b--violet-3 { border-color: var(--violet-300); }
+.b--violet-4 { border-color: var(--violet-400); }
+.b--violet-5 { border-color: var(--violet-500); }
+.b--violet-6 { border-color: var(--violet-600); }
+.b--violet-7 { border-color: var(--violet-700); }
+.b--violet-8 { border-color: var(--violet-800); }
+.b--violet-9 { border-color: var(--violet-900); }
+.b--gray-0 { border-color: var(--gray-000); }
+.b--gray-1 { border-color: var(--gray-100); }
+.b--gray-2 { border-color: var(--gray-200); }
+.b--gray-3 { border-color: var(--gray-300); }
+.b--gray-4 { border-color: var(--gray-400); }
+.b--gray-5 { border-color: var(--gray-500); }
+.b--gray-6 { border-color: var(--gray-600); }
+.b--gray-7 { border-color: var(--gray-700); }
+.b--gray-8 { border-color: var(--gray-800); }
+.b--gray-9 { border-color: var(--gray-900); }
+
+.b--transparent { border-color: var(--transparent); }
+.b--inherit { border-color: inherit; }
