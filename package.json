@@ -1,13 +1,14 @@
 {
-  "name": "codekit-project",
-  "version": "1.0.0",
-  "description": "CodeKit created this starter package.json file. You should customize it appropriately.",
+  "name": "CurlyFramework",
+  "version": "4.0.0",
+  "description": "Persönliches Frontend-Framework auf Basis von Tachyons (SASS) für Webprojekte.",
   "scripts": {},
   "author": "",
-  "license": "UNLICENSED",
+  "license": "GPL-3.0",
   "repository": {},
   "dependencies": {
     "lazysizes": "^5.2.0-beta1",
     "tachyons-sass": "^4.9.5"
-  }
+  },
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
 }
