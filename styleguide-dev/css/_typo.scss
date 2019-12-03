@@ -1,3 +1,13 @@
+@font-face {
+	font-family: 'FONTNAME';
+	font-style: normal;
+	font-weight: 500;
+	src: local('FONT NAME'), local('FONTNAME'),
+		 url('font/FONTNAME.woff') format('woff2'),
+		 url('font/FONTNAME.woff') format('woff');	
+	font-display: swap;
+}
+
 * {
 	font-family: inherit;
 	font-style: normal;
@@ -9,7 +19,7 @@
 }
 
 body {
-	font-family: '';
+	font-family: 'FONTNAME', sans-serif;
 	font-style: normal;
 	font-weight: 400;
 	font-size: $font-size-5;
