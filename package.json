@@ -1,14 +1,22 @@
 {
-  "name": "CurlyFramework",
-  "version": "4.0.0",
-  "description": "Persönliches Frontend-Framework auf Basis von Tachyons (SASS) für Webprojekte.",
+  "name": "curlyframework",
+  "version": "4.1.0",
+  "description": "Persönliches Frontend-Framework auf Basis von Tachyons (SASS) für barrierearme Webprojekte.",
   "scripts": {},
-  "author": "",
+  "author": "Jens Wittmann",
   "license": "GPL-3.0",
   "repository": {},
   "dependencies": {
     "lazysizes": "^5.2.0-beta1",
     "tachyons-sass": "^4.9.5"
   },
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "main": "index.html",
+  "devDependencies": {},
+  "keywords": [
+    "curlyframework",
+    "jens wittmann"
+  ]
 }
