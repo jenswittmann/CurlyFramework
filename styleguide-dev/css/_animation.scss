@@ -12,6 +12,6 @@
 .pulse {
 	
 	@media (prefers-reduced-motion: no-preference) {
-		animation: $somuber-pulse-animation;
+		animation: pulse $animation-time ease-in-out infinite;
 	}
 }
