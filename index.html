@@ -40,11 +40,11 @@
 		<!-- overlay nav -->
 		<header class="head">
 		    <button id="navopener" aria-haspopup="nav" aria-expanded="false" aria-controls="nav" class="button-aria-expanded-toogle">Menü öffnen</button>
-		    <nav id="nav" role="menu" aria-modal="true" aria-labeledby="navopener" class="fixed top-0 left-0 right-0 bottom-0 pa4 bg-white" hidden>
-			    <ul>
-				    <li><a href="#!">Home</a></li>
-				    <li><a href="#!">News</a></li>
-				    <li><a href="#!">Kontakt</a></li>
+		    <nav id="nav" aria-modal="true" aria-labeledby="navopener" class="fixed top-0 left-0 right-0 bottom-0 pa4 bg-white" hidden>
+			    <ul role="menu">
+				    <li role="menuitem"><a href="/">Home</a></li>
+				    <li role="menuitem"><a href="/">News</a></li>
+				    <li role="menuitem"><a href="/">Kontakt</a></li>
 			    </ul>
 			    <button aria-expanded="false" aria-controls="nav" class="button-aria-expanded-toogle">Menü schließen</button>
 		    </nav>
