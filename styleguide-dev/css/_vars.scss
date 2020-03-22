@@ -135,9 +135,9 @@ $breakpoint-not-large: 'screen and (max-width: 79em)' !default;
 $breakpoint-large: 'screen and (min-width: 79em)' !default;
 $breakpoint-extra-large: 'screen and (min-width: 95em)' !default;
 
-$icon-size-1: .5rem;
-$icon-size-2: 1rem;
-$icon-size-3: 1.5rem;
+$icon-size-1: 1rem;
+$icon-size-2: 2rem;
+$icon-size-3: 5rem;
 
 $a11y-outline-color: $yellow;
 
