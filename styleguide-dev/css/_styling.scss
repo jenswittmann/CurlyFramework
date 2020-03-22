@@ -9,5 +9,6 @@ html {
 * {
 	padding: 0;
 	margin: 0;
-	scroll-behavior: smooth;
+	scroll-behavior: smooth; // smooth scrollto
+	-webkit-overflow-scrolling: touch; // set overflow touch for ios
 }
