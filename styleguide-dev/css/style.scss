@@ -65,9 +65,10 @@
 @import 'form';
 @import 'grid';
 @import 'animation';
+@import 'a11y';
 @import 'styling';
 	
-// Device check
+// breakpoint check
 .check-device { font-size: 20px !important; }
 @media #{$breakpoint-medium} { // tablet
 	.check-device { font-size: 30px !important; }
