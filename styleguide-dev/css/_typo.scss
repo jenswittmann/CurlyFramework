@@ -1,8 +1,8 @@
 @font-face {
 	font-family: 'FONTNAME';
 	font-style: normal;
-	font-weight: 500;
-	src: local('FONT NAME'), local('FONTNAME'),
+	font-weight: 400;
+	src: local('FONT NAME'),
 		 url('font/FONTNAME.woff') format('woff2'),
 		 url('font/FONTNAME.woff') format('woff');	
 	font-display: swap;
@@ -10,7 +10,7 @@
 
 * {
 	font-family: inherit;
-	font-style: normal;
+	font-style: inherit;
 	font-weight: inherit;
 	font-size: inherit;
 	text-decoration: inherit;
@@ -23,6 +23,6 @@ body {
 	font-style: normal;
 	font-weight: 400;
 	font-size: $font-size-5;
-	line-height: 1.5;
+	line-height: $line-height-copy;
 	color: $black;
 }
