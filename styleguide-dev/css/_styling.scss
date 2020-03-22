@@ -1,5 +1,5 @@
 html {
-	font-size: 90%;
+	font-size: 100%;
 	
 	@media #{$breakpoint-large} {
 		font-size: 100%;
@@ -10,8 +10,4 @@ html {
 	padding: 0;
 	margin: 0;
 	scroll-behavior: smooth;
-}
-
-.hyphens-auto {
-	hyphens: auto;
 }
