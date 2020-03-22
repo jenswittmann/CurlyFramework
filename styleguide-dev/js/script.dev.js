@@ -11,3 +11,17 @@ import 'lazysizes';
 	}
 	return mobile;
 }());*/
+
+// prevent scrolling on body
+var preventScrollingBtn = document.querySelectorAll( '.button-prevent-body-scrolling' ),
+	preventScrollingName = 'data-scrolling';
+if ( preventScrollingBtn != null ) {
+	Array.prototype.forEach.call( preventScrollingBtn, function( btn, i ){
+		btn.onclick = function() {
+			var bodyScrollState = JSON.parse(
+					document.body.getAttribute( preventScrollingName )
+				);
+			document.body.setAttribute( preventScrollingName, !bodyScrollState );
+		}
+	});
+}
