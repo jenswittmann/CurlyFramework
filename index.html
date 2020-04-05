@@ -59,13 +59,19 @@
 	    </a>
 	    	    
 	    <main id="content">
-	   	   
-			<h1>CurlyFramework</h1>
+		    	
+		    <button id="speechcontrol">Text vorlesen 🔉</button>
+		    
+		    <div aria-labelledby="speechcontrol" data-speech-content>
+		    
+				<h1>CurlyFramework</h1>
+				
+				<p>
+					Persönliches Frontend-Framework auf Basis von Tachyons (SASS) für Webprojekte.
+					<a href="https://jens-wittmann.de" rel="nofollow" target="_blank">Mehr Infos zu Jens Wittmann</a>
+				</p>
 			
-			<p>
-				Persönliches Frontend-Framework auf Basis von Tachyons (SASS) für Webprojekte.
-				<a href="https://jens-wittmann.de" rel="nofollow" target="_blank">Mehr Infos zu Jens Wittmann</a>
-			</p>
+		    </div>
 			
 			<!-- accordion -->
 			<h2>
@@ -97,6 +103,14 @@
 	
 			</svg>
 	    </div>
+	    
+	    <script>
+		    document.querySelector('#speechcontrol').onclick = function() {
+			    var content = document.querySelector('[data-speech-content]').textContent,
+			    	speechit = new SpeechSynthesisUtterance(content);
+				window.speechSynthesis.speak(speechit);
+		    };
+		</script>
 		
 		<script src="styleguide/js/script.js"></script>
 	</body>
