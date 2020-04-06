@@ -10,9 +10,6 @@
     "lazysizes": "^5.2.0-beta1",
     "tachyons-sass": "^4.9.5"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "main": "index.html",
   "devDependencies": {},
   "keywords": [
