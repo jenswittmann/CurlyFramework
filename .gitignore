@@ -3,7 +3,7 @@
 .bashrc
 .ssh/
 .nova/
-node_modules/
+node_modules/*
 backup/
 core/*
 !core/components/
