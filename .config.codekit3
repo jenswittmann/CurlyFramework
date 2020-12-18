@@ -2276,7 +2276,7 @@
 	"esLintSourceType": 0,
 	"externalServerAddress": "https://akr-tax.dev",
 	"gitIgnoreBuildFolder": 1,
-	"hideConfigFile": 0,
+	"hideConfigFile": 1,
 	"jsCheckerReservedNamesString": "",
 	"jsHintFlags2": {
 		"asi": {
