@@ -1,5 +1,7 @@
 ## CurlyFramework
 
+![.github/workflows/npm-publish.yml](https://github.com/jenswittmann/CurlyFramework/workflows/.github/workflows/npm-publish.yml/badge.svg)
+
 [Persönliches Frontend-Framework](https://jens-wittmann.de) auf Basis von [Tachyons](https://tachyons.io) (SASS) und [MODX](https://modx.com) für Webprojekte.
 
 `$ npm i curlyframework`
