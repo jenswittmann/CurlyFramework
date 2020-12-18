@@ -853,28 +853,29 @@
 		"rFN": 0,
 		"uCM": 0
 		},
-	"/styleguide/img/anfahrt.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "/styleguide/img/anfahrt.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 52780316221407,
-		"prP": 0
-		},
-	"/styleguide/img/dummy.jpg": {
-		"ft": 16384,
-		"iS": 295745,
-		"jF": 0,
+	"/styleguide/css/font/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
 		"oA": 0,
-		"oAP": "/styleguide/img/dummy.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"ou": "lpckwebp-none",
-		"q": 100,
-		"rq": 75
+		"oAP": "/styleguide/css/font/index.html",
+		"oF": 0
+		},
+	"/styleguide/img/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/styleguide/img/index.html",
+		"oF": 0
+		},
+	"/styleguide/js/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/styleguide/js/index.html",
+		"oF": 0
 		}
 	},
 "hooks": [
