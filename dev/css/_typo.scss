@@ -1,0 +1,175 @@
+// link font files
+// @font-face {
+//     font-family: "{name}";
+//     font-style: normal;
+//     font-weight: normal;
+//     src: url("font/{name}.woff") format("woff2");
+//     font-display: swap;
+// }
+
+// reset browser font styling
+*,
+button {
+    font-family: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    text-decoration: inherit;
+    color: inherit;
+    -webkit-font-smoothing: antialiased;
+}
+
+// responsive font-size classes, reusable as mixin and css class
+@mixin fs-1 {
+    font-size: $font-size-1;
+
+    @media #{$breakpoint-not-small} {
+        font-size: $font-size-1-large;
+    }
+}
+
+.fs-1 {
+    @include fs-1;
+}
+
+@mixin fs-2 {
+    font-size: $font-size-2;
+
+    @media #{$breakpoint-not-small} {
+        font-size: $font-size-2-large;
+    }
+}
+
+.fs-2 {
+    @include fs-2;
+}
+
+@mixin fs-3 {
+    font-size: $font-size-3;
+
+    @media #{$breakpoint-not-small} {
+        font-size: $font-size-3-large;
+    }
+}
+
+.fs-3 {
+    @include fs-3;
+}
+
+@mixin fs-4 {
+    font-size: $font-size-4;
+
+    @media #{$breakpoint-not-small} {
+        font-size: $font-size-4-large;
+    }
+}
+
+.fs-4 {
+    @include fs-4;
+}
+
+@mixin fs-5 {
+    font-size: $font-size-5;
+
+    @media #{$breakpoint-not-small} {
+        font-size: $font-size-5-large;
+    }
+}
+
+.fs-5 {
+    @include fs-5;
+}
+
+@mixin fs-6 {
+    font-size: $font-size-6;
+
+    @media #{$breakpoint-not-small} {
+        font-size: $font-size-6-large;
+    }
+}
+
+.fs-6 {
+    @include fs-6;
+}
+
+@mixin fs-7 {
+    font-size: $font-size-7;
+
+    @media #{$breakpoint-not-small} {
+        font-size: $font-size-7-large;
+    }
+}
+
+.fs-7 {
+    @include fs-7;
+}
+
+.fs-1-ns {
+    @media #{$breakpoint-not-small} {
+        @include fs-1;
+    }
+}
+
+.fs-2-ns {
+    @media #{$breakpoint-not-small} {
+        @include fs-2;
+    }
+}
+
+.fs-3-ns {
+    @media #{$breakpoint-not-small} {
+        @include fs-3;
+    }
+}
+
+.fs-4-ns {
+    @media #{$breakpoint-not-small} {
+        @include fs-4;
+    }
+}
+
+.fs-5-ns {
+    @media #{$breakpoint-not-small} {
+        @include fs-5;
+    }
+}
+
+.fs-6-ns {
+    @media #{$breakpoint-not-small} {
+        @include fs-6;
+    }
+}
+
+.fs-7-ns {
+    @media #{$breakpoint-not-small} {
+        @include fs-7;
+    }
+}
+
+// set base font style
+body {
+    @include fs-4;
+    font-family: "{name}", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: $line-height-copy;
+    color: $black;
+}
+
+// reset h1 font-size set by tachyons
+h1 {
+    font-size: inherit;
+}
+
+// richtext
+.richtext {
+    p,
+    ul {
+        margin-bottom: 0.5em;
+    }
+
+    ul {
+        padding: 0;
+        padding-left: 1.1em;
+    }
+}

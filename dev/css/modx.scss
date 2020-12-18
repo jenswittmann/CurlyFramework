@@ -1,0 +1,169 @@
+// hide resource buttons
+#modx-abtn-cancel,
+#modx-abtn-help {
+    display: none !important;
+}
+
+// change contentblocks manager layout
+#modx-resource-content {
+    box-shadow: none !important;
+
+    & > .x-panel-header {
+        display: none;
+    }
+}
+
+.contentblocks-layout {
+    margin: 1rem 0;
+}
+
+.contentblocks-add-layout {
+    overflow: hidden;
+    width: 3rem;
+    height: 3rem;
+    margin: auto;
+    margin-top: 3px;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 50%;
+
+    h3 {
+        a {
+            height: 100%;
+            font-size: 1.5rem;
+            background-color: #f2f2f2;
+        }
+    }
+}
+
+.contentblocks-add-content-here {
+    a {
+        border-radius: 50%;
+    }
+}
+
+.contentblocks-add-block {
+    h3 {
+        a {
+            overflow: hidden;
+            display: block;
+            width: 2rem;
+            height: 2rem;
+            line-height: 1.25rem;
+            margin: auto;
+            background-color: #f2f2f2;
+            border-radius: 50%;
+        }
+    }
+}
+
+.contentblocks-modal-header,
+.contentblocks-modal-content {
+    .switch-view,
+    .contentblocks-modal-content {
+        display: none;
+    }
+}
+
+.contentblocks-layout-wrapper {
+    li {
+        &:nth-child(1) {
+            .contentblocks-add-layout {
+                display: none;
+            }
+        }
+    }
+}
+
+.contentblocks-region-container-header {
+    background-color: #f2f2f2;
+    box-shadow: none !important;
+}
+
+.contentblocks-setting-image {
+    .field-label {
+        display: none;
+    }
+}
+
+.contentblocks-field-image-upload,
+.contentblocks-field-gallery-upload,
+.contentblocks-field-file-upload {
+    padding: 10px;
+    background: #fcfcfc;
+    border: 1px solid #e5e5e5;
+}
+
+.contentblocks-field-button {
+    &.contentblocks-field-image-choose,
+    &.contentblocks-field-gallery-choose,
+    &.contentblocks-field-file-choose {
+        font-size: inherit;
+        color: #1a7fb8;
+        padding-right: 0;
+        background-color: transparent;
+        border-color: transparent;
+    }
+
+    &.contentblocks-field-file-choose {
+        &:after {
+            content: " oder eine Datei in diesen Bereich ziehen (Drag & Drop)";
+            color: black;
+        }
+    }
+
+    &.contentblocks-field-upload,
+    &.contentblocks-field-gallery-url,
+    &.contentblocks-field-image-url {
+        display: none;
+    }
+}
+
+.contentblocks-collapser {
+    display: none !important;
+}
+
+// region header
+.contentblocks-region-container-header {
+    border-bottom: 2px solid #1a7fb8 !important;
+
+    .contentblocks-layout-title {
+        color: #1a7fb8;
+    }
+
+    .contentblocks-region-container-tools {
+        opacity: 0.3;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+// layout field
+.contentblocks-layout,
+.contentblocks-field-layout-wrapper {
+    &:hover {
+        .contentblocks-add-block,
+        .contentblocks-add-layout {
+            opacity: 0.5;
+        }
+    }
+
+    .contentblocks-add-block,
+    .contentblocks-add-layout {
+        opacity: 0;
+        transition: 0.5s;
+    }
+}
+
+// repeater field labels
+.contentblocks-repeater-mini {
+    .contentblocks-field-link,
+    .contentblocks-float-label {
+        label {
+            padding: 5px;
+            background-color: white;
+        }
+    }
+}

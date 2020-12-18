@@ -1,0 +1,101 @@
+// custom grid
+.grid {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+@media #{$breakpoint-not-small} {
+	
+	.grid-ns {
+		display: flex;
+		flex-wrap: wrap;
+	}
+}
+
+@for $i from 1 through $grid-cols {
+	
+	.grid-#{$i} {
+		width: ( 100 / 12 ) * $i * 1%;
+	}
+}
+
+@for $i from 1 through $grid-cols {
+	
+	@media #{$breakpoint-not-small} {		
+		.grid-#{$i}-ns {
+			width: ( 100 / 12 ) * $i * 1%;
+		}
+	}
+}
+
+// css grid
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: $spacing-medium;
+
+    &-outer {
+        display: grid;
+        grid-template-columns:
+            [left] minmax($spacing-large, 1fr)
+            [content] minmax(0, $max-width-9)
+            [right] minmax($spacing-large, 1fr);
+
+        @media #{$breakpoint-not-small} {
+            grid-template-columns:
+                [left] minmax($spacing-extra-large, 1fr)
+                [content] minmax(0, $max-width-9)
+                [right] minmax($spacing-extra-large, 1fr);
+        }
+    }
+
+    &__place {
+        &--content {
+            grid-column: content;
+        }
+
+        &--offset-left {
+            grid-column: left;
+        }
+
+        &--offset-right {
+            grid-column: right;
+        }
+
+        &--fullwidth {
+            grid-column: left / -1;
+        }
+    }
+
+    &__item--end {
+        grid-column-end: -1;
+    }
+
+    @for $i from 1 through $grid-cols {
+        &__item--start-#{$i} {
+            grid-column-start: $i;
+        }
+
+        &__item--end-#{$i} {
+            grid-column-end: $i + 1;
+        }
+    }
+
+    &__item--end-ns {
+        grid-column-end: -1;
+    }
+
+    @for $i from 1 through $grid-cols {
+        @media #{$breakpoint-not-small} {
+            &__item--start-#{$i}-ns {
+                grid-column-start: $i;
+            }
+        }
+
+        @media #{$breakpoint-not-small} {
+            &__item--end-#{$i}-ns {
+                grid-column-end: $i + 1;
+            }
+        }
+    }
+}

@@ -1,0 +1,73 @@
+// hide tab focus if not needed
+* {
+    &:focus {
+        outline: 0;
+    }
+}
+
+.focus-outline {
+    * {
+        &:focus {
+            outline: 0.4em solid $a11y-outline-color;
+        }
+    }
+
+    .form__field--checkbox {
+        &:focus-within {
+            label {
+                &:before {
+                    outline: 0.4em solid $a11y-outline-color;
+                }
+            }
+        }
+    }
+}
+
+// skiplinks
+.skiplinks {
+    position: fixed;
+    top: -100rem;
+    left: -100rem;
+    z-index: 1000;
+    width: 0;
+    height: 0;
+
+    a {
+        &:focus,
+        &:active {
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 1rem;
+            background-color: $white;
+        }
+    }
+}
+
+// hide animation if not wanted
+* {
+    @media (prefers-reduced-motion: reduce) {
+        animation: none !important;
+        transition: inherit !important;
+        transition-duration: 0 !important;
+    }
+}
+
+// aria status
+.aria-status {
+    &[aria-expanded='false'] {
+        .aria-status__inactive {
+            display: none;
+        }
+    }
+
+    &[aria-expanded='true'] {
+        .aria-status__active {
+            display: none;
+        }
+
+        .aria-status__inactive {
+            display: block;
+        }
+    }
+}

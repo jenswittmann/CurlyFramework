@@ -1,0 +1,67 @@
+// split words by browser
+.hyphens-auto {
+    hyphens: auto;
+}
+
+.hyphens-auto-mobile-only {
+    @media #{$breakpoint-small} {
+        hyphens: auto;
+    }
+}
+
+// center element inside parent
+.center-content {
+    display: grid;
+    place-items: center;
+}
+
+// sticky scrolling elements
+.sticky {
+    position: sticky;
+}
+
+// img cover and contain
+.img-cover {
+    object-fit: cover;
+}
+
+.img-contain {
+    object-fit: contain;
+}
+
+// remove z-index for aspect-ratio by tachyons
+.aspect-ratio--object,
+.aspect-ratio--object-ns {
+    z-index: inherit;
+}
+
+// show child if focus-within
+.focus-within {
+    .focus-within__item {
+        display: none;
+    }
+
+    &:focus-within {
+        .focus-within__item {
+            display: block;
+        }
+    }
+}
+
+// negative z-index
+.zn-1 {
+    z-index: -1;
+}
+
+// flex auto 0
+.flex-auto-0 {
+    flex: 0 0 auto;
+}
+.flex-auto-1 {
+    flex: 1 0 auto;
+}
+
+// fixed bg
+.bg-fixed {
+    background-attachment: fixed;
+}

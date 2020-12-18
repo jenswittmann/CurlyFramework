@@ -1,0 +1,49 @@
+// fluid content
+// $basePxFor1rem = 16;
+// $baseDesignWidthFromAdobeXD = 1920;
+// $baseFontSize = 100 * $basePxFor1rem / $baseDesignWidthFromAdobeXD;
+// Result: .833333333333333vw;
+// Note: add class to <html class="scale-content">
+.scale-content {
+    font-size: 4.26666667vw;
+
+    @media #{$breakpoint-not-small} {
+        font-size: 1vw;
+    }
+}
+
+// smooth scrolling
+* {
+    scroll-behavior: smooth; // smooth scrollto
+    -webkit-overflow-scrolling: touch; // set overflow touch for ios
+}
+
+// prevent scrolling on body for overlays
+body {
+    &[data-scrolling="true"] {
+        overflow: hidden;
+        overflow-y: scroll; // prevent page jumping if no scrollbar is needed
+    }
+
+    &[data-scrolling="false"] {
+        overflow: hidden;
+    }
+}
+
+// coloring scrollbar
+::-webkit-scrollbar {
+    width: 0.25rem;
+    height: 0.25rem;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background-color: $black;
+    border: 2px solid transparent;
+    border-radius: 1rem;
+}
+* {
+    scrollbar-width: thin;
+    scrollbar-color: $black transparent;
+}

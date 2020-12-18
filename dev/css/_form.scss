@@ -1,0 +1,112 @@
+.placeholder {
+    &::placeholder {
+        color: $black;
+    }
+}
+
+.form {
+    &__item {
+        margin-bottom: $spacing-large;
+    }
+
+    &__label {
+        display: block;
+        margin-bottom: $spacing-small;
+
+        &-error {
+            display: inline-block;
+            color: $white;
+            padding: 0 $spacing-small;
+            margin-left: $spacing-small;
+            background-color: $red;
+        }
+    }
+
+    &__desc {
+        @include fs-6;
+    }
+
+    &__field {
+        &.error {
+            input,
+            textarea,
+            &.form__field--select {
+                &:not(:focus-within):not(:valid) {
+                    background-color: $washed-yellow;
+                    outline-color: $red;
+                }
+            }
+        }
+
+        &--input input,
+        &--select select,
+        &--upload input,
+        &--textarea textarea {
+            width: 100%;
+            padding: $spacing-small;
+            background-color: $light-gray;
+            border: 0;
+            outline: $border-width-1 solid $dark-gray;
+
+            @media #{$breakpoint-not-small} {
+                padding: $spacing-medium;
+            }
+        }
+
+        &--select {
+            option {
+                background-color: $white;
+            }
+        }
+
+        &--upload {
+            width: 100%;
+
+            input {
+                @include fs-6;
+                line-height: 1;
+                width: calc(100% - #{$spacing-medium} * 2);
+            }
+        }
+
+        &--textarea {
+            textarea {
+                min-height: 25vh;
+            }
+        }
+
+        &--checkbox {
+            input {
+                position: absolute;
+                overflow: visible;
+                opacity: 0;
+
+                &:checked ~ label {
+                    &:before {
+                        content: '✓';
+                    }
+                }
+            }
+
+            label {
+                position: relative;
+                padding-left: 2em;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    display: block;
+                    width: 1em;
+                    height: 1em;
+                    text-align: center;
+                    line-height: 1em;
+                    background-color: $white;
+                    outline: $border-width-1 solid $black;
+                    transform: translateY(0.25em);
+                }
+            }
+        }
+    }
+}

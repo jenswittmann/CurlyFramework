@@ -1,0 +1,54 @@
+// fade image in after load
+.lazyload,
+.lazyloading,
+[data-flickity-lazyload] {
+    opacity: 0;
+}
+
+video.lazyloading {
+    opacity: 1;
+}
+
+.lazyloaded,
+.flickity-lazyloaded,
+.flickity-lazyerror {
+    opacity: 1;
+    transition: opacity $animation-time-small;
+}
+
+// animate [hidden] elements
+.fade-in {
+    display: inherit !important;
+    visibility: visible;
+    opacity: 1;
+    transition: $animation-time-small;
+
+    &[hidden] {
+        visibility: hidden;
+        opacity: 0;
+        transition: $animation-time-small;
+    }
+}
+
+.fade-down {
+    overflow: hidden;
+    display: block;
+    max-height: 300rem;
+    transition: $animation-time-medium;
+
+    &[hidden] {
+        max-height: 0;
+        transition: $animation-time-small;
+    }
+}
+
+// transition classes
+.transition-small {
+    transition: $animation-time-small;
+}
+.transition-medium {
+    transition: $animation-time-medium;
+}
+.transition-large {
+    transition: $animation-time-large;
+}

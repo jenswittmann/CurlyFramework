@@ -1,0 +1,38 @@
+@media #{$detectHasPointer} {
+    // color orange on hover
+    .hover-orange {
+        &:hover {
+            color: $orange;
+        }
+    }
+    // change color on hover
+    .hover-child-orange {
+        &:hover {
+            .hover-child-orange__item {
+                color: $orange;
+            }
+        }
+    }
+
+    // change bg color on hover
+    .hover-child-bg-orange {
+        &:hover {
+            .hover-child-bg-orange__item {
+                background-color: $orange;
+            }
+        }
+    }
+
+    // grow child on hover
+    .hover-child-grow {
+        .hover-child-grow__item {
+            transform: scale(1);
+        }
+
+        &:hover {
+            .hover-child-grow__item {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
