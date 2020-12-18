@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de" class="scale-content">
+    <head>
+        <!--link
+            rel="preload"
+            href="styleguide/css/font/{name}.woff"
+            as="font"
+        /-->
+		<link rel="stylesheet" href="styleguide/css/style.css" />
+        <meta charset="utf-8" />
+        <title>CurlyFramework</title>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+        />
+        <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+        <meta name="description" content="" />
+        <meta property="og:image" content="" />
+	</head>
+	<body data-scrolling="" class="pa4">
+		<div class="check-device"></div>
+
+		<!-- skiplinks -->
+		<ul class="skiplinks">
+		    <li><a href="#navopener">zur Navigation</a></li>
+		    <li><a href="#content">zum Inhalt</a></li>
+		</ul>
+		
+		<!-- overlay nav -->
+		<header class="head">
+		    <button id="navopener" aria-haspopup="true" aria-expanded="false" aria-controls="nav" class="button-aria-expanded-toogle">Menü öffnen</button>
+		    <nav id="nav" aria-modal="true" aria-labeledby="navopener" class="fixed top-0 left-0 right-0 bottom-0 pa4 bg-white" hidden>
+			    <ul role="menu">
+				    <li role="menuitem"><a href="/">Home</a></li>
+				    <li role="menuitem"><a href="/">News</a></li>
+				    <li role="menuitem"><a href="/">Kontakt</a></li>
+			    </ul>
+			    <button aria-expanded="false" aria-controls="nav" class="button-aria-expanded-toogle">Menü schließen</button>
+		    </nav>
+		</header>
+	    	    
+	    <main id="content">
+		    	
+		    <button id="speechcontrol">Text vorlesen 🔉</button>
+		    
+		    <div aria-labelledby="speechcontrol" data-speech-content>
+		    
+				<h1>CurlyFramework</h1>
+				
+				<p>
+					Persönliches Frontend-Framework auf Basis von Tachyons (SASS) für Webprojekte.
+					<a href="https://jens-wittmann.de" rel="nofollow" target="_blank">Mehr Infos zu Jens Wittmann</a>
+				</p>
+			
+		    </div>
+			
+			<!-- accordion -->
+			<h2>
+				<button id="accordion-1-btn" aria-expanded="false" aria-controls="accordion-1-content" class="button-aria-expanded-toogle">Accordion #1</button>
+			</h2>
+			<section id="accordion-1-content" aria-labelledby="accordion-1-btn" hidden>
+				<p>Inhalt zum Accordion #1</p>
+			</section>
+			<h2>
+				<button id="accordion-2-btn" aria-expanded="false" aria-controls="accordion-2-content" class="button-aria-expanded-toogle">Accordion #2</button>
+			</h2>
+			<section id="accordion-2-content" aria-labelledby="accordion-2-btn" hidden>
+				<p>Inhalt zum Accordion #2</p>
+			</section>
+			
+	    </main>
+	    
+	    <footer class="foot">
+		    
+	    </footer>
+	    
+	    <script>
+		    document.querySelector('#speechcontrol').onclick = function() {
+			    var content = document.querySelector('[data-speech-content]').textContent,
+			    	speechit = new SpeechSynthesisUtterance(content);
+				window.speechSynthesis.speak(speechit);
+		    };
+		</script>
+		
+		<script src="styleguide/js/script.js"></script>
+	</body>
+</html>
