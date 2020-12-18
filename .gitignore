@@ -4,6 +4,7 @@
 .ssh/
 .nova/
 node_modules/*
+package-lock.json
 backup/
 core/*
 !core/components/
