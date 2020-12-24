@@ -39,11 +39,11 @@ body {
     background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-    background-color: $black;
+    background-color: $purple;
     border: 2px solid transparent;
     border-radius: 1rem;
 }
 * {
     scrollbar-width: thin;
-    scrollbar-color: $black transparent;
+    scrollbar-color: $purple transparent;
 }

@@ -1,24 +1,24 @@
 @media #{$detectHasPointer} {
-    // color orange on hover
-    .hover-orange {
+    // change color on hover
+    .hover-purple {
         &:hover {
-            color: $orange;
+            color: $purple;
         }
     }
-    // change color on hover
-    .hover-child-orange {
+    // change child color on hover
+    .hover-child-purple {
         &:hover {
-            .hover-child-orange__item {
-                color: $orange;
+            .hover-child-purple__item {
+                color: $purple;
             }
         }
     }
 
-    // change bg color on hover
-    .hover-child-bg-orange {
+    // change child bg color on hover
+    .hover-child-bg-purple {
         &:hover {
-            .hover-child-bg-orange__item {
-                background-color: $orange;
+            .hover-child-bg-purple__item {
+                background-color: $purple;
             }
         }
     }

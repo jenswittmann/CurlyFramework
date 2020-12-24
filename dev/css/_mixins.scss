@@ -65,3 +65,11 @@
 .bg-fixed {
     background-attachment: fixed;
 }
+
+// filter blur
+.blur {
+    filter: blur(.5rem);
+}
+.bg-blur {
+    backdrop-filter: blur(.5rem);
+}

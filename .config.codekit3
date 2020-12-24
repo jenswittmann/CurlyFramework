@@ -25,6 +25,14 @@
 		"oAP": "/.gitignore",
 		"oF": 0
 		},
+	"/.nova/Configuration.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/.nova/Configuration-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
 	"/dev/css/_a11y.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -385,6 +393,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/node_modules/tachyons-sass/css/_borders.css",
+		"oF": 0,
+		"oS": 0,
+		"sct": 0
+		},
+	"/node_modules/tachyons-sass/scss/_box-shadow.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"ec": 1,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/node_modules/tachyons-sass/css/_box-shadow.css",
 		"oF": 0,
 		"oS": 0,
 		"sct": 0

@@ -10,7 +10,7 @@ $letter-spacing-1: 0.025em !default;
 $letter-spacing-2: 0.1em !default;
 $line-height-solid: 1 !default;
 $line-height-title: 1.1 !default;
-$line-height-copy: 1.2 !default;
+$line-height-copy: 1.5 !default;
 $measure: 30em !default;
 $measure-narrow: 20em !default;
 $measure-wide: 38em !default;
@@ -46,7 +46,7 @@ $border-radius-none: 0 !default;
 $border-radius-1: 0.125rem !default;
 $border-radius-2: 0.25rem !default;
 $border-radius-3: 0.5rem !default;
-$border-radius-4: 1rem !default;
+$border-radius-4: 1.5rem !default;
 $border-radius-circle: 100% !default;
 $border-radius-pill: 9999px !default;
 $border-width-none: 0 !default;
@@ -104,7 +104,7 @@ $orange: #ff6600 !default;
 $gold: #ffb700 !default;
 $yellow: #ffd400 !default;
 $light-yellow: #fbf1a9 !default;
-$purple: #351788 !default;
+$purple: #4a4794 !default;
 $light-purple: #a463f2 !default;
 $dark-pink: #d5008f !default;
 $hot-pink: #ff41b4 !default;
@@ -166,7 +166,7 @@ $icon-size-3: $spacing-extra-large;
 $icon-size-4: $spacing-extra-extra-large;
 
 // outline color on focus elements
-$a11y-outline-color: $yellow;
+$a11y-outline-color: $black;
 
 // animation timing
 $animation-time-small: 0.3s;

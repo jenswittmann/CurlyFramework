@@ -1,51 +1,49 @@
 // custom grid
 .grid {
-	display: flex;
-	flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 @media #{$breakpoint-not-small} {
-	
-	.grid-ns {
-		display: flex;
-		flex-wrap: wrap;
-	}
+    .grid-ns {
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
 
 @for $i from 1 through $grid-cols {
-	
-	.grid-#{$i} {
-		width: ( 100 / 12 ) * $i * 1%;
-	}
+    .grid-#{$i} {
+        width: (100 / $grid-cols) * $i * 1%;
+    }
 }
 
 @for $i from 1 through $grid-cols {
-	
-	@media #{$breakpoint-not-small} {		
-		.grid-#{$i}-ns {
-			width: ( 100 / 12 ) * $i * 1%;
-		}
-	}
+    @media #{$breakpoint-not-small} {
+        .grid-#{$i}-ns {
+            width: (100 / $grid-cols) * $i * 1%;
+        }
+    }
 }
 
 // css grid
 .grid {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: $spacing-medium;
+    grid-template-columns: repeat($grid-cols, 1fr);
+    gap: $grid-gap;
 
     &-outer {
         display: grid;
         grid-template-columns:
-            [left] minmax($spacing-large, 1fr)
+            [left] minmax($spacing-medium, 1fr)
             [content] minmax(0, $max-width-9)
-            [right] minmax($spacing-large, 1fr);
+            [right] minmax($spacing-medium, 1fr);
+        gap: 0;
 
         @media #{$breakpoint-not-small} {
             grid-template-columns:
-                [left] minmax($spacing-extra-large, 1fr)
+                [left] minmax($spacing-large, 1fr)
                 [content] minmax(0, $max-width-9)
-                [right] minmax($spacing-extra-large, 1fr);
+                [right] minmax($spacing-large, 1fr);
         }
     }
 
@@ -79,6 +77,14 @@
         &__item--end-#{$i} {
             grid-column-end: $i + 1;
         }
+
+        &__item--col-span-#{$i} {
+            grid-column: span $i;
+        }
+
+        &__item--row-span-#{$i} {
+            grid-row: span $i;
+        }
     }
 
     &__item--end-ns {
@@ -90,11 +96,17 @@
             &__item--start-#{$i}-ns {
                 grid-column-start: $i;
             }
-        }
 
-        @media #{$breakpoint-not-small} {
             &__item--end-#{$i}-ns {
                 grid-column-end: $i + 1;
+            }
+
+            &__item--col-span-#{$i}-ns {
+                grid-column: span $i;
+            }
+
+            &__item--row-span-#{$i}-ns {
+                grid-row: span $i;
             }
         }
     }

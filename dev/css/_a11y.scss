@@ -8,7 +8,7 @@
 .focus-outline {
     * {
         &:focus {
-            outline: 0.4em solid $a11y-outline-color;
+            outline: 0.2em solid $a11y-outline-color;
         }
     }
 
@@ -16,7 +16,7 @@
         &:focus-within {
             label {
                 &:before {
-                    outline: 0.4em solid $a11y-outline-color;
+                    outline: 0.2em solid $a11y-outline-color;
                 }
             }
         }
@@ -55,13 +55,13 @@
 
 // aria status
 .aria-status {
-    &[aria-expanded='false'] {
+    &[aria-expanded="false"] {
         .aria-status__inactive {
             display: none;
         }
     }
 
-    &[aria-expanded='true'] {
+    &[aria-expanded="true"] {
         .aria-status__active {
             display: none;
         }

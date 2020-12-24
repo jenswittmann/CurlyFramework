@@ -1,11 +1,11 @@
 // link font files
-// @font-face {
-//     font-family: "{name}";
-//     font-style: normal;
-//     font-weight: normal;
-//     src: url("font/{name}.woff") format("woff2");
-//     font-display: swap;
-// }
+@font-face {
+    font-family: "voltaire";
+    font-style: normal;
+    font-weight: normal;
+    src: url("https://jens-wittmann.de/voltaire.woff2") format("woff2");
+    font-display: swap;
+}
 
 // reset browser font styling
 *,
@@ -17,6 +17,7 @@ button {
     text-decoration: inherit;
     color: inherit;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 // responsive font-size classes, reusable as mixin and css class
@@ -149,9 +150,12 @@ button {
 // set base font style
 body {
     @include fs-4;
-    font-family: "{name}", sans-serif;
+    font-family: "voltaire", sans-serif;
+    //font-variation-settings: 'wght' 400, 'wdth' 100; /* use to change font-weight/width */
     font-style: normal;
     font-weight: normal;
+    //letter-spacing: -0.015em; /* adjust letter spacing depending on font size */
+    //word-spacing: -0.1em; /* adjust word spacing depending on font size */
     line-height: $line-height-copy;
     color: $black;
 }
