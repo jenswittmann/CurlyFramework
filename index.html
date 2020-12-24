@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="de" class="scale-content">
     <head>
-        <!--link
+        <link
             rel="preload"
-            href="styleguide/css/font/{name}.woff"
+            href="https://jens-wittmann.de/voltaire.woff2"
             as="font"
-        /-->
-		<link rel="stylesheet" href="styleguide/css/style.css" />
+        />
+        <link rel="stylesheet" href="styleguide/css/style.css" />
         <meta charset="utf-8" />
         <title>CurlyFramework</title>
         <meta
@@ -16,72 +16,308 @@
         <link rel="icon" type="image/svg+xml" href="favicon.svg" />
         <meta name="description" content="" />
         <meta property="og:image" content="" />
-	</head>
-	<body data-scrolling="" class="pa4">
-		<div class="check-device"></div>
+    </head>
+    <body data-scrolling="true" class="purple pa4 pa6-ns">
+        <div class="check-device"></div>
 
-		<!-- skiplinks -->
-		<ul class="skiplinks">
-		    <li><a href="#navopener">zur Navigation</a></li>
-		    <li><a href="#content">zum Inhalt</a></li>
-		</ul>
-		
-		<!-- overlay nav -->
-		<header class="head">
-		    <button id="navopener" aria-haspopup="true" aria-expanded="false" aria-controls="nav" class="button-aria-expanded-toogle">Menü öffnen</button>
-		    <nav id="nav" aria-modal="true" aria-labeledby="navopener" class="fixed top-0 left-0 right-0 bottom-0 pa4 bg-white" hidden>
-			    <ul role="menu">
-				    <li role="menuitem"><a href="/">Home</a></li>
-				    <li role="menuitem"><a href="/">News</a></li>
-				    <li role="menuitem"><a href="/">Kontakt</a></li>
-			    </ul>
-			    <button aria-expanded="false" aria-controls="nav" class="button-aria-expanded-toogle">Menü schließen</button>
-		    </nav>
-		</header>
-	    	    
-	    <main id="content">
-		    	
-		    <button id="speechcontrol">Text vorlesen 🔉</button>
-		    
-		    <div aria-labelledby="speechcontrol" data-speech-content>
-		    
-				<h1>CurlyFramework</h1>
-				
-				<p>
-					Persönliches Frontend-Framework auf Basis von Tachyons (SASS) für Webprojekte.
-					<a href="https://jens-wittmann.de" rel="nofollow" target="_blank">Mehr Infos zu Jens Wittmann</a>
-				</p>
-			
-		    </div>
-			
-			<!-- accordion -->
-			<h2>
-				<button id="accordion-1-btn" aria-expanded="false" aria-controls="accordion-1-content" class="button-aria-expanded-toogle">Accordion #1</button>
-			</h2>
-			<section id="accordion-1-content" aria-labelledby="accordion-1-btn" hidden>
-				<p>Inhalt zum Accordion #1</p>
-			</section>
-			<h2>
-				<button id="accordion-2-btn" aria-expanded="false" aria-controls="accordion-2-content" class="button-aria-expanded-toogle">Accordion #2</button>
-			</h2>
-			<section id="accordion-2-content" aria-labelledby="accordion-2-btn" hidden>
-				<p>Inhalt zum Accordion #2</p>
-			</section>
-			
-	    </main>
-	    
-	    <footer class="foot">
-		    
-	    </footer>
-	    
-	    <script>
-		    document.querySelector('#speechcontrol').onclick = function() {
-			    var content = document.querySelector('[data-speech-content]').textContent,
-			    	speechit = new SpeechSynthesisUtterance(content);
-				window.speechSynthesis.speak(speechit);
-		    };
-		</script>
-		
-		<script src="styleguide/js/script.js"></script>
-	</body>
+        <!-- skiplinks -->
+        <ul class="skiplinks">
+            <li><a href="#speechcontrol">zur Navigation</a></li>
+            <li><a href="#content">zum Inhalt</a></li>
+        </ul>
+
+        <main id="content">
+            <section aria-labelledby="speechcontrol">
+                <div data-speech-content>
+                    <img
+                        src="favicon.svg"
+                        aria-hidden="true"
+                        alt=""
+                        class="db w-25 w-10-ns mb5"
+                    />
+                    <h1 class="fs-1 ma0">CurlyFramework</h1>
+                    <p class="fs-3-ns mv3 mv5-ns">
+                        Persönliches Frontend-Framework für barrierearme
+                        Webprojekte.
+                    </p>
+                </div>
+
+                <p class="mv3 mv5-ns">
+                    <span class="dib ph3 mb2 bg-near-white br4">
+                        $ npm i curlyframework
+                    </span>
+                    &
+                    <a
+                        href="https://github.com/jenswittmann/CurlyFramework"
+                        target="_blank"
+                        class="dib ph3 bg-near-white br4"
+                    >
+                        Github</a
+                    >
+                </p>
+            </section>
+
+            <h2 class="mt7">Beispiele</h2>
+
+            <section class="pv4 mb4 bt bw2 b--purple">
+                <p>
+                    Die Javascript Klasse
+                    <span class="bb bw3 b--silver">a11y.js</span> kümmert sich
+                    um die Verwaltung der <span>ARIA</span> Attribute. Damit
+                    können einfache barrierearme Overlays erstellt werden.
+                </p>
+
+                <button
+                    id="popupopener"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    aria-controls="popup"
+                    class="white ph3 pv1 bg-purple bn br4"
+                    data-modal-open
+                    data-modal-prevent-scrolling
+                >
+                    Beispiel öffnen
+                </button>
+
+                <div
+                    id="popup"
+                    aria-modal="true"
+                    aria-labeledby="popupopener"
+                    class="fixed top-0 left-0 right-0 bottom-0 z-max pa4 bg-blur"
+                    hidden
+                >
+                    <div class="w-100 h-100 center-content">
+                        <div
+                            class="w-90 w-50-ns pa3 pa5-ns ma3 ma4-ns bg-white br4 shadow-4"
+                        >
+                            <img
+                                src="favicon.svg"
+                                aria-hidden="true"
+                                alt=""
+                                class="db w-25 w-10-ns mb5"
+                            />
+                            <p>
+                                Das Script kümmert sich auch um den Focus, damit
+                                dieser im geöffneten Fenster bleibt. Hier ein
+                                <a
+                                    href="https://jens-wittmann.de"
+                                    target="_blank"
+                                    >Beispiellink</a
+                                >
+                                zum Test.
+                            </p>
+                            <button
+                                aria-expanded="false"
+                                aria-controls="popup"
+                                class="white ph3 pv1 bg-purple bn br4"
+                                data-modal-close
+                                data-modal-prevent-scrolling
+                            >
+                                Beispiel schließen
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="pv4 mb4 bt bw2 b--purple">
+                <p>
+                    Über die <span>ARIA</span> Attribute kann ebenfalls ein
+                    Akkordeon umgesetzt werden.
+                </p>
+
+                <h2>
+                    <button
+                        id="accordion-1-btn"
+                        aria-expanded="false"
+                        aria-controls="accordion-1-content"
+                        class="aria-status flex items-center pa0 bg-transparent bn"
+                    >
+                        <span
+                            class="aria-status__active ph2 ph3-ns pv1 mr2 ba br-100"
+                            >+</span
+                        >
+                        <span
+                            class="aria-status__inactive ph2 ph3-ns pv1 mr2 ba br-100"
+                            >-</span
+                        >
+                        <span>Akkordeon #1</span>
+                    </button>
+                </h2>
+                <section
+                    id="accordion-1-content"
+                    aria-labelledby="accordion-1-btn"
+                    class="fs-6"
+                    hidden
+                >
+                    <p>Inhalt zum Akkordeon #1</p>
+                </section>
+
+                <h2>
+                    <button
+                        id="accordion-2-btn"
+                        aria-expanded="false"
+                        aria-controls="accordion-2-content"
+                        class="aria-status flex items-center pa0 bg-transparent bn"
+                    >
+                        <span
+                            class="aria-status__active ph2 ph3-ns pv1 mr2 ba br-100"
+                            >+</span
+                        >
+                        <span
+                            class="aria-status__inactive ph2 ph3-ns pv1 mr2 ba br-100"
+                            >-</span
+                        >
+                        <span>Akkordeon #2</span>
+                    </button>
+                </h2>
+                <section
+                    id="accordion-2-content"
+                    aria-labelledby="accordion-2-btn"
+                    class="fs-6"
+                    hidden
+                >
+                    <p>Inhalt zum Akkordeon #2</p>
+                </section>
+            </section>
+
+            <section class="pv4 mb4 bt bw2 b--purple">
+                <p>
+                    Ein einfaches responsives Raster auf Basis von Flexbox und
+                    CSS Grid ist auch enthalten. Die Spaltenanzahl kann über
+                    <span class="bb bw3 b--silver">$grid-cols</span> und der
+                    Zwischenabstand über
+                    <span class="bb bw3 b--silver">$grid-gap</span> angepasst
+                    werden.
+                </p>
+
+                <div class="grid near-black">
+                    <div
+                        class="grid__item--start-1 grid__item--end ph1 bl bb b--silver"
+                    >
+                        Komplette Breite
+                    </div>
+                    <div
+                        class="grid__item--start-1 grid__item--start-3-ns grid__item--end grid__item--end-7-ns ph1 bl bb b--silver"
+                    >
+                        Spalte 3–7
+                    </div>
+                    <div
+                        class="grid__item--start-1 grid__item--start-9-ns grid__item--end grid__item--end-11-ns ph1 bl bb b--silver"
+                    >
+                        Spalte 9–11
+                    </div>
+                    <div
+                        class="grid__item--col-span-12 grid__item--col-span-4-ns grid__item--row-span-3-ns ph1 bl bb b--silver"
+                    >
+                        Zelle über 4 Spalten und drei Zeilen
+                    </div>
+                    <div
+                        class="grid__item--col-span-12 grid__item--col-span-4-ns ph1 bl bb b--silver"
+                    >
+                        Zelle über 4 Spalten
+                    </div>
+                    <div
+                        class="grid__item--col-span-12 grid__item--col-span-4-ns ph1 bl bb b--silver"
+                    >
+                        Zelle über 4 Spalten
+                    </div>
+                    <div
+                        class="grid__item--col-span-12 grid__item--col-span-4-ns ph1 bl bb b--silver"
+                    >
+                        Zelle über 4 Spalten
+                    </div>
+                    <div
+                        class="grid__item--col-span-12 grid__item--col-span-4-ns ph1 bl bb b--silver"
+                    >
+                        Zelle über 4 Spalten
+                    </div>
+                    <div
+                        class="grid__item--col-span-12 grid__item--col-span-4-ns ph1 bl bb b--silver"
+                    >
+                        Zelle über 4 Spalten
+                    </div>
+                </div>
+            </section>
+
+            <section class="pv4 mb4 bt bw2 b--purple">
+                <p>
+                    Für die responsive Schrift stehen sieben Klassen zur
+                    Verfügung.
+                </p>
+                <ul class="list lh-title pa0">
+                    <li class="fs-1">Testschrift</li>
+                    <li class="fs-2">Testschrift</li>
+                    <li class="fs-3">Testschrift</li>
+                    <li class="fs-4">Testschrift</li>
+                    <li class="fs-5">Testschrift</li>
+                    <li class="fs-6">Testschrift</li>
+                    <li class="fs-7">Testschrift</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer class="foot">
+            <h2 class="mt6">Danke</h2>
+
+            <ul class="list pa0">
+                <li class="bb">
+                    <a href="https://tachyons.io/" target="_blank"
+                        >tachyons.io</a
+                    >
+                </li>
+                <li class="bb">
+                    <a
+                        href="https://www.barrierefreies-webdesign.de/"
+                        target="_blank"
+                        >barrierefreies-webdesign.de</a
+                    >
+                </li>
+                <li class="bb">
+                    <a href="https://modmore.com/contentblocks" target="_blank"
+                        >modmore.com/contentblocks</a
+                    >
+                </li>
+                <li class="bb">
+                    <a
+                        href="https://afarkas.github.io/lazysizes/index.html"
+                        target="_blank"
+                        >afarkas.github.io/lazysizes</a
+                    >
+                </li>
+            </ul>
+
+            <h2 class="mt6">Fragen?</h2>
+
+            <p>
+                Fragen und Hinweise gern über
+                <a
+                    href="https://github.com/jenswittmann/CurlyFramework"
+                    target="_blank"
+                    class="underline"
+                    >GitHub</a
+                >.
+            </p>
+
+            <p class="mt7">
+                <a
+                    href="https://jens-wittmann.de/#kontakt"
+                    target="_blank"
+                    class="underline"
+                    >Impressum und Datenschutzerklärung</a
+                >
+            </p>
+        </footer>
+
+        <script>
+            document.querySelector("#speechcontrol").onclick = function () {
+                var content = document.querySelector("[data-speech-content]")
+                        .textContent,
+                    speechit = new SpeechSynthesisUtterance(content);
+                window.speechSynthesis.speak(speechit);
+            };
+        </script>
+
+        <script src="styleguide/js/script.js"></script>
+    </body>
 </html>
