@@ -14,10 +14,13 @@
     "devDependencies": {},
     "keywords": [
         "curlyframework",
+        "aria",
+        "ariahelper",
         "jens wittmann",
         "modx",
         "modmore",
         "contentblocks",
+        "gitify",
         "a11y",
         "accessibility"
     ]
