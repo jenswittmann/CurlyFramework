@@ -17,12 +17,28 @@
 		"oAP": "/.github/workflows/npm-publish.yml",
 		"oF": 0
 		},
+	"/.gitify": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/.gitify",
+		"oF": 0
+		},
 	"/.gitignore": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/.gitignore",
+		"oF": 0
+		},
+	"/.htaccess": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/.htaccess",
 		"oF": 0
 		},
 	"/.nova/Configuration.json": {
@@ -32,6 +48,22 @@
 		"oF": 0,
 		"oO": 0,
 		"oS": 1
+		},
+	"/_backup/.htaccess": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/_backup/.htaccess",
+		"oF": 0
+		},
+	"/_gitify/.htaccess": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/_gitify/.htaccess",
+		"oF": 0
 		},
 	"/dev/css/_a11y.scss": {
 		"aP": 0,
@@ -882,6 +914,16 @@
 		"oAP": "/styleguide/css/font/index.html",
 		"oF": 0
 		},
+	"/styleguide/css/style.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/styleguide/css/style-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/styleguide/img/index.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -897,6 +939,17 @@
 		"oA": 0,
 		"oAP": "/styleguide/js/index.html",
 		"oF": 0
+		},
+	"/styleguide/js/script.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/styleguide/js/min/script-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
 		}
 	},
 "hooks": [
