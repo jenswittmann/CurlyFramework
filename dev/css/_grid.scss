@@ -31,6 +31,12 @@
     grid-template-columns: repeat($grid-cols, 1fr);
     gap: $grid-gap;
 
+    @for $i from 1 through $grid-cols {
+        &--subgrid-#{$i} {
+            grid-template-columns: repeat($i, 1fr);
+        }
+    }
+
     &-outer {
         display: grid;
         grid-template-columns:
