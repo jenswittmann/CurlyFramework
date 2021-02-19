@@ -32,11 +32,14 @@ video.lazyloading {
 
 .fade-down {
     overflow: hidden;
-    display: block;
-    max-height: 300rem;
+    visibility: visible;
+    max-height: 10rem;
     transition: $animation-time-medium;
 
     &[hidden] {
+        display: block;
+        overflow: hidden;
+        visibility: hidden;
         max-height: 0;
         transition: $animation-time-small;
     }
