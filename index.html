@@ -162,7 +162,8 @@
                     <button
                         id="accordion-2-btn"
                         aria-expanded="false"
-                        aria-controls="accordion-2-content"
+                        aria-controls="accordion-3-content"
+                        data-aria-use-classname="dn"
                         class="aria-status flex items-center pa0 bg-transparent bn"
                     >
                         <span
@@ -177,12 +178,38 @@
                     </button>
                 </h2>
                 <section
+                    id="accordion-3-content"
+                    aria-labelledby="accordion-3-btn"
+                    class="dn fs-6"
+                >
+                    <p>Inhalt zum Akkordeon #2 mit CSS Klasse</p>
+                </section>
+
+                <h2>
+                    <button
+                        id="accordion-2-btn"
+                        aria-expanded="false"
+                        aria-controls="accordion-2-content"
+                        class="aria-status flex items-center pa0 bg-transparent bn"
+                    >
+                        <span
+                            class="aria-status__active ph2 ph3-ns pv1 mr2 ba br-100"
+                            >+</span
+                        >
+                        <span
+                            class="aria-status__inactive ph2 ph3-ns pv1 mr2 ba br-100"
+                            >-</span
+                        >
+                        <span>Akkordeon #3</span>
+                    </button>
+                </h2>
+                <section
                     id="accordion-2-content"
                     aria-labelledby="accordion-2-btn"
-                    class="fs-6"
+                    class="fade-down fs-6"
                     hidden
                 >
-                    <p>Inhalt zum Akkordeon #2</p>
+                    <p>Inhalt zum Akkordeon #3 mit Animation</p>
                 </section>
             </section>
 
@@ -250,7 +277,13 @@
                     <div
                         class="grid__item--col-span-12 grid__item--col-span-4-ns ph1 bl bb b--silver"
                     >
-                        Zelle über 4 Spalten
+                        Subgrid
+                        <ul class="grid grid--subgrid-4 list pa0 mv0 nl1 nr1">
+                            <li class="ph1">1</li>
+                            <li class="ph1">2</li>
+                            <li class="ph1">3</li>
+                            <li class="ph1">4</li>
+                        </ul>
                     </div>
                 </div>
             </section>
