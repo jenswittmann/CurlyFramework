@@ -6,10 +6,12 @@ export default class ariaHelper {
                 dataNames: {
                     ariaControlsElSelector: "aria-controls",
                     modalCloseSelector: "data-modal-close",
-                    modalOpener: "data-modal-open",
-                    preventScrollingOnBackground:
+                    modalOpenerSelector: "data-modal-open",
+                    modalPlayVideoSelector: "data-modal-play",
+                    preventScrollingOnBackgroundSelector:
                         "data-modal-prevent-scrolling",
-                    modalOnopenCloseGroup: "data-modal-onopen-closegroup",
+                    modalOnopenCloseGroupSelector:
+                        "data-modal-onopen-closegroup",
                     ariaUseClassname: "data-aria-use-classname",
                 },
             },
@@ -37,6 +39,7 @@ export default class ariaHelper {
         this.exitOnEsc();
         this.showTabsFocus();
         this.preventScrollingOnBackground();
+        this.autoplayVideo();
     }
 
     reload() {
@@ -103,6 +106,7 @@ export default class ariaHelper {
             el.addEventListener("click", (e) => {
                 this.watchModalTabsOptions = null;
                 this.setPreviousHistoryElFocus();
+                this.closeModal(el);
             });
         });
     }
@@ -117,6 +121,7 @@ export default class ariaHelper {
         this.hideVisibility(elSlave, true, el);
 
         this.watchModalTabsOptions = null;
+        this.controlVideo(elSlave, "pause");
     }
 
     exitOnEsc() {
@@ -129,14 +134,17 @@ export default class ariaHelper {
                     this.setPreviousHistoryElFocus();
                     if (
                         el.hasAttribute(
-                            this.config.dataNames.preventScrollingOnBackground
+                            this.config.dataNames
+                                .preventScrollingOnBackgroundSelector
                         )
                     ) {
                         this.setBodyScrollState(false);
                     }
                     if (
                         elBefore &&
-                        elBefore.hasAttribute(this.config.dataNames.modalOpener)
+                        elBefore.hasAttribute(
+                            this.config.dataNames.modalOpenerSelector
+                        )
                     ) {
                         this.setOptionsForTabsOnlyInActiveModalAllowed(
                             elBefore
@@ -162,7 +170,7 @@ export default class ariaHelper {
 
     watchTabsOnlyInActiveModalAllowed() {
         const els = document.querySelectorAll(
-            "[" + this.config.dataNames.modalOpener + "]"
+            "[" + this.config.dataNames.modalOpenerSelector + "]"
         );
 
         if (!els) return;
@@ -247,7 +255,7 @@ export default class ariaHelper {
 
     watchModalOnopenCloseGroup() {
         let els = document.querySelectorAll(
-            "[" + this.config.dataNames.modalOnopenCloseGroup + "]"
+            "[" + this.config.dataNames.modalOnopenCloseGroupSelector + "]"
         );
 
         if (!els) return;
@@ -262,11 +270,12 @@ export default class ariaHelper {
                 return;
             el.addEventListener("click", (e) => {
                 let groupName = el.getAttribute(
-                        this.config.dataNames.modalOnopenCloseGroup
+                        this.config.dataNames.modalOnopenCloseGroupSelector
                     ),
                     groupConnectedEls = document.querySelectorAll(
                         "[" +
-                            this.config.dataNames.modalOnopenCloseGroup +
+                            this.config.dataNames
+                                .modalOnopenCloseGroupSelector +
                             '="' +
                             groupName +
                             '"]'
@@ -295,7 +304,9 @@ export default class ariaHelper {
 
     preventScrollingOnBackground() {
         let els = document.querySelectorAll(
-            "[" + this.config.dataNames.preventScrollingOnBackground + "]"
+            "[" +
+                this.config.dataNames.preventScrollingOnBackgroundSelector +
+                "]"
         );
 
         if (!els) return;
@@ -348,5 +359,38 @@ export default class ariaHelper {
         }
 
         return false;
+    }
+
+    getVideoEl(el) {
+        return el.querySelector("video");
+    }
+
+    controlVideo(el, mode) {
+        if (!el) return;
+
+        let videoEl = this.getVideoEl(el);
+
+        if (!videoEl) return;
+
+        if (mode == "play") {
+            videoEl.play();
+        } else {
+            videoEl.pause();
+        }
+    }
+
+    autoplayVideo() {
+        let els = document.querySelectorAll(
+            "[" + this.config.dataNames.modalPlayVideoSelector + "]"
+        );
+
+        if (!els) return;
+
+        els.forEach((el, i) => {
+            el.addEventListener("click", (e) => {
+                let slaveEl = this.getSlave(el);
+                this.controlVideo(slaveEl, "play");
+            });
+        });
     }
 }
