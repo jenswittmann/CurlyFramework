@@ -89,3 +89,14 @@
         height: 100%;
     }
 }
+
+// give parent grid to child
+.dc {
+    display: contents;
+}
+
+// pointer events
+.pointer-events-none {
+    pointer-events: none;
+}
+

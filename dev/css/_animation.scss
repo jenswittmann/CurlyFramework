@@ -16,14 +16,15 @@ video.lazyloading {
     transition: opacity $animation-time-small;
 }
 
-// animate [hidden] elements
+// animate [hidden] and elements with class .dn
 .fade-in {
     display: inherit !important;
     visibility: visible;
     opacity: 1;
     transition: $animation-time-small;
 
-    &[hidden] {
+    &[hidden],
+    &.dn {
         visibility: hidden;
         opacity: 0;
         transition: $animation-time-small;
@@ -36,7 +37,8 @@ video.lazyloading {
     max-height: 10rem;
     transition: $animation-time-medium;
 
-    &[hidden] {
+    &[hidden],
+    &.dn {
         display: block;
         overflow: hidden;
         visibility: hidden;
