@@ -37,11 +37,11 @@ $max-width-1: 1rem !default;
 $max-width-2: 2rem !default;
 $max-width-3: 4rem !default;
 $max-width-4: 8rem !default;
-$max-width-5: 16rem !default;
+$max-width-5: 20rem !default;
 $max-width-6: 32rem !default;
-$max-width-7: 48rem !default;
-$max-width-8: 70rem !default;
-$max-width-9: 100rem !default;
+$max-width-7: 61rem !default;
+$max-width-8: 65rem !default;
+$max-width-9: 70rem !default;
 $border-radius-none: 0 !default;
 $border-radius-1: 0.125rem !default;
 $border-radius-2: 0.25rem !default;
@@ -125,13 +125,13 @@ $washed-yellow: #f6f4f1 !default;
 $washed-red: #ffdfdf !default;
 
 // breakpoints
-$breakpoint-small: "screen and (max-width: 50em)" !default;
-$breakpoint-not-small: "screen and (min-width: 50em)" !default;
+$breakpoint-small: "screen and (max-width: 30em)" !default;
+$breakpoint-not-small: "screen and (min-width: 30em)" !default;
 $breakpoint-not-large: "screen and (max-width: 79em)" !default;
-$breakpoint-medium: "screen and (min-width: 50em) and (max-width: 79em)" !default;
+$breakpoint-medium: "screen and (min-width: 30em) and (max-width: 79em)" !default;
 $breakpoint-not-large: "screen and (max-width: 79em)" !default;
 $breakpoint-large: "screen and (min-width: 79em)" !default;
-$breakpoint-extra-large: "screen and (min-width: 95em)" !default;
+$breakpoint-extra-large: "screen and (min-width: 100em)" !default;
 
 // responsive font-size
 $font-size-1: (40 / 16) * $font-size-mobile-scaling * 1rem !default;
@@ -175,4 +175,5 @@ $animation-time-large: 3s;
 
 // grid settings
 $grid-cols: 12;
-$grid-gap: (12 / 16) * 1rem;
+$grid-gap: 0.5rem;
+$grid-gap-large: 1rem;
