@@ -101,8 +101,10 @@
         }
     }
 
-    &__item--end-ns {
-        grid-column-end: -1;
+    @media #{$breakpoint-not-small} {
+        &__item--end-ns {
+            grid-column-end: -1;
+        }
     }
 
     @for $i from 1 through $grid-cols {
@@ -120,6 +122,32 @@
             }
 
             &__item--row-span-#{$i}-ns {
+                grid-row: span $i;
+            }
+        }
+    }
+
+    @media #{$breakpoint-large} {
+        &__item--end-l {
+            grid-column-end: -1;
+        }
+    }
+
+    @for $i from 1 through $grid-cols {
+        @media #{$breakpoint-large} {
+            &__item--start-#{$i}-l {
+                grid-column-start: $i;
+            }
+
+            &__item--end-#{$i}-l {
+                grid-column-end: $i + 1;
+            }
+
+            &__item--col-span-#{$i}-l {
+                grid-column: span $i;
+            }
+
+            &__item--row-span-#{$i}-l {
                 grid-row: span $i;
             }
         }
