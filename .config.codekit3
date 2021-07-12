@@ -2186,7 +2186,7 @@
       }
     },
     "esLintSourceType" : 0,
-    "externalServerAddress" : "https:\/\/akr-tax.dev",
+    "externalServerAddress" : "https:\/\/jenswittmann.dev",
     "gitIgnoreBuildFolder" : 1,
     "hideConfigFile" : 1,
     "jsCheckerReservedNamesString" : "",
