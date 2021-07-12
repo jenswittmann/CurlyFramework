@@ -1,6 +1,6 @@
 {
     "name": "curlyframework",
-    "version": "5.4.0",
+    "version": "5.5.0",
     "description": "Persönliches Frontend-Framework auf Basis von Tachyons (SASS) für barrierearme Webprojekte.",
     "scripts": {},
     "author": "Jens Wittmann",
