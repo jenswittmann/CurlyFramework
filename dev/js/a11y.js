@@ -13,6 +13,7 @@ export default class ariaHelper {
                     modalOnopenCloseGroupSelector:
                         "data-modal-onopen-closegroup",
                     ariaUseClassname: "data-aria-use-classname",
+                    closeOnFocusLeaveSelector: "data-closeonfocusleave",
                 },
             },
             ...config,
@@ -40,16 +41,17 @@ export default class ariaHelper {
         this.showTabsFocus();
         this.preventScrollingOnBackground();
         this.autoplayVideo();
+        this.closeOnFocusLeave();
     }
 
     reload() {
         this.load();
     }
 
-    getSlave(el) {
-        let ariaSlaveEl = el.getAttribute("aria-controls");
+    getAriaControlsEl(el) {
+        let ariaControlsEl = el.getAttribute("aria-controls");
 
-        return document.getElementById(ariaSlaveEl);
+        return document.getElementById(ariaControlsEl);
     }
 
     getStatus(el) {
@@ -114,14 +116,13 @@ export default class ariaHelper {
     closeModal(el) {
         if (!el) return;
 
-        let slave = el.getAttribute("aria-controls"),
-            elSlave = document.getElementById(slave);
+        let ariaControlsEl = this.getAriaControlsEl(el);
 
         el.setAttribute("aria-expanded", false);
-        this.hideVisibility(elSlave, true, el);
+        this.hideVisibility(ariaControlsEl, true, el);
 
         this.watchModalTabsOptions = null;
-        this.controlVideo(elSlave, "pause");
+        this.controlVideo(ariaControlsEl, "pause");
     }
 
     exitOnEsc() {
@@ -211,20 +212,20 @@ export default class ariaHelper {
     ariaControlsToggle(el) {
         if (!el) return;
 
-        let slaveName = el.getAttribute("aria-controls"),
-            slaveEl = this.getSlave(el),
-            slaveStatus = this.getStatus(el),
+        let ariaControlsName = el.getAttribute("aria-controls"),
+            ariaControlsEl = this.getAriaControlsEl(el),
+            ariaControlsStatus = this.getStatus(el),
             connectedAriaControlsEls = document.querySelectorAll(
-                '[aria-controls="' + slaveName + '"]'
+                '[aria-controls="' + ariaControlsName + '"]'
             );
 
         connectedAriaControlsEls.forEach((el, i) => {
-            this.setStatus(el, !slaveStatus);
+            this.setStatus(el, !ariaControlsStatus);
         });
 
-        this.hideVisibility(slaveEl, slaveStatus, el);
+        this.hideVisibility(ariaControlsEl, ariaControlsStatus, el);
 
-        if (!slaveStatus) return;
+        if (!ariaControlsStatus) return;
 
         this.setPreviousHistoryElFocus();
     }
@@ -338,18 +339,18 @@ export default class ariaHelper {
         return true;
     }
 
-    hideVisibility(slaveEl, state, trigger) {
-        if (!slaveEl) return;
+    hideVisibility(ariaControlsEl, state, trigger) {
+        if (!ariaControlsEl) return;
 
         let useClassnamme = this.useClassnameForHidden(trigger);
         if (useClassnamme) {
             if (!state) {
-                slaveEl.classList.remove(useClassnamme);
+                ariaControlsEl.classList.remove(useClassnamme);
             } else {
-                slaveEl.classList.add(useClassnamme);
+                ariaControlsEl.classList.add(useClassnamme);
             }
         } else {
-            slaveEl.hidden = state;
+            ariaControlsEl.hidden = state;
         }
     }
 
@@ -388,8 +389,38 @@ export default class ariaHelper {
 
         els.forEach((el, i) => {
             el.addEventListener("click", (e) => {
-                let slaveEl = this.getSlave(el);
-                this.controlVideo(slaveEl, "play");
+                let ariaControlsEl = this.getAriaControlsEl(el);
+                this.controlVideo(ariaControlsEl, "play");
+            });
+        });
+    }
+
+    closeOnFocusLeave() {
+        let els = document.querySelectorAll(
+            "[" + this.config.dataNames.closeOnFocusLeaveSelector + "]"
+        );
+
+        if (!els) return;
+
+        els.forEach((el, i) => {
+            el.addEventListener("click", (e) => {
+                let ariaControlsEl = this.getAriaControlsEl(el);
+                ariaControlsEl.focus();
+                document.body.addEventListener(
+                    "focusin",
+                    (e) => {
+                        let ariaControlsExpanded =
+                            el.getAttribute("aria-expanded");
+                        if (
+                            ariaControlsExpanded == "true" &&
+                            !ariaControlsEl.contains(e.target) &&
+                            el != e.target
+                        ) {
+                            el.click();
+                        }
+                    },
+                    true
+                );
             });
         });
     }
