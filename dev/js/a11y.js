@@ -322,7 +322,6 @@ export default class ariaHelper {
                 return;
             el.addEventListener("click", (e) => {
                 let elExpanded = JSON.parse(el.getAttribute("aria-expanded"));
-                console.log(elExpanded);
                 this.setBodyScrollState(!elExpanded);
             });
         });
