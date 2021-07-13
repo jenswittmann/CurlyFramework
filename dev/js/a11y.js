@@ -32,6 +32,7 @@ export default class ariaHelper {
     }
 
     load() {
+        this.preventScrollingOnBackground();
         this.watchModalOnopenCloseGroup();
         this.watchAriaControlsToggle();
         this.watchAriaHistoryEl();
@@ -39,7 +40,6 @@ export default class ariaHelper {
         this.watchTabsOnlyInActiveModalAllowed();
         this.exitOnEsc();
         this.showTabsFocus();
-        this.preventScrollingOnBackground();
         this.autoplayVideo();
         this.closeOnFocusLeave();
     }
@@ -321,7 +321,9 @@ export default class ariaHelper {
             )
                 return;
             el.addEventListener("click", (e) => {
-                this.setBodyScrollState();
+                let elExpanded = JSON.parse(el.getAttribute("aria-expanded"));
+                console.log(elExpanded);
+                this.setBodyScrollState(!elExpanded);
             });
         });
     }
