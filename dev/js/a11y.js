@@ -202,6 +202,7 @@ export default class ariaHelper {
                     !options.parent.contains(e.target)
                 ) {
                     e.stopPropagation();
+                    if (!options.focusTo) return;
                     options.focusTo.focus();
                 }
             },
