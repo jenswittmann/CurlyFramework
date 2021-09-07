@@ -167,3 +167,13 @@
         }
     }
 }
+
+// bugfix large spacing when moving TVs to main area
+.x-form-item label.x-form-item-label .modx-tv-reset {
+    padding-top: 0;
+}
+
+// show dropdown when creating new resource (thanks https://github.com/bequadrat/modx-template-select)
+#template-select-panel .x-form-field-wrap {
+    width: auto !important;
+}
