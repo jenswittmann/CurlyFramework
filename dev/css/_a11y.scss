@@ -7,8 +7,9 @@
 
 .focus-outline {
     * {
-        &:focus {
-            outline: 0.2em solid $a11y-outline-color;
+        &:focus {       
+            outline: max(2px, 0.08em) solid currentcolor;
+            outline-offset: max(2px, 0.08em);
         }
     }
 
@@ -16,7 +17,8 @@
         &:focus-within {
             label {
                 &:before {
-                    outline: 0.2em solid $a11y-outline-color;
+                    outline: max(2px, 0.08em) solid currentcolor;
+                    outline-offset: max(2px, 0.08em);
                 }
             }
         }
