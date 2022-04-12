@@ -185,3 +185,8 @@ data:
             - id
             - name
         package: collections
+        
+    formalicious_fields_types:
+        class: FormaliciousFieldType
+        primary: id
+        package: formalicious
