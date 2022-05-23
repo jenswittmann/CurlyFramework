@@ -190,3 +190,20 @@ data:
         class: FormaliciousFieldType
         primary: id
         package: formalicious
+          
+    migx_formtab:
+        class: migxFormtab
+        primary: [id, caption]
+        package: migx
+    migx_formtab_field:
+        class: migxFormtabField
+        primary: [id, field]
+    migx_config_element:
+        class: migxConfigElement
+        primary: id
+    migx_element:
+        class: migxElement
+        primary: id
+    migx_config:
+        class: migxConfig
+        primary: [id, name]
