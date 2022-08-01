@@ -1,6 +1,6 @@
 {
     "name": "curlyframework",
-    "version": "5.5.0",
+    "version": "6.0.0",
     "description": "Persönliches Frontend-Framework auf Basis von Tachyons (SASS) für barrierearme Webprojekte.",
     "scripts": {},
     "author": "Jens Wittmann",
@@ -18,7 +18,7 @@
     "keywords": [
         "curlyframework",
         "aria",
-        "ariahelper",
+        "alpinejs",
         "jens wittmann",
         "modx",
         "modmore",
