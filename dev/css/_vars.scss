@@ -1,28 +1,92 @@
-// tachyons variables
-$sans-serif: sans-serif !default;
+// curlyframework colors
+$purple: #351788 !default;
+$white: #fff !default;
+$black: #000 !default;
+
+// curlyframework breakpoints
+$breakpoint-small: "screen and (max-width: 50em)" !default;
+$breakpoint-not-small: "screen and (min-width: 50em)" !default;
+$breakpoint-not-large: "screen and (max-width: 79em)" !default;
+$breakpoint-medium: "screen and (min-width: 50em) and (max-width: 79em)" !default;
+$breakpoint-not-large: "screen and (max-width: 79em)" !default;
+$breakpoint-large: "screen and (min-width: 79em)" !default;
+$breakpoint-extra-large: "screen and (min-width: 100em)" !default;
+
+// curlyframework spacing
+$spacing-extra-small: 0.25rem !default;
+$spacing-small: math.div(15, 16) * 1rem !default;
+$spacing-medium: math.div(20, 16) * 1rem !default;
+$spacing-large: math.div(40, 16) * 1rem !default;
+$spacing-extra-large: math.div(80, 16) * 1rem !default;
+$spacing-extra-extra-large: math.div(120, 16) * 1rem !default;
+$spacing-extra-extra-extra-large: math.div(240, 16) * 1rem !default;
+
+// curlyframework font name
+$fontname: "voltaire", serif;
+
+// curlyframework font-size
+$font-size-1: math.div(32, 16) * 1rem !default;
+$font-size-1-large: math.div(32, 16) * 1rem !default;
+
+$font-size-2: math.div(28, 16) * 1rem !default;
+$font-size-2-large: math.div(28, 16) * 1rem !default;
+
+$font-size-3: math.div(24, 16) * 1rem !default;
+$font-size-3-large: math.div(24, 16) * 1rem !default;
+
+$font-size-4: math.div(17, 16) * 1rem !default;
+$font-size-4-large: math.div(17, 16) * 1rem !default;
+
+$font-size-5: math.div(15, 16) * 1rem !default;
+$font-size-5-large: math.div(15, 16) * 1rem !default;
+
+$font-size-6: math.div(12, 16) * 1rem !default;
+$font-size-6-large: math.div(12, 16) * 1rem !default;
+
+$font-size-7: math.div(10, 16) * 1rem !default;
+$font-size-7-large: math.div(10, 16) * 1rem !default;
+
+// curlyframework grid settings
+$grid-cols: 14;
+$grid-gap: math.div($spacing-small, 2);
+$grid-gap-large: $spacing-medium;
+$grid-gap-row: $spacing-medium;
+$grid-gap-row-large: $spacing-medium;
+
+// curlyframework icon sizes
+$icon-sizes: (
+    1: 0.7rem,
+    2: 1rem,
+    3: 1.25rem,
+    4: 1.9rem,
+    5: 3.3125rem,
+);
+
+// tachyons
+$sans-serif: -apple-system, BlinkMacSystemFont, "avenir next", avenir, helvetica,
+    "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial, sans-serif !default;
 $serif: georgia, serif !default;
 $code: consolas, monaco, monospace !default;
 $font-size-headline: 6rem !default;
 $font-size-subheadline: 5rem !default;
-$font-size-mobile-scaling: 1;
+$font-size-1: math.div(40, 16) * 1rem !default;
+$font-size-2: math.div(30, 16) * 1rem !default;
+$font-size-3: math.div(22, 16) * 1rem !default;
+$font-size-4: math.div(20, 16) * 1rem !default;
+$font-size-5: math.div(14, 16) * 1rem !default;
+$font-size-6: math.div(12, 16) * 1rem !default;
+$font-size-7: math.div(10, 16) * 1rem !default;
 $letter-spacing-tight: -0.05em !default;
-$letter-spacing-1: 0.025em !default;
-$letter-spacing-2: 0.1em !default;
+$letter-spacing-1: 0.05em !default;
+$letter-spacing-2: 0.5em !default;
 $line-height-solid: 1 !default;
-$line-height-title: 1.1 !default;
+$line-height-title: 1.2 !default;
 $line-height-copy: 1.5 !default;
 $measure: 30em !default;
 $measure-narrow: 20em !default;
 $measure-wide: 38em !default;
 $spacing-none: 0 !default;
-$spacing-extra-small: 0.25rem !default;
-$spacing-small: 0.5rem !default;
-$spacing-medium: 1rem !default;
-$spacing-large: 2rem !default;
-$spacing-extra-large: 3rem !default;
-$spacing-extra-extra-large: 6rem !default;
-$spacing-extra-extra-extra-large: 9rem !default;
-$spacing-copy-separator: 1.25em !default;
+$spacing-copy-separator: 1.5em !default;
 $height-1: 1rem !default;
 $height-2: 2rem !default;
 $height-3: 4rem !default;
@@ -37,16 +101,16 @@ $max-width-1: 1rem !default;
 $max-width-2: 2rem !default;
 $max-width-3: 4rem !default;
 $max-width-4: 8rem !default;
-$max-width-5: 20rem !default;
+$max-width-5: 16rem !default;
 $max-width-6: 32rem !default;
-$max-width-7: 61rem !default;
-$max-width-8: 65rem !default;
-$max-width-9: 70rem !default;
+$max-width-7: 45rem !default;
+$max-width-8: 55rem !default;
+$max-width-9: 65rem !default;
 $border-radius-none: 0 !default;
 $border-radius-1: 0.125rem !default;
 $border-radius-2: 0.25rem !default;
 $border-radius-3: 0.5rem !default;
-$border-radius-4: 1.5rem !default;
+$border-radius-4: 0.55em !default;
 $border-radius-circle: 100% !default;
 $border-radius-pill: 9999px !default;
 $border-width-none: 0 !default;
@@ -60,17 +124,15 @@ $box-shadow-2: 0px 0px 8px 2px rgba(0, 0, 0, 0.2) !default;
 $box-shadow-3: 2px 2px 4px 2px rgba(0, 0, 0, 0.2) !default;
 $box-shadow-4: 2px 2px 8px 0px rgba(0, 0, 0, 0.2) !default;
 $box-shadow-5: 4px 4px 8px 0px rgba(0, 0, 0, 0.2) !default;
-$black: #000 !default;
 $near-black: #575756 !default;
-$dark-gray: #202020 !default;
-$mid-gray: #cfcfcf !default;
-$gray: #dbe5e8 !default;
-$silver: #cdcdcd !default;
-$light-silver: #e3e3e3 !default;
+$dark-gray: #dadada !default;
+$mid-gray: #555 !default;
+$gray: #d9d9d9 !default;
+$silver: #999 !default;
+$light-silver: #dadada !default;
 $moon-gray: #ccc !default;
-$light-gray: #eeeeeb !default;
+$light-gray: #eee !default;
 $near-white: #f4f4f4 !default;
-$white: #fff !default;
 $transparent: transparent !default;
 $black-90: rgba(0, 0, 0, 0.9) !default;
 $black-80: rgba(0, 0, 0, 0.8) !default;
@@ -97,83 +159,38 @@ $white-05: rgba(255, 255, 255, 0.05) !default;
 $white-025: rgba(255, 255, 255, 0.025) !default;
 $white-0125: rgba(255, 255, 255, 0.0125) !default;
 $dark-red: #e7040f !default;
-$red: #ecdcdc !default;
-$light-red: #ffe1d0 !default;
-$brown: #683c11 !default;
-$orange: #ff6600 !default;
+$red: #ff1e28 !default;
+$light-red: #ff725c !default;
+$orange: #ff6656 !default;
 $gold: #ffb700 !default;
-$yellow: #ffd400 !default;
+$yellow: #fbba00 !default;
 $light-yellow: #fbf1a9 !default;
-$purple: #4a4794 !default;
 $light-purple: #a463f2 !default;
 $dark-pink: #d5008f !default;
 $hot-pink: #ff41b4 !default;
 $pink: #ff80cc !default;
 $light-pink: #ffa3d7 !default;
+$green: #00978c !default;
 $dark-green: #137752 !default;
-$turquoise: #1092a0 !default;
-$green: #a2d45e !default;
 $light-green: #9eebcf !default;
 $navy: #001b44 !default;
 $dark-blue: #00385f !default;
-$blue: #b1c4d6 !default;
-$light-blue: #e6f6ff !default;
+$blue: #acdbf1 !default;
+$light-blue: #96ccff !default;
 $lightest-blue: #cdecff !default;
 $washed-blue: #f6fffe !default;
 $washed-green: #e8fdf5 !default;
 $washed-yellow: #f6f4f1 !default;
 $washed-red: #ffdfdf !default;
 
-// breakpoints
-$breakpoint-small: "screen and (max-width: 30em)" !default;
-$breakpoint-not-small: "screen and (min-width: 30em)" !default;
-$breakpoint-not-large: "screen and (max-width: 79em)" !default;
-$breakpoint-medium: "screen and (min-width: 30em) and (max-width: 79em)" !default;
-$breakpoint-not-large: "screen and (max-width: 79em)" !default;
-$breakpoint-large: "screen and (min-width: 79em)" !default;
-$breakpoint-extra-large: "screen and (min-width: 100em)" !default;
-
-// responsive font-size
-$font-size-1: (40 / 16) * $font-size-mobile-scaling * 1rem !default;
-$font-size-1-large: (140 / 16) * 1rem !default;
-
-$font-size-2: (35 / 16) * $font-size-mobile-scaling * 1rem !default;
-$font-size-2-large: (100 / 16) * 1rem !default;
-
-$font-size-3: (30 / 16) * $font-size-mobile-scaling * 1rem !default;
-$font-size-3-large: (68 / 16) * 1rem !default;
-
-$font-size-4: (20 / 16) * $font-size-mobile-scaling * 1rem !default;
-$font-size-4-large: (38 / 16) * 1rem !default;
-
-$font-size-5: (20 / 16) * $font-size-mobile-scaling * 1rem !default;
-$font-size-5-large: (24 / 16) * 1rem !default;
-
-$font-size-6: (14 / 16) * $font-size-mobile-scaling * 1rem !default;
-$font-size-6-large: (20 / 16) * 1rem !default;
-
-$font-size-7: (10 / 16) * $font-size-mobile-scaling * 1rem !default;
-$font-size-7-large: (12 / 16) * 1rem !default;
-
 // detect pointer device
 $detectHasPointer: "(any-pointer: fine)" !default;
 $detectNoPointer: "(any-pointer: none)" !default;
 
-// icon sizes
-$icon-size-1: $spacing-medium;
-$icon-size-2: $spacing-large;
-$icon-size-3: $spacing-extra-large;
-$icon-size-4: $spacing-extra-extra-large;
-
 // outline color on focus elements
-$a11y-outline-color: $black;
+$a11y-outline-color: $yellow;
 
 // animation timing
 $animation-time-small: 0.3s;
 $animation-time-medium: 1s;
 $animation-time-large: 3s;
-
-// grid settings
-$grid-cols: 12;
-$grid-gap: 0.5rem;
-$grid-gap-large: 1rem;

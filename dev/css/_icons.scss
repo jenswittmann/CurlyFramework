@@ -2,11 +2,55 @@
     display: block;
 
     svg {
+        display: block;
         width: 100%;
         height: 100%;
+    }
+
+    @each $key, $size in $icon-sizes {
+        &#{"" + $key} {
+            width: $size;
+            height: $size;
+        }
+
+        @media #{$breakpoint-not-small} {
+            &#{"" + $key}-ns {
+                width: $size;
+                height: $size;
+            }
+        }
+    }
+
+    &-font {
+        width: 1em;
+        height: 1em;
+
+        @media #{$breakpoint-not-small} {
+            transform: translateY(0.25em);
+        }
+
+        &.icon--pa {
+            width: 0.6em;
+            height: 0.6em;
+        }
+    }
+
+    &--outline {
         fill: none;
         stroke: currentColor;
-        stroke-width: 0.15em;
+        stroke-width: 1px;
+
+        &-bw1 {
+            stroke-width: 0.05em;
+        }
+
+        &-bw2 {
+            stroke-width: 1px;
+        }
+
+        &-bw3 {
+            stroke-width: 2px;
+        }
     }
 
     &--fill {
@@ -15,30 +59,16 @@
             stroke-width: 0;
         }
     }
-}
 
-.icon1 {
-    width: $icon-size-1;
-    height: $icon-size-1;
-}
+    &--thin {
+        stroke-width: 1px;
+    }
 
-.icon2 {
-    width: $icon-size-2;
-    height: $icon-size-2;
-}
+    &--ml {
+        margin-left: 0.5ch;
+    }
 
-.icon3 {
-    width: $icon-size-3;
-    height: $icon-size-3;
-}
-
-.icon4 {
-    width: $icon-size-4;
-    height: $icon-size-4;
-}
-
-.icon-font {
-    width: 2ch;
-    height: 2ch;
-    transform: translateY(0.4ch);
+    &--mr {
+        margin-right: 0.5ch;
+    }
 }

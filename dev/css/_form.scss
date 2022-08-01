@@ -1,6 +1,7 @@
 .placeholder {
     &::placeholder {
-        color: $black;
+        font-family: $fontname;
+        color: inherit;
     }
 }
 
@@ -76,14 +77,34 @@
         }
 
         &--checkbox {
+            position: relative;
+
+            @media #{$detectHasPointer} {
+                &:hover {
+                    label {
+                        &:before {
+                            background-color: $orange;
+                            border-color: $orange;
+                        }
+                    }
+                }
+            }
+
             input {
                 position: absolute;
-                overflow: visible;
+                top: 0.25em;
+                left: 0.25em;
                 opacity: 0;
 
                 &:checked ~ label {
                     &:before {
-                        content: '✓';
+                        background-color: $dark-green;
+                    }
+                }
+
+                &:focus ~ label {
+                    &:before {
+                        border-color: $orange;
                     }
                 }
             }
@@ -93,7 +114,7 @@
                 padding-left: 2em;
 
                 &:before {
-                    content: '';
+                    content: "";
                     position: absolute;
                     top: 0;
                     left: 0;
@@ -101,10 +122,12 @@
                     width: 1em;
                     height: 1em;
                     text-align: center;
-                    line-height: 1em;
-                    background-color: $white;
-                    outline: $border-width-1 solid $black;
-                    transform: translateY(0.25em);
+                    line-height: 1;
+                    background-color: $lightest-blue;
+                    border: 1px solid $dark-green;
+                    border-radius: 50%;
+                    transform: translateY(0.15em);
+                    transition: $animation-time-small;
                 }
             }
         }

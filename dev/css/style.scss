@@ -1,10 +1,13 @@
+@use "sass:math";
+
 @import "vars";
 
+@import "mixins";
 @import "icons";
+@import "typo";
 @import "head";
 @import "btn";
 @import "contentblocks";
-@import "grid";
 @import "animation";
 @import "a11y";
 
@@ -63,10 +66,11 @@
 // @import "../../node_modules/tachyons-sass/scss/nested";
 //@import '../../node_modules/tachyons-sass/scss/styles';
 
-@import "mixins";
-@import "typo";
-@import "hover";
+@import "tachyons/widths";
+
+@import "grid";
 @import "form";
+@import "booking";
 @import "styling";
 
 // breakpoint JS check

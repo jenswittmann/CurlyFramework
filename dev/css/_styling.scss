@@ -18,16 +18,15 @@
     -webkit-overflow-scrolling: touch; // set overflow touch for ios
 }
 
-// prevent scrolling on body for overlays
-body {
-    &[data-scrolling="true"] {
-        overflow: hidden;
-        overflow-y: scroll; // prevent page jumping if no scrollbar is needed
-    }
+[id] {
+    scroll-margin-top: calc(var(--header-height) + #{$spacing-small});
+}
 
-    &[data-scrolling="false"] {
-        overflow: hidden;
-    }
+// body
+.page {
+    padding: $spacing-small;
+    padding-top: 0;
+    background-color: $white;
 }
 
 // coloring scrollbar

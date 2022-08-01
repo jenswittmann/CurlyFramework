@@ -1,50 +1,13 @@
-// fade image in after load
+// fade in lazyloaded image after load
 .lazyload,
-.lazyloading,
-[data-flickity-lazyload] {
+.lazyloading {
     opacity: 0;
 }
 
+.lazyloaded,
 video.lazyloading {
     opacity: 1;
-}
-
-.lazyloaded,
-.flickity-lazyloaded,
-.flickity-lazyerror {
-    opacity: 1;
     transition: opacity $animation-time-small;
-}
-
-// animate [hidden] and elements with class .dn
-.fade-in {
-    display: inherit !important;
-    visibility: visible;
-    opacity: 1;
-    transition: $animation-time-small;
-
-    &[hidden],
-    &.dn {
-        visibility: hidden;
-        opacity: 0;
-        transition: $animation-time-small;
-    }
-}
-
-.fade-down {
-    overflow: hidden;
-    visibility: visible;
-    max-height: 10rem;
-    transition: $animation-time-medium;
-
-    &[hidden],
-    &.dn {
-        display: block;
-        overflow: hidden;
-        visibility: hidden;
-        max-height: 0;
-        transition: $animation-time-small;
-    }
 }
 
 // transition classes

@@ -1,0 +1,59 @@
+// headline
+.headline {
+    line-height: $line-height-title;
+    margin-top: 2em;
+    margin-bottom: 1em;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &--small {
+        @include fs-5;
+    }
+
+    &--large {
+        @include fs-3;
+    }
+}
+
+// richtext
+.richtext {
+    &--small {
+        @include fs-5;
+    }
+
+    &--large {
+        @include fs-3;
+    }
+
+    p,
+    ul,
+    ol {
+        margin-top: 0;
+        margin-bottom: 1em;
+    }
+
+    ul,
+    ol {
+        padding: 0;
+        padding-left: 1.1em;
+
+        li {
+            padding-left: 1em;
+            margin-bottom: 0.5em;
+        }
+    }
+}
+
+// image
+.image {
+    & + .richtext,
+    & + .image {
+        margin-top: 1em;
+    }
+}

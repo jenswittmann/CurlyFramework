@@ -21,6 +21,20 @@ button {
     -moz-osx-font-smoothing: grayscale;
 }
 
+// reset browser font styling
+*,
+button {
+    font-family: inherit;
+    font-feature-settings: "lnum" 1;
+    font-style: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    text-decoration: inherit;
+    color: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 // responsive font-size classes, reusable as mixin and css class
 @mixin fs-1 {
     font-size: $font-size-1;
@@ -148,10 +162,20 @@ button {
     }
 }
 
+// reset h1 font-size set by tachyons
+h1 {
+    font-size: inherit;
+}
+
+// set correct button font-family
+button {
+    font-family: $fontname !important;
+}
+
 // set base font style
 body {
     @include fs-4;
-    font-family: "voltaire", sans-serif;
+    font-family: $fontname;
     //font-variation-settings: 'wght' 400, 'wdth' 100; /* use to change font-weight/width */
     font-style: normal;
     font-weight: normal;
@@ -159,22 +183,4 @@ body {
     //word-spacing: -0.1em; /* adjust word spacing depending on font size */
     line-height: $line-height-copy;
     color: $black;
-}
-
-// reset h1 font-size set by tachyons
-h1 {
-    font-size: inherit;
-}
-
-// richtext
-.richtext {
-    p,
-    ul {
-        margin-bottom: 0.5em;
-    }
-
-    ul {
-        padding: 0;
-        padding-left: 1.1em;
-    }
 }

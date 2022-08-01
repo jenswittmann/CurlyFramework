@@ -1,26 +1,13 @@
-// hide tab focus if not needed
+// hide tab focus if not needed* {
 * {
-    &:focus {
-        outline: 0;
+    &:focus-visible {
+        outline-offset: 0.5rem !important;
     }
 }
-
-.focus-outline {
+.nofocus {
     * {
-        &:focus {       
-            outline: max(2px, 0.08em) solid currentcolor;
-            outline-offset: max(2px, 0.08em);
-        }
-    }
-
-    .form__field--checkbox {
-        &:focus-within {
-            label {
-                &:before {
-                    outline: max(2px, 0.08em) solid currentcolor;
-                    outline-offset: max(2px, 0.08em);
-                }
-            }
+        &:focus {
+            outline: 0;
         }
     }
 }
@@ -52,24 +39,5 @@
         animation: none !important;
         transition: inherit !important;
         transition-duration: 0 !important;
-    }
-}
-
-// aria status
-.aria-status {
-    &[aria-expanded="false"] {
-        .aria-status__inactive {
-            display: none;
-        }
-    }
-
-    &[aria-expanded="true"] {
-        .aria-status__active {
-            display: none;
-        }
-
-        .aria-status__inactive {
-            display: block;
-        }
     }
 }
