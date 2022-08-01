@@ -64,7 +64,11 @@
 
 // scroll snap
 .scrollsnap {
-    scroll-snap-type: x mandatory;
+    
+    &--x {
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x mandatory;
+    }
 
     &__item {
         scroll-snap-align: start;
