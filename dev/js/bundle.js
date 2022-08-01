@@ -1,4 +1,5 @@
 import "lazysizes";
+import "helper";
 import Alpine from "alpinejs";
 import focus from "@alpinejs/focus";
 import intersect from "@alpinejs/intersect";
