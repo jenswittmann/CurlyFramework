@@ -110,6 +110,21 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/dev\/css\/_bundle.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/dev\/css\/_bundle.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/dev\/css\/_contentblocks.scss" : {
       "aP" : 0,
       "bl" : 0,
@@ -255,6 +270,21 @@
       "ma" : 0,
       "oA" : 0,
       "oAP" : "\/styleguide\/css\/modx.css",
+      "oF" : 2,
+      "oS" : 3,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/dev\/css\/print.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/styleguide\/css\/print.css",
       "oF" : 2,
       "oS" : 3,
       "pg" : 0,

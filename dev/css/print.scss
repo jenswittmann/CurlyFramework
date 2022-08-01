@@ -1,0 +1,26 @@
+// breakpoints
+$breakpoint-small: "(max-width: 30em)";
+$breakpoint-not-small: "(min-width: 30em)";
+$breakpoint-not-large: "(max-width: 30em)";
+$breakpoint-medium: "(min-width: 50em) and (max-width: 30em)";
+$breakpoint-not-large: "(max-width: 30em)";
+$breakpoint-large: "(min-width: 30em)";
+$breakpoint-extra-large: "(min-width: 105em)";
+
+@import "bundle";
+
+.scale-content {
+    font-size: 40%;
+}
+
+.print {
+    &__ {
+        &hide {
+            display: none !important;
+        }
+
+        &show {
+            display: block !important;
+        }
+    }
+}
