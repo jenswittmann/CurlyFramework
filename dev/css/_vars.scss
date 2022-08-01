@@ -25,26 +25,26 @@ $spacing-extra-extra-extra-large: math.div(240, 16) * 1rem !default;
 $fontname: "voltaire", serif;
 
 // curlyframework font-size
-$font-size-1: math.div(32, 16) * 1rem !default;
-$font-size-1-large: math.div(32, 16) * 1rem !default;
+$font-size-1: math.div(40, 16) * 1rem !default;
+$font-size-1-large: math.div(140, 16) * 1rem !default;
 
-$font-size-2: math.div(28, 16) * 1rem !default;
-$font-size-2-large: math.div(28, 16) * 1rem !default;
+$font-size-2: math.div(35, 16) * 1rem !default;
+$font-size-2-large: math.div(100, 16) * 1rem !default;
 
-$font-size-3: math.div(24, 16) * 1rem !default;
-$font-size-3-large: math.div(24, 16) * 1rem !default;
+$font-size-3: math.div(30, 16) * 1rem !default;
+$font-size-3-large: math.div(68, 16) * 1rem !default;
 
-$font-size-4: math.div(17, 16) * 1rem !default;
-$font-size-4-large: math.div(17, 16) * 1rem !default;
+$font-size-4: math.div(20, 16) * 1rem !default;
+$font-size-4-large: math.div(38, 16) * 1rem !default;
 
-$font-size-5: math.div(15, 16) * 1rem !default;
-$font-size-5-large: math.div(15, 16) * 1rem !default;
+$font-size-5: math.div(20, 16) * 1rem !default;
+$font-size-5-large: math.div(24, 16) * 1rem !default;
 
-$font-size-6: math.div(12, 16) * 1rem !default;
-$font-size-6-large: math.div(12, 16) * 1rem !default;
+$font-size-6: math.div(14, 16) * 1rem !default;
+$font-size-6-large: math.div(20, 16) * 1rem !default;
 
 $font-size-7: math.div(10, 16) * 1rem !default;
-$font-size-7-large: math.div(10, 16) * 1rem !default;
+$font-size-7-large: math.div(12, 16) * 1rem !default;
 
 // curlyframework grid settings
 $grid-cols: 14;
@@ -110,7 +110,7 @@ $border-radius-none: 0 !default;
 $border-radius-1: 0.125rem !default;
 $border-radius-2: 0.25rem !default;
 $border-radius-3: 0.5rem !default;
-$border-radius-4: 0.55em !default;
+$border-radius-4: 3rem !default;
 $border-radius-circle: 100% !default;
 $border-radius-pill: 9999px !default;
 $border-width-none: 0 !default;
