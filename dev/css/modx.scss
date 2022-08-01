@@ -17,46 +17,6 @@
     margin: 1rem 0;
 }
 
-.contentblocks-add-layout {
-    overflow: hidden;
-    width: 3rem;
-    height: 3rem;
-    margin: auto;
-    margin-top: 3px;
-    background-color: transparent;
-    border: 2px solid white;
-    border-radius: 50%;
-
-    h3 {
-        a {
-            height: 100%;
-            font-size: 1.5rem;
-            background-color: #f2f2f2;
-        }
-    }
-}
-
-.contentblocks-add-content-here {
-    a {
-        border-radius: 50%;
-    }
-}
-
-.contentblocks-add-block {
-    h3 {
-        a {
-            overflow: hidden;
-            display: block;
-            width: 2rem;
-            height: 2rem;
-            line-height: 1.25rem;
-            margin: auto;
-            background-color: #f2f2f2;
-            border-radius: 50%;
-        }
-    }
-}
-
 .contentblocks-modal-header,
 .contentblocks-modal-content {
     .switch-view,
@@ -132,28 +92,11 @@
     }
 
     .contentblocks-region-container-tools {
-        opacity: 0.3;
+        opacity: 0.2;
 
         &:hover {
             opacity: 1;
         }
-    }
-}
-
-// layout field
-.contentblocks-layout,
-.contentblocks-field-layout-wrapper {
-    &:hover {
-        .contentblocks-add-block,
-        .contentblocks-add-layout {
-            opacity: 0.5;
-        }
-    }
-
-    .contentblocks-add-block,
-    .contentblocks-add-layout {
-        opacity: 0;
-        transition: 0.5s;
     }
 }
 
@@ -168,12 +111,27 @@
     }
 }
 
-// bugfix large spacing when moving TVs to main area
-.x-form-item label.x-form-item-label .modx-tv-reset {
-    padding-top: 0;
-}
+// chunk selector
+.contentblocks-field-chunk_selector {
+    pointer-events: none;
+    position: relative;
 
-// show dropdown when creating new resource (thanks https://github.com/bequadrat/modx-template-select)
-#template-select-panel .x-form-field-wrap {
-    width: auto !important;
+    &:before {
+        content: "Only for Admin 🤙🏻";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: gray;
+        text-align: center;
+    }
+
+    * {
+        filter: blur(0.2rem);
+    }
 }
