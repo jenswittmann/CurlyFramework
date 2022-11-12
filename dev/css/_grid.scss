@@ -1,15 +1,17 @@
 // css grid
 @mixin grid {
     display: grid;
-    grid-template-columns: repeat($grid-cols - 2, 1fr);
+    grid-template-columns: repeat($grid-cols, 1fr);
     column-gap: $grid-gap;
     row-gap: $grid-gap-row;
+    padding: $spacing-large;
 }
 
 @mixin grid-large {
-    grid-template-columns: repeat($grid-cols, 1fr);
+    grid-template-columns: repeat($grid-cols, math.div($max-width-9 - ( ( $grid-cols - 1 ) * $grid-gap-large), $grid-cols));
     column-gap: $grid-gap-large;
     row-gap: $grid-gap-row-large;
+    padding: $spacing-extra-large calc(( 100vw - #{$max-width-9} ) / 2);
 }
 
 .grid {
@@ -28,9 +30,11 @@
 
     &-subgrid {
         @include grid;
+        padding: 0;
 
         @media #{$breakpoint-not-small} {
             @include grid-large;
+            padding: 0;
         }
     }
 
@@ -78,6 +82,10 @@
         &__item--row-span-#{$i} {
             grid-row-end: span $i;
         }
+
+        &__item--row-start-#{$i} {
+            grid-row-start: $i;
+        }
     }
 
     &__item--end-ns {
@@ -100,6 +108,10 @@
 
             &__item--row-span-#{$i}-ns {
                 grid-row-end: span $i;
+            }
+
+            &__item--row-start-#{$i}-ns {
+                grid-row-start: $i;
             }
         }
     }
