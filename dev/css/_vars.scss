@@ -14,12 +14,12 @@ $breakpoint-extra-large: "screen and (min-width: 100em)" !default;
 
 // curlyframework spacing
 $spacing-extra-small: 0.25rem !default;
-$spacing-small: math.div(15, 16) * 1rem !default;
-$spacing-medium: math.div(20, 16) * 1rem !default;
-$spacing-large: math.div(40, 16) * 1rem !default;
-$spacing-extra-large: math.div(80, 16) * 1rem !default;
-$spacing-extra-extra-large: math.div(120, 16) * 1rem !default;
-$spacing-extra-extra-extra-large: math.div(240, 16) * 1rem !default;
+$spacing-small: 0.5rem !default;
+$spacing-medium: 1rem !default;
+$spacing-large: 2rem !default;
+$spacing-extra-large: 3rem !default;
+$spacing-extra-extra-large: 4rem !default;
+$spacing-extra-extra-extra-large: 5rem !default;
 
 // curlyframework font name
 $fontname: "voltaire", serif;
@@ -47,11 +47,12 @@ $font-size-7: math.div(10, 16) * 1rem !default;
 $font-size-7-large: math.div(12, 16) * 1rem !default;
 
 // curlyframework grid settings
-$grid-cols: 14;
-$grid-gap: math.div($spacing-small, 2);
-$grid-gap-large: $spacing-medium;
-$grid-gap-row: $spacing-medium;
-$grid-gap-row-large: $spacing-medium;
+$max-width-9: math.div(940, 16) * 1rem;
+$grid-cols: 12;
+$grid-gap: $spacing-small;
+$grid-gap-large: $spacing-large;
+$grid-gap-row: 0;
+$grid-gap-row-large: 0;
 
 // curlyframework icon sizes
 $icon-sizes: (
