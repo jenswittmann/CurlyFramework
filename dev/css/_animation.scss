@@ -11,12 +11,16 @@ video.lazyloading {
 }
 
 // transition classes
-.transition-small {
-    transition: $animation-time-small;
-}
-.transition-medium {
-    transition: $animation-time-medium;
-}
-.transition-large {
-    transition: $animation-time-large;
+.transition {
+    &-small {
+        transition: $animation-time-small;
+    }
+
+    &-medium {
+        transition: $animation-time-medium;
+    }
+
+    &-large {
+        transition: $animation-time-large;
+    }
 }
