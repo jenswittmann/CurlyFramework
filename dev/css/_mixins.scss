@@ -88,3 +88,10 @@
         background-color: transparent;
     }
 }
+
+// flex grid
+.flex-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-large;
+}
