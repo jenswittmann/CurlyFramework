@@ -10,3 +10,7 @@ class Helper {
 const helper = new Helper();
 
 helper.realViewportHeight();
+
+window.addEventListener("resize", (e) => {
+    helper.realViewportHeight();
+});
