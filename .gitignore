@@ -12,7 +12,7 @@ core/components/*
 !core/components/{name}/
 site/assets/*
 site/connectors/*
-site/core/
+site/core/*
 site/pflege/*
 site/upload/*
 site/config.core.php
