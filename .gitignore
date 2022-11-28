@@ -12,10 +12,12 @@ core/components/*
 !core/components/{name}/
 site/assets/*
 site/connectors/*
+site/core/
 site/pflege/*
 site/upload/*
 site/config.core.php
 site/index.php
 site/.htaccess
+site/ht.access
 !/site/assets/tpl
 /site/assets/tpl/{name}/frontend/node_modules/
