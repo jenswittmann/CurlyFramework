@@ -13,9 +13,16 @@
 }
 
 // smooth scrolling
+.smooth-scroll {
+    &,
+    * {
+        scroll-behavior: smooth;
+    }
+}
+
+// set overflow touch for ios
 * {
-    scroll-behavior: smooth; // smooth scrollto
-    -webkit-overflow-scrolling: touch; // set overflow touch for ios
+    -webkit-overflow-scrolling: touch;
 }
 
 [id] {
