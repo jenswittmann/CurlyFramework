@@ -7,7 +7,7 @@
 .scale-content {
     font-size: 4.26666667vw;
 
-    @media #{$breakpoint-not-small} {
+    @media (--breakpoint-medium) {
         font-size: 1vw;
     }
 }
@@ -25,15 +25,14 @@
     -webkit-overflow-scrolling: touch;
 }
 
+// set spacing for anchor links
 [id] {
-    scroll-margin-top: calc(var(--header-height) + #{$spacing-small});
+    scroll-margin-top: calc(var(--header-height) + var(--spacing-3));
 }
 
 // body
 .page {
-    padding: $spacing-small;
-    padding-top: 0;
-    background-color: $white;
+    background-color: white;
 }
 
 // coloring scrollbar

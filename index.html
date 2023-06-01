@@ -22,12 +22,10 @@
         />
         <meta property="og:image" content="favicon.svg" />
     </head>
-    <body class="purple pa4 pa6-ns">
-        <div class="check-device"></div>
+    <body class="curlyframework page violet-5 p4 p6-m">
 
         <!-- skiplinks -->
         <ul class="skiplinks">
-            <li><a href="#speechcontrol">zur Navigation</a></li>
             <li><a href="#content">zum Inhalt</a></li>
         </ul>
 
@@ -37,16 +35,16 @@
                     src="favicon.svg"
                     aria-hidden="true"
                     alt=""
-                    class="db w-25 w-10-ns mb5"
+                    class="db w-25 w-10-m mb5"
                 />
-                <h1 class="fs-1 ma0">CurlyFramework</h1>
-                <p class="fs-3-ns mv3 mv5-ns">
+                <h1 class="f5 m0">CurlyFramework</h1>
+                <p class="f3 mv3 mv5-ns">
                     Persönliches Frontend-Framework für barrierearme
                     Webprojekte.
                 </p>
 
                 <p class="mv3 mv5-ns">
-                    <span class="dib ph3 mb2 bg-near-white br4">
+                    <span class="dib ph3 mb2 bg-gray-10 br4">
                         $ npm i curlyframework
                     </span>
                     &
@@ -54,20 +52,20 @@
                         href="https://github.com/jenswittmann/CurlyFramework"
                         rel="noreferrer"
                         target="_blank"
-                        class="dib ph3 bg-near-white br4"
+                        class="dib ph3 bg-gray-10 br4"
                     >
                         Github</a
                     >
                 </p>
             </section>
 
-            <h2 class="fs-3 mt7 mb3">Beispiele</h2>
+            <h2 class="f3 mt7 mb3">Beispiele</h2>
 
             <section
                 x-data="{
                     open: false
                 }"
-                class="pv5 bt bw2 b--purple"
+                class="pv5 bt bw2"
             >
                 <button
                     @click="open = true"
@@ -75,7 +73,7 @@
                     id="popupopener"
                     aria-haspopup="true"
                     aria-controls="popup"
-                    class="btn white ph3 pv2 bg-purple bn br4"
+                    class="btn white ph3 pv2 bg-violet-5 bn br4"
                 >
                     Modal öffnen
                 </button>
@@ -95,7 +93,7 @@
                         right-0
                         bottom-0
                         z-max
-                        pa4
+                        p4
                         bg-blur
                     "
                 >
@@ -103,10 +101,10 @@
                         <div
                             class="
                                 w-90 w-50-ns
-                                pa3
-                                pa5-ns
-                                ma3
-                                ma4-ns
+                                p3
+                                p5-m
+                                m3
+                                m4-m
                                 bg-white
                                 br4
                                 shadow-4
@@ -116,7 +114,7 @@
                                 src="favicon.svg"
                                 aria-hidden="true"
                                 alt=""
-                                class="db w-25 w-10-ns mb5"
+                                class="db w-25 w-10-m mb5"
                             />
                             <p>
                                 Das Script kümmert sich auch um den Focus, damit
@@ -131,7 +129,7 @@
                             </p>
                             <button
                                 @click="open = false"
-                                class="btn white ph3 pv2 bg-purple bn br4"
+                                class="btn white ph3 pv2 bg-violet-5 bn br4"
                             >
                                 Beispiel schließen
                             </button>
@@ -140,7 +138,7 @@
                 </div>
             </section>
 
-            <section class="pv4 bt bw2 b--purple">
+            <section class="pv4 bt bw2">
                 <p>
                     Alle Elemente skalieren auf Wunsch über die Klasse
                     <a
@@ -157,151 +155,7 @@
 
             <section class="pv4 bt bw2 b--purple">
                 <p>
-                    Ein einfaches responsives Raster auf Basis CSS Grid ist
-                    ebenfalls enthalten. Die Spalten können
-                    <a
-                        href="https://github.com/jenswittmann/CurlyFramework/blob/5dccbe6ab4a80a21290b8dc3b3c0e01382994c56/dev/css/_vars.scss#L49-L54"
-                        target="_blank"
-                        class="bb"
-                        >flexibel angepasst</a
-                    >. werden.
-                </p>
-
-                <div class="grid mb4">
-                    <div class="grid__item--start-1 grid__item--end ph1 bl bb">
-                        Komplette Breite
-                    </div>
-                    <div
-                        class="
-                            grid__item--start-1
-                            grid__item--start-3-ns
-                            grid__item--end
-                            grid__item--end-7-ns
-                            ph1
-                            bl
-                            bb
-                        "
-                    >
-                        Spalte 3–7
-                    </div>
-                    <div
-                        class="
-                            grid__item--start-1
-                            grid__item--start-9-ns
-                            grid__item--end
-                            grid__item--end-11-ns
-                            ph1
-                            bl
-                            bb
-                        "
-                    >
-                        Spalte 9–11
-                    </div>
-                    <div
-                        class="
-                            grid__item--col-span-12
-                            grid__item--col-span-4-ns
-                            grid__item--row-span-3-ns
-                            ph1
-                            bl
-                            bb
-                        "
-                    >
-                        Zelle über 4 Spalten und drei Zeilen
-                    </div>
-                    <div
-                        class="
-                            grid__item--col-span-12 grid__item--col-span-4-ns
-                            ph1
-                            bl
-                            bb
-                        "
-                    >
-                        Zelle über 4 Spalten
-                    </div>
-                    <div
-                        class="
-                            grid__item--col-span-12 grid__item--col-span-4-ns
-                            ph1
-                            bl
-                            bb
-                        "
-                    >
-                        Zelle über 4 Spalten
-                    </div>
-                    <div
-                        class="
-                            grid__item--col-span-12 grid__item--col-span-4-ns
-                            ph1
-                            bl
-                            bb
-                        "
-                    >
-                        Zelle über 4 Spalten
-                    </div>
-                    <div
-                        class="
-                            grid__item--col-span-12 grid__item--col-span-4-ns
-                            ph1
-                            bl
-                            bb
-                        "
-                    >
-                        Zelle über 4 Spalten
-                    </div>
-                    <div
-                        class="
-                            grid__item--col-span-12 grid__item--col-span-4-ns
-                            ph1
-                            bl
-                            bb
-                        "
-                    >
-                        Subgrid
-                        <ul class="grid grid--subgrid-4 list pa0 mv0 nl1 nr1">
-                            <li class="ph1">1</li>
-                            <li class="ph1">2</li>
-                            <li class="ph1">3</li>
-                            <li class="ph1">4</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class="pv4 bt bw2 b--purple">
-                <p>
-                    Für die responsive Schrift stehen sieben Klassen zur
-                    Verfügung.
-                </p>
-                <ul class="list lh-title pa0">
-                    <li class="fs-1">Testschrift</li>
-                    <li class="fs-2">Testschrift</li>
-                    <li class="fs-3">Testschrift</li>
-                    <li class="fs-4">Testschrift</li>
-                    <li class="fs-5">Testschrift</li>
-                    <li class="fs-6">Testschrift</li>
-                    <li class="fs-7">Testschrift</li>
-                </ul>
-            </section>
-
-            <section class="pv4 bt bw2 b--purple">
-                <p>
-                    MODX ist eins der flexibelsten Systeme – für den schnellen
-                    Start sind die Dateien
-                    <a
-                        href="https://github.com/jenswittmann/CurlyFramework/blob/6.0.0/.gitignore"
-                        target="_blank"
-                        class="bb"
-                        >.gitignore</a
-                    >
-                    und
-                    <a
-                        href="https://github.com/jenswittmann/CurlyFramework/blob/6.0.0/.gitify"
-                        target="_blank"
-                        class="bb"
-                        >.gitify</a
-                    >
-                    mit dabei. Die
+                    Die
                     <a
                         href="https://github.com/jenswittmann/CurlyFramework/blob/6.0.0/.htaccess"
                         target="_blank"

@@ -3,10 +3,9 @@
     hyphens: auto;
 }
 
-.hyphens-auto-mobile-only {
-    @media #{$breakpoint-small} {
-        hyphens: auto;
-    }
+// text balanced
+.text-balance {
+    text-wrap: balance
 }
 
 // sticky scrolling elements
@@ -23,33 +22,14 @@
     object-fit: contain;
 }
 
-// remove z-index for aspect-ratio by tachyons
-.aspect-ratio--object,
-.aspect-ratio--object-ns {
-    z-index: inherit;
-}
-
-// negative z-index
-.zn-1 {
-    z-index: -1;
-}
-
 // fixed bg
 .bg-fixed {
     background-attachment: fixed;
 }
 
-// filter blur
-.blur {
-    filter: blur(0.5rem);
-}
+// filter bvackground blur
 .bg-blur {
     backdrop-filter: blur(0.5rem);
-}
-
-// display contents
-.dc {
-    display: contents;
 }
 
 // pointer events
@@ -87,11 +67,4 @@
     &::-webkit-scrollbar-thumb {
         background-color: transparent;
     }
-}
-
-// flex grid
-.flex-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: $spacing-large;
 }

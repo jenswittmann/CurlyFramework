@@ -1,6 +1,6 @@
 // headline
 .headline {
-    line-height: $line-height-title;
+    line-height: var(--lh-title);
     margin-top: 2em;
     margin-bottom: 1em;
 
@@ -11,25 +11,10 @@
     &:last-child {
         margin-bottom: 0;
     }
-
-    &--small {
-        @include fs-5;
-    }
-
-    &--large {
-        @include fs-3;
-    }
 }
 
 // richtext
 .richtext {
-    &--small {
-        @include fs-5;
-    }
-
-    &--large {
-        @include fs-3;
-    }
 
     p,
     ul,
