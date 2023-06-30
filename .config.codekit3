@@ -33,6 +33,14 @@
       "oAP" : "\/.htaccess",
       "oF" : 0
     },
+    "\/.nova\/Configuration.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/.nova\/Configuration-min.json",
+      "oF" : 0,
+      "oO" : 0,
+      "oS" : 1
+    },
     "\/dev\/css\/_a11y.scss" : {
       "aP" : 0,
       "bl" : 0,
@@ -370,18 +378,6 @@
       "oAP" : "\/styleguide\/css\/font\/index.html",
       "oF" : 0
     },
-    "\/styleguide\/css\/modx-min.css" : {
-      "aP" : 1,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/styleguide\/css\/modx-min-min.css",
-      "oF" : 0,
-      "pg" : 0
-    },
     "\/styleguide\/css\/modx.css" : {
       "aP" : 1,
       "bl" : 0,
@@ -394,18 +390,6 @@
       "oF" : 0,
       "pg" : 0
     },
-    "\/styleguide\/css\/print-min.css" : {
-      "aP" : 1,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/styleguide\/css\/print-min-min.css",
-      "oF" : 0,
-      "pg" : 0
-    },
     "\/styleguide\/css\/print.css" : {
       "aP" : 1,
       "bl" : 0,
@@ -415,18 +399,6 @@
       "ma" : 0,
       "oA" : 0,
       "oAP" : "\/styleguide\/css\/print-min.css",
-      "oF" : 0,
-      "pg" : 0
-    },
-    "\/styleguide\/css\/style-min.css" : {
-      "aP" : 1,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/styleguide\/css\/style-min-min.css",
       "oF" : 0,
       "pg" : 0
     },
