@@ -22,7 +22,15 @@
         />
         <meta property="og:image" content="favicon.svg" />
     </head>
-    <body class="purple pa4 pa6-ns">
+    <body
+        x-data
+        @keyup.document="(e) => {
+            if (e.which === 9) {
+                document.documentElement.classList.add('focus-outline');
+            }
+        }"
+        class="purple pa4 pa6-ns"
+    >
         <div class="check-device"></div>
 
         <!-- skiplinks -->
