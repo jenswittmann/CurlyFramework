@@ -22,7 +22,15 @@
         />
         <meta property="og:image" content="favicon.svg" />
     </head>
-    <body class="curlyframework page violet-5 p4 p6-m">
+    <body
+        x-data
+        @keyup.document="(e) => {
+            if (e.which === 9) {
+                document.documentElement.classList.add('focus-outline');
+            }
+        }"
+        class="curlyframework page violet-5 p4 p6-m"
+    >
 
         <!-- skiplinks -->
         <ul class="skiplinks">
