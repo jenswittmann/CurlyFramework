@@ -1,30 +1,29 @@
 .placeholder {
     &::placeholder {
-        font-family: $fontname;
+        font-family: var(--fontname);
         color: inherit;
     }
 }
 
 .form {
     &__item {
-        margin-bottom: $spacing-large;
+        margin-bottom: var(--spacing-3);
     }
 
     &__label {
         display: block;
-        margin-bottom: $spacing-small;
+        margin-bottom: var(--spacing-1);
 
         &-error {
             display: inline-block;
-            color: $white;
-            padding: 0 $spacing-small;
-            margin-left: $spacing-small;
-            background-color: $red;
+            color: white;
+            padding: 0 var(--spacing-1);
+            margin-left: var(--spacing-1);
+            background-color: var(--red-5);
         }
     }
 
     &__desc {
-        @include fs-6;
     }
 
     &__field {
@@ -33,8 +32,8 @@
             textarea,
             &.form__field--select {
                 &:not(:focus-within):not(:valid) {
-                    background-color: $washed-yellow;
-                    outline-color: $red;
+                    background-color: var(--yellow-11);
+                    outline-color: var(--red-5);
                 }
             }
         }
@@ -44,19 +43,19 @@
         &--upload input,
         &--textarea textarea {
             width: 100%;
-            padding: $spacing-small;
-            background-color: $light-gray;
+            padding: var(--spacing-1);
+            background-color: var(--gray-11);
             border: 0;
-            outline: $border-width-1 solid $dark-gray;
+            outline: var(--bw1) solid var(--gray-1);
 
-            @media #{$breakpoint-not-small} {
-                padding: $spacing-medium;
+            @media (--breakpoint-medium) {
+                padding: var(--spacing-2);
             }
         }
 
         &--select {
             option {
-                background-color: $white;
+                background-color: white;
             }
         }
 
@@ -64,9 +63,8 @@
             width: 100%;
 
             input {
-                @include fs-6;
                 line-height: 1;
-                width: calc(100% - #{$spacing-medium} * 2);
+                width: calc(100% - var(--spacing-2) * 2);
             }
         }
 
@@ -79,12 +77,12 @@
         &--checkbox {
             position: relative;
 
-            @media #{$detectHasPointer} {
+            @media (--detectHasPointer) {
                 &:hover {
                     label {
                         &:before {
-                            background-color: $orange;
-                            border-color: $orange;
+                            background-color: black;
+                            border-color: black;
                         }
                     }
                 }
@@ -98,13 +96,13 @@
 
                 &:checked ~ label {
                     &:before {
-                        background-color: $dark-green;
+                        background-color: var(--gray-5);
                     }
                 }
 
                 &:focus ~ label {
                     &:before {
-                        border-color: $orange;
+                        border-color: black;
                     }
                 }
             }
@@ -123,11 +121,11 @@
                     height: 1em;
                     text-align: center;
                     line-height: 1;
-                    background-color: $lightest-blue;
-                    border: 1px solid $dark-green;
+                    background-color: var(--gray-10);
+                    border: 1px solid black;
                     border-radius: 50%;
                     transform: translateY(0.15em);
-                    transition: $animation-time-small;
+                    transition: var(--animation-time-small);
                 }
             }
         }

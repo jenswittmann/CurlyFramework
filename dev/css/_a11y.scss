@@ -1,13 +1,19 @@
-// hide tab focus if not needed* {
-* {
-    &:focus-visible {
-        outline-offset: 0.5rem !important;
+// hide tab focus if not needed
+html {
+    &:not(.focus-outline) {
+        * {
+            &:focus {
+                outline: 0;
+            }
+        }
     }
-}
-.nofocus {
-    * {
-        &:focus {
-            outline: 0;
+
+    &.focus-outline {
+        * {
+            &:focus {
+                outline-width: max(2px, 0.08em);
+                outline-offset: max(4px, 0.08em);
+            }
         }
     }
 }
@@ -28,7 +34,7 @@
             top: 0;
             left: 0;
             padding: 1rem;
-            background-color: $white;
+            background-color: white;
         }
     }
 }

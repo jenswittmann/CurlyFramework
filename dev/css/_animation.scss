@@ -1,3 +1,13 @@
+// smooth scrolling
+@media (prefers-reduced-motion: no-preference) {
+    .smooth-scroll {
+        &,
+        * {
+            scroll-behavior: smooth;
+        }
+    }
+}
+
 // fade in lazyloaded image after load
 .lazyload,
 .lazyloading {
@@ -7,20 +17,20 @@
 .lazyloaded,
 video.lazyloading {
     opacity: 1;
-    transition: opacity $animation-time-small;
+    transition: opacity var(--animation-time-small);
 }
 
 // transition classes
 .transition {
     &-small {
-        transition: $animation-time-small;
+        transition: var(--animation-time-small);
     }
 
     &-medium {
-        transition: $animation-time-medium;
+        transition: var(--animation-time-medium);
     }
 
     &-large {
-        transition: $animation-time-large;
+        transition: var(--animation-time-large);
     }
 }

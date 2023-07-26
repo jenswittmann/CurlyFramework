@@ -7,38 +7,14 @@
       "uuidString" : "74070EB3-C2DB-4E41-8B65-7D17C1560843"
     }
   ],
-  "creatorBuild" : "34365",
+  "creatorBuild" : "34510",
   "files" : {
-    "\/_backup\/.htaccess" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/_backup\/.htaccess",
-      "oF" : 0
-    },
-    "\/_gitify\/.htaccess" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/_gitify\/.htaccess",
-      "oF" : 0
-    },
     "\/.github\/workflows\/npm-publish.yml" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/.github\/workflows\/npm-publish.yml",
-      "oF" : 0
-    },
-    "\/.gitify" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/.gitify",
       "oF" : 0
     },
     "\/.gitignore" : {
@@ -155,21 +131,6 @@
       "pg" : 0,
       "sct" : 0
     },
-    "\/dev\/css\/_grid.scss" : {
-      "aP" : 0,
-      "bl" : 0,
-      "co" : 0,
-      "dP" : 10,
-      "ec" : 1,
-      "ft" : 4,
-      "ma" : 0,
-      "oA" : 1,
-      "oAP" : "\/dev\/css\/_grid.css",
-      "oF" : 0,
-      "oS" : 0,
-      "pg" : 0,
-      "sct" : 0
-    },
     "\/dev\/css\/_head.scss" : {
       "aP" : 0,
       "bl" : 0,
@@ -230,6 +191,21 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/dev\/css\/_typo-scale.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/dev\/css\/_typo-scale.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/dev\/css\/_typo.scss" : {
       "aP" : 0,
       "bl" : 0,
@@ -261,9 +237,9 @@
       "sct" : 0
     },
     "\/dev\/css\/modx.scss" : {
-      "aP" : 1,
+      "aP" : 0,
       "bl" : 0,
-      "co" : 0,
+      "co" : 2,
       "dP" : 10,
       "ec" : 1,
       "ft" : 4,
@@ -276,9 +252,9 @@
       "sct" : 0
     },
     "\/dev\/css\/print.scss" : {
-      "aP" : 1,
+      "aP" : 0,
       "bl" : 0,
-      "co" : 0,
+      "co" : 2,
       "dP" : 10,
       "ec" : 1,
       "ft" : 4,
@@ -286,14 +262,14 @@
       "oA" : 0,
       "oAP" : "\/styleguide\/css\/print.css",
       "oF" : 2,
-      "oS" : 3,
+      "oS" : 0,
       "pg" : 0,
       "sct" : 0
     },
     "\/dev\/css\/style.scss" : {
-      "aP" : 1,
+      "aP" : 0,
       "bl" : 0,
-      "co" : 0,
+      "co" : 2,
       "dP" : 10,
       "ec" : 1,
       "ft" : 4,
@@ -301,21 +277,6 @@
       "oA" : 0,
       "oAP" : "\/styleguide\/css\/style.css",
       "oF" : 2,
-      "oS" : 3,
-      "pg" : 0,
-      "sct" : 0
-    },
-    "\/dev\/css\/tachyons\/_widths.scss" : {
-      "aP" : 0,
-      "bl" : 0,
-      "co" : 0,
-      "dP" : 10,
-      "ec" : 1,
-      "ft" : 4,
-      "ma" : 0,
-      "oA" : 1,
-      "oAP" : "\/dev\/css\/css\/_widths.css",
-      "oF" : 0,
       "oS" : 0,
       "pg" : 0,
       "sct" : 0
@@ -324,23 +285,12 @@
       "bF" : 4,
       "ft" : 64,
       "ma" : 0,
-      "mi" : 1,
+      "mi" : 2,
       "oA" : 0,
       "oAP" : "\/styleguide\/js\/script.js",
-      "oF" : 3,
+      "oF" : 2,
       "sC" : 0,
       "tS" : 1
-    },
-    "\/dev\/js\/helper.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 1,
-      "oAP" : "\/dev\/js\/min\/helper-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
     },
     "\/favicon.svg" : {
       "ft" : 2097152,
@@ -390,6 +340,17 @@
       "oO" : 0,
       "oS" : 1
     },
+    "\/postcss.config.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 1,
+      "oAP" : "\/min\/postcss.config-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
     "\/readme.md" : {
       "cB" : 0,
       "cS" : 0,
@@ -417,6 +378,14 @@
       "oAP" : "\/styleguide\/css\/font\/index.html",
       "oF" : 0
     },
+    "\/styleguide\/css\/index.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/styleguide\/css\/index.html",
+      "oF" : 0
+    },
     "\/styleguide\/css\/modx.css" : {
       "aP" : 1,
       "bl" : 0,
@@ -426,6 +395,18 @@
       "ma" : 0,
       "oA" : 0,
       "oAP" : "\/styleguide\/css\/modx-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/styleguide\/css\/print.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/styleguide\/css\/print-min.css",
       "oF" : 0,
       "pg" : 0
     },
@@ -996,6 +977,10 @@
         "active" : 0,
         "optionString" : "'always', {exceptAfterSingleLine: false}"
       },
+      "logical-assignment-operators" : {
+        "active" : 0,
+        "optionString" : "'always',  {'enforceForIfStatements': false}"
+      },
       "max-classes-per-file" : {
         "active" : 0,
         "optionString" : "1"
@@ -1156,6 +1141,9 @@
       "no-empty-pattern" : {
         "active" : 1
       },
+      "no-empty-static-block" : {
+        "active" : 0
+      },
       "no-eq-null" : {
         "active" : 0
       },
@@ -1187,7 +1175,8 @@
         "active" : 1
       },
       "no-fallthrough" : {
-        "active" : 1
+        "active" : 1,
+        "optionString" : "{'allowEmptyCase': false}"
       },
       "no-floating-decimal" : {
         "active" : 0
@@ -1295,6 +1284,9 @@
       "no-new-func" : {
         "active" : 0
       },
+      "no-new-native-nonconstructor" : {
+        "active" : 0
+      },
       "no-new-object" : {
         "active" : 0
       },
@@ -1349,7 +1341,8 @@
         "optionString" : "'event', 'fdescribe'"
       },
       "no-restricted-imports" : {
-        "active" : 0
+        "active" : 0,
+        "optionString" : ""
       },
       "no-restricted-properties" : {
         "active" : 0,
@@ -1977,11 +1970,12 @@
       "createDeclarationFile" : 0,
       "jsxMode" : 0,
       "minifierStyle" : 0,
+      "moduleDetectionType" : 0,
       "moduleResolutionType" : 0,
       "moduleType" : 2,
       "removeComments" : 0,
       "sourceMapStyle" : 0,
-      "targetECMAVersion" : 0
+      "targetECMAVersion" : 2018
     },
     "languageDefaultsUserDefined" : [
 
@@ -2033,10 +2027,14 @@
       "ENVIRONMENT:::$NODE_ENV"
     ],
     "rollupTreeshakingEnabled" : 1,
+    "rollupTreeshakingModuleSideEffects" : 1,
     "skippedFoldersString" : "log, _logs, logs, _cache, cache, .idea, \/storage\/framework\/sessions, node_modules",
     "sourceFolderName" : "source",
     "susyVersion" : 3,
+    "tsAllowArbitraryExtensions" : 0,
+    "tsAllowImportingTSExtensions" : 0,
     "tsAllowSyntheticDefaultImports" : 0,
+    "tsAllowUMDGlobalAccess" : 0,
     "tsAllowUnreachableCode" : 0,
     "tsAllowUnusedLabels" : 0,
     "tsAlwaysStrict" : 0,
@@ -2045,36 +2043,36 @@
     "tsEmitDecoratorMetadata" : 0,
     "tsESModuleInterop" : 0,
     "tsExactOptionalPropertyTypes" : 0,
+    "tsExperimentalDecorators" : 0,
     "tsForceConsistentCasingInFileNames" : 0,
     "tsImportHelpers" : 0,
     "tsIsolatedModules" : 0,
     "tsJSXFactory" : "React.createElement",
-    "tsKeyofStringsOnly" : 0,
     "tsNoEmitHelpers" : 0,
     "tsNoFallthroughCasesInSwitch" : 0,
     "tsNoImplicitAny" : 0,
     "tsNoImplicitOverride" : 0,
     "tsNoImplicitReturns" : 0,
     "tsNoImplicitThis" : 0,
-    "tsNoImplicitUseStrict" : 0,
     "tsNoLib" : 0,
     "tsNoPropertyAccessFromIndexSignature" : 0,
     "tsNoResolve" : 0,
-    "tsNoStrictGenericChecks" : 0,
     "tsNoUncheckedIndexAccess" : 0,
     "tsNoUnusedLocals" : 0,
     "tsNoUnusedParameters" : 0,
     "tsPreserveConstEnums" : 0,
     "tsPreserveSymlinks" : 0,
     "tsResolveJsonModule" : 0,
+    "tsSkipDefaultLibCheck" : 0,
     "tsSkipLibCheck" : 0,
+    "tsStrictBindCallApply" : 0,
     "tsStrictFunctionTypes" : 0,
     "tsStrictNullChecks" : 0,
     "tsStrictPropertyInitialization" : 0,
     "tsStripInternal" : 0,
-    "tsSuppressExcessPropertyErrors" : 0,
-    "tsSuppressImplicitAnyIndexErrors" : 0,
+    "tsUseDefineForClassFields" : 0,
     "tsUseUnknownInCatchVariables" : 0,
+    "tsVerbatimModuleSyntax" : 0,
     "uglifyDefinesString" : "",
     "uglifyFlags2" : {
       "arguments" : {
@@ -2107,7 +2105,7 @@
       },
       "comments" : {
         "active" : 0,
-        "flagValue" : -1
+        "flagValue" : 1
       },
       "comparisons" : {
         "active" : 1,

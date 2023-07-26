@@ -21,133 +21,6 @@ button {
     -moz-osx-font-smoothing: grayscale;
 }
 
-// responsive font-size classes, reusable as mixin and css class
-@mixin fs-1 {
-    font-size: $font-size-1;
-
-    @media #{$breakpoint-not-small} {
-        font-size: $font-size-1-large;
-    }
-}
-
-.fs-1 {
-    @include fs-1;
-}
-
-@mixin fs-2 {
-    font-size: $font-size-2;
-
-    @media #{$breakpoint-not-small} {
-        font-size: $font-size-2-large;
-    }
-}
-
-.fs-2 {
-    @include fs-2;
-}
-
-@mixin fs-3 {
-    font-size: $font-size-3;
-
-    @media #{$breakpoint-not-small} {
-        font-size: $font-size-3-large;
-    }
-}
-
-.fs-3 {
-    @include fs-3;
-}
-
-@mixin fs-4 {
-    font-size: $font-size-4;
-
-    @media #{$breakpoint-not-small} {
-        font-size: $font-size-4-large;
-    }
-}
-
-.fs-4 {
-    @include fs-4;
-}
-
-@mixin fs-5 {
-    font-size: $font-size-5;
-
-    @media #{$breakpoint-not-small} {
-        font-size: $font-size-5-large;
-    }
-}
-
-.fs-5 {
-    @include fs-5;
-}
-
-@mixin fs-6 {
-    font-size: $font-size-6;
-
-    @media #{$breakpoint-not-small} {
-        font-size: $font-size-6-large;
-    }
-}
-
-.fs-6 {
-    @include fs-6;
-}
-
-@mixin fs-7 {
-    font-size: $font-size-7;
-
-    @media #{$breakpoint-not-small} {
-        font-size: $font-size-7-large;
-    }
-}
-
-.fs-7 {
-    @include fs-7;
-}
-
-.fs-1-ns {
-    @media #{$breakpoint-not-small} {
-        @include fs-1;
-    }
-}
-
-.fs-2-ns {
-    @media #{$breakpoint-not-small} {
-        @include fs-2;
-    }
-}
-
-.fs-3-ns {
-    @media #{$breakpoint-not-small} {
-        @include fs-3;
-    }
-}
-
-.fs-4-ns {
-    @media #{$breakpoint-not-small} {
-        @include fs-4;
-    }
-}
-
-.fs-5-ns {
-    @media #{$breakpoint-not-small} {
-        @include fs-5;
-    }
-}
-
-.fs-6-ns {
-    @media #{$breakpoint-not-small} {
-        @include fs-6;
-    }
-}
-
-.fs-7-ns {
-    @media #{$breakpoint-not-small} {
-        @include fs-7;
-    }
-}
-
 // reset h1 font-size set by tachyons
 h1 {
     font-size: inherit;
@@ -155,18 +28,17 @@ h1 {
 
 // set correct button font-family
 button {
-    font-family: $fontname !important;
+    font-family: var(--fontname) !important;
 }
 
 // set base font style
 body {
-    @include fs-4;
-    font-family: $fontname;
+    font-family: var(--fontname);
     //font-variation-settings: 'wght' 400, 'wdth' 100; /* use to change font-weight/width */
     font-style: normal;
     font-weight: normal;
     //letter-spacing: -0.015em; /* adjust letter spacing depending on font size */
     //word-spacing: -0.1em; /* adjust word spacing depending on font size */
-    line-height: $line-height-copy;
-    color: $black;
+    line-height: var(--lh-copy);
+    color: black;
 }

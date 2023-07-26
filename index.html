@@ -10,7 +10,10 @@
         <link rel="stylesheet" href="styleguide/css/style.css" />
         <link rel="stylesheet" href="styleguide/css/print.css" media="print" />
         <meta charset="utf-8" />
-        <title>CurlyFramework</title>
+        <title>
+            CurlyFramework for greater accessibility & sustainability
+            development.
+        </title>
         <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0, viewport-fit=cover"
@@ -18,7 +21,7 @@
         <link rel="icon" type="image/svg+xml" href="favicon.svg" />
         <meta
             name="description"
-            content="Persönliches Frontend-Framework für barrierearme Webprojekte."
+            content="Personal framework for more accessibility and sustainability, not just for MODX."
         />
         <meta property="og:image" content="favicon.svg" />
     </head>
@@ -29,32 +32,36 @@
                 document.documentElement.classList.add('focus-outline');
             }
         }"
-        class="purple pa4 pa6-ns"
+        class="curlyframework page f2 violet-5 p4 p6-m"
     >
-        <div class="check-device"></div>
-
         <!-- skiplinks -->
         <ul class="skiplinks">
-            <li><a href="#speechcontrol">zur Navigation</a></li>
-            <li><a href="#content">zum Inhalt</a></li>
+            <li><a href="#info">info</a></li>
+            <li><a href="#tips">tips</a></li>
+            <li><a href="#samples">samples</a></li>
+            <li><a href="#installation">installation</a></li>
+            <li><a href="#contact">contact</a></li>
         </ul>
 
-        <main id="content">
-            <section>
+        <main>
+            <section id="info">
                 <img
                     src="favicon.svg"
                     aria-hidden="true"
                     alt=""
-                    class="db w-25 w-10-ns mb5"
+                    class="db w-25 w-10-m mb5"
                 />
-                <h1 class="fs-1 ma0">CurlyFramework</h1>
-                <p class="fs-3-ns mv3 mv5-ns">
-                    Persönliches Frontend-Framework für barrierearme
-                    Webprojekte.
-                </p>
+                <h1 class="f5 m0">
+                    <span class="db">CurlyFramework</span>
+                    <span class="f3 mv3 mv5-ns">
+                        Personal framework for more accessibility and
+                        sustainability, not just for MODX.
+                    </span>
+                </h1>
 
                 <p class="mv3 mv5-ns">
-                    <span class="dib ph3 mb2 bg-near-white br4">
+                    <span class="clip">Installation: </span>
+                    <span class="dib ph3 mb2 bg-gray-10 br4">
                         $ npm i curlyframework
                     </span>
                     &
@@ -62,352 +69,303 @@
                         href="https://github.com/jenswittmann/CurlyFramework"
                         rel="noreferrer"
                         target="_blank"
-                        class="dib ph3 bg-near-white br4"
+                        class="dib ph3 bg-gray-10 br4"
                     >
                         Github</a
                     >
                 </p>
             </section>
 
-            <h2 class="fs-3 mt7 mb3">Beispiele</h2>
-
-            <section
-                x-data="{
-                    open: false
-                }"
-                class="pv5 bt bw2 b--purple"
-            >
-                <button
-                    @click="open = true"
-                    :aria-expanded="open"
-                    id="popupopener"
-                    aria-haspopup="true"
-                    aria-controls="popup"
-                    class="btn white ph3 pv2 bg-purple bn br4"
-                >
-                    Modal öffnen
-                </button>
-
-                <div
-                    x-cloak
-                    x-trap.inert.noscroll="open"
-                    @keyup.escape.window="open = false"
-                    :hidden="!open"
-                    id="popup"
-                    aria-modal="true"
-                    aria-labeledby="popupopener"
-                    class="
-                        fixed
-                        top-0
-                        left-0
-                        right-0
-                        bottom-0
-                        z-max
-                        pa4
-                        bg-blur
-                    "
-                >
-                    <div class="flex justify-center items-center w-100 h-100">
-                        <div
-                            class="
-                                w-90 w-50-ns
-                                pa3
-                                pa5-ns
-                                ma3
-                                ma4-ns
-                                bg-white
-                                br4
-                                shadow-4
-                            "
-                        >
-                            <img
-                                src="favicon.svg"
-                                aria-hidden="true"
-                                alt=""
-                                class="db w-25 w-10-ns mb5"
-                            />
-                            <p>
-                                Das Script kümmert sich auch um den Focus, damit
-                                dieser im geöffneten Fenster bleibt. Hier ein
-                                <a
-                                    href="https://jens-wittmann.de"
-                                    rel="noreferrer"
-                                    target="_blank"
-                                    >Beispiellink</a
-                                >
-                                zum Test.
-                            </p>
-                            <button
-                                @click="open = false"
-                                class="btn white ph3 pv2 bg-purple bn br4"
-                            >
-                                Beispiel schließen
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="pv4 bt bw2 b--purple">
-                <p>
-                    Alle Elemente skalieren auf Wunsch über die Klasse
+            <section id="tips">
+                <h2 class="f3 pv3 mt7 mb5 bb bw2">
+                    Better accessibility and sustainability in web development?
+                </h2>
+                <p class="w-60-m">
+                    It doesn't need a complete relaunch, small steps can also
+                    help to reach the goal. I recommend the talk by
                     <a
-                        href="https://github.com/jenswittmann/CurlyFramework/blob/5dccbe6ab4a80a21290b8dc3b3c0e01382994c56/dev/css/_styling.scss#L7-L13"
+                        href="https://css-irl.info/video-building-a-greener-web/"
+                        rel="noreferrer"
                         target="_blank"
                         class="bb"
-                        >.scale-content</a
-                    >
-                    im HTML Knoten proportional mit. Zusammen mit dem CSS Grid
-                    und den Klassen für die responsive Schrift eine super Basis
-                    für Designvorgaben aus Adobe XD und zeplin.io.
+                        >Michelle Barker "Building a greener web" at "All Day
+                        Hey! 2023"</a
+                    >.
                 </p>
-            </section>
-
-            <section class="pv4 bt bw2 b--purple">
-                <p>
-                    Ein einfaches responsives Raster auf Basis CSS Grid ist
-                    ebenfalls enthalten. Die Spalten können
-                    <a
-                        href="https://github.com/jenswittmann/CurlyFramework/blob/5dccbe6ab4a80a21290b8dc3b3c0e01382994c56/dev/css/_vars.scss#L49-L54"
-                        target="_blank"
-                        class="bb"
-                        >flexibel angepasst</a
-                    >. werden.
-                </p>
-
-                <div class="grid mb4">
-                    <div class="grid__item--start-1 grid__item--end ph1 bl bb">
-                        Komplette Breite
-                    </div>
-                    <div
-                        class="
-                            grid__item--start-1
-                            grid__item--start-3-ns
-                            grid__item--end
-                            grid__item--end-7-ns
-                            ph1
-                            bl
-                            bb
-                        "
-                    >
-                        Spalte 3–7
-                    </div>
-                    <div
-                        class="
-                            grid__item--start-1
-                            grid__item--start-9-ns
-                            grid__item--end
-                            grid__item--end-11-ns
-                            ph1
-                            bl
-                            bb
-                        "
-                    >
-                        Spalte 9–11
-                    </div>
-                    <div
-                        class="
-                            grid__item--col-span-12
-                            grid__item--col-span-4-ns
-                            grid__item--row-span-3-ns
-                            ph1
-                            bl
-                            bb
-                        "
-                    >
-                        Zelle über 4 Spalten und drei Zeilen
-                    </div>
-                    <div
-                        class="
-                            grid__item--col-span-12 grid__item--col-span-4-ns
-                            ph1
-                            bl
-                            bb
-                        "
-                    >
-                        Zelle über 4 Spalten
-                    </div>
-                    <div
-                        class="
-                            grid__item--col-span-12 grid__item--col-span-4-ns
-                            ph1
-                            bl
-                            bb
-                        "
-                    >
-                        Zelle über 4 Spalten
-                    </div>
-                    <div
-                        class="
-                            grid__item--col-span-12 grid__item--col-span-4-ns
-                            ph1
-                            bl
-                            bb
-                        "
-                    >
-                        Zelle über 4 Spalten
-                    </div>
-                    <div
-                        class="
-                            grid__item--col-span-12 grid__item--col-span-4-ns
-                            ph1
-                            bl
-                            bb
-                        "
-                    >
-                        Zelle über 4 Spalten
-                    </div>
-                    <div
-                        class="
-                            grid__item--col-span-12 grid__item--col-span-4-ns
-                            ph1
-                            bl
-                            bb
-                        "
-                    >
-                        Subgrid
-                        <ul class="grid grid--subgrid-4 list pa0 mv0 nl1 nr1">
-                            <li class="ph1">1</li>
-                            <li class="ph1">2</li>
-                            <li class="ph1">3</li>
-                            <li class="ph1">4</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class="pv4 bt bw2 b--purple">
-                <p>
-                    Für die responsive Schrift stehen sieben Klassen zur
-                    Verfügung.
-                </p>
-                <ul class="list lh-title pa0">
-                    <li class="fs-1">Testschrift</li>
-                    <li class="fs-2">Testschrift</li>
-                    <li class="fs-3">Testschrift</li>
-                    <li class="fs-4">Testschrift</li>
-                    <li class="fs-5">Testschrift</li>
-                    <li class="fs-6">Testschrift</li>
-                    <li class="fs-7">Testschrift</li>
+                <h3 class="f2 mt5 mb3">Tips</h3>
+                <ul>
+                    <li>Use WebP and lazyload (images, embeds).</li>
+                    <li>
+                        Use less fonts and try to use variable fonts (.woff2).
+                    </li>
+                    <li>Only load embeds on user interaction.</li>
+                    <li>Test keyboard navigation.</li>
+                    <li>
+                        Seek community to test and discuss accessibility and
+                        sustainability with real people.
+                    </li>
                 </ul>
             </section>
 
-            <section class="pv4 bt bw2 b--purple">
-                <p>
-                    MODX ist eins der flexibelsten Systeme – für den schnellen
-                    Start sind die Dateien
-                    <a
-                        href="https://github.com/jenswittmann/CurlyFramework/blob/6.0.0/.gitignore"
-                        target="_blank"
-                        class="bb"
-                        >.gitignore</a
+            <section id="samples">
+                <h2 class="f3 mt7 mb3">Samples</h2>
+
+                <article
+                    x-data="{
+                        open: false
+                    }"
+                    class="pv5 bt bw2"
+                >
+                    <button
+                        @click="open = true"
+                        :aria-expanded="open"
+                        id="popupopener"
+                        aria-haspopup="true"
+                        aria-controls="popup"
+                        class="btn white ph3 pv2 bg-violet-5 bn br4"
                     >
-                    und
-                    <a
-                        href="https://github.com/jenswittmann/CurlyFramework/blob/6.0.0/.gitify"
-                        target="_blank"
-                        class="bb"
-                        >.gitify</a
+                        Open modal
+                    </button>
+
+                    <div
+                        x-cloak
+                        x-trap.inert.noscroll="open"
+                        @keyup.escape.window="open = false"
+                        :hidden="!open"
+                        id="popup"
+                        aria-modal="true"
+                        aria-labeledby="popupopener"
+                        class="fixed top-0 left-0 right-0 bottom-0 z-max p4 bg-blur"
                     >
-                    mit dabei. Die
-                    <a
-                        href="https://github.com/jenswittmann/CurlyFramework/blob/6.0.0/.htaccess"
-                        target="_blank"
-                        class="bb"
-                        >.htaccess</a
-                    >
-                    wurde um Caching- und Security-Einstellungen ergänzt.
-                    Zusammen mit ContentBlocks von modmore, lässt sich ein
-                    flexibler Webseiten-Baukasten mit 100% Code-Kontrolle
-                    umsetzen. Die Datei
-                    <a
-                        href="https://github.com/jenswittmann/CurlyFramework/blob/6.0.0/dev/css/modx.scss"
-                        target="_blank"
-                        class="bb"
-                        >modx.css</a
-                    >
-                    bringt ein minimalistisches Layout für das Backend mit.
-                </p>
+                        <div
+                            class="flex justify-center items-center w-100 h-100"
+                        >
+                            <div
+                                class="w-90 w-50-ns p3 p5-m m3 m4-m bg-white br4 shadow-4"
+                            >
+                                <img
+                                    src="favicon.svg"
+                                    aria-hidden="true"
+                                    alt=""
+                                    class="db w-25 w-10-m mb5"
+                                />
+                                <p>
+                                    The script also takes care of the focus so
+                                    that it remains so that it remains in the
+                                    open window. Here is a
+                                    <a
+                                        href="https://jens-wittmann.de"
+                                        rel="noreferrer"
+                                        target="_blank"
+                                        >Example link</a
+                                    >
+                                    to the test.
+                                </p>
+                                <button
+                                    @click="open = false"
+                                    class="btn white ph3 pv2 bg-violet-5 bn br4"
+                                >
+                                    Close example
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="pv4 bt">
+                    <p>
+                        All elements scale if desired via the class
+                        <a
+                            href="https://github.com/jenswittmann/CurlyFramework/blob/5dccbe6ab4a80a21290b8dc3b3c0e01382994c56/dev/css/_styling.scss#L7-L13"
+                            rel="noreferrer"
+                            target="_blank"
+                            class="bb"
+                            >.scale-content</a
+                        >
+                        in the HTML node proportionally. Together with the CSS
+                        Grid and the classes for the responsive font a super
+                        basis for design presets from Figma (Adobe XD) and
+                        zeplin.io.
+                    </p>
+                </article>
+
+                <article class="pv4 bt">
+                    <p>
+                        The
+                        <a
+                            href="https://github.com/jenswittmann/CurlyFramework/blob/6.0.0/.htaccess"
+                            rel="noreferrer"
+                            target="_blank"
+                            class="bb"
+                            >.htaccess</a
+                        >
+                        has been extended with caching and security settings.
+                        Together with ContentBlocks from modmore, you can create
+                        a flexible website builder with 100% code control. can
+                        be implemented. The file
+                        <a
+                            href="https://github.com/jenswittmann/CurlyFramework/blob/6.0.0/dev/css/modx.scss"
+                            rel="noreferrer"
+                            target="_blank"
+                            class="bb"
+                            >modx.css</a
+                        >
+                        brings a minimalistic layout for the MODX Manager
+                        backend.
+                    </p>
+                </article>
+            </section>
+            <section id="installation">
+                <h2 class="f3 pv3 mt7 mb5 bb bw2">Installation</h2>
+                <ul>
+                    <li>
+                        Get it via
+                        <span class="dib f1 ph3 mb2 bg-gray-10 br4">
+                            $ git clone
+                            git@github.com:jenswittmann/CurlyFramework.git
+                        </span>
+                        or use
+                        <span class="dib f1 ph3 mb2 bg-gray-10 br4">
+                            $ npm i curlyframework
+                        </span>
+                        (as npm dependency).
+                    </li>
+                    <li>Link CSS/JS files in your markup.</li>
+                    <li>
+                        Overwrite CSS via custom properties and use inline JS
+                        via AlpineJS.
+                    </li>
+                </ul>
+                <h3 class="f2 mt5 mb3">Need more?</h3>
+                <ul>
+                    <li>
+                        Install dependency
+                        <span class="dib f1 ph3 mb2 bg-gray-10 br4">
+                            $ npm i
+                        </span>
+                    </li>
+                    <li>
+                        Use
+                        <a
+                            href="https://codekitapp.com/"
+                            rel="noreferrer"
+                            target="_blank"
+                            class="bb"
+                            >CodeKit</a
+                        >
+                        or
+                        <a
+                            href="https://esbuild.github.io/"
+                            rel="noreferrer"
+                            target="_blank"
+                            class="bb"
+                            >esbuild</a
+                        >
+                        (need custom config) to compile your assets.
+                    </li>
+                    <li>Play around, learn and share.</li>
+                </ul>
+            </section>
+            <section>
+                <h2 class="f3 pv3 mt7 mb5 bb bw2">
+                    Thank you for the inspirations
+                </h2>
+
+                <ul>
+                    <li>
+                        <a
+                            href="https://alpinejs.dev/"
+                            rel="noreferrer"
+                            target="_blank"
+                            class="bb"
+                            >alpine.js</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="https://tachyons.io/"
+                            rel="noreferrer"
+                            target="_blank"
+                            class="bb"
+                            >tachyons.io</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="https://www.barrierefreies-webdesign.de/"
+                            rel="noreferrer"
+                            target="_blank"
+                            class="bb"
+                            >barrierefreies-webdesign.de</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="https://modx.com/"
+                            rel="noreferrer"
+                            target="_blank"
+                            class="bb"
+                            >modx.com</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="https://modmore.com/contentblocks"
+                            rel="noreferrer"
+                            target="_blank"
+                            class="bb"
+                            >modmore.com/contentblocks</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="https://github.com/modmore/Gitify/"
+                            rel="noreferrer"
+                            target="_blank"
+                            class="bb"
+                            >github.com/modmore/Gitify</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="https://afarkas.github.io/lazysizes"
+                            rel="noreferrer"
+                            target="_blank"
+                            class="bb"
+                            >afarkas.github.io/lazysizes</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="https://www.dzblesen.de/"
+                            rel="noreferrer"
+                            target="_blank"
+                            class="bb"
+                            >dzblesen.de</a
+                        >
+                    </li>
+                </ul>
             </section>
         </main>
 
         <footer class="foot">
-            <h2 class="fs-3 mt6 mb3">Danke</h2>
-
-            <ul class="list pa0">
-                <li class="bb">
-                    <a
-                        href="https://alpinejs.dev/"
-                        rel="noreferrer"
-                        target="_blank"
-                        >alpine.js</a
-                    >
-                </li>
-                <li class="bb">
-                    <a
-                        href="https://tachyons.io/"
-                        rel="noreferrer"
-                        target="_blank"
-                        >tachyons.io</a
-                    >
-                </li>
-                <li class="bb">
-                    <a
-                        href="https://www.barrierefreies-webdesign.de/"
-                        rel="noreferrer"
-                        target="_blank"
-                        >barrierefreies-webdesign.de</a
-                    >
-                </li>
-                <li class="bb">
-                    <a href="https://modx.com/" rel="noreferrer" target="_blank"
-                        >modx.com</a
-                    >
-                </li>
-                <li class="bb">
-                    <a
-                        href="https://modmore.com/contentblocks"
-                        rel="noreferrer"
-                        target="_blank"
-                        >modmore.com/contentblocks</a
-                    >
-                </li>
-                <li class="bb">
-                    <a
-                        href="https://github.com/modmore/Gitify/"
-                        rel="noreferrer"
-                        target="_blank"
-                        >github.com/modmore/Gitify</a
-                    >
-                </li>
-                <li class="bb">
-                    <a
-                        href="https://afarkas.github.io/lazysizes"
-                        rel="noreferrer"
-                        target="_blank"
-                        >afarkas.github.io/lazysizes</a
-                    >
-                </li>
-                <li class="bb">
-                    <a
-                        href="https://www.dzblesen.de/"
-                        rel="noreferrer"
-                        target="_blank"
-                        >dzblesen.de</a
-                    >
-                </li>
-            </ul>
-
-            <h2 class="fs-3 mt6 mb3">Fragen?</h2>
+            <h2 id="contact" class="f3 pv3 mt7 mb5 bb bw2">Contact</h2>
 
             <p>
-                Fragen und Hinweise gern über
+                Questions and comments gladly via
                 <a
                     href="https://github.com/jenswittmann/CurlyFramework"
                     rel="noreferrer"
                     target="_blank"
                     class="bb"
                     >GitHub</a
+                >. Work together? Have a look at
+                <a
+                    href="https://jens-wittmann.de/"
+                    rel="noreferrer"
+                    target="_blank"
+                    class="bb"
+                    >jens-wittmann.de</a
                 >.
             </p>
 
@@ -417,11 +375,11 @@
                     rel="noreferrer"
                     target="_blank"
                     class="bb"
-                    >Impressum und Datenschutzerklärung</a
+                    >Imprint and privacy policy</a
                 >
             </p>
         </footer>
 
-        <script src="styleguide/js/script.js"></script>
+        <script src="styleguide/js/script.js" defer></script>
     </body>
 </html>
