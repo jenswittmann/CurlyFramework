@@ -6,4 +6,4 @@
 
 Personal framework for more accessibility and sustainability, not just for [MODX](https://modx.com).
 
-`$ npm i curlyframework` und [demo](https://jenswittmann.github.io/CurlyFramework/)
+`$ npm i curlyframework` and [demo](https://jenswittmann.github.io/CurlyFramework/)
