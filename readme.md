@@ -4,6 +4,6 @@
 
 ![.github/workflows/npm-publish.yml](https://github.com/jenswittmann/CurlyFramework/workflows/.github/workflows/npm-publish.yml/badge.svg)
 
-Persönliches Frontend-Framework für barrierearme Webprojekte.
+Personal framework for more accessibility and sustainability, not just for MODX.
 
 `$ npm i curlyframework` und [demo](https://jenswittmann.github.io/CurlyFramework/)
