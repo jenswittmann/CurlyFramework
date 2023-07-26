@@ -1,45 +1,43 @@
 .curlyframework {
-    
     // animation timing
     --animation-time-small: 0.3s;
     --animation-time-medium: 1s;
     --animation-time-large: 3s;
-    
+
     // line height
     --lh-solid: 1;
     --lh-title: 1.25;
     --lh-copy: 1.5;
-    
+
     // fonts
     --fontname: "voltaire", serif;
-    
+
     // spacing
     --spacing-0: 0;
-    --spacing-1: .25rem;
-    --spacing-2: .5rem;
+    --spacing-1: 0.25rem;
+    --spacing-2: 0.5rem;
     --spacing-3: 1rem;
     --spacing-4: 2rem;
     --spacing-5: 4rem;
     --spacing-6: 8rem;
     --spacing-7: 16rem;
     --spacing-8: 32rem;
-    
+
     // border width
     --bw1: 1px;
     --bw2: 2px;
     --bw3: 4px;
     --bw4: 8px;
-    
+
     // colors
     --violet-5: #351788;
-    
+
     // typo
     --typo-1: 1rem;
     --typo-2: 1.25rem;
     --typo-3: 1.5rem;
     --typo-4: 2rem;
     --typo-5: 4rem;
-
 }
 
 // breakpoints
@@ -50,4 +48,3 @@
 // detect pointer device
 @custom-media --detectHasPointer (any-pointer: fine);
 @custom-media --detectNoPointer (any-pointer: none);
-

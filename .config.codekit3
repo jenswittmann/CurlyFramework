@@ -262,7 +262,7 @@
       "oA" : 0,
       "oAP" : "\/styleguide\/css\/print.css",
       "oF" : 2,
-      "oS" : 3,
+      "oS" : 0,
       "pg" : 0,
       "sct" : 0
     },
@@ -376,6 +376,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/styleguide\/css\/font\/index.html",
+      "oF" : 0
+    },
+    "\/styleguide\/css\/index.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/styleguide\/css\/index.html",
       "oF" : 0
     },
     "\/styleguide\/css\/modx.css" : {
@@ -747,14 +755,14 @@
     "bowerUseExactVersion" : 0,
     "browserRefreshDelay" : 0,
     "browserslistString" : ">0.2%, last 2 versions, Firefox ESR, not dead",
-    "buildEnvironment" : 1,
+    "buildEnvironment" : 0,
     "buildFolderActive" : 0,
     "buildFolderName" : "build",
     "cleanBuild" : 1,
     "cssoForceMediaMerge" : 0,
     "cssoRestructure" : 1,
     "environmentVariableEntries" : [
-      "NODE_ENV:::development"
+      "NODE_ENV:::production"
     ],
     "esLintConfigFileHandlingType" : 0,
     "esLintECMAVersion" : 7,

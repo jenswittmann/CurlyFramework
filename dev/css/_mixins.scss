@@ -5,7 +5,7 @@
 
 // text balanced
 .text-balance {
-    text-wrap: balance
+    text-wrap: balance;
 }
 
 // sticky scrolling elements
@@ -44,7 +44,6 @@
 
 // scroll snap
 .scrollsnap {
-    
     &--x {
         overscroll-behavior-x: contain;
         scroll-snap-type: x mandatory;
