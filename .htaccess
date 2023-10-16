@@ -72,18 +72,18 @@ RewriteRule ^(.*)$ index.php?q=$1 [L,QSA]
 # caching
 FileETag MTime Size
 ExpiresActive On
-ExpiresByType text/css "access plus 10 weeks"
-ExpiresByType application/javascript "access plus 10 weeks"
-ExpiresByType application/x-javascript "access plus 10 weeks"
+
+ExpiresByType text/css "access 3 month"
+ExpiresByType text/javascript "access 3 month"
+
 ExpiresByType image/gif "access plus 12 months"
 ExpiresByType image/jpeg "access plus 12 months"
 ExpiresByType image/png "access plus 12 months"
 ExpiresByType image/webp "access plus 12 months"
 ExpiresByType image/x-icon "access plus 12 months"
-ExpiresByType font/ttf "access plus 12 months"
-ExpiresByType font/otf "access plus 12 months"
-ExpiresByType font/woff "access plus 12 months"
-ExpiresByType font/woff2 "access plus 12 months"
+
+AddType font/woff2 .woff2
+ExpiresByType font/woff2  "access plus 1 year"
 
 # headers
 <IfModule mod_headers.c>
