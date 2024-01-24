@@ -2,7 +2,7 @@
 @font-face {
     font-family: "voltaire";
     font-style: normal;
-    font-weight: normal;
+    /* font-weight: normal; */ // remove for variable fonts!
     src: url("https://jens-wittmann.de/voltaire.woff2") format("woff2");
     font-display: swap;
 }
