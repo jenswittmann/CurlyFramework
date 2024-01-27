@@ -73,8 +73,8 @@ RewriteRule ^(.*)$ index.php?q=$1 [L,QSA]
 FileETag MTime Size
 ExpiresActive On
 
-ExpiresByType text/css "access 3 month"
-ExpiresByType text/javascript "access 3 month"
+ExpiresByType text/css "access plus 12 months"
+ExpiresByType text/javascript "access plus 12 months"
 
 ExpiresByType image/gif "access plus 12 months"
 ExpiresByType image/jpeg "access plus 12 months"
@@ -84,6 +84,13 @@ ExpiresByType image/x-icon "access plus 12 months"
 
 AddType font/woff2 .woff2
 ExpiresByType font/woff2  "access plus 1 year"
+
+<IfModule mod_expires.c>  
+	ExpiresActive On  
+	<FilesMatch "\.(ico|jpg|jpeg|png|webp|svg|gif|js|css)$">  
+		ExpiresDefault "access plus 1 year"
+	</FilesMatch>  
+</IfModule> 
 
 # headers
 <IfModule mod_headers.c>
