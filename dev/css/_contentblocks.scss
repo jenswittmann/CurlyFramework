@@ -15,22 +15,28 @@
 
 // richtext
 .richtext {
-    p,
-    ul,
-    ol {
-        margin-top: 0;
-        margin-bottom: 1em;
+
+    * + * {
+        margin-top: 1em;
+    }
+
+    * + h2,
+    * + h3 {
+        margin-top: 2em;
     }
 
     ul,
     ol {
         padding: 0;
         padding-left: 1.1em;
+    }
 
-        li {
-            padding-left: 1em;
-            margin-bottom: 0.5em;
-        }
+    li + li {
+        margin-top: .5em;
+    }
+
+    h2 + h3 {
+        margin-top: .5em;
     }
 }
 
