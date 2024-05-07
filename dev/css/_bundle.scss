@@ -55,7 +55,7 @@
 @import "../../node_modules/tachyons/src/_text-decoration";
 @import "../../node_modules/tachyons/src/_text-align";
 @import "../../node_modules/tachyons/src/_text-transform";
-// @import '../../node_modules/tachyons/src/_type-scale';
+@import "../../node_modules/tachyons/src/_type-scale";
 @import "../../node_modules/tachyons/src/_typography";
 @import "../../node_modules/tachyons/src/_utilities";
 @import "../../node_modules/tachyons/src/_visibility";
@@ -81,4 +81,3 @@
 @import "mixins";
 @import "styling";
 @import "typo";
-@import "typo-scale";
