@@ -1,5 +1,7 @@
 @use "sass:math";
 
+@import "reset";
+
 /* tachyons */
 @import "../../node_modules/tachyons/src/_normalize";
 @import "../../node_modules/tachyons/src/_box-sizing";

@@ -176,6 +176,21 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/dev\/css\/_reset.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/dev\/css\/_reset.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/dev\/css\/_styling.scss" : {
       "aP" : 0,
       "bl" : 0,
@@ -354,6 +369,14 @@
       "pME" : 1,
       "rFN" : 0,
       "uCM" : 0
+    },
+    "\/robots.txt" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/robots.txt",
+      "oF" : 0
     },
     "\/styleguide\/css\/font\/index.html" : {
       "cB" : 0,
