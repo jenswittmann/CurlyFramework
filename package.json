@@ -1,16 +1,17 @@
 {
-  "license" : "GPL-3.0",
-  "dependencies" : {
-    "alpinejs" : "^3.10.3",
-    "tachyons" : "git+ssh:\/\/git@github.com:jenswittmann\/tachyons.git",
-    "postcss-custom-media" : "^10.0.6",
-    "lazysizes" : "^5.3.2",
-    "@alpinejs\/focus" : "^3.10.3",
-    "@alpinejs\/intersect" : "^3.10.3",
-    "cssnano" : "^7.0.1"
+  "license": "GPL-3.0",
+  "dependencies": {
+    "@alpinejs/collapse": "^3.13.10",
+    "@alpinejs/focus": "^3.10.3",
+    "@alpinejs/intersect": "^3.10.3",
+    "alpinejs": "^3.10.3",
+    "cssnano": "^7.0.1",
+    "lazysizes": "^5.3.2",
+    "postcss-custom-media": "^10.0.6",
+    "tachyons": "git+ssh://git@github.com:jenswittmann/tachyons.git"
   },
-  "description" : "Personal framework for more accessibility and sustainability, not just for MODX.",
-  "keywords" : [
+  "description": "Personal framework for more accessibility and sustainability, not just for MODX.",
+  "keywords": [
     "curlyframework",
     "a11y",
     "sustainability",
@@ -26,20 +27,10 @@
     "css grid",
     "leipzig"
   ],
-  "repository" : {
-
-  },
-  "main" : "index.html",
-  "name" : "curlyframework",
-  "devDependencies" : {
-
-  },
-  "version" : "7.0.2",
-  "scripts" : {
-
-  },
-  "author" : "Jens Wittmann",
-  "optionalDependencies" : {
-
-  }
+  "repository": {},
+  "main": "index.html",
+  "name": "curlyframework",
+  "version": "7.0.2",
+  "scripts": {},
+  "author": "Jens Wittmann"
 }

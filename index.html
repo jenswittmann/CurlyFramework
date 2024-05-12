@@ -170,6 +170,30 @@
                     </div>
                 </article>
 
+                <article
+                    x-data="{
+                        open: false
+                    }"
+                    class="pv5 bt"
+                >
+                    <button
+                        @click="open = !open"
+                        :aria-expanded="open"
+                        aria-controls="accordion"
+                        class="pointer b p0 bg-transparent bn"
+                    >
+                        <span
+                            x-text="open ? '-' : '+'"
+                            aria-hidden="true"
+                        ></span>
+                        Accordion
+                    </button>
+
+                    <p x-cloak x-collapse x-show="open" id="accordion">
+                        Simple Answer for the Accordion.
+                    </p>
+                </article>
+
                 <article class="pv4 bt">
                     <p>
                         All elements scale if desired via the class
