@@ -119,8 +119,6 @@
                     <button
                         @click="open = true"
                         :aria-expanded="open"
-                        id="popupopener"
-                        aria-haspopup="true"
                         aria-controls="popup"
                         class="btn white ph3 pv2 bg-violet-5 bn br4"
                     >
@@ -134,7 +132,7 @@
                         :hidden="!open"
                         id="popup"
                         aria-modal="true"
-                        aria-labeledby="popupopener"
+                        role="dialog"
                         class="fixed top-0 left-0 right-0 bottom-0 z-max p4 bg-blur"
                     >
                         <div
