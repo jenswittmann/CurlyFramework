@@ -69,3 +69,9 @@
         background-color: transparent;
     }
 }
+
+// prevent overscroll
+.overscroll-behavior-none,
+.overscroll-behavior-none * {
+    overscroll-behavior: none;
+}

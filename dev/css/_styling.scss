@@ -12,8 +12,9 @@
     }
 }
 
-// set overflow touch for ios
+// set overflow touch
 * {
+    overscroll-behavior: none;
     -webkit-overflow-scrolling: touch;
 }
 
