@@ -4,42 +4,32 @@
     display: none !important;
 }
 
-// change contentblocks manager layout
-#modx-resource-content {
-    box-shadow: none !important;
+// ContentBlocks: add layout
+.contentblocks-add-layout {
+    margin: -1px !important;
 
-    & > .x-panel-header {
-        display: none;
+    h3 a {
+        height: auto;
+        padding: 25px 0;
+        background-color: #fff !important;
     }
 }
 
-.contentblocks-layout {
-    margin: 1rem 0;
+.modx_v23 .contentblocks-region.contentblocks-region-middle {
+    border-bottom: 1px solid #e4e4e4;
 }
 
-.contentblocks-modal-header,
-.contentblocks-modal-content {
-    .switch-view,
-    .contentblocks-modal-content {
-        display: none;
-    }
+// ContentBlocks: style layout title
+.contentblocks-layout-title {
+    opacity: 0.5;
 }
 
-.contentblocks-layout-wrapper {
-    li {
-        &:nth-child(1) {
-            .contentblocks-add-layout {
-                display: none;
-            }
-        }
-    }
+// ContentBlocks: hide collapse
+.contentblocks-collapser {
+    display: none !important;
 }
 
-.contentblocks-region-container-header {
-    background-color: #f2f2f2;
-    box-shadow: none !important;
-}
-
+// ContentBlocks: image upload
 .contentblocks-setting-image {
     .field-label {
         display: none;
@@ -79,28 +69,7 @@
     }
 }
 
-.contentblocks-collapser {
-    display: none !important;
-}
-
-// region header
-.contentblocks-region-container-header {
-    border-bottom: 2px solid #1a7fb8 !important;
-
-    .contentblocks-layout-title {
-        color: #1a7fb8;
-    }
-
-    .contentblocks-region-container-tools {
-        opacity: 0.2;
-
-        &:hover {
-            opacity: 1;
-        }
-    }
-}
-
-// repeater field labels
+// ContentBlocks: repeater field labels
 .contentblocks-repeater-mini {
     .contentblocks-field-link,
     .contentblocks-float-label {
@@ -111,7 +80,7 @@
     }
 }
 
-// chunk selector
+// ContentBlocks: chunk selector
 .contentblocks-field-chunk_selector {
     pointer-events: none;
     position: relative;
@@ -135,3 +104,97 @@
         filter: blur(0.2rem);
     }
 }
+
+// ContentBlocks: layout field settings
+.modx_v23 .contentblocks-region-container-header {
+    border-top: 1px solid #e4e4e4;
+    box-shadow: none;
+}
+
+.contentblocks-region-settings {
+    border-bottom: 2px solid #eee;
+}
+
+.contentblocks-exposed-fields-wrapper.contentblocks-exposed-fields-as-setting-wrapper {
+    display: grid;
+    margin: -10px 0;
+
+    & > label {
+        display: none;
+    }
+
+    .contentblocks-modal-field {
+        display: flex;
+        align-items: center;
+        padding: 5px 0;
+
+        label {
+            overflow: hidden;
+            width: 40%;
+            font-size: 9px;
+            text-indent: -10px;
+            margin: 0;
+        }
+
+        input {
+            width: 60%;
+            padding: 3px;
+            margin-right: 10px;
+        }
+
+        .contentblocks-setting-description {
+            display: none;
+        }
+    }
+}
+
+// [data-layout="1"] {
+//
+//     .contentblocks-exposed-fields-wrapper.contentblocks-exposed-fields-as-setting-wrapper {
+//         grid-template-columns: 1fr 1fr;
+//     }
+// }
+//
+// [data-layout="2"] {
+//
+//     .contentblocks-exposed-fields-wrapper.contentblocks-exposed-fields-as-setting-wrapper {
+//         grid-template-columns: 1fr 1fr 1fr 1fr;
+//
+//         .contentblocks-modal-field {
+//
+//             &:nth-child(3),
+//             &:nth-child(7) {
+//                 margin-left: 4px;
+//                 border-right: 5px solid #f5f5f5;
+//             }
+//         }
+//     }
+// }
+
+// ContentBlocks: layout system
+// [data-layout="3"] {
+//
+//     .contentblocks-add-layout.contentblocks-add-layout-here,
+//     .contentblocks-add-block,
+//     .contentblocks-region-container-header,
+//     .contentblocks-field-delete {
+//         display: none !important;
+//     }
+//
+//     .contentblocks-field-wrap,
+//     .contentblocks-region.contentblocks-region-middle {
+//         padding: 0;
+//         border: 0;
+//     }
+// }
+
+// ContentBlocks: preview image
+// [data-field="9"] {
+//     background-color: white;
+//     padding-bottom: 50px;
+//     margin: -10px -1px 0 -1px;
+//
+//     img {
+//         max-width: 10rem;
+//     }
+// }
