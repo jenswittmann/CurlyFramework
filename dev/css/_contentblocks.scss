@@ -15,7 +15,6 @@
 
 // richtext
 .richtext {
-
     * + * {
         margin-top: 1em;
     }
@@ -32,11 +31,16 @@
     }
 
     li + li {
-        margin-top: .5em;
+        margin-top: 0.5em;
     }
 
     h2 + h3 {
-        margin-top: .5em;
+        margin-top: 0.5em;
+    }
+
+    a {
+        text-decoration: underline;
+        text-decoration-thickness: from-font;
     }
 }
 
