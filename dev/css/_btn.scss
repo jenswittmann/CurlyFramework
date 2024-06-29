@@ -1,2 +1,8 @@
 .btn {
+    &--clean {
+        cursor: pointer;
+        padding: 0;
+        background-color: transparent;
+        border: 0;
+    }
 }
