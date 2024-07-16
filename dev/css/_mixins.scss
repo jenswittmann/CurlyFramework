@@ -54,10 +54,15 @@
     }
 }
 
+// flex auto for defined element width
+.flex-auto-1-0 {
+    flex: 1 0 auto;
+}
+
 // no scrollbar
 .no-scrollbar {
     scrollbar-width: none;
-    
+
     &::-webkit-scrollbar {
         width: 0;
         height: 0;
