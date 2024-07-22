@@ -14,46 +14,53 @@
 }
 
 // richtext
+/*! purgecss start ignore */
 .richtext {
+    
     * + * {
+        margin-top: 1.5em;
+        margin-bottom: 0;
+    }
+    
+    * + p {
         margin-top: 1em;
     }
 
     h2 {
-        @extend .f6;
+        font-size: 1.75em;;
+        @extend .lh-solid;
     }
 
     h3 {
-        @extend .f5;
+        font-size: 1.5em;
+        @extend .lh-title;
     }
 
     h4 {
-        @extend .f4;
+        font-size: 1.22em;
+        @extend .lh-title;
     }
 
     h5 {
-        @extend .f3;
+        font-size: 1.1em;
     }
 
-    ul,
+    ul,  
     ol {
         padding: 0;
         padding-left: 1.1em;
     }
-
+    
     li + li {
         margin-top: 0.5em;
     }
-
-    h2 + h3 {
-        margin-top: 0.5em;
-    }
-
+    
     a {
         text-decoration: underline;
         text-decoration-thickness: from-font;
     }
 }
+/*! purgecss end ignore */
 
 // image
 .image {
