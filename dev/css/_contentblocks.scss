@@ -19,9 +19,20 @@
         margin-top: 1em;
     }
 
-    * + h2,
-    * + h3 {
-        margin-top: 2em;
+    h2 {
+        @extend .f6;
+    }
+
+    h3 {
+        @extend .f5;
+    }
+
+    h4 {
+        @extend .f4;
+    }
+
+    h5 {
+        @extend .f3;
     }
 
     ul,
