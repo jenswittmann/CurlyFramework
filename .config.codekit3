@@ -278,7 +278,7 @@
       "oAP" : "\/styleguide\/css\/style.css",
       "oF" : 2,
       "oS" : 0,
-      "pg" : 0,
+      "pg" : 2,
       "sct" : 0
     },
     "\/dev\/js\/bundle.js" : {
@@ -2011,7 +2011,8 @@
         "**\/*.slim",
         "**\/*.haml",
         "**\/*.md",
-        "**\/*.kit"
+        "**\/*.kit",
+        "**\/*.tpl"
       ],
       "removeFontFace" : 0,
       "removeKeyframes" : 0,
