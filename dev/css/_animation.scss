@@ -8,18 +8,6 @@
     }
 }
 
-// fade in lazyloaded image after load
-.lazyload,
-.lazyloading {
-    opacity: 0;
-}
-
-.lazyloaded,
-video.lazyloading {
-    opacity: 1;
-    transition: opacity var(--animation-time-small);
-}
-
 // transition classes
 .transition {
     &-small {
