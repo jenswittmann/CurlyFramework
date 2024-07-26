@@ -17,7 +17,7 @@
 /*! purgecss start ignore */
 .richtext {
     
-    * + * {
+    > * + * {
         margin-top: 1.5em;
         margin-bottom: 0;
     }
