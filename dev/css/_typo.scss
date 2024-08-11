@@ -27,7 +27,8 @@ h1 {
 }
 
 // set correct button font-family
-button {
+button,
+input::file-selector-button {
     font-family: var(--fontname) !important;
 }
 
