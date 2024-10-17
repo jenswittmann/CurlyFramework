@@ -191,48 +191,45 @@
                                     <span aria-hidden="true">⇢</span></span
                                 >
                             </button>
-
                             <div
                                 x-cloak
+                                x-transition
+                                x-show="open"
+                                @click="open = false"
+                                class="fixed top-0 left-0 right-0 bottom-0 bg-blur"
+                            ></div>
+                            <div
+                                x-cloak
+                                x-transition
                                 x-trap.inert.noscroll="open"
                                 x-show="open"
                                 @keyup.escape.window="open = false"
                                 id="popup"
                                 aria-modal="true"
                                 role="dialog"
-                                class="fixed top-0 left-0 right-0 bottom-0 z-max flex justify-end"
+                                class="fixed top-0 right-0 bottom-0 z-max w-80 w-third-m white p3 p5-m bg-violet-5"
                             >
-                                <div
-                                    @click="open = false"
-                                    class="absolute top-0 left-0 right-0 bottom-0 bg-blur"
-                                ></div>
-                                <div
-                                    class="relative w-80 w-third-m white p3 p5-m bg-violet-5"
-                                >
-                                    <p>
-                                        The script also takes care of the focus
-                                        so that it stays in the modal. Here is a
-                                        <a
-                                            href="https://jens-wittmann.de"
-                                            rel="noreferrer"
-                                            target="_blank"
-                                            >example link</a
-                                        >
-                                        to the test. You can also close it with
-                                        the Escape key.
-                                    </p>
-                                    <button
-                                        @click="open = false"
-                                        class="btn pointer p0 bg-transparent bn bb"
+                                <p>
+                                    The script also takes care of the focus so
+                                    that it stays in the modal. Here is a
+                                    <a
+                                        href="https://jens-wittmann.de"
+                                        rel="noreferrer"
+                                        target="_blank"
+                                        >example link</a
                                     >
-                                        <span class="bb"
-                                            >close
-                                            <span aria-hidden="true"
-                                                >×</span
-                                            ></span
-                                        >
-                                    </button>
-                                </div>
+                                    to the test. You can also close it with the
+                                    Escape key.
+                                </p>
+                                <button
+                                    @click="open = false"
+                                    class="btn pointer p0 bg-transparent bn bb"
+                                >
+                                    <span class="bb"
+                                        >close
+                                        <span aria-hidden="true">×</span></span
+                                    >
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -288,13 +285,122 @@
                 </article>
                 <article class="dc">
                     <div class="start-1 end-last end-4-m">
-                        <h3 class="sticky top-0 f4 lh-title m0">
-                            Slider <sup>Todo</sup>
-                        </h3>
+                        <h3 class="sticky top-0 f4 lh-title m0">Slider</h3>
                     </div>
                     <div
                         class="start-1 start-4-m end-last flex flex-column justify-center items-center p4 bg-violet-10 br4 aspect-ratio-16x9"
-                    ></div>
+                    >
+                        <div
+                            x-data="{
+                                index: 1,
+                                slides: [
+                                    'This',
+                                    'is',
+                                    'pure',
+                                    'Alpine.js',
+                                    'no dependencies'
+                                ],
+                                
+                                prev() {
+                                    this.index--;
+                                    if (this.index < 0) {
+                                        this.index = 0;
+                                    }
+                                    this.goto(this.index);
+                                },
+                                
+                                next() {
+                                    this.index++;
+                                    if (this.index > this.slides.length) {
+                                        this.index = this.slides.length;
+                                    }
+                                    this.goto(this.index);
+                                },
+                                
+                                goto(i = this.index) {
+                                    this.$refs.slider.scrollLeft = this.$refs.slider.offsetWidth * i;
+                                }
+                            }"
+                            class="flex flex-column w-70"
+                        >
+                            <div>
+                                <button
+                                    @click="prev()"
+                                    :disabled="index == 0"
+                                    :class="{
+                                        'o-50': index == 0
+                                    }"
+                                    class="p2 bg-transparent ba br-100 transition-small"
+                                >
+                                    <span
+                                        aria-hidden="true"
+                                        class="dib rotate-180"
+                                        >⇢</span
+                                    >
+                                    previous
+                                </button>
+                            </div>
+                            <ul
+                                x-ref="slider"
+                                class="scrollsnap scrollsnap--x list overflow-auto flex w-100 ph0 pv3 m0"
+                            >
+                                <template x-for="(text, i) in slides">
+                                    <li
+                                        x-data="{
+                                            'visible': false
+                                        }"
+                                        x-intersect.half="visible = true; index = i"
+                                        x-intersect:leave.half="visible = false"
+                                        :aria-hiden="!visible"
+                                        class="scrollsnap__item flex-auto-1-0 w-100"
+                                    >
+                                        <div
+                                            x-text="text"
+                                            class="flex justify-center items-center white m1 mb2 bg-violet-5 br3 aspect-ratio-16x9"
+                                        ></div>
+                                    </li>
+                                </template>
+                            </ul>
+                            <div class="flex justify-between">
+                                <ul
+                                    aria-label="slider legend"
+                                    class="list flex g2 w-30 p0"
+                                    style="height: 0.5rem"
+                                >
+                                    <template
+                                        x-for="(text, i) in slides.length"
+                                    >
+                                        <li class="dc">
+                                            <button
+                                                @click="goto(i)"
+                                                :class="{
+                                                    'w-40': index == i,
+                                                    'w-10': index != i
+                                                }"
+                                                class="db h-100 p0 bg-violet-5 br3 bn transition-small"
+                                            >
+                                                <span class="clip"
+                                                    >Slide
+                                                    <span x-text="i"></span
+                                                ></span>
+                                            </button>
+                                        </li>
+                                    </template>
+                                </ul>
+                                <button
+                                    @click="next()"
+                                    :disabled="index == slides.length - 1"
+                                    :class="{
+                                        'o-50': index == slides.length - 1
+                                    }"
+                                    class="p2 bg-transparent ba br-100 transition-small"
+                                >
+                                    next
+                                    <span aria-hidden="true">⇢</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </article>
             </section>
 
@@ -324,7 +430,7 @@
                         </div>
                     </article>
                     <article
-                        class="sticky top-0 col-full col-4-m white p4 bg-violet-10 ba br4 aspect-ratio-square"
+                        class="sticky top-0 col-full col-4-m white p4 mt6 bg-violet-10 ba br4 aspect-ratio-square"
                     >
                         <div class="violet-5">
                             <h3 class="f1 i m0">Security & Caching</h3>
@@ -343,7 +449,7 @@
                         </div>
                     </article>
                     <article
-                        class="sticky top-0 col-full col-4-m white p4 bg-violet-10 ba br4 aspect-ratio-square"
+                        class="sticky top-0 col-full col-4-m white p4 mt7 bg-violet-10 ba br4 aspect-ratio-square"
                     >
                         <div class="violet-5">
                             <h3 class="f1 i m0">MODX</h3>
