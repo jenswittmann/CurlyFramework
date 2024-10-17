@@ -288,7 +288,7 @@
                         <h3 class="sticky top-0 f4 lh-title m0">Slider</h3>
                     </div>
                     <div
-                        class="start-1 start-4-m end-last flex flex-column justify-center items-center p4 bg-violet-10 br4 aspect-ratio-16x9"
+                        class="start-1 start-4-m end-last flex flex-column justify-center items-center ph1 pv3 p6-m bg-violet-10 br4"
                     >
                         <div
                             x-data="{
@@ -321,7 +321,7 @@
                                     this.$refs.slider.scrollLeft = this.$refs.slider.offsetWidth * i;
                                 }
                             }"
-                            class="flex flex-column w-70"
+                            class="flex flex-column w-90 w-70-m"
                         >
                             <div>
                                 <button
@@ -400,6 +400,122 @@
                                 </button>
                             </div>
                         </div>
+                    </div>
+                </article>
+                <article class="dc">
+                    <div class="start-1 end-last end-4-m">
+                        <h3 class="sticky top-0 f4 lh-title m0">Filter</h3>
+                    </div>
+                    <div
+                        class="start-1 start-4-m end-last flex flex-column justify-center items-center p3 pv4 p4-m pv6-m bg-violet-10 br4"
+                    >
+                        <section
+                            x-data="{
+                                filter: false,
+                                items: [
+                                    {
+                                        name: 'Tachyons',
+                                        categories: [
+                                            'css'
+                                        ]
+                                    },
+                                    {
+                                        name: 'Alpine.js',
+                                        categories: [
+                                            'js'
+                                        ]
+                                    },
+                                    {
+                                        name: 'CurlyFramework',
+                                        categories: [
+                                            'css',
+                                            'js'
+                                        ]
+                                    },
+                                    {
+                                        name: 'MODX CMF',
+                                        categories: [
+                                            'php'
+                                        ]
+                                    },
+                                    {
+                                        name: 'JoliTypo',
+                                        categories: [
+                                            'php'
+                                        ]
+                                    },
+                                    {
+                                        name: 'Gitify',
+                                        categories: [
+                                            'php'
+                                        ]
+                                    },
+                                    {
+                                        name: 'Grid',
+                                        categories: [
+                                            'css'
+                                        ]
+                                    },
+                                    {
+                                        name: 'A11y',
+                                        categories: [
+                                            'css'
+                                        ]
+                                    }
+                                ]
+                            }"
+                            class="w-90"
+                        >
+                            <header
+                                class="flex justify-between items-baseline g1 mb2"
+                            >
+                                <span
+                                    aria-atomic="true"
+                                    aria-live="polite"
+                                    role="status"
+                                    class="dib white ph3 bg-violet-5 br-100"
+                                >
+                                    <span class="clip">Results: </span>
+                                    <span
+                                        x-text="items.filter((item) => { return item.categories.includes(filter) || !filter }).length"
+                                    ></span>
+                                </span>
+                                <span>
+                                    <span class="dn db-m">Filter:</span>
+                                    <template
+                                        x-for="(item, i) in ['css', 'php', 'js']"
+                                    >
+                                        <button
+                                            @click="filter == item ? filter = false : filter = item"
+                                            x-text="item"
+                                            :aria-pressed="filter == item"
+                                            :class="{
+                                                'br2 br--left': i == 0,                                            
+                                                'br2 br--right': i == 2,
+                                                'white bg-violet-5': filter == item,
+                                                'bg-transparent': filter != item
+                                            }"
+                                            class="pointer ttu p2 ba"
+                                        ></button>
+                                    </template>
+                                </span>
+                            </header>
+                            <ul class="dg cols-2 cols-4-m g2 list p0 m0">
+                                <template x-for="(item, i) in items">
+                                    <li
+                                        :class="{
+                                            'o-20 rotate-180': !item.categories.includes(filter) && filter
+                                        }"
+                                        class="bg-white ba br2 aspect-ratio-square transition-medium"
+                                    >
+                                        <span
+                                            x-text="item.name"
+                                            class="flex justify-center items-center h-100 f1 hyphens-auto tc p1 p3-m"
+                                        ></span>
+                                    </li>
+                                </template>
+                            </ul>
+                        </section>
                     </div>
                 </article>
             </section>
