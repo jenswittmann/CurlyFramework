@@ -32,7 +32,7 @@
                 document.documentElement.classList.add('focus-outline');
             }
         }"
-        class="curlyframework page f2 violet-5 p4 p6-m"
+        class="curlyframework page dg cols-12 g3 f2 violet-5 p4 p6-m"
     >
         <!-- skiplinks -->
         <ul class="skiplinks">
@@ -43,334 +43,481 @@
             <li><a href="#contact">contact</a></li>
         </ul>
 
-        <main>
-            <section id="info">
-                <img
-                    src="favicon.svg"
-                    aria-hidden="true"
-                    alt=""
-                    class="db w-25 w-10-m mb5"
-                />
-                <h1 class="f4 f5-m m0">
-                    <span class="db">CurlyFramework</span>
-                    <span class="db f3 mv3 mv5-m">
-                        Personal framework for more accessibility and
-                        sustainability, not just for MODX.
-                    </span>
-                </h1>
+        <main class="dc">
+            <section id="info" class="dc">
+                <span class="start-1 end-4 end-2-m relative">
+                    <img
+                        src="favicon.svg"
+                        width="50"
+                        height="50"
+                        alt="CurlyFramework Logo"
+                        class="db w-100 h-inherit"
+                    />
+                    <span class="cooking"></span>
+                    <style>
+                        .cooking {
+                            position: absolute;
+                            top: 0;
+                            left: 15%;
+                            display: block;
+                            width: 10%;
+                            background-color: rgba(0, 0, 0, 0.3);
+                            border-radius: 50%;
+                            filter: blur(5px);
+                            transform: translateY(0) scaleX(1);
+                            opacity: 0;
+                            aspect-ratio: 1/2;
+                            animation: cooking 3s infinite;
+                        }
 
-                <p class="mv3 mv5-m">
-                    <span class="clip">Installation: </span>
-                    <span class="dib ph3 mb2 bg-gray-10 br4">
-                        $ npm i curlyframework
-                    </span>
-                    &
+                        @keyframes cooking {
+                            0% {
+                                transform: translateY(0) scaleX(1);
+                                opacity: 0;
+                            }
+                            25% {
+                                opacity: 1;
+                            }
+                            50% {
+                                transform: translateY(-1rem) scaleX(2);
+                            }
+                            90% {
+                                opacity: 0;
+                            }
+                            100% {
+                                transform: translateY(-2rem) scaleX(1);
+                            }
+                        }
+                    </style>
+                </span>
+                <h1
+                    class="start-4 end-last end-6-m f1 f4-m lh-title tr tl-m m0"
+                >
+                    CurlyFramework
+                </h1>
+                <p
+                    class="start-1 start-4-m end-last db f3 f5-m lh-title mt3 mb4"
+                >
+                    Tiny Framework for accessibility and sustainability, not
+                    only for
+                    <a href="https://modx.com" target="_blank" class="bb">
+                        MODX</a
+                    >. Based on
+                    <a
+                        href="https://github.com/jenswittmann/tachyons"
+                        target="_blank"
+                        class="bb"
+                        >Tachyons</a
+                    >, powered by
+                    <a href="http://alpinejs.dev" target="_blank" class="bb"
+                        >Alpine.js</a
+                    >
+                    and flavoured with lessons learned over the years.
+                </p>
+                <div class="start-1 end-3">
+                    <a href="#tips" class="f3 nowrap ph3 pv1 ba br-100">
+                        Docs <span aria-hidden="true">⇣</span>
+                    </a>
+                </div>
+                <div class="start-6 start-9-m end-11">
                     <a
                         href="https://github.com/jenswittmann/CurlyFramework"
                         rel="noreferrer"
                         target="_blank"
-                        class="dib ph3 bg-gray-10 br4"
+                        class="f3 nowrap ph3 pv1 ba br-100"
                     >
-                        Github</a
-                    >
-                </p>
+                        Github <span aria-hidden="true">⇢</span>
+                    </a>
+                </div>
             </section>
 
-            <section id="tips">
-                <h2 class="f3 pv3 mt7 mb5 bb bw2">
+            <section class="dc">
+                <div id="tips" class="col-full mt6"></div>
+                <h2 class="start-1 end-10 end-5-m f2 f4-m lh-title m0">
                     Better accessibility and sustainability in web development?
                 </h2>
-                <p class="w-60-m">
-                    It doesn't need a complete relaunch, small steps can also
-                    help to reach the goal. I recommend the talk by
-                    <a
-                        href="https://css-irl.info/video-building-a-greener-web/"
-                        rel="noreferrer"
-                        target="_blank"
-                        class="bb"
-                        >Michelle Barker "Building a greener web" at "All Day
-                        Hey! 2023"</a
-                    >.
-                </p>
-                <h3 class="f2 mt5 mb3">Tips</h3>
-                <ul>
-                    <li>Use WebP and lazyload (images, embeds).</li>
-                    <li>
-                        Use less fonts and try to use variable fonts (.woff2).
-                    </li>
-                    <li>Only load embeds on user interaction.</li>
-                    <li>Test keyboard navigation.</li>
-                    <li>
-                        Seek community to test and discuss accessibility and
-                        sustainability with real people.
-                    </li>
-                </ul>
+                <div class="start-1 start-6-m end-last f1 f2-m">
+                    <p class="m0">
+                        It doesn't have to be a complete overhaul, small steps
+                        can help you get there. I recommend Michelle Barker's
+                        talk "<a
+                            href="https://css-irl.info/video-building-a-greener-web/"
+                            rel="noreferrer"
+                            target="_blank"
+                            class="bb"
+                            >Building a greener web</a
+                        >" at "All Day Hey! 2023". Here are some tips:
+                    </p>
+                    <ul style="list-style-type: '⇢ '">
+                        <li>Use WebP and native lazyload (images, embeds).</li>
+                        <li>
+                            Use fewer fonts and try to use variable fonts
+                            (.woff2).
+                        </li>
+                        <li>Load embeds only on user interaction.</li>
+                        <li>Test keyboard navigation.</li>
+                        <li>
+                            Find a community to test and discuss accessibility
+                            and sustainability with real people.
+                        </li>
+                    </ul>
+                </div>
             </section>
 
-            <section id="samples">
-                <h2 class="f3 mt7 mb3">Samples</h2>
-
-                <article
-                    x-data="{
-                        open: false
-                    }"
-                    class="pv5 bt bw2"
-                >
-                    <button
-                        @click="open = true"
-                        :aria-expanded="open"
-                        aria-controls="popup"
-                        class="btn white ph3 pv2 bg-violet-5 bn br4"
-                    >
-                        Open modal
-                    </button>
-
+            <section class="dc">
+                <div id="samples" class="col-full mt6"></div>
+                <h2 class="start-1 start-4-m end-last f5">Samples</h2>
+                <article class="dc">
+                    <div class="start-1 end-last end-4-m">
+                        <h3 class="sticky top-0 f4 lh-title m0">Modal</h3>
+                    </div>
                     <div
-                        x-cloak
-                        x-trap.inert.noscroll="open"
-                        @keyup.escape.window="open = false"
-                        :hidden="!open"
-                        id="popup"
-                        aria-modal="true"
-                        role="dialog"
-                        class="fixed top-0 left-0 right-0 bottom-0 z-max p4 bg-blur"
+                        class="start-1 start-4-m end-last flex flex-column justify-center items-center p4 bg-violet-10 br4 aspect-ratio-16x9"
                     >
                         <div
-                            class="flex justify-center items-center w-100 h-100"
+                            x-data="{
+                                open: false
+                            }"
+                            class="dc"
                         >
-                            <div
-                                class="w-90 w-50-m p3 p5-m m3 m4-m bg-white br4 shadow-4"
+                            <button
+                                @click="open = true"
+                                :aria-expanded="open"
+                                aria-controls="popup"
+                                class="btn pointer p0 bg-transparent bn bb"
                             >
-                                <img
-                                    src="favicon.svg"
-                                    aria-hidden="true"
-                                    alt=""
-                                    class="db w-25 w-10-m mb5"
-                                />
-                                <p>
-                                    The script also takes care of the focus so
-                                    that it remains so that it remains in the
-                                    open window. Here is a
-                                    <a
-                                        href="https://jens-wittmann.de"
-                                        rel="noreferrer"
-                                        target="_blank"
-                                        >Example link</a
-                                    >
-                                    to the test.
-                                </p>
-                                <button
-                                    @click="open = false"
-                                    class="btn white ph3 pv2 bg-violet-5 bn br4"
+                                <span class="bb"
+                                    >open
+                                    <span aria-hidden="true">⇢</span></span
                                 >
-                                    Close example
-                                </button>
+                            </button>
+
+                            <div
+                                x-cloak
+                                x-trap.inert.noscroll="open"
+                                x-show="open"
+                                @keyup.escape.window="open = false"
+                                id="popup"
+                                aria-modal="true"
+                                role="dialog"
+                                class="fixed top-0 left-0 right-0 bottom-0 z-max flex justify-end"
+                            >
+                                <div
+                                    @click="open = false"
+                                    class="absolute top-0 left-0 right-0 bottom-0 bg-blur"
+                                ></div>
+                                <div
+                                    class="relative w-80 w-third-m white p3 p5-m bg-violet-5"
+                                >
+                                    <p>
+                                        The script also takes care of the focus
+                                        so that it stays in the modal. Here is a
+                                        <a
+                                            href="https://jens-wittmann.de"
+                                            rel="noreferrer"
+                                            target="_blank"
+                                            >example link</a
+                                        >
+                                        to the test. You can also close it with
+                                        the Escape key.
+                                    </p>
+                                    <button
+                                        @click="open = false"
+                                        class="btn pointer p0 bg-transparent bn bb"
+                                    >
+                                        <span class="bb"
+                                            >close
+                                            <span aria-hidden="true"
+                                                >×</span
+                                            ></span
+                                        >
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </article>
-
-                <article
-                    x-data="{
-                        open: false
-                    }"
-                    class="pv5 bt"
-                >
-                    <button
-                        @click="open = !open"
-                        :aria-expanded="open"
-                        aria-controls="accordion"
-                        class="pointer b p0 bg-transparent bn"
+                <article class="dc">
+                    <div class="start-1 end-last end-4-m">
+                        <h3 class="sticky top-0 f4 lh-title m0">Accordion</h3>
+                    </div>
+                    <div
+                        class="start-1 start-4-m end-last flex flex-column justify-center items-center p4 bg-violet-10 br4 aspect-ratio-16x9"
                     >
-                        <span
-                            x-text="open ? '-' : '+'"
-                            aria-hidden="true"
-                        ></span>
-                        Accordion
-                    </button>
-
-                    <p x-cloak x-collapse x-show="open" id="accordion">
-                        Simple Answer for the Accordion.
-                    </p>
+                        <template x-for="i in 3">
+                            <div
+                                x-data="{
+                                    open: false
+                                }"
+                                :class="{
+                                    'br4 br--top': i == 1,
+                                    'br4 br--bottom': i == 3
+                                }"
+                                class="w-100 w-50-m mb1 ba"
+                            >
+                                <button
+                                    @click="open = !open"
+                                    :aria-expanded="open"
+                                    aria-controls="accordion"
+                                    class="pointer flex justify-between w-100 p2 bg-transparent bn"
+                                >
+                                    <span
+                                        >Accordion <span x-text="i"></span
+                                    ></span>
+                                    <span
+                                        :class="{
+                                            'rotate-180': open
+                                        }"
+                                        aria-hidden="true"
+                                        class="transition-small"
+                                        >⇣</span
+                                    >
+                                </button>
+                                <p
+                                    x-cloak
+                                    x-collapse
+                                    x-show="open"
+                                    id="accordion"
+                                    class="p2 m0 bt"
+                                >
+                                    Simple Answer for the Accordion.
+                                </p>
+                            </div>
+                        </template>
+                    </div>
                 </article>
-
-                <article class="pv4 bt">
-                    <p>
-                        All elements scale if desired via the class
-                        <a
-                            href="https://github.com/jenswittmann/CurlyFramework/blob/5dccbe6ab4a80a21290b8dc3b3c0e01382994c56/dev/css/_styling.scss#L7-L13"
-                            rel="noreferrer"
-                            target="_blank"
-                            class="bb"
-                            >.scale-content</a
-                        >
-                        in the HTML node proportionally. Together with the CSS
-                        Grid and the classes for the responsive font a super
-                        basis for design presets from Figma (Adobe XD) and
-                        zeplin.io.
-                    </p>
-                </article>
-
-                <article class="pv4 bt">
-                    <p>
-                        The
-                        <a
-                            href="https://github.com/jenswittmann/CurlyFramework/blob/6.0.0/.htaccess"
-                            rel="noreferrer"
-                            target="_blank"
-                            class="bb"
-                            >.htaccess</a
-                        >
-                        has been extended with caching and security settings.
-                        Together with ContentBlocks from modmore, you can create
-                        a flexible website builder with 100% code control. The file
-                        <a
-                            href="https://github.com/jenswittmann/CurlyFramework/blob/6.0.0/dev/css/modx.scss"
-                            rel="noreferrer"
-                            target="_blank"
-                            class="bb"
-                            >modx.css</a
-                        >
-                        brings a minimalistic layout for the MODX Manager
-                        backend.
-                    </p>
+                <article class="dc">
+                    <div class="start-1 end-last end-4-m">
+                        <h3 class="sticky top-0 f4 lh-title m0">
+                            Slider <sup>Todo</sup>
+                        </h3>
+                    </div>
+                    <div
+                        class="start-1 start-4-m end-last flex flex-column justify-center items-center p4 bg-violet-10 br4 aspect-ratio-16x9"
+                    ></div>
                 </article>
             </section>
-            <section id="installation">
-                <h2 class="f3 pv3 mt7 mb5 bb bw2">Installation</h2>
-                <ul>
-                    <li>
-                        Get it via
-                        <span class="dib f1 ph3 mb2 bg-gray-10 br4">
-                            $ git clone git@github.com:jenswittmann/<wbr />CurlyFramework.git
-                        </span>
-                        or use
-                        <span class="dib f1 ph3 mb2 bg-gray-10 br4">
-                            $ npm i curlyframework
-                        </span>
-                        (as npm dependency).
-                    </li>
-                    <li>Link CSS/JS files in your markup.</li>
-                    <li>
-                        Overwrite CSS via custom properties and use inline JS
-                        via AlpineJS.
-                    </li>
-                </ul>
-                <h3 class="f2 mt5 mb3">Need more?</h3>
-                <ul>
-                    <li>
-                        Install dependency
-                        <span class="dib f1 ph3 mb2 bg-gray-10 br4">
-                            $ npm i
-                        </span>
-                    </li>
-                    <li>
-                        Use
-                        <a
-                            href="https://codekitapp.com/"
-                            rel="noreferrer"
-                            target="_blank"
-                            class="bb"
-                            >CodeKit</a
-                        >
-                        or
-                        <a
-                            href="https://esbuild.github.io/"
-                            rel="noreferrer"
-                            target="_blank"
-                            class="bb"
-                            >esbuild</a
-                        >
-                        (need custom config) to compile your assets.
-                    </li>
-                    <li>Play around, learn and share.</li>
-                </ul>
-            </section>
-            <section>
-                <h2 class="f3 pv3 mt7 mb5 bb bw2">
-                    Thank you for the inspirations
-                </h2>
 
-                <ul>
-                    <li>
-                        <a
-                            href="https://alpinejs.dev/"
-                            rel="noreferrer"
-                            target="_blank"
-                            class="bb"
-                            >alpine.js</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="https://tachyons.io/"
-                            rel="noreferrer"
-                            target="_blank"
-                            class="bb"
-                            >tachyons.io</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="https://www.barrierefreies-webdesign.de/"
-                            rel="noreferrer"
-                            target="_blank"
-                            class="bb"
-                            >barrierefreies-webdesign.de</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="https://modx.com/"
-                            rel="noreferrer"
-                            target="_blank"
-                            class="bb"
-                            >modx.com</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="https://modmore.com/contentblocks"
-                            rel="noreferrer"
-                            target="_blank"
-                            class="bb"
-                            >modmore.com/contentblocks</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="https://github.com/modmore/Gitify/"
-                            rel="noreferrer"
-                            target="_blank"
-                            class="bb"
-                            >github.com/modmore/Gitify</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="https://afarkas.github.io/lazysizes"
-                            rel="noreferrer"
-                            target="_blank"
-                            class="bb"
-                            >afarkas.github.io/lazysizes</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="https://www.dzblesen.de/"
-                            rel="noreferrer"
-                            target="_blank"
-                            class="bb"
-                            >dzblesen.de</a
-                        >
-                    </li>
-                </ul>
+            <section id="samples" class="dc">
+                <div class="col-full mt6"></div>
+                <h2 class="start-1 start-4-m end-last f5">Features</h2>
+                <div class="col-full subgrid">
+                    <article
+                        class="sticky top-0 col-full col-4-m white p4 bg-violet-10 ba br4 aspect-ratio-square"
+                    >
+                        <div class="violet-5">
+                            <h3 class="f1 i m0">Fluid Scale</h3>
+                            <p>
+                                All elements can be scaled using the
+                                <a
+                                    href="https://github.com/jenswittmann/CurlyFramework/blob/5dccbe6ab4a80a21290b8dc3b3c0e01382994c56/dev/css/_styling.scss#L7-L13"
+                                    rel="noreferrer"
+                                    target="_blank"
+                                    class="bb"
+                                    >.scale-content</a
+                                >
+                                in the HTML node. Together with the CSS grid and
+                                responsive font classes, this is a great basis
+                                for basis for design presets from Figma (Adobe
+                                XD) and zeplin.io.
+                            </p>
+                        </div>
+                    </article>
+                    <article
+                        class="sticky top-0 col-full col-4-m white p4 bg-violet-10 ba br4 aspect-ratio-square"
+                    >
+                        <div class="violet-5">
+                            <h3 class="f1 i m0">Security & Caching</h3>
+                            <p>
+                                The
+                                <a
+                                    href="https://github.com/jenswittmann/CurlyFramework/blob/6.0.0/.htaccess"
+                                    rel="noreferrer"
+                                    target="_blank"
+                                    class="bb"
+                                    >.htaccess</a
+                                >
+                                has been extended to include caching and
+                                security settings.
+                            </p>
+                        </div>
+                    </article>
+                    <article
+                        class="sticky top-0 col-full col-4-m white p4 bg-violet-10 ba br4 aspect-ratio-square"
+                    >
+                        <div class="violet-5">
+                            <h3 class="f1 i m0">MODX</h3>
+                            <p>
+                                Together with
+                                <a
+                                    href="https://modmore.com/contentblocks/"
+                                    rel="noreferrer"
+                                    target="_blank"
+                                    class="bb"
+                                    >Content Blocks</a
+                                >
+                                From Modmore you can create a flexible website
+                                builder with 100% code control. The file
+                                <a
+                                    href="https://github.com/jenswittmann/CurlyFramework/blob/6.0.0/dev/css/modx.scss"
+                                    rel="noreferrer"
+                                    target="_blank"
+                                    class="bb"
+                                    >modx.css</a
+                                >
+                                brings a minimalist layout to the MODX Manager
+                                backend.
+                            </p>
+                            <p>
+                                Interested in MODX? Have a look at
+                                <a
+                                    href="https://github.com/jenswittmann/JoliTypo"
+                                    rel="noreferrer"
+                                    target="_blank"
+                                    class="bb"
+                                    >JoliTypo</a
+                                >
+                                and
+                                <a
+                                    href="https://github.com/jenswittmann/MODX-Gitify-Preset"
+                                    rel="noreferrer"
+                                    target="_blank"
+                                    class="bb"
+                                    >Gitify-Preset</a
+                                >.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="dc">
+                <div id="installation" class="col-full mt6"></div>
+                <h2 class="start-1 start-4-m end-last f5">Get it</h2>
+                <div class="col-full subgrid g1">
+                    <div class="col-full col-6-m p4 ba br4 br--top br--left-m">
+                        <h3 class="f1 i m0">Get the latest version</h3>
+                        <p>
+                            <span class="p2 bg-violet-10 br2"
+                                >git clone git@<wbr />github.com:jenswittmann/<wbr />CurlyFramework.git</span
+                            >
+                            <span class="db">or</span>
+                            <span class="p2 bg-violet-10 br2"
+                                >npm i curlyframework</span
+                            >
+                        </p>
+                        <p>
+                            Include the CSS and JS files in your markup and you
+                            are ready to go! Override the CSS settings using
+                            custom properties and use inline JS via AlpineJS to
+                            skip the build process.
+                        </p>
+                    </div>
+                    <div
+                        class="col-full col-6-m p4 ba br4 br--bottom br--right-m"
+                    >
+                        <h3 class="f1 i m0">Need more?</h3>
+                        <p>
+                            Install dependency via
+                            <span class="p2 bg-violet-10 br2">npm i</span> and
+                            use
+                            <a
+                                href="https://codekitapp.com/"
+                                rel="noreferrer"
+                                target="_blank"
+                                class="bb"
+                                >CodeKit</a
+                            >
+                            (or
+                            <a
+                                href="https://esbuild.github.io/"
+                                rel="noreferrer"
+                                target="_blank"
+                                class="bb"
+                                >esbuild</a
+                            >
+                            with custom config) to compile your assets. Play
+                            around, learn and share.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="dc">
+                <div id="contact" class="col-full mt6"></div>
+                <div class="col-full col-4-m p4">
+                    <h2 class="start-4 end-last f1">Thank you</h2>
+                    <ul class="list p0">
+                        <li>
+                            <a
+                                href="https://alpinejs.dev/"
+                                rel="noreferrer"
+                                target="_blank"
+                                class="bb"
+                                >alpine.js</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://tachyons.io/"
+                                rel="noreferrer"
+                                target="_blank"
+                                class="bb"
+                                >tachyons.io</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://www.barrierefreies-webdesign.de/"
+                                rel="noreferrer"
+                                target="_blank"
+                                class="bb"
+                                >barrierefreies-webdesign.de</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://modx.com/"
+                                rel="noreferrer"
+                                target="_blank"
+                                class="bb"
+                                >modx.com</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://modmore.com/contentblocks"
+                                rel="noreferrer"
+                                target="_blank"
+                                class="bb"
+                                >modmore.com/contentblocks</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://github.com/modmore/Gitify/"
+                                rel="noreferrer"
+                                target="_blank"
+                                class="bb"
+                                >github.com/modmore/Gitify</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://www.dzblesen.de/"
+                                rel="noreferrer"
+                                target="_blank"
+                                class="bb"
+                                >dzblesen.de</a
+                            >
+                        </li>
+                    </ul>
+                </div>
             </section>
         </main>
 
-        <footer class="foot">
-            <h2 id="contact" class="f3 pv3 mt7 mb5 bb bw2">Contact</h2>
-
+        <footer class="col-full col-4-m p4">
+            <h2 class="f1">Contact</h2>
             <p>
                 Questions and comments gladly via
                 <a
@@ -388,8 +535,7 @@
                     >jens-wittmann.de</a
                 >.
             </p>
-
-            <p class="mt7">
+            <p>
                 <a
                     href="https://jens-wittmann.de/#kontakt"
                     rel="noreferrer"
