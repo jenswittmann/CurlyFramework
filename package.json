@@ -1,45 +1,37 @@
 {
-  "description" : "Personal framework for more accessibility and sustainability, not just for MODX.",
-  "devDependencies" : {
-
-  },
-  "dependencies" : {
-    "postcss-custom-media" : "^11.0.3",
-    "cssnano" : "^7.0.1",
-    "tachyons" : "git+ssh:\/\/git@github.com:jenswittmann\/tachyons.git",
-    "@alpinejs\/intersect" : "^3.10.3",
-    "@alpinejs\/focus" : "^3.10.3",
-    "alpinejs" : "^3.10.3",
-    "@alpinejs\/collapse" : "^3.13.10"
-  },
-  "scripts" : {
-
-  },
-  "author" : "Jens Wittmann",
-  "main" : "index.html",
-  "repository" : {
-
-  },
-  "license" : "GPL-3.0",
-  "name" : "curlyframework",
-  "keywords" : [
-    "curlyframework",
-    "a11y",
-    "sustainability",
-    "carbon-footprint",
-    "alpinejs",
-    "modx",
-    "aria",
-    "jens wittmann",
-    "modmore",
-    "contentblocks",
-    "gitify",
-    "accessibility",
-    "css grid",
-    "leipzig"
-  ],
-  "version" : "7.2.0",
-  "optionalDependencies" : {
-
-  }
+    "description": "Personal framework for more accessibility and sustainability, not just for MODX.",
+    "devDependencies": {},
+    "dependencies": {
+        "postcss-custom-media": "^11.0.3",
+        "cssnano": "^7.0.1",
+        "tachyons": "git+ssh://git@github.com:jenswittmann/tachyons.git",
+        "@alpinejs/intersect": "^3.10.3",
+        "@alpinejs/focus": "^3.10.3",
+        "alpinejs": "^3.10.3",
+        "@alpinejs/collapse": "^3.13.10"
+    },
+    "scripts": {},
+    "author": "Jens Wittmann",
+    "main": "index.html",
+    "repository": {},
+    "license": "GPL-3.0",
+    "name": "curlyframework",
+    "keywords": [
+        "curlyframework",
+        "a11y",
+        "sustainability",
+        "carbon-footprint",
+        "alpinejs",
+        "modx",
+        "aria",
+        "jens wittmann",
+        "modmore",
+        "contentblocks",
+        "gitify",
+        "accessibility",
+        "css grid",
+        "leipzig"
+    ],
+    "version": "7.3.0",
+    "optionalDependencies": {}
 }
