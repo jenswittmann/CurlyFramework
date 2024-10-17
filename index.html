@@ -246,6 +246,7 @@
                                 x-data="{
                                     open: false
                                 }"
+                                x-id="['accordion']"
                                 :class="{
                                     'br4 br--top': i == 1,
                                     'br4 br--bottom': i == 3
@@ -255,7 +256,7 @@
                                 <button
                                     @click="open = !open"
                                     :aria-expanded="open"
-                                    aria-controls="accordion"
+                                    :aria-controls="$id('accordion')"
                                     class="pointer flex justify-between w-100 p2 bg-transparent bn"
                                 >
                                     <span
@@ -274,7 +275,7 @@
                                     x-cloak
                                     x-collapse
                                     x-show="open"
-                                    id="accordion"
+                                    :id="$id('accordion')"
                                     class="p2 m0 bt"
                                 >
                                     Simple Answer for the Accordion.
@@ -351,7 +352,7 @@
                                         }"
                                         x-intersect.half="visible = true; index = i"
                                         x-intersect:leave.half="visible = false"
-                                        :aria-hiden="!visible"
+                                        :aria-hidden="!visible"
                                         class="scrollsnap__item flex-auto-1-0 w-100"
                                     >
                                         <div
@@ -364,8 +365,8 @@
                             <div class="flex justify-between">
                                 <ul
                                     aria-label="slider legend"
-                                    class="list flex g2 w-30 p0"
-                                    style="height: 0.5rem"
+                                    class="list flex g2 w-60 p0"
+                                    style="height: 1rem"
                                 >
                                     <template
                                         x-for="(text, i) in slides.length"
@@ -377,7 +378,7 @@
                                                     'w-40': index == i,
                                                     'w-10': index != i
                                                 }"
-                                                class="db h-100 p0 bg-violet-5 br3 bn transition-small"
+                                                class="db h-100 p0 bg-violet-7 br3 bn transition-small"
                                             >
                                                 <span class="clip"
                                                     >Slide
