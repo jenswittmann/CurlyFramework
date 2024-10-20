@@ -287,6 +287,50 @@
                 </article>
                 <article class="dc">
                     <div class="start-1 end-last end-4-m">
+                        <h3 class="sticky top-0 f4 lh-title m0">
+                            Accordion
+                            <sup class="f1 violet-7">&lt;details&gt;</sup>
+                        </h3>
+                    </div>
+                    <div
+                        class="start-1 start-4-m end-last flex flex-column justify-center items-center p4 bg-violet-10 br4 aspect-ratio-16x9"
+                    >
+                        <template x-for="i in 3">
+                            <details
+                                x-data="{
+                                    open: false
+                                }"
+                                @toggle="open = $el.open"
+                                :class="{
+                                    'br4 br--top': i == 1,
+                                    'br4 br--bottom': i == 3
+                                }"
+                                class="w-100 w-50-m mb1 ba"
+                            >
+                                <summary
+                                    class="pointer flex justify-between w-100 p2 bg-transparent bn"
+                                >
+                                    <span
+                                        >Accordion <span x-text="i"></span
+                                    ></span>
+                                    <span
+                                        :class="{
+                                            'rotate-180': open
+                                        }"
+                                        aria-hidden="true"
+                                        class="transition-small"
+                                        >⇣</span
+                                    >
+                                </summary>
+                                <p x-collapse x-show="open" class="p2 m0 bt">
+                                    Simple Answer for the Accordion.
+                                </p>
+                            </details>
+                        </template>
+                    </div>
+                </article>
+                <article class="dc">
+                    <div class="start-1 end-last end-4-m">
                         <h3 class="sticky top-0 f4 lh-title m0">Slider</h3>
                     </div>
                     <div
