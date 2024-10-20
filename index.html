@@ -237,6 +237,76 @@
                 </article>
                 <article class="dc">
                     <div class="start-1 end-last end-4-m">
+                        <h3 class="sticky top-0 f4 lh-title m0">
+                            Modal <sup class="f1 violet-7">[popover]</sup>
+                        </h3>
+                    </div>
+                    <div
+                        class="start-1 start-4-m end-last flex flex-column justify-center items-center p4 bg-violet-10 br4 aspect-ratio-16x9"
+                    >
+                        <div
+                            x-data="{
+                            open: false
+                        }"
+                            class="dc"
+                        >
+                            <button
+                                popovertarget="popup2"
+                                class="btn pointer p0 bg-transparent bn bb"
+                            >
+                                <span class="bb"
+                                    >open
+                                    <span aria-hidden="true">⇢</span></span
+                                >
+                            </button>
+                            <div
+                                x-trap.inert.noscroll="open"
+                                @toggle="open = $event.newState == 'open'"
+                                id="popup2"
+                                aria-modal="true"
+                                class="w-100 h-100 bg-transparent bn"
+                                popover
+                            >
+                                <button
+                                    tabindex="-1"
+                                    popovertarget="popup2"
+                                    popovertargetaction="hide"
+                                    class="fixed top-0 left-0 right-0 bottom-0 bg-transparent bg-blur"
+                                ></button>
+                                <div
+                                    class="fixed top-0 right-0 bottom-0 z-max w-80 w-third-m white p3 p5-m bg-violet-5"
+                                >
+                                    <p>
+                                        The script also takes care of the focus
+                                        so that it stays in the modal. Here is a
+                                        <a
+                                            href="https://jens-wittmann.de"
+                                            rel="noreferrer"
+                                            target="_blank"
+                                            >example link</a
+                                        >
+                                        to the test. You can also close it with
+                                        the Escape key.
+                                    </p>
+                                    <button
+                                        popovertarget="popup2"
+                                        popovertargetaction="hide"
+                                        class="btn pointer p0 bg-transparent bn bb"
+                                    >
+                                        <span class="bb"
+                                            >close
+                                            <span aria-hidden="true"
+                                                >×</span
+                                            ></span
+                                        >
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="dc">
+                    <div class="start-1 end-last end-4-m">
                         <h3 class="sticky top-0 f4 lh-title m0">Accordion</h3>
                     </div>
                     <div
