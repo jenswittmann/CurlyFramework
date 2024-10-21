@@ -9,6 +9,14 @@
   ],
   "creatorBuild" : "34576",
   "files" : {
+    "\/.github\/dependabot.yml" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/.github\/dependabot.yml",
+      "oF" : 0
+    },
     "\/.github\/workflows\/npm-publish.yml" : {
       "cB" : 0,
       "ft" : 8192,
