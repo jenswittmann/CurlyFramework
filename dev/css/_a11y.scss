@@ -28,3 +28,12 @@
         transition-duration: 0 !important;
     }
 }
+
+// focus highlight
+// thanks to https://www.oidaisdes.org/de/two-color-focus-indicator.de/
+*:focus-visible,
+.focus-visible {
+    outline: 3px #fff solid;
+    outline-offset: 0;
+    box-shadow: 0 0 0 5px #000;
+}
