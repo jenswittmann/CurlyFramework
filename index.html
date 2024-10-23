@@ -649,6 +649,258 @@
                         </div>
                     </div>
                 </article>
+                <article class="dc">
+                    <div class="start-1 end-last end-4-m">
+                        <h3 class="sticky top-0 f4 lh-title m0">
+                            Form <sup class="f1">accessible upload</sup>
+                        </h3>
+                    </div>
+                    <div
+                        class="start-1 start-4-m end-last flex flex-column justify-center items-center p3 pv4 p4-m pv5-m bg-violet-10 br4"
+                    >
+                        <form
+                            x-data="{             
+                                is_uploading: false,
+                                is_uploaderror: false,
+                                is_disabled: false,
+                                data: false,
+                                progress: 0,
+                                        
+                                resetData() {
+                                    this.is_uploading = false;
+                                    this.is_uploaderror = false;
+                                    this.data = false;
+                                    this.progress = 0;
+                                    this.$refs.photoupload.value = '';
+                                    this.$refs.photourl.value = '';
+                                },
+                                
+                                async upload() {
+                                    let field = this.$refs.photoupload,
+                                        file = field.files[0],
+                                        formData = new FormData(),
+                                        xhr = new XMLHttpRequest();
+                                    if (!file) {
+                                        return;
+                                    }
+                                    this.is_uploading = true;
+                                    formData.append('file', file, file.name);
+                                    xhr.upload.addEventListener('progress', (el) => {
+                                        this.progress = Math.round(el.loaded / el.total * 100);
+                                    });
+                                    xhr.open('GET', 'demo/upload.json', true);
+                                    // LIVE: xhr.open('POST', 'demo/upload.json', true);
+                                    xhr.onload = (e) => {
+                                        let res = JSON.parse(xhr.response);
+                                        this.data = {
+                                            url: res.url,
+                                            name: res.name
+                                        };
+                                        this.progress = false;
+                                        this.is_uploading = false;
+                                        if (!this.data.url) {          
+                                            this.resetData();              
+                                            this.is_uploaderror = true;
+                                        } else {
+                                            this.is_uploaderror = false;
+                                        }
+                                    };
+                                    xhr.send(formData);
+                                },
+                                
+                                async send() {
+                                    let formData = new FormData($el),
+                                        xhr = new XMLHttpRequest();
+                                    this.is_disabled = true;
+                                    xhr.open('POST', $el.getAttribute('action'), true);
+                                    xhr.onload = (e) => {
+                                        var parser = new DOMParser(),
+                                            response = parser.parseFromString(xhr.response, 'text/html'),
+                                            messageQueryselector = '.form__message',
+                                            messageEl = $el.querySelector(messageQueryselector),
+                                            responseMessage = response.querySelector(messageQueryselector);
+                                        document.documentElement.classList.add('smooth-scroll');
+                                        messageEl.innerHTML = responseMessage.innerHTML;
+                                        messageEl.setAttribute('tabindex', 0);
+                                        this.$focus.focus(messageEl);
+                                        this.is_disabled = false;
+                                    };
+                                    xhr.send(formData);                 
+                                }
+                            }"
+                            @submit.prevent="send()"
+                            id="form"
+                            action="#form"
+                            method="post"
+                            class="form w-100 w-70-m"
+                        >
+                            <div
+                                aria-atomic="true"
+                                aria-live="polite"
+                                role="status"
+                                class="form__message"
+                            >
+                                <p class="b white p2 bg-violet-5 br2">Error</p>
+                                <p class="b p2 bg-white br2">Success</p>
+                            </div>
+
+                            <div class="form__item">
+                                <label for="surname" class="form__label">
+                                    Name
+                                    <span aria-hidden="true">*</span>
+                                    <span class="clip">(Pflichtfeld)</span>
+                                </label>
+                                <div class="form__field form__field--input">
+                                    <input
+                                        type="text"
+                                        name="surname"
+                                        id="surname"
+                                        required
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="form__item">
+                                <label for="email" class="form__label"
+                                    >Email
+                                    <span aria-hidden="true">*</span>
+                                    <span class="clip">(Pflichtfeld)</span>
+                                </label>
+                                <div class="form__field form__field--input">
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        id="email"
+                                        required
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="form__item">
+                                <label for="message" class="form__label"
+                                    >Message
+                                </label>
+                                <div class="form__field form__field--textarea">
+                                    <textarea
+                                        name="message"
+                                        id="message"
+                                        class="form__field form__field--textarea"
+                                    ></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form__item">
+                                <label for="photoupload" class="form__label"
+                                    >Photo
+                                    <sup class="white ph3 bg-violet-5 br-100"
+                                        >try it!</sup
+                                    >
+                                    <span
+                                        x-text="
+                                            if (is_uploading && !data.url) {
+                                                return 'uploading …';
+                                            }
+                                            if (is_uploaderror) {
+                                                return 'upload error.';
+                                            }
+                                            if (data.url) {
+                                                return 'upload successful.';
+                                            }
+                                        "
+                                        aria-atomic="true"
+                                        aria-live="polite"
+                                        role="status"
+                                    ></span>
+                                </label>
+                                <div x-show="progress">
+                                    <div
+                                        class="overflow-hidden w-100 mv3 bg-gray-11 br2"
+                                    >
+                                        <div
+                                            x-text="progress + '%'"
+                                            :style="'width: ' + progress + '%; height: 100%'"
+                                            class="flex justify-center items-center white bg-violet-5"
+                                        ></div>
+                                    </div>
+                                </div>
+                                <div
+                                    x-show="!is_uploading && !data.url"
+                                    class="form__field form__field--upload"
+                                >
+                                    <input
+                                        x-ref="photoupload"
+                                        x-show="!data.url"
+                                        @change="upload()"
+                                        type="file"
+                                        name="photoupload"
+                                        id="photoupload"
+                                        class="form__field form__field--upload"
+                                    />
+                                </div>
+                                <input
+                                    x-ref="photourl"
+                                    :value="data.url"
+                                    type="hidden"
+                                    name="photourl"
+                                    id="photourl"
+                                />
+                                <div x-show="data.url">
+                                    <img
+                                        :src="data.url"
+                                        alt="Photo Preview"
+                                        class="db w-50 h-inherit br2"
+                                    />
+                                    <div>
+                                        <button
+                                            @click="resetData()"
+                                            type="button"
+                                            class="btn pointer p0 bg-transparent bn bb"
+                                        >
+                                            <span class="bb"
+                                                >delete
+                                                <span aria-hidden="true"
+                                                    >×</span
+                                                ></span
+                                            >
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form__item">
+                                <div class="form__field form__field--checkbox">
+                                    <input
+                                        type="checkbox"
+                                        name="accept_gdpr"
+                                        id="accept_gdpr"
+                                        value="Ja"
+                                        required
+                                    />
+                                    <label
+                                        for="accept_gdpr"
+                                        class="form__label"
+                                    >
+                                        <span>
+                                            I agree to the use of my data.
+                                            <span aria-hidden="true">*</span>
+                                            <span class="clip"
+                                                >(Pflichtfeld)</span
+                                            >
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <button
+                                @click="document.documentElement.classList.remove('smooth-scroll')"
+                                x-text="is_disabled ? 'Sending …' : 'Submit'"
+                                :disabled="is_uploading || is_disabled"
+                                type="submit"
+                                class="pointer db p2 mt4 ml-auto mr-auto bg-transparent ba br-100"
+                            ></button>
+                        </form>
+                    </div>
+                </article>
             </section>
 
             <section id="samples" class="dc">

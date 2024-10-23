@@ -27,17 +27,6 @@
     }
 
     &__field {
-        &.error {
-            input,
-            textarea,
-            &.form__field--select {
-                &:not(:focus-within):not(:valid) {
-                    background-color: var(--yellow-11);
-                    outline-color: var(--red-5);
-                }
-            }
-        }
-
         &--input input,
         &--select select,
         &--upload input,
@@ -45,8 +34,7 @@
             width: 100%;
             padding: var(--spacing-1);
             background-color: var(--gray-11);
-            border: 0;
-            outline: var(--bw1) solid var(--gray-1);
+            border: 1px solid;
 
             @media (--breakpoint-medium) {
                 padding: var(--spacing-2);
@@ -64,7 +52,10 @@
 
             input {
                 line-height: 1;
-                width: calc(100% - var(--spacing-2) * 2);
+
+                &::file-selector-button {
+                    @extend .btn;
+                }
             }
         }
 
@@ -77,55 +68,38 @@
         &--checkbox {
             position: relative;
 
-            @media (--detectHasPointer) {
-                &:hover {
-                    label {
-                        &:before {
-                            background-color: black;
-                            border-color: black;
-                        }
-                    }
-                }
-            }
-
             input {
                 position: absolute;
-                top: 0.25em;
-                left: 0.25em;
+                top: 0;
+                left: 0;
                 opacity: 0;
 
                 &:checked ~ label {
                     &:before {
-                        background-color: var(--gray-5);
+                        content: "×";
                     }
                 }
 
                 &:focus ~ label {
                     &:before {
-                        border-color: black;
+                        @extend .focus-visible;
                     }
                 }
             }
 
             label {
-                position: relative;
-                padding-left: 2em;
+                display: flex;
+                gap: var(--spacing-3);
 
                 &:before {
                     content: "";
-                    position: absolute;
-                    top: 0;
-                    left: 0;
                     display: block;
-                    width: 1em;
-                    height: 1em;
+                    height: 1lh;
                     text-align: center;
-                    line-height: 1;
-                    background-color: var(--gray-10);
+                    background-color: white;
                     border: 1px solid black;
                     border-radius: 50%;
-                    transform: translateY(0.15em);
-                    transition: var(--animation-time-small);
+                    aspect-ratio: 1/1;
                 }
             }
         }
