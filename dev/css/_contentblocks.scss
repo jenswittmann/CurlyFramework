@@ -16,18 +16,17 @@
 // richtext
 /*! purgecss start ignore */
 .richtext {
-    
     > * + * {
         margin-top: 1.5em;
         margin-bottom: 0;
     }
-    
+
     * + p {
         margin-top: 1em;
     }
 
     h2 {
-        font-size: 1.75em;;
+        font-size: 1.75em;
         @extend .lh-solid;
     }
 
@@ -45,19 +44,20 @@
         font-size: 1.1em;
     }
 
-    ul,  
+    ul,
     ol {
         padding: 0;
         padding-left: 1.1em;
     }
-    
+
     li + li {
         margin-top: 0.5em;
     }
-    
+
     a {
         text-decoration: underline;
         text-decoration-thickness: from-font;
+        hyphens: auto;
     }
 }
 /*! purgecss end ignore */
