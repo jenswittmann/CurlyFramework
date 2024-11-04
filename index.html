@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" class="scale-content smooth-scroll">
     <head>
-        <link
-            rel="preload"
-            href="https://jens-wittmann.de/voltaire.woff2"
-            as="font"
-            crossorigin="anonymous"
-        />
+        <style>
+            @font-face {
+                font-family: "voltaire";
+                font-style: normal;
+                src: url("https://jens-wittmann.de/voltaire.woff2")
+                    format("woff2");
+                font-display: swap;
+            }
+        </style>
         <link rel="stylesheet" href="styleguide/css/style.css" />
         <link rel="stylesheet" href="styleguide/css/print.css" media="print" />
         <meta charset="utf-8" />
@@ -25,7 +28,11 @@
         />
         <meta property="og:image" content="favicon.svg" />
     </head>
-    <body x-data class="curlyframework page dg cols-12 g3 f2 violet-5 p4 p6-m">
+    <body
+        x-data
+        class="curlyframework page dg cols-12 g3 f2 violet-5 p4 p6-m"
+        style="--fontname: 'voltaire', serif"
+    >
         <!-- skiplinks -->
         <ul class="skiplinks">
             <li><a href="#info">info</a></li>
