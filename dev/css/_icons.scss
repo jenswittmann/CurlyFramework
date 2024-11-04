@@ -11,10 +11,6 @@
         width: 1em;
         height: 1em;
 
-        @media (--breakpoint-medium) {
-            transform: translateY(0.25em);
-        }
-
         &.icon--pa {
             width: 0.6em;
             height: 0.6em;
