@@ -81,6 +81,8 @@ ExpiresByType image/jpeg "access plus 12 months"
 ExpiresByType image/png "access plus 12 months"
 ExpiresByType image/webp "access plus 12 months"
 ExpiresByType image/x-icon "access plus 12 months"
+ExpiresByType video/mp4 "access plus 4 months"
+ExpiresByType video/webm "access plus 4 months"
 
 AddType font/woff2 .woff2
 ExpiresByType font/woff2  "access plus 1 year"
