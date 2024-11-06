@@ -168,9 +168,14 @@
             <section class="dc">
                 <div id="samples" class="col-full mt6"></div>
                 <h2 class="start-1 start-4-m end-last f5">Samples</h2>
-                <article class="dc">
+                <article aria-label="Sample Modal" class="dc">
                     <div class="start-1 end-last end-4-m">
-                        <h3 class="sticky top-0 f4 lh-title m0">Modal</h3>
+                        <h3
+                            id="headline__modal"
+                            class="sticky top-0 f4 lh-title m0"
+                        >
+                            Modal
+                        </h3>
                     </div>
                     <div
                         class="start-1 start-4-m end-last flex flex-column justify-center items-center p4 bg-violet-10 br4 aspect-ratio-16x9"
@@ -235,7 +240,7 @@
                         </div>
                     </div>
                 </article>
-                <article class="dc">
+                <article aria-label="Sample Modal [popover]" class="dc">
                     <div class="start-1 end-last end-4-m">
                         <h3 class="sticky top-0 f4 lh-title m0">
                             Modal <sup class="f1">[popover]</sup>
@@ -305,7 +310,7 @@
                         </div>
                     </div>
                 </article>
-                <article class="dc">
+                <article aria-label="Sample Accordion" class="dc">
                     <div class="start-1 end-last end-4-m">
                         <h3 class="sticky top-0 f4 lh-title m0">Accordion</h3>
                     </div>
@@ -355,7 +360,10 @@
                         </template>
                     </div>
                 </article>
-                <article class="dc">
+                <article
+                    aria-label="Sample Accordion &lt;details&gt;"
+                    class="dc"
+                >
                     <div class="start-1 end-last end-4-m">
                         <h3 class="sticky top-0 f4 lh-title m0">
                             Accordion
@@ -399,7 +407,7 @@
                         </template>
                     </div>
                 </article>
-                <article class="dc">
+                <article aria-label="Sample Slider" class="dc">
                     <div class="start-1 end-last end-4-m">
                         <h3 class="sticky top-0 f4 lh-title m0">Slider</h3>
                     </div>
@@ -518,7 +526,7 @@
                         </div>
                     </div>
                 </article>
-                <article class="dc">
+                <article aria-label="Sample Filter" class="dc">
                     <div class="start-1 end-last end-4-m">
                         <h3 class="sticky top-0 f4 lh-title m0">Filter</h3>
                     </div>
@@ -634,7 +642,7 @@
                         </section>
                     </div>
                 </article>
-                <article class="dc">
+                <article aria-label="Sample Richtext" class="dc">
                     <div class="start-1 end-last end-4-m">
                         <h3 class="sticky top-0 f4 lh-title m0">Richtext</h3>
                     </div>
@@ -657,7 +665,7 @@
                         </div>
                     </div>
                 </article>
-                <article class="dc">
+                <article aria-label="Sample accessible upload" class="dc">
                     <div class="start-1 end-last end-4-m">
                         <h3 class="sticky top-0 f4 lh-title m0">
                             Form <sup class="f1">accessible upload</sup>
@@ -667,7 +675,7 @@
                         class="start-1 start-4-m end-last flex flex-column justify-center items-center p3 pv4 p4-m pv5-m bg-violet-10 br4"
                     >
                         <form
-                            x-data="{             
+                            x-data="{       
                                 is_uploading: false,
                                 is_uploaderror: false,
                                 is_disabled: false,
@@ -720,7 +728,8 @@
                                     let formData = new FormData($el),
                                         xhr = new XMLHttpRequest();
                                     this.is_disabled = true;
-                                    xhr.open('POST', $el.getAttribute('action'), true);
+                                    xhr.open('GET', $el.getAttribute('action'), true);
+                                    // LIVE: xhr.open('POST', $el.getAttribute('action'), true);
                                     xhr.onload = (e) => {
                                         var parser = new DOMParser(),
                                             response = parser.parseFromString(xhr.response, 'text/html'),
@@ -736,6 +745,11 @@
                                     xhr.send(formData);                 
                                 }
                             }"
+                            x-init="
+                                $watch('is_disabled', (is_disabled) => {
+                                    $refs.message.scrollIntoView();
+                                });
+                            "
                             @submit.prevent="send()"
                             id="form"
                             action="#form"
@@ -743,12 +757,14 @@
                             class="form w-100 w-70-m"
                         >
                             <div
-                                aria-atomic="true"
-                                aria-live="polite"
+                                x-ref="message"
+                                aria-live="assertive"
                                 role="status"
                                 class="form__message"
                             >
-                                <p class="b white p2 bg-violet-5 br2">Error</p>
+                                <!--p class="b white p2 bg-violet-5 br2">
+                                    Error
+                                </p-->
                                 <p class="b p2 bg-white br2">Success</p>
                             </div>
 
@@ -815,8 +831,7 @@
                                                 return 'upload successful.';
                                             }
                                         "
-                                        aria-atomic="true"
-                                        aria-live="polite"
+                                        aria-live="assertive"
                                         role="status"
                                     ></span>
                                 </label>
@@ -915,7 +930,7 @@
                 <div class="col-full mt6"></div>
                 <h2 class="start-1 start-4-m end-last f5">Features</h2>
                 <div class="col-full subgrid">
-                    <article
+                    <div
                         class="sticky top-0 col-full col-4-m white p4 bg-violet-10 ba br4 aspect-ratio-9x16 aspect-ratio-square-m"
                     >
                         <div class="violet-5">
@@ -935,8 +950,8 @@
                                 zeplin.io.
                             </p>
                         </div>
-                    </article>
-                    <article
+                    </div>
+                    <div
                         class="sticky top-0 col-full col-4-m white p4 mt6 bg-violet-10 ba br4 aspect-ratio-9x16 aspect-ratio-square-m"
                     >
                         <div class="violet-5">
@@ -955,8 +970,8 @@
                                 security policy or XSS protection.
                             </p>
                         </div>
-                    </article>
-                    <article
+                    </div>
+                    <div
                         class="sticky top-0 col-full col-4-m white p4 mt7 bg-violet-10 ba br4 aspect-ratio-9x16 aspect-ratio-square-m"
                     >
                         <div class="violet-5">
@@ -1001,7 +1016,7 @@
                                 >.
                             </p>
                         </div>
-                    </article>
+                    </div>
                 </div>
             </section>
 
