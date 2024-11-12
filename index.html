@@ -407,6 +407,75 @@
                         </template>
                     </div>
                 </article>
+                <article aria-label="Sample Tabs" class="dc">
+                    <div class="start-1 end-last end-4-m">
+                        <h3 class="sticky top-0 f4 lh-title m0">Tabs</h3>
+                    </div>
+                    <div
+                        class="start-1 start-4-m end-last flex flex-column justify-center items-center p4 bg-violet-10 br4 aspect-ratio-16x9"
+                    >
+                        <div
+                            x-data="{
+                                tabs: 3,
+                                selected: 1
+                            }"
+                            class="w-70-m"
+                        >
+                            <ul
+                                @keydown.right.prevent.stop="$focus.wrap().next()"
+                                @keydown.left.prevent.stop="$focus.wrap().prev()"
+                                role="tablist"
+                                aria-label="Tabs, use the left and right arrow keys to navigate."
+                                class="list flex p0 m0"
+                            >
+                                <template x-for="i in tabs">
+                                    <li class="w-third">
+                                        <button
+                                            @click="selected = i"
+                                            @focus="selected = i"
+                                            :id="`tab${i}`"
+                                            :tabindex="selected == i ? 0 : -1"
+                                            :aria-selected="selected == i"
+                                            :aria-controls="`tabcontent${i}`"
+                                            id="nils"
+                                            type="button"
+                                            role="tab"
+                                            class="btn btn--clean w-100"
+                                        >
+                                            <span
+                                                :class="selected == i ? 'bg-white' : 'bg-transparent bb hover-bg-violet-9'"
+                                                class="db p1 bt bl br br4 br--top"
+                                            >
+                                                Tab #<span x-text="i"></span>
+                                            </span>
+                                        </button>
+                                    </li>
+                                </template>
+                            </ul>
+                            <div role="tabpanels">
+                                <template x-for="i in tabs">
+                                    <section
+                                        x-show="selected == i"
+                                        :id="`tabcontent${i}`"
+                                        :aria-labelledby="`tab${i}`"
+                                        role="tabpanel"
+                                        class="p3 p5-m bg-white bl br bb br4 br--bottom"
+                                    >
+                                        <p>
+                                            Content for Tab #<span
+                                                x-text="i"
+                                            ></span
+                                            >. Use the tab key to navigate to
+                                            the table list, then use the left
+                                            and right arrow keys to navigate to
+                                            the other tabs.
+                                        </p>
+                                    </section>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </article>
                 <article aria-label="Sample Slider" class="dc">
                     <div class="start-1 end-last end-4-m">
                         <h3 class="sticky top-0 f4 lh-title m0">Slider</h3>
