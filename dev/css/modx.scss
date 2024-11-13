@@ -1,3 +1,25 @@
+:root {
+    --color-main: #292f33;
+}
+// left bar
+#modx-header {
+    background-color: var(--color-main);
+}
+
+.primary-button.x-btn {
+    background-color: var(--color-main);
+
+    &:hover {
+        background-color: var(--color-main);
+        filter: brightness(1.75);
+    }
+}
+
+#modx-home-dashboard,
+#modx-site-info {
+    display: none;
+}
+
 // hide resource buttons
 #modx-abtn-cancel,
 #modx-abtn-help {
