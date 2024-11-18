@@ -5,10 +5,10 @@
 // Result: .833333333333333vw;
 // Note: add class to <html class="scale-content">
 .scale-content {
-    font-size: 4.26666667vw;
+    font-size: calc( ( 100 * 16 / 390 ) * 1vw );
 
     @media (--breakpoint-medium) {
-        font-size: 1vw;
+        font-size: calc( ( 100 * 16 / 1920 ) * 1vw );
     }
 }
 
