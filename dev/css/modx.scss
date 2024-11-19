@@ -1,23 +1,52 @@
 :root {
     --color-main: #292f33;
+    --color-cta: oklch(82.77% 0.0329 301.49);
 }
 // left bar
 #modx-header {
     background-color: var(--color-main);
 }
 
-.primary-button.x-btn {
-    background-color: var(--color-main);
+.primary-button.x-btn,
+.x-btn-focus.primary-button.x-btn:not(.x-btn-over),
+.redactor-modx3 .redactor-modal button,
+button.c-button:not(.c-button--ghost),
+#modx-login-btn {
+    color: black;
+    background-color: var(--color-cta);
 
-    &:hover {
-        background-color: var(--color-main);
-        filter: brightness(1.75);
+    &:hover,
+    &:focus {
+        color: black;
+        background-color: oklch(86% 0.0329 301.49);
     }
 }
 
-#modx-home-dashboard,
-#modx-site-info {
-    display: none;
+#login {
+    a,
+    .c-button--ghost {
+        color: black;
+    }
+
+    .c-button--ghost .c-arrow {
+        stroke: black;
+    }
+}
+
+#modx-home-dashboard {
+    a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: #fff url("/assets/tpl/{name}/frontend/favicon.svg")
+            no-repeat center;
+        background-size: 70%;
+        border-radius: 0.5rem;
+    }
+
+    img {
+        display: none;
+    }
 }
 
 // hide resource buttons
