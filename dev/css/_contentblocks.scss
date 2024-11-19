@@ -16,13 +16,16 @@
 // richtext
 /*! purgecss start ignore */
 .richtext {
-    > * + * {
-        margin-top: 1.5em;
-        margin-bottom: 0;
+    * {
+        margin: 0;
     }
 
-    * + p {
-        margin-top: 1em;
+    > * + * {
+        margin-top: 1.5em;
+    }
+
+    > * + :is(h1, h2, h3) {
+        margin-top: 2em;
     }
 
     h2 {
