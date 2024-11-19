@@ -346,3 +346,42 @@ button.c-button:not(.c-button--ghost),
 //         text-indent: -1000px;
 //     }
 // }
+
+// MagicPreview: style template
+.mmmp-c-container__inner {
+    position: fixed;
+    left: 0;
+    bottom: 1rem;
+    right: 0;
+    justify-content: center;
+    background-color: transparent;
+    box-shadow: none;
+
+    .mmmp-c-title {
+        display: none;
+    }
+
+    .mmmp-c-breakpoints {
+        padding: 0;
+        border-radius: 5px;
+        outline: 1px solid #acacac;
+
+        &__item-label {
+            font-size: 0.75rem;
+            color: #53595f;
+            margin: 0;
+            background-color: #f1f1f1;
+            box-shadow: none;
+        }
+    }
+
+    .mmmp-c-breakpoints__input[type="radio"]:checked
+        + .mmmp-c-breakpoints__item
+        > .mmmp-c-breakpoints__item-label {
+        background-color: #53595f;
+    }
+
+    .mmmp-c-close {
+        display: none;
+    }
+}
