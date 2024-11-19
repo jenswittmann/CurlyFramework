@@ -325,3 +325,24 @@ button.c-button:not(.c-button--ghost),
 //         display: none;
 //     }
 // }
+
+// ContentBlocks repeater fields: move settings on first position
+.modx_v23 .contentblocks-field-wrap {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+// MagicPreview: style preview buttons
+// #modx-abtn-preview {
+//     margin-left: -.6rem !important;
+//     border-top-left-radius: 0;
+//     border-bottom-left-radius: 0;
+//
+//     &:before {
+//         content: "↗";
+//     }
+//
+//     .x-btn-text {
+//         text-indent: -1000px;
+//     }
+// }
