@@ -29,7 +29,9 @@
         <meta property="og:image" content="favicon.svg" />
     </head>
     <body
-        x-data
+        x-data="{
+            showgrid: false
+        }"
         class="curlyframework page dg cols-12 g3 f2 violet-5 p4 p6-m bg-white"
         style="--fontname: 'voltaire', serif"
     >
@@ -993,6 +995,99 @@
                         </form>
                     </div>
                 </article>
+                <article aria-label="Styleguide" class="dc">
+                    <div class="start-1 end-last end-4-m">
+                        <h3 class="sticky top-0 f4 lh-title m0">Styleguide</h3>
+                    </div>
+                    <div
+                        class="start-1 start-4-m end-last p4 bg-violet-10 br4 aspect-ratio-16x9"
+                    >
+                        <section aria-label="Type Scale" class="mb5">
+                            <h4 class="f1 i m0">
+                                Type Scale
+                                <sup>
+                                    <span class="dn-m">mobile</span>
+                                    <span class="dn di-m">desktop</span>
+                                </sup>
+                            </h4>
+                            <ul class="list p0">
+                                <template x-for="i in 5">
+                                    <li :class="`f${i}`">
+                                        Sample Text
+                                        <span
+                                            x-text="`.f${i}`"
+                                            class="lh-solid ph1 bg-violet-9 br1"
+                                        ></span>
+                                    </li>
+                                </template>
+                            </ul>
+                        </section>
+
+                        <section aria-label="Colors" class="mb5">
+                            <h4 class="f1 i m0">Colors</h4>
+                            <ul class="list flex flex-wrap g3 p0">
+                                <template
+                                    x-for="i in [
+                                        'violet-5',
+                                        'violet-9',
+                                        'violet-10'
+                                    ]"
+                                >
+                                    <li class="w-40 w-20-m">
+                                        <span
+                                            :class="`bg-${i}`"
+                                            class="db p2 ba br3 aspect-ratio-1x1"
+                                        ></span>
+                                        <span
+                                            x-text="`.bg-${i}`"
+                                            class="f1"
+                                        ></span>
+                                    </li>
+                                </template>
+                            </ul>
+                        </section>
+
+                        <section aria-label="Spacing" class="mb5">
+                            <h4 class="f1 i m0">Spacing</h4>
+                            <ul class="list flex flex-wrap g1 p0">
+                                <template x-for="i in 8">
+                                    <li>
+                                        <span
+                                            x-text="`.mb${i}`"
+                                            class="dib f1 p1"
+                                        ></span>
+                                        <span
+                                            :class="`pb${i}`"
+                                            class="db bg-violet-9"
+                                        ></span>
+                                    </li>
+                                </template>
+                            </ul>
+                        </section>
+
+                        <section aria-label="Grid" class="mb5">
+                            <h4 class="f1 i m0">Grid</h4>
+                            <button
+                                @click="showgrid = !showgrid"
+                                :aria-pressed="showgrid"
+                                class="pointer flex items-center g3 w-100 p0 mt2 bg-transparent bn"
+                            >
+                                <span
+                                    :class="{
+                                        'pl5': showgrid,
+                                        'pr5': !showgrid
+                                    }"
+                                    class="db h2 bg-violet-9 br-100 transition-small"
+                                >
+                                    <span
+                                        class="db h-100 bg-white ba br-100 aspect-ratio-1x1"
+                                    ></span>
+                                </span>
+                                <span class="nowrap">toggle grid</span>
+                            </button>
+                        </section>
+                    </div>
+                </article>
             </section>
 
             <section id="samples" class="dc">
@@ -1252,6 +1347,16 @@
                 >
             </p>
         </footer>
+
+        <div
+            x-transition
+            x-show="showgrid == true"
+            class="fixed top-0 left-0 right-0 dg cols-12 g3 ph4 ph6-m pointer-events-none"
+        >
+            <template x-for="i in 12">
+                <div class="w-100 vh-100 bg-red-5 o-10"></div>
+            </template>
+        </div>
 
         <script src="styleguide/js/script.js" defer></script>
     </body>
