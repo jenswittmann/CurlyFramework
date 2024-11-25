@@ -423,7 +423,7 @@
                             }"
                             class="w-70-m"
                         >
-                            <ul
+                            <div
                                 @keydown.right.prevent.stop="$focus.wrap().next()"
                                 @keydown.left.prevent.stop="$focus.wrap().prev()"
                                 role="tablist"
@@ -431,7 +431,7 @@
                                 class="list flex p0 m0"
                             >
                                 <template x-for="i in tabs">
-                                    <li class="w-third">
+                                    <div class="w-third">
                                         <button
                                             @click="selected = i"
                                             @focus="selected = i"
@@ -451,10 +451,10 @@
                                                 Tab #<span x-text="i"></span>
                                             </span>
                                         </button>
-                                    </li>
+                                    </div>
                                 </template>
-                            </ul>
-                            <div role="tabpanels">
+                            </div>
+                            <div>
                                 <template x-for="i in tabs">
                                     <section
                                         x-show="selected == i"
