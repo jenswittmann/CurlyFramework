@@ -385,3 +385,13 @@ button.c-button:not(.c-button--ghost),
         display: none;
     }
 }
+
+// collections buttons
+.collections-grid {
+    .actions {
+        a {
+            font-weight: normal;
+            background: none;
+        }
+    }
+}
