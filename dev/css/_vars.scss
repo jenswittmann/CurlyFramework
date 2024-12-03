@@ -48,3 +48,9 @@
 // detect pointer device
 @custom-media --detectHasPointer (any-pointer: fine);
 @custom-media --detectNoPointer (any-pointer: none);
+
+// scaling
+:root {
+    --scale-content-mobile: 390;
+    --scale-content-desktop: 1920;
+}
