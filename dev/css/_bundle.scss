@@ -73,7 +73,9 @@
 
 @import "vars";
 
+/*! purgecss start ignore */
 @import "a11y";
+/*! purgecss end ignore */
 @import "animation";
 @import "btn";
 @import "contentblocks";
