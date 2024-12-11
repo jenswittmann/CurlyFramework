@@ -522,44 +522,6 @@
                             }"
                             class="flex flex-column w-90 w-70-m"
                         >
-                            <div>
-                                <button
-                                    @click="prev()"
-                                    :disabled="index == 0"
-                                    :class="{
-                                        'o-50': index == 0
-                                    }"
-                                    class="p2 bg-transparent ba br-100 transition-small"
-                                >
-                                    <span
-                                        aria-hidden="true"
-                                        class="dib rotate-180"
-                                        >⇢</span
-                                    >
-                                    previous
-                                </button>
-                            </div>
-                            <ul
-                                x-ref="slider"
-                                class="scrollsnap scrollsnap--x list overflow-auto flex w-100 ph0 pv3 m0"
-                            >
-                                <template x-for="(text, i) in slides">
-                                    <li
-                                        x-data="{
-                                            'visible': false
-                                        }"
-                                        x-intersect.half="visible = true; index = i"
-                                        x-intersect:leave.half="visible = false"
-                                        :aria-hidden="!visible"
-                                        class="scrollsnap__item flex-auto-1-0 w-100"
-                                    >
-                                        <div
-                                            x-text="text"
-                                            class="flex justify-center items-center white m1 mb2 bg-violet-5 br3 aspect-ratio-16x9"
-                                        ></div>
-                                    </li>
-                                </template>
-                            </ul>
                             <div class="flex justify-between">
                                 <ul
                                     aria-label="slider legend"
@@ -592,10 +554,47 @@
                                     :class="{
                                         'o-50': index == slides.length - 1
                                     }"
-                                    class="p2 bg-transparent ba br-100 transition-small"
+                                    class="ph4 pv3 bg-transparent ba br-100 transition-small"
                                 >
-                                    next
+                                    <span class="clip">next</span>
                                     <span aria-hidden="true">⇢</span>
+                                </button>
+                            </div>
+                            <ul
+                                x-ref="slider"
+                                class="scrollsnap scrollsnap--x list overflow-auto flex w-100 ph0 pv3 m0"
+                            >
+                                <template x-for="(text, i) in slides">
+                                    <li
+                                        x-data="{
+                                            'visible': false
+                                        }"
+                                        x-intersect.half="visible = true; index = i"
+                                        x-intersect:leave.half="visible = false"
+                                        class="scrollsnap__item flex-auto-1-0 w-100"
+                                    >
+                                        <div
+                                            x-text="text"
+                                            class="flex justify-center items-center white m1 mb2 bg-violet-5 br3 aspect-ratio-16x9"
+                                        ></div>
+                                    </li>
+                                </template>
+                            </ul>
+                            <div>
+                                <button
+                                    @click="prev()"
+                                    :disabled="index == 0"
+                                    :class="{
+                                        'o-50': index == 0
+                                    }"
+                                    class="ph4 pv3 bg-transparent ba br-100 transition-small"
+                                >
+                                    <span
+                                        aria-hidden="true"
+                                        class="dib rotate-180"
+                                        >⇢</span
+                                    >
+                                    <span class="clip">previous</span>
                                 </button>
                             </div>
                         </div>
