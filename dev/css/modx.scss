@@ -332,21 +332,6 @@ button.c-button:not(.c-button--ghost),
     flex-direction: column-reverse;
 }
 
-// MagicPreview: style preview buttons
-// #modx-abtn-preview {
-//     margin-left: -.6rem !important;
-//     border-top-left-radius: 0;
-//     border-bottom-left-radius: 0;
-//
-//     &:before {
-//         content: "↗";
-//     }
-//
-//     .x-btn-text {
-//         text-indent: -1000px;
-//     }
-// }
-
 // MagicPreview: style template
 .mmmp-c-container__inner {
     position: fixed;
