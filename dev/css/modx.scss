@@ -332,6 +332,27 @@ button.c-button:not(.c-button--ghost),
     flex-direction: column-reverse;
 }
 
+// ContentBlocks modal
+#contentblocks-modal-mask {
+    opacity: 0.5;
+    background-color: #000;
+}
+
+.contentblocks-modal {
+    &-header {
+        .switch-view {
+            display: none !important;
+        }
+    }
+
+    &-content {
+        & > p,
+        & > div:first-of-type {
+            display: none !important;
+        }
+    }
+}
+
 // MagicPreview: style template
 .mmmp-c-container__inner {
     position: fixed;
