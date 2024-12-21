@@ -1,3 +1,6 @@
+@use "a11y";
+@use "btn";
+
 .placeholder {
     &::placeholder {
         font-family: var(--fontname);

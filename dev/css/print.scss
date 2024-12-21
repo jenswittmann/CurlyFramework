@@ -7,7 +7,7 @@ $breakpoint-not-large: "(max-width: 30em)";
 $breakpoint-large: "(min-width: 30em)";
 $breakpoint-extra-large: "(min-width: 105em)";
 
-@import "bundle";
+@use "bundle";
 
 .scale-content {
     font-size: 40%;
