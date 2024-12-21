@@ -31,12 +31,22 @@
     // colors
     --violet-5: #351788;
 
-    // typo
-    --typo-1: 1rem;
-    --typo-2: 1.25rem;
-    --typo-3: 1.5rem;
-    --typo-4: 2rem;
-    --typo-5: 4rem;
+    // typo, calculate from px
+    & {
+        --typo-1: calc(16 / 16 * 1rem);
+        --typo-2: calc(20 / 16 * 1rem);
+        --typo-3: calc(24 / 16 * 1rem);
+        --typo-4: calc(32 / 16 * 1rem);
+        --typo-5: calc(64 / 16 * 1rem);
+
+        @media (--breakpoint-medium) {
+            --typo-1: calc(16 / 16 * 1rem);
+            --typo-2: calc(20 / 16 * 1rem);
+            --typo-3: calc(24 / 16 * 1rem);
+            --typo-4: calc(32 / 16 * 1rem);
+            --typo-5: calc(64 / 16 * 1rem);
+        }
+    }
 }
 
 // breakpoints
