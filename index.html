@@ -41,7 +41,7 @@
     >
         <!-- skiplinks -->
         <ul class="skiplinks">
-            <li><a href="#info">info</a></li>
+            <li><a href="#info">general info</a></li>
             <li><a href="#tips">tips</a></li>
             <li><a href="#samples">samples</a></li>
             <li><a href="#installation">installation</a></li>
@@ -95,31 +95,28 @@
                         }
                     </style>
                 </span>
-                <h1 class="dc">
-                    <span
+                <div class="dc">
+                    <h1
                         class="start-4 end-last end-6-m f1 f4-m lh-title tr tl-m m0"
-                        >CurlyFramework</span
                     >
-                    <span
+                        CurlyFramework
+                    </h1>
+                    <p
                         class="start-1 start-4-m end-last db f3 f5-m lh-title mt3 mb4"
                     >
                         Tiny Framework for accessibility and sustainability, not
                         only for
-                        <a href="https://modx.com" target="_blank" class="bb">
-                            MODX</a
-                        >. Based on
+                        <a href="https://modx.com" class="bb"> MODX</a>. Based
+                        on
                         <a
                             href="https://github.com/jenswittmann/tachyons"
-                            target="_blank"
                             class="bb"
                             >Tachyons</a
                         >, powered by
-                        <a href="http://alpinejs.dev" target="_blank" class="bb"
-                            >Alpine.js</a
-                        >
+                        <a href="http://alpinejs.dev" class="bb">Alpine.js</a>
                         and flavoured with lessons learned over the years.
-                    </span>
-                </h1>
+                    </p>
+                </div>
                 <div class="start-1 end-3">
                     <a href="#tips" class="f3 nowrap ph3 pv1 ba br-100">
                         Docs <span aria-hidden="true">⇣</span>
@@ -129,7 +126,6 @@
                     <a
                         href="https://github.com/jenswittmann/CurlyFramework"
                         rel="noreferrer"
-                        target="_blank"
                         class="f3 nowrap ph3 pv1 ba br-100"
                     >
                         Github <span aria-hidden="true">⇢</span>
@@ -149,7 +145,6 @@
                         talk "<a
                             href="https://css-irl.info/video-building-a-greener-web/"
                             rel="noreferrer"
-                            target="_blank"
                             class="bb"
                             >Building a greener web</a
                         >" at "All Day Hey! 2023". Here are some tips:
@@ -168,6 +163,68 @@
                             and sustainability with real people.
                         </li>
                     </ul>
+                    <div
+                        x-data="{
+                            sa11y: null,
+                            
+                            loadCSS() {
+                                return new Promise((resolve, reject) => {
+                                    const link = document.createElement('link');
+                                    link.rel = 'stylesheet';
+                                    link.href = 'https://cdn.jsdelivr.net/gh/ryersondmp/sa11y@3.2.3/dist/css/sa11y.min.css';
+                                    link.onload = resolve;
+                                    link.onerror = reject;
+                                    document.head.appendChild(link);
+                                });
+                            },
+                            
+                            loadJS() {
+                                return new Promise((resolve, reject) => {
+                                  const script = document.createElement('script');
+                                  script.src = 'https://cdn.jsdelivr.net/combine/gh/ryersondmp/sa11y@3.2.3/dist/js/lang/en.umd.js,gh/ryersondmp/sa11y@3.2.3/dist/js/sa11y.umd.min.js';
+                                  script.onload = resolve;
+                                  script.onerror = reject;
+                                  document.body.appendChild(script);
+                                });
+                            },
+                            
+                            initSa11y() {                                    
+                                this.loadCSS()
+                                    .then(this.loadJS)
+                                    .then(() => {
+                                        Sa11y.Lang.addI18n(Sa11yLangEn.strings);
+                                        this.sa11y = new Sa11y.Sa11y({
+                                            checkRoot: 'body',
+                                        });
+                                    })
+                                    .catch((error) => new Error('Error loading Sa11y:', error));
+                            }
+                        }"
+                    >
+                        <p class="mt3 mb0">
+                            Sa11y.js visually highlights content issues at the
+                            source with a simple tooltip on how to fix them:
+                        </p>
+                        <button
+                            @click="initSa11y()"
+                            :aria-pressed="sa11y"
+                            :disabled="sa11y"
+                            class="pointer flex items-center g3 p0 mt2 bg-transparent bn"
+                        >
+                            <span
+                                :class="{
+                                    'pl5 o-50': sa11y,
+                                    'pr5': !sa11y
+                                }"
+                                class="db h2 bg-violet-9 br-100 transition-small"
+                            >
+                                <span
+                                    class="db h-100 bg-white ba br-100 aspect-ratio-1x1"
+                                ></span>
+                            </span>
+                            <span class="nowrap">show Sa11y.js</span>
+                        </button>
+                    </div>
                 </div>
             </section>
 
@@ -227,7 +284,6 @@
                                     <a
                                         href="https://jens-wittmann.de"
                                         rel="noreferrer"
-                                        target="_blank"
                                         >example link</a
                                     >
                                     to the test. You can also close it with the
@@ -293,7 +349,6 @@
                                         <a
                                             href="https://jens-wittmann.de"
                                             rel="noreferrer"
-                                            target="_blank"
                                             >example link</a
                                         >
                                         to the test. You can also close it with
@@ -538,7 +593,7 @@
                                                     'w-40': index == i,
                                                     'w-10': index != i
                                                 }"
-                                                class="db h-100 p0 bg-violet-7 br3 bn transition-small"
+                                                class="db h-100 white p0 bg-violet-5 br3 bn transition-small"
                                             >
                                                 <span class="clip"
                                                     >Slide
@@ -727,7 +782,7 @@
                             <h4>This is a H4 headline.</h4>
                             <p>
                                 A <strong>paragraph</strong> after a
-                                <a href="#!">headline</a> is here.
+                                <a href="#tips">headline</a> is here.
                             </p>
                             <p>Another paragraph after a paragraph is here.</p>
                             <h5>This is a H5 headline.</h5>
@@ -941,10 +996,10 @@
                                     name="photourl"
                                     id="photourl"
                                 />
-                                <div x-show="data.url">
+                                <template x-if="data.url">
                                     <img
                                         :src="data.url"
-                                        alt="Photo Preview"
+                                        alt="Preview of your upload"
                                         class="db w-50 h-inherit br2"
                                     />
                                     <div>
@@ -961,7 +1016,7 @@
                                             >
                                         </button>
                                     </div>
-                                </div>
+                                </template>
                             </div>
 
                             <div class="form__item">
@@ -1107,14 +1162,13 @@
                                 <a
                                     href="https://github.com/jenswittmann/CurlyFramework/blob/5dccbe6ab4a80a21290b8dc3b3c0e01382994c56/dev/css/_styling.scss#L7-L13"
                                     rel="noreferrer"
-                                    target="_blank"
                                     class="bb"
                                     >.scale-content</a
                                 >
                                 in the HTML node. Along with the CSS grid and
                                 responsive font classes, this is a great basis
-                                for the design presets from Figma, Adobe XD and
-                                zeplin.io.
+                                for the design presets from PenPot, Figma, Adobe
+                                XD and zeplin.io.
                             </p>
                         </div>
                     </div>
@@ -1128,7 +1182,6 @@
                                 <a
                                     href="https://github.com/jenswittmann/CurlyFramework/blob/6.0.0/.htaccess"
                                     rel="noreferrer"
-                                    target="_blank"
                                     class="bb"
                                     >.htaccess</a
                                 >
@@ -1148,7 +1201,6 @@
                                 <a
                                     href="https://modmore.com/contentblocks/"
                                     rel="noreferrer"
-                                    target="_blank"
                                     class="bb"
                                     >ContentBlocks</a
                                 >
@@ -1157,7 +1209,6 @@
                                 <a
                                     href="https://github.com/jenswittmann/CurlyFramework/blob/6.0.0/dev/css/modx.scss"
                                     rel="noreferrer"
-                                    target="_blank"
                                     class="bb"
                                     >modx.css</a
                                 >
@@ -1169,7 +1220,6 @@
                                 <a
                                     href="https://github.com/jenswittmann/JoliTypo"
                                     rel="noreferrer"
-                                    target="_blank"
                                     class="bb"
                                     >JoliTypo</a
                                 >
@@ -1177,7 +1227,6 @@
                                 <a
                                     href="https://github.com/jenswittmann/MODX-Gitify-Preset"
                                     rel="noreferrer"
-                                    target="_blank"
                                     class="bb"
                                     >Gitify-Preset</a
                                 >.
@@ -1220,7 +1269,6 @@
                             <a
                                 href="https://codekitapp.com/"
                                 rel="noreferrer"
-                                target="_blank"
                                 class="bb"
                                 >CodeKit</a
                             >
@@ -1228,7 +1276,6 @@
                             <a
                                 href="https://esbuild.github.io/"
                                 rel="noreferrer"
-                                target="_blank"
                                 class="bb"
                                 >esbuild</a
                             >
@@ -1248,16 +1295,15 @@
                             <a
                                 href="https://alpinejs.dev/"
                                 rel="noreferrer"
-                                target="_blank"
                                 class="bb"
-                                >alpine.js</a
+                                >alpine.js
+                                <span class="clip">framework</span></a
                             >
                         </li>
                         <li>
                             <a
                                 href="https://tachyons.io/"
                                 rel="noreferrer"
-                                target="_blank"
                                 class="bb"
                                 >tachyons.io</a
                             >
@@ -1266,7 +1312,6 @@
                             <a
                                 href="https://www.barrierefreies-webdesign.de/"
                                 rel="noreferrer"
-                                target="_blank"
                                 class="bb"
                                 >barrierefreies-webdesign.de</a
                             >
@@ -1275,7 +1320,6 @@
                             <a
                                 href="https://modx.com/"
                                 rel="noreferrer"
-                                target="_blank"
                                 class="bb"
                                 >modx.com</a
                             >
@@ -1284,7 +1328,6 @@
                             <a
                                 href="https://modmore.com/contentblocks"
                                 rel="noreferrer"
-                                target="_blank"
                                 class="bb"
                                 >modmore.com/contentblocks</a
                             >
@@ -1293,7 +1336,6 @@
                             <a
                                 href="https://github.com/modmore/Gitify/"
                                 rel="noreferrer"
-                                target="_blank"
                                 class="bb"
                                 >github.com/modmore/Gitify</a
                             >
@@ -1302,7 +1344,6 @@
                             <a
                                 href="https://www.dzblesen.de/"
                                 rel="noreferrer"
-                                target="_blank"
                                 class="bb"
                                 >dzblesen.de</a
                             >
@@ -1311,9 +1352,16 @@
                             <a
                                 href="https://www.oidaisdes.org/"
                                 rel="noreferrer"
-                                target="_blank"
                                 class="bb"
                                 >oidaisdes.org</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://sa11y.netlify.app/"
+                                rel="noreferrer"
+                                class="bb"
+                                >sa11y.netlify.app</a
                             >
                         </li>
                     </ul>
@@ -1328,15 +1376,10 @@
                 <a
                     href="https://github.com/jenswittmann/CurlyFramework"
                     rel="noreferrer"
-                    target="_blank"
                     class="bb"
                     >GitHub</a
                 >. Work together? Have a look at
-                <a
-                    href="https://jens-wittmann.de/"
-                    rel="noreferrer"
-                    target="_blank"
-                    class="bb"
+                <a href="https://jens-wittmann.de/" rel="noreferrer" class="bb"
                     >jens-wittmann.de</a
                 >.
             </p>
@@ -1344,7 +1387,6 @@
                 <a
                     href="https://jens-wittmann.de/#kontakt"
                     rel="noreferrer"
-                    target="_blank"
                     class="bb"
                     >Imprint and privacy policy</a
                 >
