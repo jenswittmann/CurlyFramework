@@ -49,6 +49,50 @@ button.c-button:not(.c-button--ghost),
     }
 }
 
+// content backgrounds
+#modx-resource-settings #modx-resource-main-left,
+#modx-resource-settings #modx-resource-main-right,
+#modx-leftbar .x-tree .x-panel-body,
+.x-tab-panel-noborder .x-tab-panel-body-noborder,
+.tree-pseudoroot-node.x-tree-node-el + .x-tree-node-ct,
+.tree-pseudoroot-node.x-tree-node-el + div > .x-tree-node-ct,
+.x-tree-node {
+    
+    &,
+    .modx-resource-panel {
+        background-color: #eee;
+    }
+}
+
+#modx-leftbar {
+    padding-right: 3rem;
+    background-color: #eee;
+}
+
+.x-tab-panel-header ul.x-tab-strip {
+    
+    li {
+        
+        &:hover {
+            background-color: #eee;
+        }
+        
+        &.x-tab-strip-active {
+            font-weight: bold;
+            background-color: #eee;       
+            opacity: 1;
+            
+            &:hover {
+                background-color: #eee;
+            }
+            
+            .x-tab-strip-text {
+                color: black;
+            }
+        }
+    }
+}
+
 // hide resource buttons
 #modx-abtn-cancel,
 #modx-abtn-help {
