@@ -48,6 +48,22 @@
             <li><a href="#contact">contact</a></li>
         </ul>
 
+        <div
+            x-data="{
+                zoomlevel: 1,
+                
+                checkZoom() {
+                    this.zoomlevel = window.outerWidth / window.innerWidth;         
+                }                
+            }"
+            x-init="
+                $watch('zoomlevel', (zoomlevel) => {
+                    document.documentElement.style.setProperty('--zoomlevel', zoomlevel);
+                })
+            "
+            @resize.window="checkZoom()"
+        ></div>
+
         <main class="dc">
             <section id="info" class="dc">
                 <span class="start-1 end-4 end-2-m relative">
