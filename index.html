@@ -31,10 +31,31 @@
             content="Framework for accessibility & sustainability, not only for MODX. Based on Tachyons, powered by Alpine.js and flavoured with lessons learned."
         />
         <meta property="og:image" content="favicon.svg" />
+        <style>
+            @media (prefers-color-scheme: dark) {
+                .page {
+                    background-color: var(--gray-1);
+                    --violet-5: #fff;
+                    --violet-10: var(--gray-3);
+                    --cooking-outline-color: var(--gray-4);
+                }
+            }
+
+            .page.darkmode {
+                background-color: var(--gray-1);
+                --violet-5: #fff;
+                --violet-10: var(--gray-3);
+                --cooking-outline-color: var(--gray-4);
+            }
+        </style>
     </head>
     <body
         x-data="{
-            showgrid: false
+            showgrid: false,
+            darkmode: $persist(false),
+        }"
+        :class="{
+            'darkmode': darkmode
         }"
         class="curlyframework page reset-spacing dg cols-12 g3 f2 violet-5 p4 p6-m"
         style="--fontname: 'voltaire', serif"
@@ -246,6 +267,66 @@
                     >
                         CurlyFramework
                     </h1>
+                    <button
+                        @click="darkmode = !darkmode"
+                        :aria-pressed="darkmode"
+                        class="btn btn--clean fixed right-0 bottom-0 f4 m3"
+                    >
+                        <span class="clip">
+                            Darkmode
+                            <span x-text="darkmode ? 'off' : 'on'"></span>
+                        </span>
+                        <span x-show="darkmode" class="icon icon-font">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 256 256"
+                            >
+                                <path fill="none" d="M0 0h256v256H0z" />
+                                <path
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="16"
+                                    d="M128 40v-8"
+                                />
+                                <circle
+                                    cx="128"
+                                    cy="128"
+                                    r="56"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="16"
+                                />
+                                <path
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="16"
+                                    d="m64 64-8-8M64 192l-8 8M192 64l8-8M192 192l8 8M40 128h-8M128 216v8M216 128h8"
+                                />
+                            </svg>
+                        </span>
+                        <span x-show="!darkmode" class="icon icon-font">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 256 256"
+                            >
+                                <path fill="none" d="M0 0h256v256H0z" />
+                                <path
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="16"
+                                    d="M108.11 28.11a96.09 96.09 0 0 0 119.78 119.78A96 96 0 1 1 108.11 28.11Z"
+                                />
+                            </svg>
+                        </span>
+                    </button>
                     <p
                         class="start-1 start-4-m end-last db f3 f5-m lh-title mt3 mb4"
                     >
