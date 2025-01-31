@@ -32,13 +32,11 @@
         />
         <meta property="og:image" content="favicon.svg" />
         <style>
-            @media (prefers-color-scheme: dark) {
-                .page {
-                    background-color: var(--gray-1);
-                    --violet-5: #fff;
-                    --violet-10: var(--gray-3);
-                    --cooking-outline-color: var(--gray-4);
-                }
+            .page.lightmode {
+                background-color: #fff;
+                --violet-5: #351788;
+                --violet-10: #eccefa;
+                --cooking-outline-color: black;
             }
 
             .page.darkmode {
@@ -53,8 +51,21 @@
         x-data="{
             showgrid: false,
             darkmode: $persist(false),
+            userThemeModeSet: $persist(false),
+            
+            init() {
+                if (this.userThemeModeSet) {
+                    return;
+                }
+                let darkmodeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+                this.darkmode = darkmodeQuery.matches;
+                darkmodeQuery.addEventListener('change', (e) => {
+                    this.darkmode = e.matches;
+                });
+            }
         }"
         :class="{
+            'lightmode': !darkmode,
             'darkmode': darkmode
         }"
         class="curlyframework page reset-spacing dg cols-12 g3 f2 violet-5 p4 p6-m"
@@ -268,7 +279,7 @@
                         CurlyFramework
                     </h1>
                     <button
-                        @click="darkmode = !darkmode"
+                        @click="darkmode = !darkmode; userThemeModeSet = true"
                         :aria-pressed="darkmode"
                         class="btn btn--clean fixed right-0 bottom-0 f4 m3"
                     >
