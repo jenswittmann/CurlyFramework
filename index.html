@@ -36,7 +36,7 @@
         x-data="{
             showgrid: false
         }"
-        class="curlyframework page reset-spacing dg cols-12 g3 f2 violet-5 p4 p6-m bg-white"
+        class="curlyframework page reset-spacing dg cols-12 g3 f2 violet-5 p4 p6-m"
         style="--fontname: 'voltaire', serif"
     >
         <!-- skiplinks -->
@@ -67,23 +67,151 @@
 
         <main class="dc">
             <section id="info" class="dc">
-                <span class="start-1 end-4 end-2-m relative">
-                    <img
-                        src="favicon.svg"
-                        width="50"
-                        height="50"
-                        alt="CurlyFramework Logo"
-                        class="db w-100 h-inherit"
-                    />
-                    <span class="cooking"></span>
+                <span class="cooking start-1 end-4 end-2-m relative">
+                    <div class="cooking__pot icon">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            viewBox="0 0 275 275"
+                        >
+                            <path
+                                fill="#FFF"
+                                d="M191.461 64.596L153.231 30H115L77.246 65.287H59.998l21.417 19.647"
+                            />
+                            <path
+                                fill="none"
+                                stroke-width="7.857"
+                                d="M191.461 64.596L153.231 30H115L77.246 65.287H59.998l21.417 19.647"
+                                class="cooking__outline"
+                            />
+                            <path
+                                fill="#4A4794"
+                                d="M93.766 157.69L77.508 264.96h112.765l-16.63-107.27z"
+                            />
+                            <defs>
+                                <path
+                                    id="a"
+                                    d="M93.769 157.69L77.505 264.96H190.27l-16.625-107.27z"
+                                />
+                            </defs>
+                            <clipPath id="b">
+                                <use xlink:href="#a" overflow="visible" />
+                            </clipPath>
+                            <path
+                                clip-path="url(#b)"
+                                fill="none"
+                                stroke-width="7.857"
+                                d="M120.491 158.431l-9.203 107.27"
+                                class="cooking__outline"
+                            />
+                            <path
+                                fill="#8D9FCC"
+                                d="M146.031 160.065l8.579 104.898h17.877l17.73-.367-16.337-105.39z"
+                            />
+                            <defs>
+                                <path
+                                    id="c"
+                                    d="M93.769 157.69L77.505 264.96H190.27l-16.625-107.27z"
+                                />
+                            </defs>
+                            <clipPath id="d">
+                                <use xlink:href="#c" overflow="visible" />
+                            </clipPath>
+                            <path
+                                clip-path="url(#d)"
+                                fill="none"
+                                stroke-width="7.857"
+                                d="M146.548 158.431l9.203 107.27"
+                                class="cooking__outline"
+                            />
+                            <path
+                                fill="none"
+                                stroke-width="7.857"
+                                d="M93.766 157.689h79.877l16.63 107.27H77.508z"
+                                class="cooking__outline"
+                            />
+                            <path
+                                fill="#4A4794"
+                                d="M93.928 137.253h79.551l16.562-71.968H77.738z"
+                            />
+                            <defs>
+                                <path
+                                    id="e"
+                                    d="M77.736 65.285l16.19 71.967h79.557l16.556-71.967z"
+                                />
+                            </defs>
+                            <clipPath id="f">
+                                <use xlink:href="#e" overflow="visible" />
+                            </clipPath>
+                            <path
+                                clip-path="url(#f)"
+                                fill="none"
+                                stroke-width="7.857"
+                                d="M120.131 172.312l-9.202-107.27"
+                                class="cooking__outline"
+                            />
+                            <path
+                                fill="#8D9FCC"
+                                d="M155.53 67.416l-6.605 69.836h24.476l1.734-7.192 14.734-64.027z"
+                            />
+                            <defs>
+                                <path
+                                    id="g"
+                                    d="M77.736 65.285l16.19 71.967h79.557l16.556-71.967z"
+                                />
+                            </defs>
+                            <clipPath id="h">
+                                <use xlink:href="#g" overflow="visible" />
+                            </clipPath>
+                            <path
+                                clip-path="url(#h)"
+                                fill="none"
+                                stroke-width="7.857"
+                                d="M146.188 172.312l9.203-107.27"
+                                class="cooking__outline"
+                            />
+                            <path
+                                fill="none"
+                                stroke-width="7.857"
+                                d="M93.928 137.253h79.551l16.562-71.968H77.738zM101.784 138.09v20.711M164.015 138.09v20.711"
+                                class="cooking__outline"
+                            />
+                            <g
+                                fill="none"
+                                stroke-width="7.857"
+                                class="cooking__outline"
+                            >
+                                <path
+                                    d="M187.644 82.179h11.816v38.838c0 2.53 3.551 5.322 7.925 5.322s7.925-2.792 7.899-5.243c-.021.084-.021-54.939-.021-54.939h-25.11"
+                                />
+                                <ellipse
+                                    cx="134.003"
+                                    cy="12.927"
+                                    rx="7.925"
+                                    ry="5.473"
+                                />
+                            </g>
+                            <path
+                                fill="none"
+                                stroke-width="7.857"
+                                d="M126.133 14.041l1.98 15.341M141.725 14.041l-1.98 15.341"
+                                class="cooking__outline"
+                            />
+                        </svg>
+                    </div>
+                    <span class="cooking__steam"></span>
                     <style>
-                        .cooking {
+                        .cooking__outline {
+                            stroke: var(--cooking-outline-color, black);
+                        }
+
+                        .cooking__steam {
                             position: absolute;
                             top: 0;
                             left: 15%;
                             display: block;
                             width: 10%;
-                            background-color: rgba(0, 0, 0, 0.3);
+                            background-color: #bbb;
                             border-radius: 50%;
                             filter: blur(5px);
                             transform: translateY(0) scaleX(1);
@@ -233,7 +361,7 @@
                                     'pl5 o-50': sa11y,
                                     'pr5': !sa11y
                                 }"
-                                class="db h2 bg-violet-9 br-100 transition-small"
+                                class="db h2 ba br-100 transition-small"
                             >
                                 <span
                                     class="db h-100 bg-white ba br-100 aspect-ratio-1x1"
@@ -293,7 +421,7 @@
                                 id="popup"
                                 aria-modal="true"
                                 role="dialog"
-                                class="fixed top-0 right-0 bottom-0 z-max w-80 w-third-m white p3 p5-m bg-violet-5"
+                                class="fixed top-0 right-0 bottom-0 z-max w-80 w-third-m white p3 p5-m bg-violet-1"
                             >
                                 <p>
                                     The script also takes care of the focus so
@@ -355,10 +483,10 @@
                                     tabindex="-1"
                                     popovertarget="popup2"
                                     popovertargetaction="hide"
-                                    class="fixed top-0 left-0 right-0 bottom-0 bg-transparent bg-blur"
+                                    class="fixed top-0 left-0 right-0 bottom-0 bg-transparent bg-blur bn"
                                 ></button>
                                 <div
-                                    class="fixed top-0 right-0 bottom-0 z-max w-80 w-third-m white p3 p5-m bg-violet-5"
+                                    class="fixed top-0 right-0 bottom-0 z-max w-80 w-third-m white p3 p5-m bg-violet-1"
                                 >
                                     <p>
                                         The script also takes care of the focus
@@ -498,7 +626,7 @@
                                 tabs: 3,
                                 selected: 1
                             }"
-                            class="w-70-m"
+                            class="w-70-m violet-5"
                         >
                             <div
                                 @keydown.right.prevent.stop="$focus.wrap().next()"
@@ -522,7 +650,7 @@
                                             class="btn btn--clean w-100"
                                         >
                                             <span
-                                                :class="selected == i ? 'bg-white' : 'bg-transparent bb hover-bg-violet-9'"
+                                                :class="selected == i ? '' : 'bg-transparent bb hover-bg-violet-9'"
                                                 class="db p1 bt bl br br4 br--top"
                                             >
                                                 Tab #<span x-text="i"></span>
@@ -538,7 +666,7 @@
                                         :id="`tabcontent${i}`"
                                         :aria-labelledby="`tab${i}`"
                                         role="tabpanel"
-                                        class="p3 p5-m bg-white bl br bb br4 br--bottom"
+                                        class="p3 p5-m bl br bb br4 br--bottom"
                                     >
                                         <p>
                                             Content for Tab #<span
@@ -627,7 +755,7 @@
                                     :class="{
                                         'o-50': index == slides.length - 1
                                     }"
-                                    class="ph4 pv3 bg-transparent ba br-100 transition-small"
+                                    class="pointer ph4 pv3 bg-transparent ba b--inherit br-100 transition-small"
                                 >
                                     <span class="clip">next</span>
                                     <span aria-hidden="true">⇢</span>
@@ -648,7 +776,7 @@
                                     >
                                         <div
                                             x-text="text"
-                                            class="flex justify-center items-center white m1 mb2 bg-violet-5 br3 aspect-ratio-16x9"
+                                            class="flex justify-center items-center m1 mb2 ba br3 aspect-ratio-16x9"
                                         ></div>
                                     </li>
                                 </template>
@@ -660,7 +788,7 @@
                                     :class="{
                                         'o-50': index == 0
                                     }"
-                                    class="ph4 pv3 bg-transparent ba br-100 transition-small"
+                                    class="pointer ph4 pv3 bg-transparent ba b--inherit br-100 transition-small"
                                 >
                                     <span
                                         aria-hidden="true"
@@ -738,37 +866,48 @@
                             class="w-90"
                         >
                             <header
-                                class="flex justify-between items-baseline g1 mb2"
+                                class="flex justify-between items-end g1 mb4"
                             >
-                                <span
-                                    aria-atomic="true"
-                                    aria-live="polite"
-                                    role="status"
-                                    class="dib white ph3 bg-violet-5 br-100"
-                                >
-                                    <span class="clip">Results: </span>
-                                    <span
-                                        x-text="items.filter((item) => { return item.categories.includes(filter) || !filter }).length"
-                                    ></span>
-                                </span>
-                                <span>
-                                    <span class="dn db-m">Filter:</span>
+                                <span class="flex items-baseline">
+                                    <span>Filter:</span>
                                     <template
                                         x-for="(item, i) in ['css', 'php', 'js']"
                                     >
                                         <button
                                             @click="filter == item ? filter = false : filter = item"
-                                            x-text="item"
                                             :aria-pressed="filter == item"
                                             :class="{
-                                                'br2 br--left': i == 0,                                            
-                                                'br2 br--right': i == 2,
-                                                'white bg-violet-5': filter == item,
-                                                'bg-transparent': filter != item
+                                                'b': filter == item,
+                                                'o-70': filter && filter != item
                                             }"
-                                            class="pointer ttu p2 ba"
-                                        ></button>
+                                            class="pointer ttu ph2 pv0 bg-transparent bn"
+                                        >
+                                            <span
+                                                x-text="item"
+                                                class="bb"
+                                            ></span>
+                                        </button>
                                     </template>
+                                </span>
+                                <span
+                                    aria-atomic="true"
+                                    aria-live="polite"
+                                    role="status"
+                                    class="flex f4"
+                                >
+                                    <span class="clip">Results: </span>
+                                    <span
+                                        x-text="items.filter((item) => { return item.categories.includes(filter) || !filter }).length"
+                                        class="self-start"
+                                    ></span>
+                                    <span class="clip">out of</span>
+                                    <span aria-hidden="true" class="mv3"
+                                        >/</span
+                                    >
+                                    <span
+                                        x-text="items.length"
+                                        class="self-end"
+                                    ></span>
                                 </span>
                             </header>
                             <ul class="dg cols-2 cols-4-m g2 list p0 m0">
@@ -777,7 +916,7 @@
                                         :class="{
                                             'o-20 rotate-180': !item.categories.includes(filter) && filter
                                         }"
-                                        class="bg-white ba br2 aspect-ratio-square transition-medium"
+                                        class="ba br2 aspect-ratio-square transition-medium"
                                     >
                                         <span
                                             x-html="item.name"
@@ -912,7 +1051,7 @@
                                 <!--p class="b white p2 bg-violet-5 br2">
                                     Error
                                 </p-->
-                                <p class="b p2 bg-white br2">Success</p>
+                                <p class="b p2 ba bw2 br2 mb3">Success</p>
                             </div>
 
                             <div class="form__item">
@@ -963,9 +1102,7 @@
                             <div class="form__item">
                                 <label for="photoupload" class="form__label"
                                     >Photo
-                                    <sup class="white ph3 bg-violet-5 br-100"
-                                        >try it!</sup
-                                    >
+                                    <sup class="ph3 ba br-100">try it!</sup>
                                     <span
                                         x-text="
                                             if (is_uploading && !data.url) {
@@ -1066,7 +1203,7 @@
                                 x-text="is_disabled ? 'Sending …' : 'Submit'"
                                 :disabled="is_uploading || is_disabled"
                                 type="submit"
-                                class="pointer db p2 mt4 ml-auto mr-auto bg-transparent ba br-100"
+                                class="pointer db p2 mt4 ml-auto mr-auto bg-transparent ba b--inherit br-100"
                             ></button>
                         </form>
                     </div>
@@ -1092,7 +1229,7 @@
                                         Sample Text
                                         <span
                                             x-text="`.f${i}`"
-                                            class="lh-solid ph1 bg-violet-9 br1"
+                                            class="lh-solid ph1 ba br1"
                                         ></span>
                                     </li>
                                 </template>
@@ -1153,7 +1290,7 @@
                                         'pl5': showgrid,
                                         'pr5': !showgrid
                                     }"
-                                    class="db h2 bg-violet-9 br-100 transition-small"
+                                    class="db h2 ba br-100 transition-small"
                                 >
                                     <span
                                         class="db h-100 bg-white ba br-100 aspect-ratio-1x1"
