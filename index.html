@@ -57,6 +57,7 @@
                 }                
             }"
             x-init="
+                $nextTick(() => checkZoom());
                 $watch('zoomlevel', (zoomlevel) => {
                     document.documentElement.style.setProperty('--zoomlevel', zoomlevel);
                 })
