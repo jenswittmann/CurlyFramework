@@ -400,69 +400,209 @@
                             and sustainability with real people.
                         </li>
                     </ul>
+                </div>
+            </section>
+
+            <section class="dc">
+                <div id="tools" class="col-full mt6"></div>
+                <h2 class="start-1 start-4-m end-last f5">Tools</h2>
+                <article aria-label="Sa11y" class="dc">
+                    <div id="tools__sa11y" class="start-1 end-last end-4-m">
+                        <h3 class="sticky top-0 f4 lh-title m0">Sa11y</h3>
+                    </div>
                     <div
-                        x-data="{
-                            sa11y: null,
-                            
-                            loadCSS() {
-                                return new Promise((resolve, reject) => {
-                                    const link = document.createElement('link');
-                                    link.rel = 'stylesheet';
-                                    link.href = 'https://cdn.jsdelivr.net/gh/ryersondmp/sa11y@3.2.3/dist/css/sa11y.min.css';
-                                    link.onload = resolve;
-                                    link.onerror = reject;
-                                    document.head.appendChild(link);
-                                });
-                            },
-                            
-                            loadJS() {
-                                return new Promise((resolve, reject) => {
-                                  const script = document.createElement('script');
-                                  script.src = 'https://cdn.jsdelivr.net/combine/gh/ryersondmp/sa11y@3.2.3/dist/js/lang/en.umd.js,gh/ryersondmp/sa11y@3.2.3/dist/js/sa11y.umd.min.js';
-                                  script.onload = resolve;
-                                  script.onerror = reject;
-                                  document.body.appendChild(script);
-                                });
-                            },
-                            
-                            initSa11y() {                                    
-                                this.loadCSS()
-                                    .then(this.loadJS)
-                                    .then(() => {
-                                        Sa11y.Lang.addI18n(Sa11yLangEn.strings);
-                                        this.sa11y = new Sa11y.Sa11y({
-                                            checkRoot: 'body',
-                                        });
-                                    })
-                                    .catch((error) => new Error('Error loading Sa11y:', error));
-                            }
-                        }"
+                        class="start-1 start-4-m end-last flex flex-column justify-center items-center p4 bg-violet-10 br4 aspect-ratio-16x9"
                     >
-                        <p class="mt3 mb0">
-                            Sa11y.js visually highlights content issues at the
-                            source with a simple tooltip on how to fix them:
-                        </p>
-                        <button
-                            @click="initSa11y()"
-                            :aria-pressed="sa11y"
-                            :disabled="sa11y"
-                            class="pointer flex items-center g3 p0 mt2 bg-transparent bn"
+                        <div
+                            x-data="{
+                                sa11y: null,
+                                
+                                loadCSS() {
+                                    return new Promise((resolve, reject) => {
+                                        const link = document.createElement('link');
+                                        link.rel = 'stylesheet';
+                                        link.href = 'https://cdn.jsdelivr.net/gh/ryersondmp/sa11y@3.2.3/dist/css/sa11y.min.css';
+                                        link.onload = resolve;
+                                        link.onerror = reject;
+                                        document.head.appendChild(link);
+                                    });
+                                },
+                                
+                                loadJS() {
+                                    return new Promise((resolve, reject) => {
+                                    const script = document.createElement('script');
+                                    script.src = 'https://cdn.jsdelivr.net/combine/gh/ryersondmp/sa11y@3.2.3/dist/js/lang/en.umd.js,gh/ryersondmp/sa11y@3.2.3/dist/js/sa11y.umd.min.js';
+                                    script.onload = resolve;
+                                    script.onerror = reject;
+                                    document.body.appendChild(script);
+                                    });
+                                },
+                                
+                                initSa11y() {                                    
+                                    this.loadCSS()
+                                        .then(this.loadJS)
+                                        .then(() => {
+                                            Sa11y.Lang.addI18n(Sa11yLangEn.strings);
+                                            this.sa11y = new Sa11y.Sa11y({
+                                                checkRoot: 'body',
+                                            });
+                                        })
+                                        .catch((error) => new Error('Error loading Sa11y:', error));
+                                }
+                            }"
+                            class="w-60-m"
                         >
-                            <span
-                                :class="{
-                                    'pl5 o-50': sa11y,
-                                    'pr5': !sa11y
-                                }"
-                                class="db h2 ba br-100 transition-small"
+                            <p class="mt3 mb0">
+                                Sa11y.js visually highlights content issues at
+                                the source with a simple tooltip on how to fix
+                                them:
+                            </p>
+                            <button
+                                @click="initSa11y()"
+                                :aria-pressed="sa11y"
+                                :disabled="sa11y"
+                                class="pointer flex items-center g3 p0 mt2 bg-transparent bn"
                             >
                                 <span
-                                    class="db h-100 bg-white ba br-100 aspect-ratio-1x1"
-                                ></span>
-                            </span>
-                            <span class="nowrap">show Sa11y.js</span>
-                        </button>
+                                    :class="{
+                                'pl5 o-50': sa11y,
+                                'pr5': !sa11y
+                            }"
+                                    class="db h2 ba br-100 transition-small"
+                                >
+                                    <span
+                                        class="db h-100 bg-white ba br-100 aspect-ratio-1x1"
+                                    ></span>
+                                </span>
+                                <span class="nowrap">show Sa11y.js</span>
+                            </button>
+                        </div>
                     </div>
-                </div>
+                </article>
+                <article aria-label="Checklist" class="dc">
+                    <div class="start-1 end-last end-4-m">
+                        <h3
+                            id="tools__checklist"
+                            class="sticky top-0 f4 lh-title m0"
+                        >
+                            Checklist
+                        </h3>
+                    </div>
+                    <div
+                        class="start-1 start-4-m end-last flex flex-column justify-center items-center p4 pv5-m bg-violet-10 br4 aspect-ratio-16x9"
+                    >
+                        <div
+                            x-data="{
+                                checksdone: $persist([]),
+                                checkitems: [
+                                    {
+                                        id: 'wireframe',
+                                        task: 'Have a coffee with the designer and check the wireframe for any accessibility issues.'
+                                    },
+                                    {
+                                        id: 'design',
+                                        task: 'Test the design for common contrast issues, long animations or some complicated navigation structures.'
+                                    },
+                                    {
+                                        id: 'sa11y',
+                                        task: 'Use <a href=#tools__sa11y class=bb>Sa11y.js</a> during development. <a href=https://visbug.web.app/ class=bb>VisBug</a> can also be useful for debugging colour ratios and so on.'
+                                    },
+                                    {
+                                        id: 'web.dev',
+                                        task: 'Measure your pages with <a href=https://pagespeed.web.dev/analysis/https-curlyframe-work/79r5iuaoc3?form_factor=mobile class=bb>PageSpeed Insights</a>'
+                                    },
+                                    {
+                                        id: 'wave',
+                                        task: 'Check accessibility with <a href=https://wave.webaim.org/report#/https://curlyframe.work/ class=bb>WAVE</a>'
+                                    },
+                                    {
+                                        id: 'tabs',
+                                        task: 'Use the Tab key to navigate through your site. Do you know where your focus is? Are there any keyboard traps? Are modals escapable with the ESC key?'
+                                    },
+                                    {
+                                        id: 'skiplinks',
+                                        task: 'Check your skiplinks and landmarks.'
+                                    },
+                                    {
+                                        id: 'zoom',
+                                        task: 'Check that your page is zoomable.'
+                                    },
+                                    {
+                                        id: 'color',
+                                        task: 'Check your page without colours using <a href=#tools__sa11y class=bb>Sa11y.js</a> and in dark mode.'
+                                    },
+                                    {
+                                        id: 'screenreader',
+                                        task: 'Test your page with a screen reader like VoiceOver. Dim your monitor. Is everything accessible and would changes be announced?'
+                                    },
+                                    {
+                                        id: 'sustainability',
+                                        task: 'Check sustainability with <a href=https://www.websitecarbon.com/website/curlyframe-work/ class=bb>Website Carbon Calculator</a>.'
+                                    },
+                                    {
+                                        id: 'seo',
+                                        task: 'Do a classic SEO <a href=https://freetools.seobility.net/de/seocheck/check?url=https%3A%2F%2Fcurlyframe.work%2F&crawltype=1 class=bb>check</a>.'
+                                    },
+                                    {
+                                        id: 'metatags',
+                                        task: 'Check that your <a href=https://metatags.io/?url=https%3A%2F%2Fcurlyframe.work%2F class=bb>meta tags</a> are ready.'
+                                    },
+                                    {
+                                        id: 'page',
+                                        task: 'Add a page for accessibility information. Like a contact page, what does not work and helpful <a href=https://toolbox.teilhabe4punkt0.de/tools/overlay-tools-vs-browsereinstellungen class=bb>browser tips</a>/<a href=https://support.google.com/chrome/answer/7040464 class=bb>tools</a>. Maybe there is an option to add .grayscale-100 to the body element to disable colour complety for the site?'
+                                    }
+                                ]
+                            }"
+                            class="w-90"
+                        >
+                            <p>
+                                Here are some checks for a good website
+                                development workflow.
+                            </p>
+                            <ul class="mv4">
+                                <template x-for="check in checkitems">
+                                    <div class="form__item">
+                                        <div
+                                            x-id="['check']"
+                                            class="form__field form__field--checkbox"
+                                        >
+                                            <input
+                                                @change="
+                                                    if (checksdone.includes(check.id)) {
+                                                        checksdone.splice(checksdone.indexOf(check.id), 1);
+                                                        return;
+                                                    }
+                                                    checksdone.push(check.id)
+                                                "
+                                                :id="$id('check')"
+                                                :name="$id('check')"
+                                                :checked="checksdone.includes(check.id)"
+                                                type="checkbox"
+                                                value="done"
+                                                required
+                                            />
+                                            <label
+                                                :for="$id('check')"
+                                                class="form__label"
+                                            >
+                                                <span x-html="check.task">
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </template>
+                            </ul>
+                            <p>
+                                Go deeper with the BITV/WCAG 2.2
+                                <a href="https://studio.bitvtest.de/" class="bb"
+                                    >Toolbox</a
+                                >
+                                or get in touch with
+                                <a href="#contact" class="bb">me</a>.
+                            </p>
+                        </div>
+                    </div>
+                </article>
             </section>
 
             <section class="dc">
@@ -470,12 +610,7 @@
                 <h2 class="start-1 start-4-m end-last f5">Samples</h2>
                 <article aria-label="Sample Modal" class="dc">
                     <div class="start-1 end-last end-4-m">
-                        <h3
-                            id="headline__modal"
-                            class="sticky top-0 f4 lh-title m0"
-                        >
-                            Modal
-                        </h3>
+                        <h3 class="sticky top-0 f4 lh-title m0">Modal</h3>
                     </div>
                     <div
                         class="start-1 start-4-m end-last flex flex-column justify-center items-center p4 bg-violet-10 br4 aspect-ratio-16x9"
@@ -1617,7 +1752,7 @@
         </main>
 
         <footer class="col-full col-4-m p4">
-            <h2 class="f1">Contact</h2>
+            <h2 id="contact" class="f1">Contact</h2>
             <p>
                 Questions and comments gladly via
                 <a
