@@ -603,6 +603,128 @@
                         </div>
                     </div>
                 </article>
+                <article aria-label="Checklist" class="dc">
+                    <div class="start-1 end-last end-4-m">
+                        <h3
+                            id="tools__imagealtgenerator"
+                            class="sticky top-0 f4 lh-title m0"
+                        >
+                            Image Alt Generator
+                        </h3>
+                    </div>
+                    <div
+                        class="start-1 start-4-m end-last flex flex-column justify-center items-center p4 pv5-m bg-violet-10 br4 aspect-ratio-16x9"
+                    >
+                        <div
+                            x-data="{
+                                apiKey: $persist(''),
+                                image: '',
+                                caption: '',
+                                
+                                generate() {
+                                    if (!this.apiKey) {
+                                        alert('Please enter an API key. You can get a free one at platform.openai.com.');
+                                        return;
+                                    }
+                                    this.caption = '';                            
+                                    const file = this.$refs.imageFile.files[0],
+                                          reader = new FileReader();
+                                    reader.readAsDataURL(file);
+                                    reader.onload = () => {
+                                        this.image = reader.result;
+                                        this.askAI();
+                                    };
+                                },
+                                
+                                askAI() {
+                                    fetch('https://api.openai.com/v1/chat/completions', {
+                                        method: 'POST',
+                                        headers: {
+                                            'Content-Type': 'application/json',
+                                            'Authorization': `Bearer ${this.apiKey}`
+                                        },
+                                        body: JSON.stringify({
+                                            model: 'gpt-4o-mini',
+                                            messages: [
+                                                {
+                                                    role: 'user',
+                                                    content: [
+                                                        {
+                                                            'type': 'text', 
+                                                            'text': 'Generate a description for an image alt attribute.'
+                                                        },
+                                                        {
+                                                            'type': 'image_url',
+                                                            'image_url': {
+                                                                'url': this.image,
+                                                            },
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        })
+                                    })
+                                        .then((response) => response.json())
+                                        .then((response) => {
+                                            this.caption = response.choices[0].message.content;
+                                        }); 
+                                }
+                            }"
+                            class="w-70-m"
+                        >
+                            <p class="mb2">
+                                Upload an image to get an image description from
+                                ChatGPT. Note that the AI uses a lot of
+                                resources and uses your image for training. So
+                                use it responsibly!
+                            </p>
+                            <div class="form__item p4 ba br3">
+                                <label for="image" class="form__label"
+                                    >Image</label
+                                >
+                                <input
+                                    x-ref="imageFile"
+                                    type="file"
+                                    name="image"
+                                    id="image"
+                                    class="form__field form__field--upload"
+                                />
+                            </div>
+                            <div class="mv4">
+                                <button
+                                    @click="generate()"
+                                    class="pointer db p2 mt4 ml-auto mr-auto bg-transparent ba b--inherit br-100"
+                                >
+                                    Generate
+                                </button>
+                            </div>
+                            <figure x-show="image" class="p4 ba br3">
+                                <img
+                                    :src="image"
+                                    width="10"
+                                    height="10"
+                                    alt=""
+                                    class="overflow-hidden db flex-auto-1-0 w-50 h-inherit br3 aspect-ratio-1x1 img-cover"
+                                />
+                                <figcaption
+                                    x-text="caption == '' ? 'Generating …' : caption"
+                                    class="f1 mt3"
+                                ></figcaption>
+                            </figure>
+                            <div class="flex justify-end mv2">
+                                <button
+                                    @click="apiKey = prompt('Enter your OpenAI API Key:')"
+                                    class="btn btn--clean f1"
+                                >
+                                    <span class="bb">Set API Key</span>
+                                    <span x-show="apiKey" aria-hidden="true"
+                                        >✅</span
+                                    >
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
             </section>
 
             <section class="dc">
