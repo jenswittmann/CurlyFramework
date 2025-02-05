@@ -536,6 +536,14 @@
                                         task: 'Test your page with a screen reader like VoiceOver. Dim your monitor. Is everything accessible and would changes be announced?'
                                     },
                                     {
+                                        id: 'print',
+                                        task: 'Check that your site has a good and sustainable <button @click=window.print() class=\'btn btn--clean\'><span class=bb>print</span></button> style.'
+                                    },
+                                    {
+                                        id: 'naked',
+                                        task: 'View your site in <button @click=\'document.styleSheets.item(1).disabled=!document.styleSheets.item(1).disabled\' class=\'btn btn--clean\'><span class=bb>plain</span></button> HTML without CSS.'
+                                    },
+                                    {
                                         id: 'sustainability',
                                         task: 'Check sustainability with <a href=https://www.websitecarbon.com/website/curlyframe-work/ class=bb>Website Carbon Calculator</a>.'
                                     },
