@@ -614,7 +614,7 @@
                         </div>
                     </div>
                 </article>
-                <article aria-label="Checklist" class="dc">
+                <article aria-label="Image Alt Generator" class="dc">
                     <div class="start-1 end-last end-4-m">
                         <h3
                             id="tools__imagealtgenerator"
@@ -662,7 +662,7 @@
                                                     content: [
                                                         {
                                                             'type': 'text', 
-                                                            'text': 'Generate a description for an image alt attribute.'
+                                                            'text': 'Write a very short german image description with max 100 characters for screenreader.'
                                                         },
                                                         {
                                                             'type': 'image_url',
@@ -689,50 +689,66 @@
                                 resources and uses your image for training. So
                                 use it responsibly!
                             </p>
-                            <div class="form__item p4 ba br3">
-                                <label for="image" class="form__label"
-                                    >Image</label
-                                >
-                                <input
-                                    x-ref="imageFile"
-                                    type="file"
-                                    name="image"
-                                    id="image"
-                                    class="form__field form__field--upload"
-                                />
-                            </div>
-                            <div class="mv4">
+                            <div class="mv2">
                                 <button
-                                    @click="generate()"
-                                    class="pointer db p2 mt4 ml-auto mr-auto bg-transparent ba b--inherit br-100"
-                                >
-                                    Generate
-                                </button>
-                            </div>
-                            <figure x-show="image" class="p4 ba br3">
-                                <img
-                                    :src="image"
-                                    width="10"
-                                    height="10"
-                                    alt=""
-                                    class="overflow-hidden db flex-auto-1-0 w-50 h-inherit br3 aspect-ratio-1x1 img-cover"
-                                />
-                                <figcaption
-                                    x-text="caption == '' ? 'Generating …' : caption"
-                                    class="f1 mt3"
-                                ></figcaption>
-                            </figure>
-                            <div class="flex justify-end mv2">
-                                <button
-                                    @click="apiKey = prompt('Enter your OpenAI API Key:')"
+                                    @click="apiKey = apiKey ? '' : prompt('Enter your OpenAI API Key:')"
                                     class="btn btn--clean f1"
                                 >
-                                    <span class="bb">Set API Key</span>
-                                    <span x-show="apiKey" aria-hidden="true"
-                                        >✅</span
-                                    >
+                                    <span x-show="!apiKey" class="bb">
+                                        Set API Key
+                                    </span>
+                                    <span x-show="apiKey" class="bb">
+                                        remove API Key
+                                    </span>
                                 </button>
                             </div>
+                            <form
+                                x-show="apiKey"
+                                @submit.prevent="generate(); $refs.imagealtgeneratorresult.focus()"
+                                class="form"
+                            >
+                                <div class="form__item p4 ba br3">
+                                    <label for="image" class="form__label"
+                                        >Image</label
+                                    >
+                                    <input
+                                        x-ref="imageFile"
+                                        type="file"
+                                        name="image"
+                                        id="image"
+                                        class="form__field form__field--upload"
+                                    />
+                                </div>
+                                <div class="mv4">
+                                    <button
+                                        type="submit"
+                                        class="pointer db p2 mt4 ml-auto mr-auto bg-transparent ba b--inherit br-100"
+                                    >
+                                        Generate
+                                    </button>
+                                </div>
+                                <figure
+                                    x-ref="imagealtgeneratorresult"
+                                    x-show="image"
+                                    tabindex="0"
+                                    class="p4 ba br3"
+                                >
+                                    <img
+                                        :src="image"
+                                        width="10"
+                                        height="10"
+                                        alt="your uploaded image"
+                                        class="overflow-hidden db flex-auto-1-0 w-50 h-inherit br3 aspect-ratio-1x1 img-cover"
+                                    />
+                                    <figcaption
+                                        x-text="caption == '' ? 'Generating …' : caption"
+                                        aria-atomic="true"
+                                        aria-live="polite"
+                                        role="status"
+                                        class="f1 mt3"
+                                    ></figcaption>
+                                </figure>
+                            </form>
                         </div>
                     </div>
                 </article>
