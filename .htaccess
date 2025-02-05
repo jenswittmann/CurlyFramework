@@ -4,6 +4,10 @@ RewriteBase /
 # Prevent dot directories (hidden directories like .git) to be exposed to the public
 RewriteRule "/\.|^\.(?!well-known/)" - [F]
 
+# Develop locally, use images from production
+#RewriteCond %{REQUEST_URI} ^/upload/[^\/]*/.*$
+#RewriteRule ^(.*)$ https://REMOTE-URL.COM/$1 [QSA,L]
+
 # Rewrite www.example.com -> example.com -- used with SEO Strict URLs plugin
 #RewriteCond %{HTTP_HOST} .
 #RewriteCond %{HTTP_HOST} ^www.(.*)$ [NC]
