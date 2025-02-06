@@ -95,9 +95,9 @@
                 
                 checkZoom() {
                     this.zoomlevel = window.outerWidth / window.innerWidth;        
-                    if (this.zoomlevel > 2) {
+                    if (this.zoomlevel < 0.1 || this.zoomlevel >= 2) {
                         this.zoomlevel = 1;
-                    }   
+                    }
                 }                
             }"
             x-init="
