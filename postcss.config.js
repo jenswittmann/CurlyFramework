@@ -1,6 +1,3 @@
 module.exports = {
-    plugins: [
-        require('postcss-custom-media'),
-        require('cssnano'),
-    ]    
-}
+    plugins: [require("postcss-custom-media")],
+};
