@@ -31,5 +31,8 @@
         "css grid",
         "leipzig"
     ],
+    "devDependencies": {
+        "prettier": "*"
+    },
     "version": "7.7.0"
 }
