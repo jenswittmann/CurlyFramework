@@ -106,3 +106,29 @@
 .vv {
     visibility: visible;
 }
+
+// transform
+.transform-nt-50 {
+    transform: translateY(-50%);
+}
+
+.transform-nl-50 {
+    transform: translateX(-50%);
+}
+
+.transform-nr-50 {
+    transform: translateX(50%);
+}
+
+.transform-ntl-50 {
+    transform: translate(-50%, -50%);
+}
+
+.transform-ntr-50 {
+    transform: translate(50%, -50%);
+}
+
+// position
+.top-50 {
+    top: 50%;
+}
