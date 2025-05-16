@@ -22,3 +22,40 @@
         transition: var(--animation-time-large);
     }
 }
+
+// parallax
+.scroll {
+    $p: &;
+
+    &--parallax-up {
+        animation: parallax-up linear forwards;
+        animation-timeline: view();
+    }
+
+    @keyframes parallax-up {
+        0% {
+            transform: translateY(var(--scroll-up-start, 50%)) rotate(10deg);
+        }
+        100% {
+            transform: translateY(var(--scroll-up-end, -50%)) rotate(-10deg);
+        }
+    }
+
+    &--parallax-bg {
+        #{$p}__item {
+            height: 80vh;
+            object-fit: cover;
+            animation: parallax-bg linear forwards;
+            animation-timeline: view();
+        }
+    }
+
+    @keyframes parallax-bg {
+        0% {
+            object-position: 0 0%;
+        }
+        100% {
+            object-position: 0 100%;
+        }
+    }
+}
