@@ -13,14 +13,27 @@
     --fontname: sans-serif;
 
     // spacing
-    --spacing-1: 0.25rem;
-    --spacing-2: 0.5rem;
-    --spacing-3: 1rem;
-    --spacing-4: 2rem;
-    --spacing-5: 4rem;
-    --spacing-6: 8rem;
-    --spacing-7: 16rem;
-    --spacing-8: 32rem;
+    & {
+        --spacing-1: calc(6 / 16 * 1rem);
+        --spacing-2: calc(12 / 16 * 1rem);
+        --spacing-3: calc(24 / 16 * 1rem);
+        --spacing-4: calc(36 / 16 * 1rem);
+        --spacing-5: calc(48 / 16 * 1rem);
+        --spacing-6: calc(60 / 16 * 1rem);
+        --spacing-7: calc(75 / 16 * 1rem);
+        --spacing-8: calc(124 / 16 * 1rem);
+
+        @media (--breakpoint-medium) {
+            --spacing-1: calc(8 / 16 * 1rem);
+            --spacing-2: calc(16 / 16 * 1rem);
+            --spacing-3: calc(24 / 16 * 1rem);
+            --spacing-4: calc(32 / 16 * 1rem);
+            --spacing-5: calc(40 / 16 * 1rem);
+            --spacing-6: calc(56 / 16 * 1rem);
+            --spacing-7: calc(95 / 16 * 1rem);
+            --spacing-8: calc(200 / 16 * 1rem);
+        }
+    }
 
     // colors
     --violet-5: #351788;
@@ -50,8 +63,8 @@
 @custom-media --breakpoint-large screen and (min-width: 60em);
 
 // detect pointer device
-@custom-media --detectHasPointer (any-pointer: fine);
-@custom-media --detectNoPointer (any-pointer: none);
+@custom-media --detectHasPointer (pointer: fine);
+@custom-media --detectNoPointer (pointer: coarse);
 
 // scaling
 :root {
