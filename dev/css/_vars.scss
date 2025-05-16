@@ -12,6 +12,9 @@
     // fonts
     --fontname: sans-serif;
 
+    // colors
+    --violet-5: #351788;
+
     // spacing
     & {
         --spacing-1: calc(6 / 16 * 1rem);
@@ -34,9 +37,6 @@
             --spacing-8: calc(200 / 16 * 1rem);
         }
     }
-
-    // colors
-    --violet-5: #351788;
 
     // typo, calculate from px
     & {
