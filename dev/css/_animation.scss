@@ -34,10 +34,18 @@
 
     @keyframes parallax-up {
         0% {
-            transform: translateY(var(--scroll-up-start, 50%)) rotate(10deg);
+            transform: translate(
+                    var(--scroll-up-x-start, 0),
+                    var(--scroll-up-y-start, 0)
+                )
+                rotate(var(--scroll-up-rotate-start, 0deg));
         }
         100% {
-            transform: translateY(var(--scroll-up-end, -50%)) rotate(-10deg);
+            transform: translate(
+                    var(--scroll-up-x-end, 0),
+                    var(--scroll-up-y-end, 0)
+                )
+                rotate(var(--scroll-up-rotate-end, 0deg));
         }
     }
 
