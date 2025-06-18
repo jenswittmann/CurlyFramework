@@ -33,6 +33,11 @@ html {
     scroll-padding: var(--spacing-4) 0;
 }
 
+// remove page bouncing
+body {
+    overscroll-behavior: none;
+}
+
 // coloring scrollbar
 ::-webkit-scrollbar {
     width: 0.25rem;
