@@ -46,6 +46,10 @@
         }
 
         &--select {
+            select {
+                -webkit-appearance: none;
+            }
+            
             option {
                 background-color: white;
             }
