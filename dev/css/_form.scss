@@ -61,7 +61,7 @@
             input {
                 line-height: 1;
 
-                &::file-selector-button {
+                &:file-selector-button {
                     @extend .btn;
                 }
             }
