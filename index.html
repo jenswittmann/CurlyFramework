@@ -409,7 +409,7 @@
                         <div
                             x-data="{
                                 sa11y: null,
-                                
+
                                 loadCSS() {
                                     return new Promise((resolve, reject) => {
                                         const link = document.createElement('link');
@@ -420,7 +420,7 @@
                                         document.head.appendChild(link);
                                     });
                                 },
-                                
+
                                 loadJS() {
                                     return new Promise((resolve, reject) => {
                                     const script = document.createElement('script');
@@ -430,8 +430,8 @@
                                     document.body.appendChild(script);
                                     });
                                 },
-                                
-                                initSa11y() {                                    
+
+                                initSa11y() {
                                     this.loadCSS()
                                         .then(this.loadJS)
                                         .then(() => {
@@ -621,13 +621,13 @@
                                 apiKey: $persist(''),
                                 image: '',
                                 caption: '',
-                                
+
                                 generate() {
                                     if (!this.apiKey) {
                                         alert('Please enter an API key. You can get a free one at platform.openai.com.');
                                         return;
                                     }
-                                    this.caption = '';                            
+                                    this.caption = '';
                                     const file = this.$refs.imageFile.files[0],
                                           reader = new FileReader();
                                     reader.readAsDataURL(file);
@@ -636,7 +636,7 @@
                                         this.askAI();
                                     };
                                 },
-                                
+
                                 askAI() {
                                     fetch('https://api.openai.com/v1/chat/completions', {
                                         method: 'POST',
@@ -651,7 +651,7 @@
                                                     role: 'user',
                                                     content: [
                                                         {
-                                                            'type': 'text', 
+                                                            'type': 'text',
                                                             'text': 'Write a very short german image description with max 100 characters for screenreader.'
                                                         },
                                                         {
@@ -668,7 +668,7 @@
                                         .then((response) => response.json())
                                         .then((response) => {
                                             this.caption = response.choices[0].message.content;
-                                        }); 
+                                        });
                                 }
                             }"
                             class="w-70-m"
@@ -1124,7 +1124,7 @@
                                     'Alpine.js',
                                     'no dependencies'
                                 ],
-                                
+
                                 prev() {
                                     this.index--;
                                     if (this.index < 0) {
@@ -1132,7 +1132,7 @@
                                     }
                                     this.goto(this.index);
                                 },
-                                
+
                                 next() {
                                     this.index++;
                                     if (this.index > this.slides.length) {
@@ -1140,7 +1140,7 @@
                                     }
                                     this.goto(this.index);
                                 },
-                                
+
                                 goto(i = this.index) {
                                     this.$refs.slider.scrollLeft = this.$refs.slider.offsetWidth * i;
                                 }
@@ -1564,13 +1564,13 @@
                         class="start-1 start-4-m end-last flex flex-column justify-center items-center p3 pv4 p4-m pv5-m bg-violet-10 br4"
                     >
                         <form
-                            x-data="{       
+                            x-data="{
                                 is_uploading: false,
                                 is_uploaderror: false,
                                 is_disabled: false,
                                 data: false,
                                 progress: 0,
-                                        
+
                                 resetData() {
                                     this.is_uploading = false;
                                     this.is_uploaderror = false;
@@ -1579,7 +1579,7 @@
                                     this.$refs.photoupload.value = '';
                                     this.$refs.photourl.value = '';
                                 },
-                                
+
                                 async upload() {
                                     let field = this.$refs.photoupload,
                                         file = field.files[0],
@@ -1603,8 +1603,8 @@
                                         };
                                         this.progress = false;
                                         this.is_uploading = false;
-                                        if (!this.data.url) {          
-                                            this.resetData();              
+                                        if (!this.data.url) {
+                                            this.resetData();
                                             this.is_uploaderror = true;
                                         } else {
                                             this.is_uploaderror = false;
@@ -1612,7 +1612,7 @@
                                     };
                                     xhr.send(formData);
                                 },
-                                
+
                                 async send() {
                                     let formData = new FormData($el),
                                         xhr = new XMLHttpRequest();
@@ -1631,7 +1631,7 @@
                                         this.$focus.focus(messageEl);
                                         this.is_disabled = false;
                                     };
-                                    xhr.send(formData);                 
+                                    xhr.send(formData);
                                 }
                             }"
                             x-init="
