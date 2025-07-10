@@ -10,11 +10,6 @@
     &-font {
         width: 1em;
         height: 1em;
-
-        &.icon--pa {
-            width: 0.6em;
-            height: 0.6em;
-        }
     }
 
     &--outline {
@@ -28,13 +23,5 @@
             fill: currentColor;
             stroke-width: 0;
         }
-    }
-
-    &--ml {
-        margin-left: 0.5ch;
-    }
-
-    &--mr {
-        margin-right: 0.5ch;
     }
 }
