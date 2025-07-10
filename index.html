@@ -89,26 +89,6 @@
             <li><a href="#contact">contact</a></li>
         </ul>
 
-        <div
-            x-data="{
-                zoomlevel: 1,
-                
-                checkZoom() {
-                    this.zoomlevel = window.outerWidth / window.innerWidth;        
-                    if (this.zoomlevel < 0.1 || this.zoomlevel >= 2) {
-                        this.zoomlevel = 1;
-                    }
-                }                
-            }"
-            x-init="
-                $nextTick(() => checkZoom());
-                $watch('zoomlevel', (zoomlevel) => {
-                    document.documentElement.style.setProperty('--zoomlevel', zoomlevel);
-                })
-            "
-            @resize.window="checkZoom()"
-        ></div>
-
         <main class="dc">
             <section id="info" class="dc">
                 <span class="cooking start-1 end-4 end-2-m relative">
@@ -767,6 +747,64 @@
             <section class="dc">
                 <div id="samples" class="col-full mt6"></div>
                 <h2 class="start-1 start-4-m end-last f5">Samples</h2>
+                <article aria-label="Sample Modal" class="dc">
+                    <div class="start-1 end-last end-4-m">
+                        <h3 id="zoomdetector" class="sticky top-0 f4 lh-title m0">Zoom Detector</h3>
+                    </div>
+                    <div
+                        class="start-1 start-4-m end-last bg-violet-10 br4 aspect-ratio-16x9"
+                    >
+                        <div
+                            x-data="{
+                                zoomlevel: 1,
+                                zoompositive: false,
+
+                                checkZoom() {
+                                    this.zoomlevel = window.outerWidth / window.innerWidth;
+                                    this.zoompositive = this.zoomlevel > 1.05;
+
+                                    // maybe helps on bugs for brave/firefox
+                                    // if (this.zoomlevel < 0.1 || this.zoomlevel >= 2) {
+                                    //    this.zoomlevel = 1;
+                                    // }
+                                }
+                            }"
+                            x-init="
+                                $nextTick(() => checkZoom());
+                                $watch('zoomlevel', (zoomlevel) => {
+                                    document.documentElement.style.setProperty('--zoomlevel', zoomlevel);
+                                })
+                            "
+                            @resize.window="checkZoom()"
+                            class="flex flex-column justify-center items-center"
+                        >
+                            <template x-if="zoompositive">
+                                <style>
+                                    .fixed,
+                                    .sticky {
+                                        position: static !important;
+                                    }
+                                </style>
+                            </template>
+                            <div class="sticky top-0 w-90 tc p4 bg-violet-10 bb br4">
+                                <p class="dib ph2 pv1 ba br-100 mb1 mb0-m">
+                                    Zoom: <span x-text="(zoomlevel * 100).toFixed(0)"></span>%
+                                </p>
+                                <p class="dib ph2 pv1 ba br-100">
+                                    Positive: <span x-text="zoompositive"></span>
+                                </p>
+                            </div>
+                            <div class="richtext w-70-m m4">
+                                <p>
+                                    Fixed or sticky elements can sometimes use a large amount of screen space, especially when the user zooms in to more than 150%. In this case, it may be better to inherit these elements.
+                                </p>
+                                <p>
+                                    In this script, you divide the outerWith width by the innerWidth to calculate the zoom factor. If the zoom factor is greater than 100%, you can add a class to reset the position. Try this with a Chromium browser using the Ctrl and +/- keys. It's actually a proof of concept, so the CSS isn't in the core at the moment.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
                 <article aria-label="Sample Modal" class="dc">
                     <div class="start-1 end-last end-4-m">
                         <h3 class="sticky top-0 f4 lh-title m0">Modal</h3>
