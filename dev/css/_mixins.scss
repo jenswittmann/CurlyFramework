@@ -137,3 +137,36 @@
 .flip-x {
     transform: scaleX(-1);
 }
+
+// details
+.details__open--show {
+    display: none;
+}
+
+details[open] {
+    .details__open--show {
+        display: block;
+    }
+
+    .details__open--hide {
+        display: none;
+    }
+}
+
+::details-content {
+    overflow: clip;
+    height: 0;
+    transition: height var(--animation-time-small) ease-in-out,
+        content-visibility var(--animation-time-small) ease-in-out
+            allow-discrete;
+}
+
+@supports (interpolate-size: allow-keywords) {
+    :root {
+        interpolate-size: allow-keywords;
+    }
+
+    [open]::details-content {
+        height: auto;
+    }
+}
