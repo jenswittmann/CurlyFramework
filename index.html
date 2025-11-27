@@ -379,7 +379,7 @@
                             >Building a greener web</a
                         >" at "All Day Hey! 2023". Here are some tips:
                     </p>
-                    <ul style="list-style-type: '⇢ '">
+                    <ul class="m3" style="list-style-type: '⇢ '">
                         <li>Use WebP and native lazyload (images, embeds).</li>
                         <li>
                             Use fewer fonts and try to use variable fonts
@@ -489,12 +489,16 @@
                                 checksdone: $persist([]),
                                 checkitems: [
                                     {
+                                        id: 'start',
+                                        task: 'Use these tools to find out more and get started: <a href=https://digitalservice.bund.de/wie-viele-menschen class=bb>How many people?</a>, <a href=https://chromewebstore.google.com/detail/simulating-accessibility/fhdoonhhbnjeckanhpieiiijicdnmnki class=bb>Simulating Accessibility</a>'
+                                    },
+                                    {
                                         id: 'wireframe',
                                         task: 'Have a coffee with the designer and check the wireframe for any accessibility issues.'
                                     },
                                     {
                                         id: 'design',
-                                        task: 'Test the design for common contrast issues, long animations or some complicated navigation structures.'
+                                        task: 'Test the design for common contrast issues, long animations or some complicated navigation structures. Use these <a href=https://leitfaden.leicht-fuer-alle.de/leitfaden/erfolgskritierien/ class=bb>guidelines</a>.'
                                     },
                                     {
                                         id: 'sa11y',
