@@ -414,7 +414,7 @@
                                     return new Promise((resolve, reject) => {
                                         const link = document.createElement('link');
                                         link.rel = 'stylesheet';
-                                        link.href = 'https://cdn.jsdelivr.net/gh/ryersondmp/sa11y@3.2.3/dist/css/sa11y.min.css';
+                                        link.href = 'https://cdn.jsdelivr.net/gh/ryersondmp/sa11y@4.4.1/dist/css/sa11y.min.css';
                                         link.onload = resolve;
                                         link.onerror = reject;
                                         document.head.appendChild(link);
@@ -424,7 +424,7 @@
                                 loadJS() {
                                     return new Promise((resolve, reject) => {
                                     const script = document.createElement('script');
-                                    script.src = 'https://cdn.jsdelivr.net/combine/gh/ryersondmp/sa11y@3.2.3/dist/js/lang/en.umd.js,gh/ryersondmp/sa11y@3.2.3/dist/js/sa11y.umd.min.js';
+                                    script.src = 'https://cdn.jsdelivr.net/combine/gh/ryersondmp/sa11y@4.4.1/dist/js/lang/en.umd.js,gh/ryersondmp/sa11y@4.4.1/dist/js/sa11y.umd.min.js';
                                     script.onload = resolve;
                                     script.onerror = reject;
                                     document.body.appendChild(script);
