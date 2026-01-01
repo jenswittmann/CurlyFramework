@@ -67,3 +67,8 @@
         }
     }
 }
+
+// pulse
+.pulse {
+    transition-timing-function: cubic-bezier(0.3, 0.8, 0.3, 2.3);
+}
