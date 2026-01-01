@@ -128,6 +128,14 @@
     transform: translate(50%, -50%);
 }
 
+.transform-scale-0 {
+    transform: scale(0);
+}
+
+.transform-scale-1 {
+    transform: scale(1);
+}
+
 // position
 .top-50 {
     top: 50%;
