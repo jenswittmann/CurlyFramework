@@ -755,6 +755,109 @@
             <section class="dc">
                 <div id="samples" class="col-full mt6"></div>
                 <h2 class="start-1 start-4-m end-last f5">Samples</h2>
+                <article aria-label="Text to Speech" class="dc">
+                    <div class="start-1 end-last end-4-m">
+                        <h3 id="texttospeech" class="sticky top-0 f4 lh-title m0">Text to Speech</h3>
+                    </div>
+                    <div
+                        class="start-1 start-4-m end-last bg-violet-10 br4 aspect-ratio-16x9"
+                    >
+                        <div
+                            x-data="{
+                                playing: false,
+                                textEls: [],
+                                currentIndex: 0,
+
+                                init() {
+                                    this.textEls = this.$el.querySelectorAll('p');
+                                },
+
+                                speak() {
+                                    this.playing = true;
+                                    let el = this.textEls[this.currentIndex];
+                                    el.classList.add('is-speaking');
+                                    el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                                    const text = new SpeechSynthesisUtterance(el.textContent);
+                                    text.lang = 'en-GB';
+                                    window.speechSynthesis.speak(text);
+                                    text.addEventListener('end', () => {
+                                        el.classList.remove('is-speaking');
+                                        if (this.textEls.length - 1 === this.currentIndex) {
+                                            this.currentIndex = 0;
+                                            this.playing = false;
+                                            return;
+                                        }
+                                        this.next();
+                                    });
+                                },
+
+                                prev() {
+                                    this.cancel();
+                                    this.currentIndex--;
+                                    if (this.currentIndex < 0) {
+                                        this.playing = false;
+                                        this.currentIndex = this.textEls.length - 1;
+                                    }
+                                    this.speak();
+                                },
+
+                                next() {
+                                    this.cancel();
+                                    this.currentIndex++;
+                                    if (this.currentIndex >= this.textEls.length) {
+                                        this.playing = false;
+                                        this.currentIndex = 0;
+                                    }
+                                    this.speak();
+                                },
+
+                                cancel() {
+                                    window.speechSynthesis.cancel();
+                                    this.playing = false;
+                                    this.textEls[this.currentIndex]?.classList.remove('is-speaking');
+                                }
+                            }"
+                            @keydown.left="playing ? prev() : null"
+                            @keydown.right="playing ? next() : null"
+                            @keydown.esc.window="cancel()"
+                            class="flex flex-column justify-center items-center"
+                        >
+                            
+                            <div class="sticky top-0 flex flex-wrap justify-center g1 w-90 f1 tc p1 p4-m bg-violet-10 bb br4">
+                                <button @click="prev()" :disabled="!playing" :class="{ 'transform-scale-0': !playing }" class="pointer p1 ph4-m pv3-m bg-transparent ba b--inherit br-100 transition-small pulse"><span aria-hidden="true">⇠</span> <span class="clip">previous</span></button>
+                                <button x-text="playing ? 'stop' : 'speak'" @click="playing ? cancel() : speak()" :aria-pressed="playing" class="pointer p1 ph4-m pv3-m bg-transparent ba b--inherit br-100 transition-small pulse"></button>
+                                <button @click="next()" :disabled="!playing" :class="{ 'transform-scale-0': !playing }" class="pointer p1 ph4-m pv3-m bg-transparent ba b--inherit br-100 transition-small pulse"><span class="clip">next</span> <span aria-hidden="true">⇢</span></button>
+                            </div>
+                            <div class="richtext w-70-m m4">
+                                <p>
+                                    When it comes to screen readers, programmes such as NVDA and JAWS tend to spring to mind.
+                                </p>
+                                <p>
+                                    However, there are also cases where simply reading a main text aloud is useful.
+                                </p>
+                                <p>
+                                    For example, this could be useful when reading long texts is too tiring for the eyes, or when on parental leave and both hands are needed to care for a baby.
+                                </p>
+                                <p>
+                                    In these cases, it can be helpful to read a text aloud without having to install a programme beforehand.
+                                </p>
+                                <p>
+                                    The Web Speech API already offers a native option for this in the browser. The script is pure vanilla JavaScript based on AlpineJS and is quite simple — it is designed to serve as inspiration.
+                                </p>
+                                <p>
+                                    Use the left and right arrow keys to navigate. Press Escape to cancel.
+                                </p>
+                            </div>
+                        </div>
+                        <style>
+                            .is-speaking {
+                                outline: 3px #fff solid;
+                                outline-offset: 3px;
+                                box-shadow: 0 0 0 5px #000;
+                            }
+                        </style>
+                    </div>
+                </article>
                 <article aria-label="Zoom Detector" class="dc">
                     <div class="start-1 end-last end-4-m">
                         <h3 id="zoomdetector" class="sticky top-0 f4 lh-title m0">Zoom Detector</h3>
