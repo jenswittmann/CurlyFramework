@@ -64,16 +64,6 @@
         text-decoration-thickness: from-font;
         hyphens: auto;
     }
-
-    :empty {
-        height: calc(1lh + 2em);
-        padding: 1em;
-        outline: 1px solid red;
-
-        &:before {
-            content: "⚠️";
-        }
-    }
 }
 /*! purgecss end ignore */
 

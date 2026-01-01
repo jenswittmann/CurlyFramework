@@ -438,6 +438,21 @@
                                             Sa11y.Lang.addI18n(Sa11yLangEn.strings);
                                             this.sa11y = new Sa11y.Sa11y({
                                                 checkRoot: 'body',
+                                                customChecks: 'listen',
+                                            });
+                                            document.addEventListener('sa11y-custom-checks', () => {
+                                                const emptyElements = this.sa11y.find('.richtext *:empty:not(br)', 'root');
+                                                emptyElements.forEach((emptyElement) => {
+                                                    this.sa11y.results.push({
+                                                        element: emptyElement,
+                                                        type: 'error',
+                                                        content: 'Please remove empty paragraphs to avoid confusion.',
+                                                        inline: false,
+                                                        position: 'beforebegin',
+                                                    });
+                                                });
+                                                const allDone = new CustomEvent('sa11y-resume');
+                                                document.dispatchEvent(allDone);
                                             });
                                         })
                                         .catch((error) => new Error('Error loading Sa11y:', error));
@@ -445,11 +460,12 @@
                             }"
                             class="w-60-m"
                         >
-                            <p class="mt3 mb0">
-                                Sa11y.js visually highlights content issues at
+                            <div class="richtext mb3">
+                                <p aria-label="Sample Error for empty Text."></p>
+                                <p>Sa11y.js visually highlights content issues at
                                 the source with a simple tooltip on how to fix
-                                them:
-                            </p>
+                                them.</p>
+                            </div>
                             <button
                                 @click="initSa11y()"
                                 :aria-pressed="sa11y"
