@@ -393,12 +393,13 @@ button.c-button:not(.c-button--ghost),
 // MagicPreview: style template
 .mmmp-c-container__inner {
     position: fixed;
-    left: 0;
+    left: 50%;
     bottom: 1rem;
-    right: 0;
     justify-content: center;
+    width: fit-content;
     background-color: transparent;
     box-shadow: none;
+    transform: translateX(-50%);
 
     .mmmp-c-title {
         display: none;
