@@ -1,0 +1,102 @@
+/*
+
+   TYPE SCALE
+   Docs: https://tachyons.io/docs/typography/scale/
+
+   Base:
+    f = font-size
+
+   Modifiers
+     1 = 1st step in size scale
+     2 = 2nd step in size scale
+     3 = 3rd step in size scale
+     4 = 4th step in size scale
+     5 = 5th step in size scale
+     6 = 6th step in size scale
+     7 = 7th step in size scale
+     8 = 8th step in size scale
+     9 = 9th step in size scale
+     10 = 10th step in size scale
+     11 = 11th step in size scale
+     12 = 12th step in size scale
+
+   Media Query Extensions:
+     -s = small
+     -m = medium
+     -l = large
+*/
+
+:root {
+  --typo-1: .75rem;
+  --typo-2: .875rem;
+  --typo-3: 1rem;
+  --typo-4: 1.25rem;
+  --typo-5: 1.25rem;
+  --typo-6: 1.5rem;
+  --typo-7: 2rem;
+  --typo-8: 3rem;
+  --typo-9: 4rem;
+  --typo-10: 6rem;
+  --typo-11: 8rem;
+  --typo-12: 12rem;
+}
+
+/* Type Scale */
+
+.f1 { font-size: var(--typo-1); }
+.f2 { font-size: var(--typo-2); }
+.f3 { font-size: var(--typo-3); }
+.f4 { font-size: var(--typo-4); }
+.f5 { font-size: var(--typo-5); }
+.f6 { font-size: var(--typo-6); }
+.f7 { font-size: var(--typo-7); }
+.f8 { font-size: var(--typo-8); }
+.f9 { font-size: var(--typo-9); }
+.f10 { font-size: var(--typo-10); }
+.f11 { font-size: var(--typo-11); }
+.f12 { font-size: var(--typo-12); }
+
+@media (--breakpoint-small){
+  .f1-s { font-size: var(--typo-1); }
+  .f2-s { font-size: var(--typo-2); }
+  .f3-s { font-size: var(--typo-3); }
+  .f4-s { font-size: var(--typo-4); }
+  .f5-s { font-size: var(--typo-5); }
+  .f6-s { font-size: var(--typo-6); }
+  .f7-s { font-size: var(--typo-7); }
+  .f8-s { font-size: var(--typo-8); }
+  .f9-s { font-size: var(--typo-9); }
+  .f10-s { font-size: var(--typo-10); }
+  .f11-s { font-size: var(--typo-11); }
+  .f12-s { font-size: var(--typo-12); }
+}
+
+@media (--breakpoint-medium) {
+  .f1-m { font-size: var(--typo-1); }
+  .f2-m { font-size: var(--typo-2); }
+  .f3-m { font-size: var(--typo-3); }
+  .f4-m { font-size: var(--typo-4); }
+  .f5-m { font-size: var(--typo-5); }
+  .f6-m { font-size: var(--typo-6); }
+  .f7-m { font-size: var(--typo-7); }
+  .f8-m { font-size: var(--typo-8); }
+  .f9-m { font-size: var(--typo-9); }
+  .f10-m { font-size: var(--typo-10); }
+  .f11-m { font-size: var(--typo-11); }
+  .f12-m { font-size: var(--typo-12); }
+}
+
+@media (--breakpoint-large) {
+  .f1-l { font-size: var(--typo-1); }
+  .f2-l { font-size: var(--typo-2); }
+  .f3-l { font-size: var(--typo-3); }
+  .f4-l { font-size: var(--typo-4); }
+  .f5-l { font-size: var(--typo-5); }
+  .f6-l { font-size: var(--typo-6); }
+  .f7-l { font-size: var(--typo-7); }
+  .f8-l { font-size: var(--typo-8); }
+  .f9-l { font-size: var(--typo-9); }
+  .f10-l { font-size: var(--typo-10); }
+  .f11-l { font-size: var(--typo-11); }
+  .f12-l { font-size: var(--typo-12); }
+}

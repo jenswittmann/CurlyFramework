@@ -1,0 +1,58 @@
+/*
+
+   UTILITIES
+
+   Media Query Extensions:
+     -s = small
+     -m = medium
+     -l = large
+
+*/
+
+/* Equivalent to .overflow-y-scroll */
+.overflow-container {
+  overflow-y: scroll;
+}
+
+.center {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.mt-auto { margin-top: auto; }
+.mr-auto { margin-right: auto; }
+.ml-auto { margin-left:  auto; }
+.mb-auto { margin-bottom: auto; }
+
+@media (--breakpoint-small){
+  .center-s {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .mt-auto-s { margin-top: auto; }
+  .mr-auto-s { margin-right: auto; }
+  .ml-auto-s { margin-left:  auto; }
+  .mb-auto-s { margin-bottom: auto; }
+}
+
+@media (--breakpoint-medium){
+  .center-m {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .mt-auto-m { margin-top: auto; }
+  .mr-auto-m { margin-right: auto; }
+  .ml-auto-m { margin-left:  auto; }
+  .mb-auto-m { margin-bottom: auto; }
+}
+
+@media (--breakpoint-large){
+  .center-l {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .mt-auto-l { margin-top: auto; }
+  .mr-auto-l { margin-right: auto; }
+  .ml-auto-l { margin-left:  auto; }
+  .mb-auto-l { margin-bottom: auto; }
+}

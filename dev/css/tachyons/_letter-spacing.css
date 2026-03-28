@@ -1,0 +1,39 @@
+/*
+
+   LETTER SPACING
+   Docs: https://tachyons.io/docs/typography/tracking/
+
+   Media Query Extensions:
+     -s = small
+     -m = medium
+     -l = large
+
+*/
+
+:root {
+  --tracked: .1em;
+  --tracked-tight: -.05em;
+  --tracked-mega: .25em;
+}
+
+.tracked       { letter-spacing: var(--tracked); }
+.tracked-tight { letter-spacing: var(--tracked-tight); }
+.tracked-mega  { letter-spacing: var(--tracked-mega); }
+
+@media (--breakpoint-small) {
+  .tracked-s       { letter-spacing: var(--tracked); }
+  .tracked-tight-s { letter-spacing: var(--tracked-tight); }
+  .tracked-mega-s  { letter-spacing: var(--tracked-mega); }
+}
+
+@media (--breakpoint-medium) {
+  .tracked-m       { letter-spacing: var(--tracked); }
+  .tracked-tight-m { letter-spacing: var(--tracked-tight); }
+  .tracked-mega-m  { letter-spacing: var(--tracked-mega); }
+}
+
+@media (--breakpoint-large) {
+  .tracked-l       { letter-spacing: var(--tracked); }
+  .tracked-tight-l { letter-spacing: var(--tracked-tight); }
+  .tracked-mega-l  { letter-spacing: var(--tracked-mega); }
+}

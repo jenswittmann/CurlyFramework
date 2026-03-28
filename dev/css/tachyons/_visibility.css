@@ -1,0 +1,47 @@
+/*
+
+   VISIBILITY
+   Text that is hidden but accessible
+   Ref: https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+
+   Media Query Extensions:
+     -s = small
+     -m = medium
+     -l = large
+
+*/
+
+.clip {
+  position: fixed !important;
+  _position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+@media (--breakpoint-small) {
+  .clip-s {
+    position: fixed !important;
+    _position: absolute !important;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+}
+
+@media (--breakpoint-medium) {
+  .clip-m {
+    position: fixed !important;
+    _position: absolute !important;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+}
+
+@media (--breakpoint-large) {
+  .clip-l {
+    position: fixed !important;
+    _position: absolute !important;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+}
+

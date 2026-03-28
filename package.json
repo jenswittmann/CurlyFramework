@@ -5,8 +5,7 @@
         "@alpinejs/focus": "^3.10.3",
         "@alpinejs/intersect": "^3.10.3",
         "@alpinejs/persist": "^3.14.8",
-        "alpinejs": "^3.10.3",
-        "tachyons": "git+ssh://git@github.com:jenswittmann/tachyons.git"
+        "alpinejs": "^3.10.3"
     },
     "scripts": {},
     "author": "Jens Wittmann",

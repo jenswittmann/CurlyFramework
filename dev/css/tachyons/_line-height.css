@@ -1,0 +1,40 @@
+/*
+
+   LINE HEIGHT / LEADING
+   Docs: https://tachyons.io/docs/typography/line-height
+
+   Media Query Extensions:
+     -s = small
+     -m = medium
+     -l = large
+
+*/
+
+:root {
+  --lh-solid: 1;
+  --lh-title: 1.25;
+  --lh-copy: 1.5;
+}
+
+.lh-solid { line-height: var(--lh-solid); }
+.lh-title { line-height: var(--lh-title); }
+.lh-copy  { line-height: var(--lh-copy); }
+
+@media (--breakpoint-small) {
+  .lh-solid-s { line-height: var(--lh-solid); }
+  .lh-title-s { line-height: var(--lh-title); }
+  .lh-copy-s  { line-height: var(--lh-copy); }
+}
+
+@media (--breakpoint-medium) {
+  .lh-solid-m { line-height: var(--lh-solid); }
+  .lh-title-m { line-height: var(--lh-title); }
+  .lh-copy-m  { line-height: var(--lh-copy); }
+}
+
+@media (--breakpoint-large) {
+  .lh-solid-l { line-height: var(--lh-solid); }
+  .lh-title-l { line-height: var(--lh-title); }
+  .lh-copy-l  { line-height: var(--lh-copy); }
+}
+
