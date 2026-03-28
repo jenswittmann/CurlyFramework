@@ -23,19 +23,19 @@
 
 .nested-list-reset ul,
 .nested-list-reset ol {
-  padding-left: 0;
-  margin-left: 0;
+  padding-inline-start: 0;
+  margin-inline-start: 0;
   list-style-type: none;
 }
 
 .nested-copy-indent p+p {
   text-indent: 1em;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 .nested-copy-separator p+p {
-  margin-top: 1.5em;
+  margin-block-start: 1.5em;
 }
 
 .nested-img img {

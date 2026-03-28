@@ -287,7 +287,7 @@
     "\/dev\/css\/style.scss" : {
       "aP" : 0,
       "bl" : 0,
-      "co" : 2,
+      "co" : 1,
       "ec" : 0,
       "ft" : 4,
       "ma" : 0,
@@ -1583,7 +1583,7 @@
     "bowerTargetDependencyListType" : 1,
     "bowerUseExactVersion" : 0,
     "browserRefreshDelay" : 0,
-    "browserslistString" : ">0.2%, last 2 versions, Firefox ESR, not dead",
+    "browserslistString" : "defaults",
     "buildEnvironment" : 0,
     "buildFolderActive" : 0,
     "buildFolderName" : "build",

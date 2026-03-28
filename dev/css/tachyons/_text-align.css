@@ -19,28 +19,28 @@
 
 */
 
-.tl  { text-align: left; }
-.tr  { text-align: right; }
+.tl  { text-align: start; }
+.tr  { text-align: end; }
 .tc  { text-align: center; }
 .tj  { text-align: justify; }
 
 @media (--breakpoint-small) {
-  .tl-s  { text-align: left; }
-  .tr-s  { text-align: right; }
+  .tl-s  { text-align: start; }
+  .tr-s  { text-align: end; }
   .tc-s  { text-align: center; }
   .tj-s  { text-align: justify; }
 }
 
 @media (--breakpoint-medium) {
-  .tl-m  { text-align: left; }
-  .tr-m  { text-align: right; }
+  .tl-m  { text-align: start; }
+  .tr-m  { text-align: end; }
   .tc-m  { text-align: center; }
   .tj-m  { text-align: justify; }
 }
 
 @media (--breakpoint-large) {
-  .tl-l  { text-align: left; }
-  .tr-l  { text-align: right; }
+  .tl-l  { text-align: start; }
+  .tr-l  { text-align: end; }
   .tc-l  { text-align: center; }
   .tj-l  { text-align: justify; }
 }

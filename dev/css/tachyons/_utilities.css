@@ -15,44 +15,40 @@
 }
 
 .center {
-  margin-right: auto;
-  margin-left: auto;
+  margin-inline: auto;
 }
 
-.mt-auto { margin-top: auto; }
-.mr-auto { margin-right: auto; }
-.ml-auto { margin-left:  auto; }
-.mb-auto { margin-bottom: auto; }
+.mt-auto { margin-block-start: auto; }
+.mr-auto { margin-inline-end: auto; }
+.ml-auto { margin-inline-start: auto; }
+.mb-auto { margin-block-end: auto; }
 
 @media (--breakpoint-small){
   .center-s {
-    margin-right: auto;
-    margin-left: auto;
+    margin-inline: auto;
   }
-  .mt-auto-s { margin-top: auto; }
-  .mr-auto-s { margin-right: auto; }
-  .ml-auto-s { margin-left:  auto; }
-  .mb-auto-s { margin-bottom: auto; }
+  .mt-auto-s { margin-block-start: auto; }
+  .mr-auto-s { margin-inline-end: auto; }
+  .ml-auto-s { margin-inline-start: auto; }
+  .mb-auto-s { margin-block-end: auto; }
 }
 
 @media (--breakpoint-medium){
   .center-m {
-    margin-right: auto;
-    margin-left: auto;
+    margin-inline: auto;
   }
-  .mt-auto-m { margin-top: auto; }
-  .mr-auto-m { margin-right: auto; }
-  .ml-auto-m { margin-left:  auto; }
-  .mb-auto-m { margin-bottom: auto; }
+  .mt-auto-m { margin-block-start: auto; }
+  .mr-auto-m { margin-inline-end: auto; }
+  .ml-auto-m { margin-inline-start: auto; }
+  .mb-auto-m { margin-block-end: auto; }
 }
 
 @media (--breakpoint-large){
   .center-l {
-    margin-right: auto;
-    margin-left: auto;
+    margin-inline: auto;
   }
-  .mt-auto-l { margin-top: auto; }
-  .mr-auto-l { margin-right: auto; }
-  .ml-auto-l { margin-left:  auto; }
-  .mb-auto-l { margin-bottom: auto; }
+  .mt-auto-l { margin-block-start: auto; }
+  .mr-auto-l { margin-inline-end: auto; }
+  .ml-auto-l { margin-inline-start: auto; }
+  .mb-auto-l { margin-block-end: auto; }
 }

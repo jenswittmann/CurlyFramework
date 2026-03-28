@@ -24,24 +24,24 @@
 
 */
 
-.fl { float: left; }
-.fr { float: right; }
+.fl { float: inline-start; }
+.fr { float: inline-end; }
 .fn { float: none; }
 
 @media (--breakpoint-small) {
-  .fl-s { float: left; }
-  .fr-s { float: right;  }
+  .fl-s { float: inline-start; }
+  .fr-s { float: inline-end;  }
   .fn-s { float: none; }
 }
 
 @media (--breakpoint-medium) {
-  .fl-m { float: left;  }
-  .fr-m { float: right;  }
+  .fl-m { float: inline-start;  }
+  .fr-m { float: inline-end;  }
   .fn-m { float: none; }
 }
 
 @media (--breakpoint-large) {
-  .fl-l { float: left; }
-  .fr-l { float: right; }
+  .fl-l { float: inline-start; }
+  .fr-l { float: inline-end; }
   .fn-l { float: none; }
 }
