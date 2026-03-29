@@ -7,7 +7,18 @@
         "@alpinejs/persist": "^3.14.8",
         "alpinejs": "^3.10.3"
     },
-    "scripts": {},
+    "scripts": {
+        "scss": "sass --no-source-map dev/css/style.scss:styleguide/css/style.src.css dev/css/print.scss:styleguide/css/print.src.css dev/css/modx.scss:styleguide/css/modx.src.css",
+        "lcss": "npm run scss && lightningcss --targets 'defaults' --custom-media --minify styleguide/css/style.src.css -o styleguide/css/style.css && lightningcss --targets 'defaults' --custom-media --minify styleguide/css/print.src.css -o styleguide/css/print.css && lightningcss --targets 'defaults' --custom-media --minify styleguide/css/modx.src.css -o styleguide/css/modx.css",
+        "compile:css": "lightningcss --targets 'defaults' --custom-media styleguide/css/style.src.css -o styleguide/css/style.css && lightningcss --targets 'defaults' --custom-media styleguide/css/print.src.css -o styleguide/css/print.css && lightningcss --targets 'defaults' --custom-media styleguide/css/modx.src.css -o styleguide/css/modx.css",
+        "compile": "npm run scss && npm run compile:css",
+        "build": "npm run lcss && npm run bundle:js",
+        "bundle:js": "esbuild dev/js/bundle.js --bundle --outfile=styleguide/js/script.js && npm run minify:js",
+        "minify:js": "terser styleguide/js/script.js -o styleguide/js/script.js --compress --mangle",
+        "purge": "purgecss --css styleguide/css/style.css --content '**/*.html' 'styleguide/js/*.js' --output styleguide/css/",
+        "serve": "browser-sync start --config bs-config.js",
+        "dev": "sass --no-source-map --watch dev/css/style.scss:styleguide/css/style.src.css dev/css/print.scss:styleguide/css/print.src.css dev/css/modx.scss:styleguide/css/modx.src.css & chokidar 'styleguide/css/*.src.css' -c 'npm run compile:css' & esbuild dev/js/bundle.js --bundle --watch --outfile=styleguide/js/script.js & browser-sync start --config bs-config.js"
+    },
     "author": "Jens Wittmann",
     "main": "index.html",
     "repository": {},
@@ -30,7 +41,14 @@
         "leipzig"
     ],
     "devDependencies": {
-        "prettier": "*"
+        "browser-sync": "*",
+        "chokidar-cli": "*",
+        "esbuild": "*",
+        "lightningcss-cli": "*",
+        "purgecss": "*",
+        "prettier": "*",
+        "sass": "*",
+        "terser": "*"
     },
     "version": "7.9.0"
 }
