@@ -104,6 +104,7 @@ ExpiresByType image/gif "access plus 12 months"
 ExpiresByType image/jpeg "access plus 12 months"
 ExpiresByType image/png "access plus 12 months"
 ExpiresByType image/webp "access plus 12 months"
+ExpiresByType image/avif "access plus 12 months"
 ExpiresByType image/x-icon "access plus 12 months"
 ExpiresByType video/mp4 "access plus 4 months"
 ExpiresByType video/webm "access plus 4 months"
@@ -113,7 +114,7 @@ ExpiresByType font/woff2  "access plus 1 year"
 
 <IfModule mod_expires.c>  
 	ExpiresActive On  
-	<FilesMatch "\.(ico|jpg|jpeg|png|webp|svg|gif|js|css)$">  
+	<FilesMatch "\.(ico|jpg|jpeg|png|webp|avif|svg|gif|js|css)$">  
 		ExpiresDefault "access plus 1 year"
 	</FilesMatch>  
 </IfModule> 
