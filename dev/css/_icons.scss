@@ -19,7 +19,7 @@
     }
 
     &--fill {
-        svg {
+        svg * {
             fill: currentColor;
             stroke-width: 0;
         }
