@@ -45,7 +45,7 @@
     "devDependencies": {
         "browser-sync": "*",
         "chokidar-cli": "*",
-        "esbuild": "*",
+        "esbuild": ">=0.28.1",
         "lightningcss-cli": "*",
         "purgecss": "*",
         "prettier": "*",
