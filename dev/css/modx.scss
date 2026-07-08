@@ -38,7 +38,7 @@ button.c-button:not(.c-button--ghost),
         display: block;
         width: 100%;
         height: 100%;
-        background: #fff url("/assets/tpl/default/frontend/favicon.svg")
+        background: #fff url('/assets/tpl/default/frontend/favicon.svg')
             no-repeat center;
         background-size: 70%;
         border-radius: 0.5rem;
@@ -57,7 +57,6 @@ button.c-button:not(.c-button--ghost),
 .tree-pseudoroot-node.x-tree-node-el + .x-tree-node-ct,
 .tree-pseudoroot-node.x-tree-node-el + div > .x-tree-node-ct,
 .x-tree-node {
-    
     &,
     .modx-resource-panel {
         background-color: #eee;
@@ -70,22 +69,20 @@ button.c-button:not(.c-button--ghost),
 }
 
 .x-tab-panel-header ul.x-tab-strip {
-    
     li {
-        
         &:hover {
             background-color: #eee;
         }
-        
+
         &.x-tab-strip-active {
             font-weight: bold;
-            background-color: #eee;       
+            background-color: #eee;
             opacity: 1;
-            
+
             &:hover {
                 background-color: #eee;
             }
-            
+
             .x-tab-strip-text {
                 color: black;
             }
@@ -99,19 +96,44 @@ button.c-button:not(.c-button--ghost),
     display: none !important;
 }
 
-// ContentBlocks: add layout
-.contentblocks-add-layout {
-    margin: -1px !important;
+// ContentBlocks: use Block Canvas
+#contentblocks-block-panel-wrapper {
+    margin-top: 50px !important;
+    background-color: transparent;
+    box-shadow: none;
 
-    h3 a {
-        height: auto;
-        padding: 25px 0;
-        background-color: transparent !important;
+    .x-panel-header {
+        display: none !important;
+    }
+
+    .contentblocks-layout-wrapper > li .contentblocks-add-layout {
+        display: none !important;
     }
 }
 
-.modx_v23 .contentblocks-region.contentblocks-region-middle {
-    border-bottom: 1px solid #e4e4e4;
+// ContentBlocks: add layout
+.contentblocks-add-layout {
+    display: none !important;
+    // margin: -1px !important;
+
+    // h3 a {
+    //     height: auto;
+    //     padding: 25px 0;
+    //     background-color: transparent !important;
+    // }
+}
+
+// .contentblocks-region.contentblocks-region-middle {
+//     background-color: #eee !important;
+// }
+
+.contentblocks-add-content-here {
+    position: relative !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 7rem;
+    background-color: #f1f1f1;
 }
 
 // ContentBlocks: style layout title
@@ -152,7 +174,7 @@ button.c-button:not(.c-button--ghost),
 
     &.contentblocks-field-file-choose {
         &:after {
-            content: " oder eine Datei in diesen Bereich ziehen (Drag & Drop)";
+            content: ' oder eine Datei in diesen Bereich ziehen (Drag & Drop)';
             color: black;
         }
     }
@@ -181,7 +203,7 @@ button.c-button:not(.c-button--ghost),
     position: relative;
 
     &:before {
-        content: "Only for Admin 🤙🏻";
+        content: 'Only for Admin 🤙🏻';
         position: absolute;
         top: 0;
         left: 0;
@@ -201,9 +223,17 @@ button.c-button:not(.c-button--ghost),
 }
 
 // ContentBlocks: layout field settings
+.contentblocks-region-container {
+    background-color: #eeeeee !important;
+}
+
 .modx_v23 .contentblocks-region-container-header {
     border-top: 1px solid #e4e4e4;
     box-shadow: none;
+}
+
+.contentblocks-region-container-header {
+    display: none !important;
 }
 
 .contentblocks-region-container-tools {
@@ -214,7 +244,7 @@ button.c-button:not(.c-button--ghost),
     &:hover,
     &:focus {
         .contentblocks-region-container-tools {
-            display: block;
+            display: block !important;
         }
     }
 }
@@ -374,6 +404,7 @@ button.c-button:not(.c-button--ghost),
 .modx_v23 .contentblocks-field-wrap {
     display: flex;
     flex-direction: column-reverse;
+    border: 0;
 }
 
 // ContentBlocks modal
@@ -390,43 +421,58 @@ button.c-button:not(.c-button--ghost),
     }
 }
 
-// MagicPreview: style template
-.mmmp-c-container__inner {
-    position: fixed;
-    left: 50%;
-    bottom: 1rem;
-    justify-content: center;
-    width: fit-content;
-    background-color: transparent;
-    box-shadow: none;
-    transform: translateX(-50%);
+// MagicPreview
+.mmmp-panel {
+    $panel: &;
 
-    .mmmp-c-title {
-        display: none;
-    }
+    // Overlay
+    border-left: 3px solid var(--color-cta, #000);
+    box-shadow: none !important;
 
-    .mmmp-c-breakpoints {
-        padding: 0;
-        border-radius: 5px;
-        outline: 1px solid #acacac;
+    &--onpage {
+        #{$panel}__toolbar {
+            height: 0px;
+            padding: 0;
+            justify-content: end;
+            background-color: transparent;
 
-        &__item-label {
-            font-size: 0.75rem;
-            color: #53595f;
-            margin: 0;
-            background-color: #f1f1f1;
-            box-shadow: none;
+            #{$panel}__breakpoints,
+            #{$panel}__save-draft,
+            #{$panel}__reload {
+                display: none !important;
+            }
+
+            #{$panel}__close {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                z-index: 1;
+                background-color: white;
+                border-radius: 3px;
+                box-shadow: 0 0 0 1px #e4e4e4;
+
+                svg {
+                    color: black;
+                    stroke-width: 2px;
+                }
+            }
         }
     }
 
-    .mmmp-c-breakpoints__input[type="radio"]:checked
-        + .mmmp-c-breakpoints__item
-        > .mmmp-c-breakpoints__item-label {
-        background-color: #53595f;
-    }
+    &-onpage-active {
+        .x-panel-body {
+            width: 100% !important;
+        }
 
-    .mmmp-c-close {
-        display: none;
+        #modx-resource-main-left {
+            width: calc(100% - 40px) !important;
+        }
+
+        #modx-resource-main-right {
+            width: calc(100% - 10px) !important;
+            margin-top: 10px !important;
+            margin-left: 0 !important;
+        }
     }
 }
 
