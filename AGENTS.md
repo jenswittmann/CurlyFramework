@@ -382,3 +382,4 @@ All interactive components require proper ARIA attributes, keyboard navigation, 
 - **Accessibility first:** WCAG 2.2 — ARIA attributes, keyboard navigation, screen reader support on all interactive components.
 - **Sustainability:** Minimize bundle size, prefer CSS-only solutions over JS where possible.
 - **New dependencies** must align with accessibility and sustainability goals — prefer lightweight, well-maintained packages.
+- **Assets:** Never convert SVG files to PNG. Keep icons/graphics as SVG.
