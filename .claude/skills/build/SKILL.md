@@ -11,7 +11,7 @@ You are working on **CurlyFramework**, a lightweight frontend framework for acce
 
 ## Build Process
 
-SCSS compilation and JS bundling are handled by **CodeKit** (macOS app). Additionally, npm scripts are available for SCSS compilation (via Dart Sass) and CSS post-processing (via Lightning CSS). Source files live in `/dev`, compiled output goes to `/styleguide`.
+SCSS compilation and JS bundling are handled by **CodeKit** (macOS app). Additionally, npm scripts are available for SCSS compilation (via Dart Sass) and CSS post-processing (via Lightning CSS). Source files live in `/resources`, compiled output goes to `/public/styleguide`.
 
 | Command | What it does |
 |---------|-------------|
@@ -20,8 +20,8 @@ SCSS compilation and JS bundling are handled by **CodeKit** (macOS app). Additio
 | `npm run compile` | Compile SCSS + Lightning CSS without minify (dev use) |
 | `npm run compile:css` | Run Lightning CSS only on `.src.css` files (no sass step) |
 | `npm run lcss` | Compile SCSS + Lightning CSS with minification (CSS production build) |
-| `npm run bundle:js` | Bundle `dev/js/bundle.js` with esbuild + minify with Terser (full CodeKit JS fallback) |
-| `npm run minify:js` | Minify already-bundled `styleguide/js/script.js` with Terser only |
+| `npm run bundle:js` | Bundle `resources/js/bundle.js` with esbuild + minify with Terser (full CodeKit JS fallback) |
+| `npm run minify:js` | Minify already-bundled `public/styleguide/js/script.js` with Terser only |
 | `npm run purge` | Remove unused CSS from `style.css` based on `*.html` + JS content |
 | `npm run dev` | Watch CSS + JS + browser-sync hot reload (full dev workflow) |
 | `npm run serve` | Start browser-sync server only (no watching) |
@@ -29,17 +29,17 @@ SCSS compilation and JS bundling are handled by **CodeKit** (macOS app). Additio
 | `npx prettier --write .` | Format code |
 | `npm install` | Install dependencies |
 
-Compiled files in `/styleguide/css/` and `/styleguide/js/` should be committed — they are the distributed assets.
+Compiled files in `/public/styleguide/css/` and `/public/styleguide/js/` should be committed — they are the distributed assets.
 
 ### CSS pipeline details
 
-- **Dart Sass** compiles SCSS from `dev/css/` → `styleguide/css/` with `--no-source-map`
+- **Dart Sass** compiles SCSS from `resources/css/` → `public/styleguide/css/` with `--no-source-map`
 - **Lightning CSS** post-processes in place with `--targets 'defaults' --minify`
 - Watch mode uses `&` between commands to run all three watchers in parallel
 
 ### When adding a new SCSS entry point
 
-1. Add the source file in `dev/css/`
+1. Add the source file in `resources/css/`
 2. Add it to the relevant scripts in `package.json`: `scss`, `compile:css`, `lcss`, and `dev`
 3. Add it to the Source → Output mapping in this file and in `AGENTS.md`
 4. Register it in `.config.codekit3` if CodeKit is also used
@@ -47,12 +47,12 @@ Compiled files in `/styleguide/css/` and `/styleguide/js/` should be committed �
 ## Architecture
 
 **Source → Output mapping:**
-- `dev/css/style.scss` → `styleguide/css/style.css` (main stylesheet, ~165KB compiled)
-- `dev/css/print.scss` → `styleguide/css/print.css`
-- `dev/css/modx.scss` → `styleguide/css/modx.css`
-- `dev/js/bundle.js` → `styleguide/js/script.js` (Alpine.js + plugins, ~62KB compiled)
+- `resources/css/style.scss` → `public/styleguide/css/style.css` (main stylesheet, ~165KB compiled)
+- `resources/css/print.scss` → `public/styleguide/css/print.css`
+- `resources/css/modx.scss` → `public/styleguide/css/modx.css`
+- `resources/js/bundle.js` → `public/styleguide/js/script.js` (Alpine.js + plugins, ~62KB compiled)
 
-**SCSS structure in `dev/css/`:**
+**SCSS structure in `resources/css/`:**
 - `_vars.scss` — CSS custom properties, breakpoints (`small: 30em`, `medium: 48em`, `large: 60em`), responsive scaling
 - `_bundle.scss` — imports Tachyons + all custom modules
 - `_a11y.scss` — skiplinks, reduced-motion, ARIA patterns
@@ -60,9 +60,9 @@ Compiled files in `/styleguide/css/` and `/styleguide/js/` should be committed �
 - `_typo.scss` — typography utilities (`--typo-1` through `--typo-5`)
 - `_form.scss`, `_animation.scss` — component-specific modules
 
-**JS (`dev/js/bundle.js`):** Initializes Alpine.js with plugins: `@alpinejs/collapse`, `@alpinejs/focus`, `@alpinejs/intersect`, `@alpinejs/persist`.
+**JS (`resources/js/bundle.js`):** Initializes Alpine.js with plugins: `@alpinejs/collapse`, `@alpinejs/focus`, `@alpinejs/intersect`, `@alpinejs/persist`.
 
-**`docs/`** is a Jekyll site (`_layouts`, `_includes`, `index.html`, `samples.html`, `tools.html`) that serves as the primary documentation and demo pages. The framework is transitioning away from a single root `index.html` (removed from the repo root) to this Jekyll-based docs site.
+**Docs site:** the repo root is itself a Jekyll site — `index.html` is the homepage (Jekyll front matter: layout, title, description, features), `_layouts/` and `_includes/` hold the layout/partials, and `docs/` holds page content (`samples.html`, `checklists.html`). `_config.yml` excludes `resources` (SCSS sources) from the Jekyll build — keep that in sync if `resources/` is ever renamed again.
 
 ## Coding Conventions
 
@@ -80,7 +80,7 @@ Compiled files in `/styleguide/css/` and `/styleguide/js/` should be committed �
 - **Accessibility first:** All components require proper ARIA attributes, keyboard navigation, and screen reader compatibility (WCAG 2.2).
 - **Sustainability:** Minimize bundle size, prefer CSS-only solutions over JS when possible, avoid heavy dependencies.
 - **New dependencies** must align with accessibility and sustainability goals — prefer lightweight, well-maintained packages.
-- **CSS classes:** Only use classes from the compiled styleguide (`styleguide/css/`). Do not use Tailwind, Bootstrap, or any other external CSS framework.
+- **CSS classes:** Only use classes from the compiled styleguide (`public/styleguide/css/`). Do not use Tailwind, Bootstrap, or any other external CSS framework.
 
 ## Tachyons CSS Reference
 

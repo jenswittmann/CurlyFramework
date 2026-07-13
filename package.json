@@ -8,16 +8,16 @@
         "alpinejs": "^3.10.3"
     },
     "scripts": {
-        "scss": "sass --no-source-map dev/css/style.scss:styleguide/css/style.src.css dev/css/print.scss:styleguide/css/print.src.css dev/css/modx.scss:styleguide/css/modx.src.css",
-        "lcss": "npm run scss && lightningcss --targets 'defaults' --custom-media --minify styleguide/css/style.src.css -o styleguide/css/style.css && lightningcss --targets 'defaults' --custom-media --minify styleguide/css/print.src.css -o styleguide/css/print.css && lightningcss --targets 'defaults' --custom-media --minify styleguide/css/modx.src.css -o styleguide/css/modx.css",
-        "compile:css": "lightningcss --targets 'defaults' --custom-media styleguide/css/style.src.css -o styleguide/css/style.css && lightningcss --targets 'defaults' --custom-media styleguide/css/print.src.css -o styleguide/css/print.css && lightningcss --targets 'defaults' --custom-media styleguide/css/modx.src.css -o styleguide/css/modx.css",
+        "scss": "sass --no-source-map resources/css/style.scss:public/styleguide/css/style.src.css resources/css/print.scss:public/styleguide/css/print.src.css resources/css/modx.scss:public/styleguide/css/modx.src.css",
+        "lcss": "npm run scss && lightningcss --targets 'defaults' --custom-media --minify public/styleguide/css/style.src.css -o public/styleguide/css/style.css && lightningcss --targets 'defaults' --custom-media --minify public/styleguide/css/print.src.css -o public/styleguide/css/print.css && lightningcss --targets 'defaults' --custom-media --minify public/styleguide/css/modx.src.css -o public/styleguide/css/modx.css",
+        "compile:css": "lightningcss --targets 'defaults' --custom-media public/styleguide/css/style.src.css -o public/styleguide/css/style.css && lightningcss --targets 'defaults' --custom-media public/styleguide/css/print.src.css -o public/styleguide/css/print.css && lightningcss --targets 'defaults' --custom-media public/styleguide/css/modx.src.css -o public/styleguide/css/modx.css",
         "compile": "npm run scss && npm run compile:css",
         "build": "npm run lcss && npm run bundle:js",
-        "bundle:js": "esbuild dev/js/bundle.js --bundle --outfile=styleguide/js/script.js && npm run minify:js",
-        "minify:js": "terser styleguide/js/script.js -o styleguide/js/script.js --compress --mangle",
-        "purge": "purgecss --css styleguide/css/style.css --content '**/*.html' 'styleguide/js/*.js' --output styleguide/css/",
+        "bundle:js": "esbuild resources/js/bundle.js --bundle --outfile=public/styleguide/js/script.js && npm run minify:js",
+        "minify:js": "terser public/styleguide/js/script.js -o public/styleguide/js/script.js --compress --mangle",
+        "purge": "purgecss --css public/styleguide/css/style.css --content '**/*.html' 'public/styleguide/js/*.js' --output public/styleguide/css/",
         "serve": "browser-sync start --config bs-config.js",
-        "dev": "sass --no-source-map --watch dev/css/style.scss:styleguide/css/style.src.css dev/css/print.scss:styleguide/css/print.src.css dev/css/modx.scss:styleguide/css/modx.src.css & chokidar 'styleguide/css/*.src.css' -c 'npm run compile:css' & esbuild dev/js/bundle.js --bundle --watch --outfile=styleguide/js/script.js & browser-sync start --config bs-config.js",
+        "dev": "sass --no-source-map --watch resources/css/style.scss:public/styleguide/css/style.src.css resources/css/print.scss:public/styleguide/css/print.src.css resources/css/modx.scss:public/styleguide/css/modx.src.css & chokidar 'public/styleguide/css/*.src.css' -c 'npm run compile:css' & esbuild resources/js/bundle.js --bundle --watch --outfile=public/styleguide/js/script.js & browser-sync start --config bs-config.js",
         "docs": "jekyll serve --port 4000"
     },
     "author": "Jens Wittmann",

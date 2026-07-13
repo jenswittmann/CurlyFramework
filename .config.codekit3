@@ -135,18 +135,6 @@
       "oF" : 0,
       "pg" : 0
     },
-    "\/_site\/public\/styleguide\/css\/modx.src.css" : {
-      "aP" : 0,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/_site\/public\/styleguide\/css\/modx.src-min.css",
-      "oF" : 0,
-      "pg" : 0
-    },
     "\/_site\/public\/styleguide\/css\/print.css" : {
       "aP" : 0,
       "bl" : 0,
@@ -159,18 +147,6 @@
       "oF" : 0,
       "pg" : 0
     },
-    "\/_site\/public\/styleguide\/css\/print.src.css" : {
-      "aP" : 0,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/_site\/public\/styleguide\/css\/print.src-min.css",
-      "oF" : 0,
-      "pg" : 0
-    },
     "\/_site\/public\/styleguide\/css\/style.css" : {
       "aP" : 0,
       "bl" : 0,
@@ -180,18 +156,6 @@
       "ma" : 0,
       "oA" : 0,
       "oAP" : "\/_site\/public\/styleguide\/css\/style-min.css",
-      "oF" : 0,
-      "pg" : 0
-    },
-    "\/_site\/public\/styleguide\/css\/style.src.css" : {
-      "aP" : 0,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/_site\/public\/styleguide\/css\/style.src-min.css",
       "oF" : 0,
       "pg" : 0
     },
@@ -573,18 +537,6 @@
       "oF" : 0,
       "pg" : 0
     },
-    "\/public\/styleguide\/css\/modx.src.css" : {
-      "aP" : 0,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/public\/styleguide\/css\/modx.src-min.css",
-      "oF" : 0,
-      "pg" : 0
-    },
     "\/public\/styleguide\/css\/print.css" : {
       "aP" : 0,
       "bl" : 0,
@@ -597,18 +549,6 @@
       "oF" : 0,
       "pg" : 0
     },
-    "\/public\/styleguide\/css\/print.src.css" : {
-      "aP" : 0,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/public\/styleguide\/css\/print.src-min.css",
-      "oF" : 0,
-      "pg" : 0
-    },
     "\/public\/styleguide\/css\/style.css" : {
       "aP" : 0,
       "bl" : 0,
@@ -618,18 +558,6 @@
       "ma" : 0,
       "oA" : 0,
       "oAP" : "\/public\/styleguide\/css\/style-min.css",
-      "oF" : 0,
-      "pg" : 0
-    },
-    "\/public\/styleguide\/css\/style.src.css" : {
-      "aP" : 0,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/public\/styleguide\/css\/style.src-min.css",
       "oF" : 0,
       "pg" : 0
     },
@@ -919,7 +847,7 @@
       "ft" : 4,
       "ma" : 0,
       "oA" : 0,
-      "oAP" : "\/styleguide\/css\/print.css",
+      "oAP" : "\/public\/styleguide\/css\/print.css",
       "oF" : 2,
       "oS" : 1,
       "pg" : 0
@@ -932,7 +860,7 @@
       "ft" : 4,
       "ma" : 0,
       "oA" : 0,
-      "oAP" : "\/styleguide\/css\/style.css",
+      "oAP" : "\/public\/styleguide\/css\/style.css",
       "oF" : 2,
       "oS" : 1,
       "pg" : 0
@@ -1759,7 +1687,7 @@
       "ma" : 0,
       "mi" : 2,
       "oA" : 0,
-      "oAP" : "\/styleguide\/js\/script.js",
+      "oAP" : "\/public\/styleguide\/js\/script.js",
       "oF" : 2,
       "sC" : 0,
       "tS" : 0

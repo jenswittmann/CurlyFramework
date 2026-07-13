@@ -19,7 +19,7 @@
 
 ```
 .                          # repo root = CurlyFramework theme/package root
-├── dev/css/               # SCSS source files
+├── resources/css/         # SCSS source files
 │   ├── _vars.scss         # CSS custom properties & breakpoints
 │   ├── _bundle.scss       # Tachyons + partials imports
 │   ├── _a11y.scss         # Accessibility (skiplinks, ARIA)
@@ -29,14 +29,15 @@
 │   ├── _contentblocks.scss # ContentBlocks-specific styles
 │   ├── modx.scss          # MODX manager backend styling
 │   └── style.scss         # Main entry point
-├── dev/js/
+├── resources/js/
 │   └── bundle.js          # Alpine.js entry point
-├── styleguide/
+├── public/styleguide/
 │   ├── css/style.css      # Compiled CSS — committed, do not hand-edit
 │   └── js/script.js       # Compiled JS — committed, do not hand-edit
-├── docs/                  # Jekyll docs/demo site content (samples.html, checklists.html)
-├── _layouts/, _includes/  # Jekyll layouts/includes (repo root, used by docs/)
-├── demo/                  # Static demo/styleguide pages
+├── index.html             # Jekyll homepage (front matter: layout, title, description, features)
+├── docs/                  # Jekyll page content (samples.html, checklists.html)
+├── _layouts/, _includes/  # Jekyll layouts/includes (repo root, used by docs/ and index.html)
+├── demo/                  # Static demo/upload assets
 ├── package.json
 └── readme.md
 ```
@@ -47,7 +48,7 @@ The MODX-specific concepts referenced below (Fenom templates, ContentBlocks chun
 
 ## CSS Classes
 
-**Only use CSS classes that exist in `styleguide/css/style.css`** — the compiled CurlyFramework stylesheet. Do not use Tailwind, Bootstrap, or any other external CSS framework. Do not invent class names.
+**Only use CSS classes that exist in `public/styleguide/css/style.css`** — the compiled CurlyFramework stylesheet. Do not use Tailwind, Bootstrap, or any other external CSS framework. Do not invent class names.
 
 ### Available Utility Classes (Tachyons)
 
@@ -127,7 +128,7 @@ Scoped to `.curlyframework`. Use CSS custom properties for brand values:
 
 ### Custom Partials
 
-Custom component classes follow BEM naming (`.component__element--modifier`). Key SCSS partials in `dev/css/`:
+Custom component classes follow BEM naming (`.component__element--modifier`). Key SCSS partials in `resources/css/`:
 
 `_head.scss`, `_btn.scss`, `_form.scss`, `_typo.scss`, `_icons.scss`, `_contentblocks.scss`, `_animation.scss`, `_a11y.scss`, `_styling.scss`, `_mixins.scss`, `_reset.scss`
 
@@ -135,7 +136,7 @@ Custom component classes follow BEM naming (`.component__element--modifier`). Ke
 
 ## Templates (Fenom syntax)
 
-This repository has no MODX templates itself, but `dev/css/modx.scss` styles the MODX manager backend, and this framework is designed to be consumed by **MODX Revolution** projects. Consumer projects use **Fenom** syntax (`.chunk.tpl` files, typically under `site/assets/tpl/cfb/chunks/`) — reference this section when working on such a consumer project. Do **not** use Blade, Antlers, Twig, or Smarty syntax.
+This repository has no MODX templates itself, but `resources/css/modx.scss` styles the MODX manager backend, and this framework is designed to be consumed by **MODX Revolution** projects. Consumer projects use **Fenom** syntax (`.chunk.tpl` files, typically under `site/assets/tpl/cfb/chunks/`) — reference this section when working on such a consumer project. Do **not** use Blade, Antlers, Twig, or Smarty syntax.
 
 ### Fenom syntax reference
 
@@ -200,7 +201,7 @@ ContentBlocks field content is accessed via `$settings` (field settings object) 
 
 ## JavaScript
 
-All interactivity uses **Alpine.js v3**. Do not introduce other JS frameworks or libraries. Entry point: `dev/js/bundle.js`.
+All interactivity uses **Alpine.js v3**. Do not introduce other JS frameworks or libraries. Entry point: `resources/js/bundle.js`.
 
 Available Alpine plugins:
 - `@alpinejs/focus` (`x-trap`)
@@ -223,21 +224,21 @@ Run all build commands from the repo root.
 | `npm run scss` | Compile SCSS only |
 | `npm run compile` | Compile SCSS + Lightning CSS without minify (dev use) |
 | `npm run bundle:js` | Bundle JS with esbuild + minify with Terser |
-| `npm run minify:js` | Minify already-bundled `styleguide/js/script.js` with Terser |
+| `npm run minify:js` | Minify already-bundled `public/styleguide/js/script.js` with Terser |
 | `npm run purge` | Remove unused CSS from `style.css` |
 | `npm run serve` | Start browser-sync server only |
 | `npm run docs` | Serve the Jekyll docs site at `http://127.0.0.1:4000` (no `--livereload` — conflicts with CodeKit's own live-reload broadcaster) |
 | `npx prettier --write .` | Format code |
 
-**CSS pipeline:** Dart Sass compiles SCSS from `dev/css/` → `styleguide/css/*.src.css`, then Lightning CSS post-processes with `--targets 'defaults' --custom-media --minify`.
+**CSS pipeline:** Dart Sass compiles SCSS from `resources/css/` → `public/styleguide/css/*.src.css`, then Lightning CSS post-processes with `--targets 'defaults' --custom-media --minify`.
 
 **Source → Output mapping:**
-- `dev/css/style.scss` → `styleguide/css/style.css`
-- `dev/css/print.scss` → `styleguide/css/print.css`
-- `dev/css/modx.scss` → `styleguide/css/modx.css`
-- `dev/js/bundle.js` → `styleguide/js/script.js`
+- `resources/css/style.scss` → `public/styleguide/css/style.css`
+- `resources/css/print.scss` → `public/styleguide/css/print.css`
+- `resources/css/modx.scss` → `public/styleguide/css/modx.css`
+- `resources/js/bundle.js` → `public/styleguide/js/script.js`
 
-Compiled files in `styleguide/css/` and `styleguide/js/` are committed — they are the distributed assets.
+Compiled files in `public/styleguide/css/` and `public/styleguide/js/` are committed — they are the distributed assets.
 
 ---
 
@@ -378,7 +379,7 @@ All interactive components require proper ARIA attributes, keyboard navigation, 
 
 ## Key Constraints
 
-- **CSS:** Only classes from the compiled styleguide (`styleguide/css/style.css`). Never Tailwind, Bootstrap, or external frameworks.
+- **CSS:** Only classes from the compiled styleguide (`public/styleguide/css/style.css`). Never Tailwind, Bootstrap, or external frameworks.
 - **Templates:** Fenom syntax only. Never Blade, Antlers, Twig, or Smarty.
 - **JS:** Alpine.js v3 only. No React, Vue, jQuery, or other libraries.
 - **Accessibility first:** WCAG 2.2 — ARIA attributes, keyboard navigation, screen reader support on all interactive components.
