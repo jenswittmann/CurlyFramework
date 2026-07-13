@@ -22,7 +22,7 @@
     background-attachment: fixed;
 }
 
-// filter bvackground blur
+// filter background blur
 .bg-blur {
     backdrop-filter: blur(0.5rem);
 
@@ -169,7 +169,8 @@ details[open] {
     ::details-content {
         overflow: clip;
         height: 0;
-        transition: height var(--animation-time-small) ease-in-out,
+        transition:
+            height var(--animation-time-small) ease-in-out,
             content-visibility var(--animation-time-small) ease-in-out
                 allow-discrete;
     }
