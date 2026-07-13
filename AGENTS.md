@@ -225,6 +225,7 @@ Run all build commands from the repo root.
 | `npm run minify:js` | Minify already-bundled `styleguide/js/script.js` with Terser |
 | `npm run purge` | Remove unused CSS from `style.css` |
 | `npm run serve` | Start browser-sync server only |
+| `npm run docs` | Serve the Jekyll docs site at `http://127.0.0.1:4000` (no `--livereload` — conflicts with CodeKit's own live-reload broadcaster) |
 | `npx prettier --write .` | Format code |
 
 **CSS pipeline:** Dart Sass compiles SCSS from `dev/css/` → `styleguide/css/*.src.css`, then Lightning CSS post-processes with `--targets 'defaults' --custom-media --minify`.

@@ -1,0 +1,97 @@
+<!doctype html>
+<html
+    lang="en"
+    class="scale-content smooth-scroll"
+    style="--scale-content-desktop: 1600"
+>
+    <head>
+        <style>
+            @font-face {
+                font-family: 'voltaire';
+                font-style: normal;
+                src: url('https://jens-wittmann.de/voltaire.woff2')
+                    format('woff2');
+                font-display: swap;
+            }
+        </style>
+        <base href="../" />
+        <link rel="stylesheet" href="styleguide/css/style.css" />
+        <link rel="stylesheet" href="styleguide/css/print.css" media="print" />
+        <meta charset="utf-8" />
+        <title>{{ page.title }}</title>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+        />
+        <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+        <meta name="description" content="{{ page.description }}" />
+        <meta property="og:image" content="favicon.svg" />
+        <style>
+            .page.lightmode {
+                background-color: #fff;
+                --violet-5: #351788;
+                --violet-10: #eccefa;
+                --cooking-outline-color: black;
+            }
+
+            .page.darkmode {
+                background-color: var(--gray-1);
+                --violet-5: #fff;
+                --violet-10: var(--gray-3);
+                --violet-11: var(--gray-2);
+                --cooking-outline-color: var(--gray-4);
+            }
+
+            @media print {
+                .page.darkmode {
+                    background-color: #fff;
+                    --violet-5: #351788;
+                    --violet-10: #eccefa;
+                    --cooking-outline-color: black;
+                }
+            }
+        </style>
+    </head>
+    <body
+        x-data="{
+            showgrid: false,
+            darkmode: $persist(false),
+            userThemeModeSet: $persist(false),
+
+            init() {
+                if (this.userThemeModeSet) {
+                    return;
+                }
+                let darkmodeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+                this.darkmode = darkmodeQuery.matches;
+                darkmodeQuery.addEventListener('change', (e) => {
+                    this.darkmode = e.matches;
+                });
+            }
+        }"
+        :class="{
+            'lightmode': !darkmode,
+            'darkmode': darkmode
+        }"
+        class="curlyframework page reset-spacing f2 violet-5 p4 pt0 p6-m pt0-m"
+        style="--fontname: 'voltaire', serif"
+    >
+        {% include header.html %}
+
+        <main class="dg cols-12 g3 smooth-scroll">{{ content }}</main>
+
+        {% include footer.html %}
+
+        <div
+            x-transition
+            x-show="showgrid == true"
+            class="fixed top-0 left-0 right-0 dg cols-12 g3 ph4 ph6-m pointer-events-none"
+        >
+            <template x-for="i in 12">
+                <div class="w-100 vh-100 bg-red-5 o-10"></div>
+            </template>
+        </div>
+
+        <script src="styleguide/js/script.js" defer></script>
+    </body>
+</html>

@@ -1,0 +1,195 @@
+{% capture cooking_uid %}{% increment cooking_uid_counter %}{% endcapture %}
+<span class="cooking relative">
+    <div class="cooking__pot icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+            <defs>
+                <mask
+                    id="a-{{ cooking_uid }}"
+                    x="283.985"
+                    y="575.837"
+                    width="405.055"
+                    height="389.185"
+                    maskUnits="userSpaceOnUse"
+                >
+                    <path
+                        d="m342.406 575.837-58.421 385.318H689.04l-59.717-385.318z"
+                        fill="#fff"
+                    />
+                </mask>
+                <mask
+                    id="b-{{ cooking_uid }}"
+                    x="283.985"
+                    y="575.837"
+                    width="405.055"
+                    height="389.185"
+                    maskUnits="userSpaceOnUse"
+                >
+                    <path
+                        d="m342.406 575.837-58.421 385.318H689.04l-59.717-385.318z"
+                        fill="#fff"
+                    />
+                </mask>
+                <mask
+                    id="c-{{ cooking_uid }}"
+                    x="284.827"
+                    y="241.837"
+                    width="403.396"
+                    height="387.73"
+                    maskUnits="userSpaceOnUse"
+                >
+                    <path
+                        d="m284.827 243.915 58.155 258.508h285.771l59.47-258.508z"
+                        fill="#fff"
+                    />
+                </mask>
+                <mask
+                    id="d-{{ cooking_uid }}"
+                    x="284.827"
+                    y="241.837"
+                    width="403.396"
+                    height="387.73"
+                    maskUnits="userSpaceOnUse"
+                >
+                    <path
+                        d="m284.827 243.915 58.155 258.508h285.771l59.47-258.508z"
+                        fill="#fff"
+                    />
+                </mask>
+            </defs>
+            <path
+                fill="#fff"
+                stroke="#000"
+                stroke-miterlimit="10"
+                d="M371.199 505.433h228.164v70.252H371.199z"
+            />
+            <path
+                fill="#fff"
+                d="M463.8 42.418h48.999v65.331H463.8zm229.516 199.023L555.992 117.17H418.665L283.052 243.922h-61.956l76.93 70.573"
+            />
+            <path
+                d="M693.316 241.441 555.992 117.17H418.665L283.052 243.922h-61.956l76.93 70.573"
+                fill="none"
+                stroke="#1a171b"
+                stroke-width="28.223"
+                class="cooking__outline"
+            />
+            <path
+                d="m342.403 575.837-58.399 385.318h405.055l-59.736-385.318z"
+                fill="#4a4794"
+            />
+            <g mask="url(#a-{{ cooking_uid }})">
+                <path
+                    d="m438.384 578.499-33.057 385.317"
+                    fill="none"
+                    stroke="#1a171b"
+                    stroke-width="28.223"
+                    class="cooking__outline"
+                />
+            </g>
+            <path
+                d="m530.136 584.37 30.816 376.795h64.215l63.687-1.317-58.683-378.563z"
+                fill="#8d9fcc"
+            />
+            <g mask="url(#b-{{ cooking_uid }})">
+                <path
+                    d="m531.982 578.499 33.058 385.317"
+                    fill="none"
+                    stroke="#1a171b"
+                    stroke-width="28.223"
+                    class="cooking__outline"
+                />
+            </g>
+            <path
+                d="M342.403 575.835h286.92l59.736 385.321H284.004z"
+                fill="none"
+                stroke="#1a171b"
+                stroke-width="28.223"
+                class="cooking__outline"
+            />
+            <path
+                d="M342.98 502.427h285.75l59.491-258.511H284.825z"
+                fill="#4a4794"
+            />
+            <g mask="url(#c-{{ cooking_uid }})">
+                <path
+                    d="m437.109 628.361-33.054-385.317"
+                    fill="none"
+                    stroke="#1a171b"
+                    stroke-width="28.223"
+                    class="cooking__outline"
+                />
+            </g>
+            <path
+                d="m564.267 251.571-23.726 250.853h87.918l6.228-25.834 52.926-229.987z"
+                fill="#8d9fcc"
+            />
+            <g mask="url(#d-{{ cooking_uid }})">
+                <path
+                    d="m530.713 628.361 33.058-385.317"
+                    fill="none"
+                    stroke="#1a171b"
+                    stroke-width="28.223"
+                    class="cooking__outline"
+                />
+            </g>
+            <path
+                d="M371.199 505.433v74.395m223.536-74.395v74.395M342.98 502.427h285.75l59.491-258.511H284.825z"
+                fill="none"
+                stroke="#1a171b"
+                stroke-width="28.223"
+                class="cooking__outline"
+            />
+            <path
+                fill="#fff"
+                d="M722.756 247.395H692.46v55.532h30.296V455.6h52.185V247.395z"
+            />
+            <path
+                d="M679.619 304.6h42.444v139.507c0 9.088 12.756 19.117 28.467 19.117s28.467-10.029 28.374-18.833c-.075.302-.075-197.343-.075-197.343h-90.196M486.932 75.503c15.722 0 28.467-8.802 28.467-19.659s-12.745-19.659-28.467-19.659-28.467 8.802-28.467 19.659 12.745 19.659 28.467 19.659Zm-28.263-15.657 7.112 55.106m48.895-55.106-7.112 55.106"
+                fill="none"
+                stroke="#1a171b"
+                stroke-width="28.223"
+                class="cooking__outline"
+            />
+        </svg>
+    </div>
+    <span class="cooking__steam"></span>
+    <style>
+        .cooking__outline {
+            stroke: var(--cooking-outline-color, black);
+        }
+
+        .cooking__steam {
+            position: absolute;
+            top: 0;
+            left: 15%;
+            display: block;
+            width: 10%;
+            background-color: #bbb;
+            border-radius: 50%;
+            filter: blur(5px);
+            transform: translateY(0) scaleX(1);
+            opacity: 0;
+            aspect-ratio: 1/2;
+            animation: cooking 3s infinite;
+        }
+
+        @keyframes cooking {
+            0% {
+                transform: translateY(0) scaleX(1);
+                opacity: 0;
+            }
+            25% {
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-1rem) scaleX(2);
+            }
+            90% {
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(-2rem) scaleX(1);
+            }
+        }
+    </style>
+</span>

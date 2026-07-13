@@ -1,0 +1,239 @@
+---
+layout: default
+title: Tools – CurlyFramework
+description: >-
+    Accessibility and sustainability tools included with CurlyFramework —
+    Sa11y, an accessibility checklist, and an image alt text generator.
+---
+
+<section class="dc">
+    <h2 class="col-full f5 tc mt8 mb5">Checklists</h2>
+
+    <article aria-label="Checklist" class="dc">
+        <div class="start-1 end-last end-4-m">
+            <h3 class="sticky top-0 f4 lh-title m0">Checklist</h3>
+        </div>
+        <div
+            class="start-1 start-4-m end-last flex flex-column justify-center items-center p4 pv5-m bg-violet-10 br4 aspect-ratio-16x9"
+        >
+            <div
+                x-data="{
+                    checksdone: $persist([]),
+                    checkitems: [
+                        {
+                            id: 'start',
+                            task: 'Use these tools to find out more and get started: <a href=https://digitalservice.bund.de/wie-viele-menschen class=bb>How many people?</a>, <a href=https://chromewebstore.google.com/detail/simulating-accessibility/fhdoonhhbnjeckanhpieiiijicdnmnki class=bb>Simulating Accessibility</a>'
+                        },
+                        {
+                            id: 'gendern',
+                            task: 'Check your content for inclusive language using <a href=https://geschicktgendern.de/ class=bb>geschicktgendern.de</a>.'
+                        },
+                        {
+                            id: 'wireframe',
+                            task: 'Have a coffee with the designer and check the wireframe for any accessibility issues.'
+                        },
+                        {
+                            id: 'design',
+                            task: 'Test the design for common contrast issues, long animations or some complicated navigation structures. Use these <a href=https://leitfaden.leicht-fuer-alle.de/leitfaden/erfolgskritierien/ class=bb>guidelines</a>.'
+                        },
+                        {
+                            id: 'sa11y',
+                            task: 'Use <a href=#tools__sa11y class=bb>Sa11y.js</a> during development. <a href=https://visbug.web.app/ class=bb>VisBug</a> can also be useful for debugging colour ratios and so on.'
+                        },
+                        {
+                            id: 'web.dev',
+                            task: 'Measure your pages with <a href=https://pagespeed.web.dev/analysis/https-curlyframe-work/79r5iuaoc3?form_factor=mobile class=bb>PageSpeed Insights</a>'
+                        },
+                        {
+                            id: 'wave',
+                            task: 'Check accessibility with <a href=https://wave.webaim.org/report#/https://curlyframe.work/ class=bb>WAVE</a>'
+                        },
+                        {
+                            id: 'tabs',
+                            task: 'Use the Tab key to navigate through your site. Do you know where your focus is? Are there any keyboard traps? Are modals escapable with the ESC key?'
+                        },
+                        {
+                            id: 'skiplinks',
+                            task: 'Check your skiplinks and landmarks.'
+                        },
+                        {
+                            id: 'zoom',
+                            task: 'Check that your page is zoomable.'
+                        },
+                        {
+                            id: 'color',
+                            task: 'Check your page without colours using <a href=#tools__sa11y class=bb>Sa11y.js</a> and in <a href=https://chromewebstore.google.com/detail/hoher-kontrast/djcfdncoelnlbldjfhinnjlhdjlikmph?pli=1 class=bb>dark mode</a>.'
+                        },
+                        {
+                            id: 'screenreader',
+                            task: 'Test your page with a screen reader like VoiceOver. Dim your monitor. Is everything accessible and would changes be announced?'
+                        },
+                        {
+                            id: 'textforall',
+                            task: 'Check your content against <a href=https://toolbox.teilhabe4punkt0.de/tools/texten-web#0-texten-fuer-alle class=bb>these guidelines</a> and use a <a href=https://audit.capito.ai class=bb>tool to assess its complexity</a>.'
+                        },
+                        {
+                            id: 'print',
+                            task: 'Check that your site has a good and sustainable <button @click=window.print() class=\'btn btn--clean\'><span class=bb>print</span></button> style.'
+                        },
+                        {
+                            id: 'naked',
+                            task: 'View your site in <button @click=\'document.styleSheets.item(1).disabled=!document.styleSheets.item(1).disabled\' class=\'btn btn--clean\'><span class=bb>plain</span></button> HTML without CSS.'
+                        },
+                        {
+                            id: 'sustainability',
+                            task: 'Check sustainability with <a href=https://www.websitecarbon.com/website/curlyframe-work/ class=bb>Website Carbon Calculator</a>.'
+                        },
+                        {
+                            id: 'seo',
+                            task: 'Do a classic SEO <a href=https://freetools.seobility.net/de/seocheck/check?url=https%3A%2F%2Fcurlyframe.work%2F&crawltype=1 class=bb>check</a>.'
+                        },
+                        {
+                            id: 'metatags',
+                            task: 'Check that your <a href=https://metatags.io/?url=https%3A%2F%2Fcurlyframe.work%2F class=bb>meta tags</a> are ready.'
+                        },
+                        {
+                            id: 'page',
+                            task: 'Add a page for accessibility information. Like a contact page, what does not work and helpful <a href=https://toolbox.teilhabe4punkt0.de/tools/overlay-tools-vs-browsereinstellungen class=bb>browser tips</a>/<a href=https://support.google.com/chrome/answer/7040464 class=bb>tools</a>. Maybe there is an option to add .grayscale-100 to the body element to disable colour complety for the site?'
+                        }
+                    ]
+                }"
+                class="w-90"
+            >
+                <p>
+                    Here are some checks for a good website development
+                    workflow.
+                </p>
+                <ul class="mv4">
+                    <template x-for="check in checkitems">
+                        <div class="form__item">
+                            <div
+                                x-id="['check']"
+                                class="form__field form__field--checkbox"
+                            >
+                                <input
+                                    @change="
+                                        if (checksdone.includes(check.id)) {
+                                            checksdone.splice(checksdone.indexOf(check.id), 1);
+                                            return;
+                                        }
+                                        checksdone.push(check.id)
+                                    "
+                                    :id="$id('check')"
+                                    :name="$id('check')"
+                                    :checked="checksdone.includes(check.id)"
+                                    type="checkbox"
+                                    value="done"
+                                    required
+                                />
+                                <label
+                                    :for="$id('check')"
+                                    class="form__label f1 f2-m"
+                                >
+                                    <span x-html="check.task"> </span>
+                                </label>
+                            </div>
+                        </div>
+                    </template>
+                </ul>
+                <p>
+                    Go deeper with the BITV/WCAG 2.2
+                    <a href="https://studio.bitvtest.de/" class="bb">Toolbox</a>
+                    or get in touch with
+                    <a href="index.html#contact" class="bb">me</a>.
+                </p>
+            </div>
+        </div>
+    </article>
+    <article aria-label="Sa11y" class="dc">
+        <div id="tools__sa11y" class="start-1 end-last end-4-m">
+            <h3 class="sticky top-0 f4 lh-title m0">Sa11y</h3>
+        </div>
+        <div
+            class="start-1 start-4-m end-last flex flex-column justify-center items-center p4 bg-violet-10 br4 aspect-ratio-16x9"
+        >
+            <div
+                x-data="{
+                    sa11y: null,
+
+                    loadCSS() {
+                        return new Promise((resolve, reject) => {
+                            const link = document.createElement('link');
+                            link.rel = 'stylesheet';
+                            link.href = 'https://cdn.jsdelivr.net/gh/ryersondmp/sa11y@latest/dist/css/sa11y.min.css';
+                            link.onload = resolve;
+                            link.onerror = reject;
+                            document.head.appendChild(link);
+                        });
+                    },
+
+                    loadJS() {
+                        return new Promise((resolve, reject) => {
+                        const script = document.createElement('script');
+                        script.src = 'https://cdn.jsdelivr.net/combine/gh/ryersondmp/sa11y@latest/dist/js/lang/en.umd.js,gh/ryersondmp/sa11y@latest/dist/js/sa11y.umd.min.js';
+                        script.onload = resolve;
+                        script.onerror = reject;
+                        document.body.appendChild(script);
+                        });
+                    },
+
+                    initSa11y() {
+                        this.loadCSS()
+                            .then(this.loadJS)
+                            .then(() => {
+                                Sa11y.Lang.addI18n(Sa11yLangEn.strings);
+                                this.sa11y = new Sa11y.Sa11y({
+                                    checkRoot: 'body',
+                                    customChecks: 'listen',
+                                    panelPosition: 'top-left',
+                                });
+                                document.addEventListener('sa11y-custom-checks', () => {
+                                    const emptyElements = this.sa11y.find('.richtext *:empty:not(br)', 'root');
+                                    emptyElements.forEach((emptyElement) => {
+                                        this.sa11y.results.push({
+                                            element: emptyElement,
+                                            type: 'error',
+                                            content: 'Please remove empty paragraphs to avoid confusion.',
+                                            inline: false,
+                                            position: 'beforebegin',
+                                        });
+                                    });
+                                    const allDone = new CustomEvent('sa11y-resume');
+                                    document.dispatchEvent(allDone);
+                                });
+                            })
+                            .catch((error) => new Error('Error loading Sa11y:', error));
+                    }
+                }"
+                class="w-60-m"
+            >
+                <div class="richtext mb3">
+                    <p aria-label="Sample Error for empty Text."></p>
+                    <p>
+                        Sa11y.js visually highlights content issues at the
+                        source with a simple tooltip on how to fix them.
+                    </p>
+                </div>
+                <button
+                    @click="initSa11y()"
+                    :aria-pressed="sa11y"
+                    :disabled="sa11y"
+                    class="pointer flex items-center g3 p0 mt2 bg-transparent bn"
+                >
+                    <span
+                        :class="{
+                                'pl5 o-50': sa11y,
+                                'pr5': !sa11y
+                            }"
+                        class="db h2 ba br-100 transition-small"
+                    >
+                        <span
+                            class="db h-100 bg-white ba br-100 aspect-ratio-1x1"
+                        ></span>
+                    </span>
+                    <span class="nowrap">show Sa11y.js</span>
+                </button>
+            </div>
+        </div>
+    </article>
+</section>

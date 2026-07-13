@@ -17,7 +17,8 @@
         "minify:js": "terser styleguide/js/script.js -o styleguide/js/script.js --compress --mangle",
         "purge": "purgecss --css styleguide/css/style.css --content '**/*.html' 'styleguide/js/*.js' --output styleguide/css/",
         "serve": "browser-sync start --config bs-config.js",
-        "dev": "sass --no-source-map --watch dev/css/style.scss:styleguide/css/style.src.css dev/css/print.scss:styleguide/css/print.src.css dev/css/modx.scss:styleguide/css/modx.src.css & chokidar 'styleguide/css/*.src.css' -c 'npm run compile:css' & esbuild dev/js/bundle.js --bundle --watch --outfile=styleguide/js/script.js & browser-sync start --config bs-config.js"
+        "dev": "sass --no-source-map --watch dev/css/style.scss:styleguide/css/style.src.css dev/css/print.scss:styleguide/css/print.src.css dev/css/modx.scss:styleguide/css/modx.src.css & chokidar 'styleguide/css/*.src.css' -c 'npm run compile:css' & esbuild dev/js/bundle.js --bundle --watch --outfile=styleguide/js/script.js & browser-sync start --config bs-config.js",
+        "docs": "jekyll serve --port 4000"
     },
     "author": "Jens Wittmann",
     "main": "index.html",

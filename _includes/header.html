@@ -1,0 +1,155 @@
+<ul class="skiplinks">
+    <li><a href="{{ page.url }}#intro">general info</a></li>
+    <li><a href="{{ page.url }}#installation">installation</a></li>
+</ul>
+
+<header
+    class="sticky top-1 z-1 flex items-center w-min-content f3 ml-auto mr-auto"
+>
+    <a href="/" class="p2 bg-violet-11 br6">
+        <span class="icon icon-font">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 41 41"
+            >
+                <mask
+                    id="a"
+                    width="41"
+                    height="41"
+                    x="0"
+                    y="0"
+                    maskUnits="userSpaceOnUse"
+                    style="mask-type: luminance"
+                >
+                    <path fill="#fff" d="M41 0H0v41h41z" />
+                </mask>
+                <g mask="url(#a)">
+                    <path
+                        fill="#fff"
+                        d="M20.5 40.354c10.965 0 19.854-8.887 19.854-19.853S31.464.647 20.5.647C9.535.647.646 9.537.646 20.5c0 10.965 8.89 19.853 19.854 19.853"
+                    />
+                </g>
+                <mask
+                    id="b"
+                    width="41"
+                    height="41"
+                    x="0"
+                    y="0"
+                    maskUnits="userSpaceOnUse"
+                    style="mask-type: luminance"
+                >
+                    <path
+                        fill="#fff"
+                        d="M20.5 40.354C9.535 40.354.646 31.467.646 20.502.646 9.535 9.536.646 20.5.646c10.965 0 19.854 8.89 19.854 19.856 0 10.965-8.89 19.852-19.854 19.852"
+                    />
+                </mask>
+                <g mask="url(#b)">
+                    <path
+                        fill="#4a4794"
+                        d="M6.321 6.552S11.567.388 20.686.766l-.251 11.384s-4.466.314-5.787 2.578zM34.792 6.657s6.169 5.03 5.394 14.124l-11.39.068s-.12-4.476-2.324-5.893zM34.56 34.468s-4.874 6.176-13.997 5.877l-.165-11.352s4.776.098 6.077-2.179z"
+                    />
+                    <path
+                        fill="#8d9fcc"
+                        d="M6.51 34.522S1.046 29.245.639 20.816l11.171-.104s.201 4.284 2.46 5.615z"
+                    />
+                    <path
+                        stroke="#1a171b"
+                        stroke-width="1.292"
+                        d="M-12.33 20.684h65.66M20.682 53.33v-65.66M-2.776 43.777 43.778-2.778M43.777 43.775-2.778-2.78"
+                    />
+                </g>
+                <mask
+                    id="c"
+                    width="41"
+                    height="41"
+                    x="0"
+                    y="0"
+                    maskUnits="userSpaceOnUse"
+                    style="mask-type: luminance"
+                >
+                    <path fill="#fff" d="M41 0H0v41h41z" />
+                </mask>
+                <g mask="url(#c)">
+                    <path
+                        stroke="#1a171b"
+                        stroke-width="1.292"
+                        d="M20.5 40.354c10.965 0 19.854-8.887 19.854-19.853S31.464.647 20.5.647C9.535.647.646 9.537.646 20.5c0 10.965 8.89 19.853 19.854 19.853Z"
+                    />
+                    <path
+                        fill="#f1f8f8"
+                        d="M20.5 29.035a8.535 8.535 0 1 0 0-17.069 8.535 8.535 0 0 0 0 17.07"
+                    />
+                    <path
+                        stroke="#1a171b"
+                        stroke-width="1.292"
+                        d="M20.5 29.035a8.535 8.535 0 1 0 0-17.069 8.535 8.535 0 0 0 0 17.07Z"
+                    />
+                </g>
+            </svg>
+        </span>
+        <span class="clip">Go to Home</span>
+    </a>
+
+    <a
+        href="{{ page.url }}#navigation"
+        class="lh-solid ph3 pv2 bg-violet-11 br6"
+    >
+        Menü
+    </a>
+
+    <button
+        @click="darkmode = !darkmode; userThemeModeSet = true"
+        :aria-pressed="darkmode"
+        class="btn btn--clean fixed right-0 bottom-0 f4 m3"
+    >
+        <span class="clip">
+            Darkmode
+            <span x-text="darkmode ? 'off' : 'on'"></span>
+        </span>
+        <span x-show="darkmode" class="icon icon-font">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                <path fill="none" d="M0 0h256v256H0z" />
+                <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="16"
+                    d="M128 40v-8"
+                />
+                <circle
+                    cx="128"
+                    cy="128"
+                    r="56"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="16"
+                />
+                <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="16"
+                    d="m64 64-8-8M64 192l-8 8M192 64l8-8M192 192l8 8M40 128h-8M128 216v8M216 128h8"
+                />
+            </svg>
+        </span>
+        <span x-show="!darkmode" class="icon icon-font">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                <path fill="none" d="M0 0h256v256H0z" />
+                <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="16"
+                    d="M108.11 28.11a96.09 96.09 0 0 0 119.78 119.78A96 96 0 1 1 108.11 28.11Z"
+                />
+            </svg>
+        </span>
+    </button>
+</header>

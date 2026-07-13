@@ -25,6 +25,7 @@ SCSS compilation and JS bundling are handled by **CodeKit** (macOS app). Additio
 | `npm run purge` | Remove unused CSS from `style.css` based on `*.html` + JS content |
 | `npm run dev` | Watch CSS + JS + browser-sync hot reload (full dev workflow) |
 | `npm run serve` | Start browser-sync server only (no watching) |
+| `npm run docs` | Serve the Jekyll docs site at `http://127.0.0.1:4000` (no `--livereload` â€” conflicts with CodeKit's own live-reload broadcaster) |
 | `npx prettier --write .` | Format code |
 | `npm install` | Install dependencies |
 
@@ -61,7 +62,7 @@ Compiled files in `/styleguide/css/` and `/styleguide/js/` should be committed â
 
 **JS (`dev/js/bundle.js`):** Initializes Alpine.js with plugins: `@alpinejs/collapse`, `@alpinejs/focus`, `@alpinejs/intersect`, `@alpinejs/persist`.
 
-**`index.html`** (root) is both the primary documentation and the demo page.
+**`docs/`** is a Jekyll site (`_layouts`, `_includes`, `index.html`, `samples.html`, `tools.html`) that serves as the primary documentation and demo pages. The framework is transitioning away from a single root `index.html` (removed from the repo root) to this Jekyll-based docs site.
 
 ## Coding Conventions
 

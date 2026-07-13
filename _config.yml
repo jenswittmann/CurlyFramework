@@ -1,0 +1,8 @@
+exclude:
+  - dev
+  - package.json
+  - package-lock.json
+  - readme.md
+  - AGENTS.md
+  - LICENSE
+  - bs-config.js

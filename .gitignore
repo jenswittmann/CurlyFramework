@@ -5,3 +5,4 @@
 node_modules/*
 package-lock.json
 styleguide/css/*.src.css
+/_site
