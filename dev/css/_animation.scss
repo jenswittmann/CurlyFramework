@@ -23,11 +23,21 @@
     }
 }
 
+// easing
+.bounce {
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
 // parallax
 .scroll {
     $p: &;
 
-    &--parallax-up {
+    &--move {
+        transform: translate(
+                var(--scroll-move-x-start, 0),
+                var(--scroll-move-y-start, 0)
+            )
+            rotate(var(--scroll-move-rotate-start, 0deg));
         animation: parallax-up linear forwards;
         animation-timeline: view();
     }
@@ -35,17 +45,17 @@
     @keyframes parallax-up {
         0% {
             transform: translate(
-                    var(--scroll-up-x-start, 0),
-                    var(--scroll-up-y-start, 0)
+                    var(--scroll-move-x-start, 0),
+                    var(--scroll-move-y-start, 0)
                 )
-                rotate(var(--scroll-up-rotate-start, 0deg));
+                rotate(var(--scroll-move-rotate-start, 0deg));
         }
         100% {
             transform: translate(
-                    var(--scroll-up-x-end, 0),
-                    var(--scroll-up-y-end, 0)
+                    var(--scroll-move-x-end, 0),
+                    var(--scroll-move-y-end, 0)
                 )
-                rotate(var(--scroll-up-rotate-end, 0deg));
+                rotate(var(--scroll-move-rotate-end, 0deg));
         }
     }
 
@@ -64,6 +74,43 @@
         }
         100% {
             object-position: 0 100%;
+        }
+    }
+
+    &--fade {
+        opacity: var(--scroll-fade-start, 0);
+        animation: fade linear forwards;
+        animation-timeline: view();
+    }
+
+    @keyframes fade {
+        0% {
+            opacity: var(--scroll-fade-start, 0);
+        }
+        50% {
+            opacity: var(--scroll-fade-center, 1);
+        }
+        100% {
+            opacity: var(--scroll-fade-end, 0);
+        }
+    }
+
+    &--scale {
+        transform: scale(var(--scroll-scale-start, 0));
+        transform-origin: var(--scroll-scale-origin, center);
+        animation: scale linear forwards;
+        animation-timeline: view();
+    }
+
+    @keyframes scale {
+        0% {
+            transform: scale(var(--scroll-scale-start, 0));
+        }
+        50% {
+            transform: scale(var(--scroll-scale-center, 1));
+        }
+        100% {
+            transform: scale(var(--scroll-scale-end, 0));
         }
     }
 }
