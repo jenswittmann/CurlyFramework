@@ -34,6 +34,8 @@
 ├── styleguide/
 │   ├── css/style.css      # Compiled CSS — committed, do not hand-edit
 │   └── js/script.js       # Compiled JS — committed, do not hand-edit
+├── docs/                  # Jekyll docs/demo site content (samples.html, checklists.html)
+├── _layouts/, _includes/  # Jekyll layouts/includes (repo root, used by docs/)
 ├── demo/                  # Static demo/styleguide pages
 ├── package.json
 └── readme.md
@@ -45,13 +47,13 @@ The MODX-specific concepts referenced below (Fenom templates, ContentBlocks chun
 
 ## CSS Classes
 
-**Only use CSS classes that exist in `frontend/styleguide/css/style.css`** — the compiled CurlyFramework stylesheet. Do not use Tailwind, Bootstrap, or any other external CSS framework. Do not invent class names.
+**Only use CSS classes that exist in `styleguide/css/style.css`** — the compiled CurlyFramework stylesheet. Do not use Tailwind, Bootstrap, or any other external CSS framework. Do not invent class names.
 
 ### Available Utility Classes (Tachyons)
 
 **Naming pattern:** `{property}{value}` — e.g. `pa3` = padding all 1rem, `mt2` = margin-top 0.5rem.
 
-**Responsive suffixes:** none = all sizes, `-ns` = ≥30em, `-m` = ≥48em, `-l` = ≥120em.
+**Responsive suffixes:** none = all sizes (mobile-first base), `-s` = ≥30em, `-m` = ≥48em, `-l` = ≥60em. All cumulative (min-width), not exclusive ranges.
 
 **Spacing scale (8px baseline):**
 
@@ -80,6 +82,8 @@ The MODX-specific concepts referenced below (Fenom templates, ContentBlocks chun
 | `.f5` | 1.25rem |
 | `.f6` | 1.5rem |
 | `.f7` | 2rem |
+| `.f8` | 3rem |
+| `.f9` | 4rem |
 
 **Colors:** text = class name (`blue`, `dark-gray`), bg = `bg-` prefix, border = `b--` prefix.
 
@@ -91,7 +95,7 @@ Colors: `dark-red`, `red`, `orange`, `gold`, `yellow`, `purple`, `dark-pink`, `h
 
 **Display:** `dn`, `di`, `db`, `dib`, `flex`, `inline-flex`, `dg` (grid).
 
-Example: `dn db-m` = hidden on mobile, block on ≥48em.
+Example: `dn db-m` = hidden on mobile, block on ≥48em (and up, since `-m` is cumulative).
 
 **Flexbox:** `flex-column`, `flex-row`, `flex-wrap`, `items-center`, `items-start`, `items-end`, `justify-center`, `justify-between`, `justify-around`, `flex-auto`, `flex-none`.
 
@@ -115,18 +119,15 @@ Border radius: `br0`–`br4`, `br-100`, `br-pill`. Directional: `br--top`, `br--
 
 Scoped to `.curlyframework`. Use CSS custom properties for brand values:
 
-- Brand colors: `--yellow-5: #ffdd00`, `--yellow-8: #fff6c3`, `--gray-5: #55514b`
-- Spacing: `--spacing-1` (5px) through `--spacing-8` (120px), responsive at ≥48em
-- Type scale: `--typo-1` (12px) through `--typo-6` (27px), responsive at ≥48em
-- Breakpoints: `--breakpoint-small` (30em), `--breakpoint-medium` (48em), `--breakpoint-large` (120em)
-- Max widths: `--max-width-8` (70rem), `--max-width-9` (105rem)
-- Border radius: `--border-radius-1`–`--border-radius-3` (responsive)
-- Header height: `--head-height` (4.7rem mobile / 10rem desktop)
-- Font: `--fontname: 'sofia-sans', sans-serif`
+- Brand colors: `--violet-5: #351788`
+- Spacing: `--spacing-1` (6px) through `--spacing-8` (124px) mobile, scaling up to `--spacing-1` (8px) through `--spacing-8` (200px) at ≥48em
+- Type scale: `--typo-1` (16px) through `--typo-5` (64px), same values at ≥48em
+- Breakpoints: `--breakpoint-small` (30em), `--breakpoint-medium` (48em), `--breakpoint-large` (60em)
+- Font: `--fontname: sans-serif`
 
 ### Custom Partials
 
-Custom component classes follow BEM naming (`.component__element--modifier`). Key SCSS partials in `frontend/dev/css/`:
+Custom component classes follow BEM naming (`.component__element--modifier`). Key SCSS partials in `dev/css/`:
 
 `_head.scss`, `_btn.scss`, `_form.scss`, `_typo.scss`, `_icons.scss`, `_contentblocks.scss`, `_animation.scss`, `_a11y.scss`, `_styling.scss`, `_mixins.scss`, `_reset.scss`
 
@@ -199,7 +200,7 @@ ContentBlocks field content is accessed via `$settings` (field settings object) 
 
 ## JavaScript
 
-All interactivity uses **Alpine.js v3**. Do not introduce other JS frameworks or libraries. Entry point: `frontend/dev/js/bundle.js`.
+All interactivity uses **Alpine.js v3**. Do not introduce other JS frameworks or libraries. Entry point: `dev/js/bundle.js`.
 
 Available Alpine plugins:
 - `@alpinejs/focus` (`x-trap`)
@@ -377,7 +378,7 @@ All interactive components require proper ARIA attributes, keyboard navigation, 
 
 ## Key Constraints
 
-- **CSS:** Only classes from the compiled styleguide (`frontend/styleguide/css/style.css`). Never Tailwind, Bootstrap, or external frameworks.
+- **CSS:** Only classes from the compiled styleguide (`styleguide/css/style.css`). Never Tailwind, Bootstrap, or external frameworks.
 - **Templates:** Fenom syntax only. Never Blade, Antlers, Twig, or Smarty.
 - **JS:** Alpine.js v3 only. No React, Vue, jQuery, or other libraries.
 - **Accessibility first:** WCAG 2.2 — ARIA attributes, keyboard navigation, screen reader support on all interactive components.

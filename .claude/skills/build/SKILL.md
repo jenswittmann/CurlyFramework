@@ -40,8 +40,8 @@ Compiled files in `/styleguide/css/` and `/styleguide/js/` should be committed �
 ### When adding a new SCSS entry point
 
 1. Add the source file in `dev/css/`
-2. Add it to all three scripts in `package.json`: `scss`, `lcss`, and `lcss:watch`
-3. Add it to the Source → Output mapping in `CLAUDE.md`
+2. Add it to the relevant scripts in `package.json`: `scss`, `compile:css`, `lcss`, and `dev`
+3. Add it to the Source → Output mapping in this file and in `AGENTS.md`
 4. Register it in `.config.codekit3` if CodeKit is also used
 
 ## Architecture
@@ -95,11 +95,11 @@ Tachyons is a functional/atomic CSS framework providing single-purpose utility c
 | Suffix | Breakpoint |
 |--------|------------|
 | (none) | All (mobile-first base) |
-| `-ns` | ≥30em (not small) |
-| `-m` | 30em–60em (medium only) |
-| `-l` | ≥60em (large and up) |
+| `-s` | ≥30em |
+| `-m` | ≥48em |
+| `-l` | ≥60em |
 
-Example: `dn db-ns` = hidden on mobile, block on medium+
+All cumulative (min-width), not exclusive ranges. Example: `dn db-m` = hidden on mobile, block on ≥48em and up.
 
 ### Spacing Scale (8px baseline)
 
@@ -128,6 +128,8 @@ Margin: `ma`, `ml`, `mr`, `mt`, `mb`, `mv`, `mh` + scale number
 | `.f5` | 1.25rem |
 | `.f6` | 1.5rem |
 | `.f7` | 2rem |
+| `.f8` | 3rem |
+| `.f9` | 4rem |
 
 Note: inside `.curlyframework`, `--typo-1`–`--typo-5` are overridden to `1rem`, `1.25rem`, `1.5rem`, `2rem`, `4rem`. The scale also extends to `--typo-12` (12rem).
 
