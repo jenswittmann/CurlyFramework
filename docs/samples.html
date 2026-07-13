@@ -2,14 +2,14 @@
 layout: default
 title: Samples – CurlyFramework
 description: >-
-  Interactive AlpineJS and Tachyons sample components — text to speech,
-  zoom detection, modals, accordion, tabs, slider, filter, parallax,
-  richtext, an accessible upload form, and a styleguide.
+    Interactive AlpineJS and Tachyons sample components — text to speech,
+    zoom detection, modals, accordion, tabs, slider, filter, parallax,
+    richtext, an accessible upload form, and a styleguide.
 ---
 
 <section class="dc">
     <h2 class="col-full f5 tc mt8 mb5">Samples</h2>
-    
+
     <article aria-label="Text to Speech" class="dc">
         <div class="start-1 end-last end-4-m">
             <h3 id="texttospeech" class="f4 lh-title m0">Text to Speech</h3>
@@ -77,30 +77,61 @@ description: >-
                 @keydown.esc.window="cancel()"
                 class="flex flex-column justify-center items-center"
             >
-                
-                <div class="sticky top-0 flex flex-wrap justify-center g1 w-90 f1 tc p4 pt7 bg-violet-10 bb br4">
-                    <button @click="prev()" :disabled="!playing" :class="{ 'transform-scale-0': !playing }" class="pointer p1 ph4-m pv3-m bg-transparent ba b--inherit br-100 transition-small pulse"><span aria-hidden="true">⇠</span> <span class="clip">previous</span></button>
-                    <button x-text="playing ? 'stop' : 'speak'" @click="playing ? cancel() : speak()" :aria-pressed="playing" class="pointer p1 ph4-m pv3-m bg-transparent ba b--inherit br-100 transition-small pulse"></button>
-                    <button @click="next()" :disabled="!playing" :class="{ 'transform-scale-0': !playing }" class="pointer p1 ph4-m pv3-m bg-transparent ba b--inherit br-100 transition-small pulse"><span class="clip">next</span> <span aria-hidden="true">⇢</span></button>
+                <div
+                    class="sticky top-0 flex flex-wrap justify-center g1 w-90 f1 tc p4 pt7 bg-violet-10 bb br4"
+                >
+                    <button
+                        @click="prev()"
+                        :disabled="!playing"
+                        :class="{ 'transform-scale-0': !playing }"
+                        class="pointer p1 ph4-m pv3-m bg-transparent ba b--inherit br-100 transition-small pulse"
+                    >
+                        <span aria-hidden="true">⇠</span>
+                        <span class="clip">previous</span>
+                    </button>
+                    <button
+                        x-text="playing ? 'stop' : 'speak'"
+                        @click="playing ? cancel() : speak()"
+                        :aria-pressed="playing"
+                        class="pointer p1 ph4-m pv3-m bg-transparent ba b--inherit br-100 transition-small pulse"
+                    ></button>
+                    <button
+                        @click="next()"
+                        :disabled="!playing"
+                        :class="{ 'transform-scale-0': !playing }"
+                        class="pointer p1 ph4-m pv3-m bg-transparent ba b--inherit br-100 transition-small pulse"
+                    >
+                        <span class="clip">next</span>
+                        <span aria-hidden="true">⇢</span>
+                    </button>
                 </div>
                 <div class="richtext w-70-m m4">
                     <p>
-                        When it comes to screen readers, programmes such as NVDA and JAWS tend to spring to mind.
+                        When it comes to screen readers, programmes such as NVDA
+                        and JAWS tend to spring to mind.
                     </p>
                     <p>
-                        However, there are also cases where simply reading a main text aloud is useful.
+                        However, there are also cases where simply reading a
+                        main text aloud is useful.
                     </p>
                     <p>
-                        For example, this could be useful when reading long texts is too tiring for the eyes, or when on parental leave and both hands are needed to care for a baby.
+                        For example, this could be useful when reading long
+                        texts is too tiring for the eyes, or when on parental
+                        leave and both hands are needed to care for a baby.
                     </p>
                     <p>
-                        In these cases, it can be helpful to read a text aloud without having to install a programme beforehand.
+                        In these cases, it can be helpful to read a text aloud
+                        without having to install a programme beforehand.
                     </p>
                     <p>
-                        The Web Speech API already offers a native option for this in the browser. The script is pure vanilla JavaScript based on AlpineJS and is quite simple — it is designed to serve as inspiration.
+                        The Web Speech API already offers a native option for
+                        this in the browser. The script is pure vanilla
+                        JavaScript based on AlpineJS and is quite simple — it is
+                        designed to serve as inspiration.
                     </p>
                     <p>
-                        Use the left and right arrow keys to navigate. Press Escape to cancel.
+                        Use the left and right arrow keys to navigate. Press
+                        Escape to cancel.
                     </p>
                 </div>
             </div>
@@ -154,7 +185,8 @@ description: >-
                 </template>
                 <div class="sticky top-0 w-90 tc p4 pt7 bg-violet-10 bb br4">
                     <p class="dib ph2 pv1 ba br-100 mb1 mb0-m">
-                        Zoom: <span x-text="(zoomlevel * 100).toFixed(0)"></span>%
+                        Zoom:
+                        <span x-text="(zoomlevel * 100).toFixed(0)"></span>%
                     </p>
                     <p class="dib ph2 pv1 ba br-100">
                         Positive: <span x-text="zoompositive"></span>
@@ -162,10 +194,18 @@ description: >-
                 </div>
                 <div class="richtext w-70-m m4">
                     <p>
-                        Fixed or sticky elements can sometimes use a large amount of screen space, especially when the user zooms in to more than 150%. In this case, it may be better to inherit these elements.
+                        Fixed or sticky elements can sometimes use a large
+                        amount of screen space, especially when the user zooms
+                        in to more than 150%. In this case, it may be better to
+                        inherit these elements.
                     </p>
                     <p>
-                        In this script, you divide the outerWith width by the innerWidth to calculate the zoom factor. If the zoom factor is greater than 100%, you can add a class to reset the position. Try this with a Chromium browser using the Ctrl and +/- keys. It's actually a proof of concept, so the CSS isn't in the core at the moment.
+                        In this script, you divide the outerWith width by the
+                        innerWidth to calculate the zoom factor. If the zoom
+                        factor is greater than 100%, you can add a class to
+                        reset the position. Try this with a Chromium browser
+                        using the Ctrl and +/- keys. It's actually a proof of
+                        concept, so the CSS isn't in the core at the moment.
                     </p>
                 </div>
             </div>
@@ -191,8 +231,7 @@ description: >-
                     class="btn pointer p0 bg-transparent bn bb"
                 >
                     <span class="bb"
-                        >open
-                        <span aria-hidden="true">⇢</span></span
+                        >open <span aria-hidden="true">⇢</span></span
                     >
                 </button>
                 <div
@@ -214,23 +253,19 @@ description: >-
                     class="fixed top-0 right-0 bottom-0 z-max w-80 w-third-m white p3 p5-m bg-violet-1"
                 >
                     <p>
-                        The script also takes care of the focus so
-                        that it stays in the modal. Here is a
-                        <a
-                            href="https://jens-wittmann.de"
-                            rel="noreferrer"
+                        The script also takes care of the focus so that it stays
+                        in the modal. Here is a
+                        <a href="https://jens-wittmann.de" rel="noreferrer"
                             >example link</a
                         >
-                        to the test. You can also close it with the
-                        Escape key.
+                        to the test. You can also close it with the Escape key.
                     </p>
                     <button
                         @click="open = false"
                         class="btn pointer p0 bg-transparent bn bb"
                     >
                         <span class="bb"
-                            >close
-                            <span aria-hidden="true">×</span></span
+                            >close <span aria-hidden="true">×</span></span
                         >
                     </button>
                 </div>
@@ -257,8 +292,7 @@ description: >-
                     class="btn pointer p0 bg-transparent bn bb"
                 >
                     <span class="bb"
-                        >open
-                        <span aria-hidden="true">⇢</span></span
+                        >open <span aria-hidden="true">⇢</span></span
                     >
                 </button>
                 <div
@@ -279,15 +313,13 @@ description: >-
                         class="fixed top-0 right-0 bottom-0 z-max w-80 w-third-m white p3 p5-m bg-violet-1"
                     >
                         <p>
-                            The script also takes care of the focus
-                            so that it stays in the modal. Here is a
-                            <a
-                                href="https://jens-wittmann.de"
-                                rel="noreferrer"
+                            The script also takes care of the focus so that it
+                            stays in the modal. Here is a
+                            <a href="https://jens-wittmann.de" rel="noreferrer"
                                 >example link</a
                             >
-                            to the test. You can also close it with
-                            the Escape key.
+                            to the test. You can also close it with the Escape
+                            key.
                         </p>
                         <button
                             popovertarget="popup2"
@@ -295,10 +327,7 @@ description: >-
                             class="btn pointer p0 bg-transparent bn bb"
                         >
                             <span class="bb"
-                                >close
-                                <span aria-hidden="true"
-                                    >×</span
-                                ></span
+                                >close <span aria-hidden="true">×</span></span
                             >
                         </button>
                     </div>
@@ -306,10 +335,7 @@ description: >-
             </div>
         </div>
     </article>
-    <article
-        aria-label="Sample Accordion &lt;details&gt;"
-        class="dc"
-    >
+    <article aria-label="Sample Accordion &lt;details&gt;" class="dc">
         <div class="start-1 end-last end-4-m">
             <h3 class="sticky top-0 f4 lh-title m0">
                 Accordion
@@ -335,9 +361,7 @@ description: >-
                     <summary
                         class="pointer flex justify-between w-100 p2 bg-transparent bn"
                     >
-                        <span
-                            >Accordion <span x-text="i"></span
-                        ></span>
+                        <span>Accordion <span x-text="i"></span></span>
                         <span
                             :class="{
                                 'rotate-180': open
@@ -347,9 +371,7 @@ description: >-
                             >⇣</span
                         >
                     </summary>
-                    <p class="p2 m0 bt">
-                        Simple Answer for the Accordion.
-                    </p>
+                    <p class="p2 m0 bt">Simple Answer for the Accordion.</p>
                 </details>
             </template>
         </div>
@@ -409,12 +431,9 @@ description: >-
                             class="p3 p5-m bl br bb br4 br--bottom"
                         >
                             <p>
-                                Content for Tab #<span
-                                    x-text="i"
-                                ></span
-                                >. Use the tab key to navigate to
-                                the table list, then use the left
-                                and right arrow keys to navigate to
+                                Content for Tab #<span x-text="i"></span>. Use
+                                the tab key to navigate to the table list, then
+                                use the left and right arrow keys to navigate to
                                 the other tabs.
                             </p>
                         </section>
@@ -469,9 +488,7 @@ description: >-
                         class="list flex g2 w-60 p0"
                         style="height: 1rem"
                     >
-                        <template
-                            x-for="(text, i) in slides.length"
-                        >
+                        <template x-for="(text, i) in slides.length">
                             <li class="dc">
                                 <button
                                     @click="goto(i)"
@@ -482,8 +499,7 @@ description: >-
                                     class="db h-100 white p0 bg-violet-5 br3 bn transition-small"
                                 >
                                     <span class="clip"
-                                        >Slide
-                                        <span x-text="i"></span
+                                        >Slide <span x-text="i"></span
                                     ></span>
                                 </button>
                             </li>
@@ -530,11 +546,7 @@ description: >-
                         }"
                         class="pointer ph4 pv3 bg-transparent ba b--inherit br-100 transition-small"
                     >
-                        <span
-                            aria-hidden="true"
-                            class="dib rotate-180"
-                            >⇢</span
-                        >
+                        <span aria-hidden="true" class="dib rotate-180">⇢</span>
                         <span class="clip">previous</span>
                     </button>
                 </div>
@@ -611,14 +623,10 @@ description: >-
                 }"
                 class="w-90"
             >
-                <header
-                    class="flex justify-between items-end g1 mb4"
-                >
+                <header class="flex justify-between items-end g1 mb4">
                     <span class="flex items-baseline">
                         <span>Filter:</span>
-                        <template
-                            x-for="(item, i) in ['css', 'php', 'js']"
-                        >
+                        <template x-for="(item, i) in ['css', 'php', 'js']">
                             <button
                                 @click="filter == item ? filter = false : filter = item"
                                 :aria-pressed="filter == item"
@@ -628,10 +636,7 @@ description: >-
                                 }"
                                 class="pointer ttu ph2 pv0 bg-transparent bn"
                             >
-                                <span
-                                    x-text="item"
-                                    class="bb"
-                                ></span>
+                                <span x-text="item" class="bb"></span>
                             </button>
                         </template>
                     </span>
@@ -647,13 +652,8 @@ description: >-
                             class="self-start"
                         ></span>
                         <span class="clip">out of</span>
-                        <span aria-hidden="true" class="mv3"
-                            >/</span
-                        >
-                        <span
-                            x-text="items.length"
-                            class="self-end"
-                        ></span>
+                        <span aria-hidden="true" class="mv3">/</span>
+                        <span x-text="items.length" class="self-end"></span>
                     </span>
                 </header>
                 <ul class="dg cols-2 cols-4-m g2 list p0 m0">
@@ -676,16 +676,12 @@ description: >-
     </article>
     <article aria-label="Sample CSS Parallax" class="dc">
         <div class="start-1 end-last end-4-m">
-            <h3 class="sticky top-0 f4 lh-title m0">
-                CSS Parallax
-            </h3>
+            <h3 class="sticky top-0 f4 lh-title m0">CSS Parallax</h3>
         </div>
         <div
             class="start-1 start-4-m end-last flex flex-column justify-center items-center p3 pv4 p4-m pv5-m bg-violet-10 br4"
         >
-            <div
-                class="flex justify-center items-center vh-50 debug-grid-16"
-            >
+            <div class="flex justify-center items-center vh-50 debug-grid-16">
                 <div
                     class="scroll scroll--move flex justify-center items-center w-70 p4 bg-white br-100 aspect-ratio-square"
                     style="
@@ -697,152 +693,7 @@ description: >-
                         --scroll-move-rotate-end: 360deg;
                     "
                 >
-                    <span class="cooking relative">
-                        <div class="cooking__pot icon">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink"
-                                viewBox="0 0 275 275"
-                            >
-                                <path
-                                    fill="#FFF"
-                                    d="M191.461 64.596L153.231 30H115L77.246 65.287H59.998l21.417 19.647"
-                                />
-                                <path
-                                    fill="none"
-                                    stroke-width="7.857"
-                                    d="M191.461 64.596L153.231 30H115L77.246 65.287H59.998l21.417 19.647"
-                                    class="cooking__outline"
-                                />
-                                <path
-                                    fill="#4A4794"
-                                    d="M93.766 157.69L77.508 264.96h112.765l-16.63-107.27z"
-                                />
-                                <defs>
-                                    <path
-                                        id="aa"
-                                        d="M93.769 157.69L77.505 264.96H190.27l-16.625-107.27z"
-                                    />
-                                </defs>
-                                <clipPath id="bb">
-                                    <use
-                                        xlink:href="#aa"
-                                        overflow="visible"
-                                    />
-                                </clipPath>
-                                <path
-                                    clip-path="url(#bb)"
-                                    fill="none"
-                                    stroke-width="7.857"
-                                    d="M120.491 158.431l-9.203 107.27"
-                                    class="cooking__outline"
-                                />
-                                <path
-                                    fill="#8D9FCC"
-                                    d="M146.031 160.065l8.579 104.898h17.877l17.73-.367-16.337-105.39z"
-                                />
-                                <defs>
-                                    <path
-                                        id="cc"
-                                        d="M93.769 157.69L77.505 264.96H190.27l-16.625-107.27z"
-                                    />
-                                </defs>
-                                <clipPath id="dd">
-                                    <use
-                                        xlink:href="#cc"
-                                        overflow="visible"
-                                    />
-                                </clipPath>
-                                <path
-                                    clip-path="url(#dd)"
-                                    fill="none"
-                                    stroke-width="7.857"
-                                    d="M146.548 158.431l9.203 107.27"
-                                    class="cooking__outline"
-                                />
-                                <path
-                                    fill="none"
-                                    stroke-width="7.857"
-                                    d="M93.766 157.689h79.877l16.63 107.27H77.508z"
-                                    class="cooking__outline"
-                                />
-                                <path
-                                    fill="#4A4794"
-                                    d="M93.928 137.253h79.551l16.562-71.968H77.738z"
-                                />
-                                <defs>
-                                    <path
-                                        id="ee"
-                                        d="M77.736 65.285l16.19 71.967h79.557l16.556-71.967z"
-                                    />
-                                </defs>
-                                <clipPath id="ff">
-                                    <use
-                                        xlink:href="#ee"
-                                        overflow="visible"
-                                    />
-                                </clipPath>
-                                <path
-                                    clip-path="url(#ff)"
-                                    fill="none"
-                                    stroke-width="7.857"
-                                    d="M120.131 172.312l-9.202-107.27"
-                                    class="cooking__outline"
-                                />
-                                <path
-                                    fill="#8D9FCC"
-                                    d="M155.53 67.416l-6.605 69.836h24.476l1.734-7.192 14.734-64.027z"
-                                />
-                                <defs>
-                                    <path
-                                        id="gg"
-                                        d="M77.736 65.285l16.19 71.967h79.557l16.556-71.967z"
-                                    />
-                                </defs>
-                                <clipPath id="hh">
-                                    <use
-                                        xlink:href="#gg"
-                                        overflow="visible"
-                                    />
-                                </clipPath>
-                                <path
-                                    clip-path="url(#hh)"
-                                    fill="none"
-                                    stroke-width="7.857"
-                                    d="M146.188 172.312l9.203-107.27"
-                                    class="cooking__outline"
-                                />
-                                <path
-                                    fill="none"
-                                    stroke-width="7.857"
-                                    d="M93.928 137.253h79.551l16.562-71.968H77.738zM101.784 138.09v20.711M164.015 138.09v20.711"
-                                    class="cooking__outline"
-                                />
-                                <g
-                                    fill="none"
-                                    stroke-width="7.857"
-                                    class="cooking__outline"
-                                >
-                                    <path
-                                        d="M187.644 82.179h11.816v38.838c0 2.53 3.551 5.322 7.925 5.322s7.925-2.792 7.899-5.243c-.021.084-.021-54.939-.021-54.939h-25.11"
-                                    />
-                                    <ellipse
-                                        cx="134.003"
-                                        cy="12.927"
-                                        rx="7.925"
-                                        ry="5.473"
-                                    />
-                                </g>
-                                <path
-                                    fill="none"
-                                    stroke-width="7.857"
-                                    d="M126.133 14.041l1.98 15.341M141.725 14.041l-1.98 15.341"
-                                    class="cooking__outline"
-                                />
-                            </svg>
-                            <span class="cooking__steam"></span>
-                        </span>
-                    </div>
+                    {% include cooking.html %}
                 </div>
             </div>
         </div>
@@ -996,19 +847,12 @@ description: >-
                         <span class="clip">(required)</span>
                     </label>
                     <div class="form__field form__field--input">
-                        <input
-                            type="email"
-                            name="email"
-                            id="email"
-                            required
-                        />
+                        <input type="email" name="email" id="email" required />
                     </div>
                 </div>
 
                 <div class="form__item">
-                    <label for="message" class="form__label"
-                        >Message
-                    </label>
+                    <label for="message" class="form__label">Message </label>
                     <div class="form__field form__field--textarea">
                         <textarea
                             name="message"
@@ -1039,9 +883,7 @@ description: >-
                         ></span>
                     </label>
                     <div x-show="progress">
-                        <div
-                            class="overflow-hidden w-100 mv3 bg-gray-11 br2"
-                        >
+                        <div class="overflow-hidden w-100 mv3 bg-gray-11 br2">
                             <div
                                 x-text="progress + '%'"
                                 :style="'width: ' + progress + '%; height: 100%'"
@@ -1084,9 +926,7 @@ description: >-
                             >
                                 <span class="bb"
                                     >delete
-                                    <span aria-hidden="true"
-                                        >×</span
-                                    ></span
+                                    <span aria-hidden="true">×</span></span
                                 >
                             </button>
                         </div>
@@ -1102,10 +942,7 @@ description: >-
                             value="Ja"
                             required
                         />
-                        <label
-                            for="accept_gdpr"
-                            class="form__label"
-                        >
+                        <label for="accept_gdpr" class="form__label">
                             <span>
                                 I agree to the use of my data.
                                 <span aria-hidden="true">*</span>
@@ -1168,10 +1005,7 @@ description: >-
                                 :class="`bg-${i}`"
                                 class="db p2 ba br3 aspect-ratio-1x1"
                             ></span>
-                            <span
-                                x-text="`.bg-${i}`"
-                                class="f1"
-                            ></span>
+                            <span x-text="`.bg-${i}`" class="f1"></span>
                         </li>
                     </template>
                 </ul>
@@ -1182,10 +1016,7 @@ description: >-
                 <ul class="list flex flex-wrap g1 p0">
                     <template x-for="i in 8">
                         <li>
-                            <span
-                                x-text="`.mb${i}`"
-                                class="dib f1 p1"
-                            ></span>
+                            <span x-text="`.mb${i}`" class="dib f1 p1"></span>
                             <span
                                 :class="`pb${i}`"
                                 class="db bg-violet-9"
