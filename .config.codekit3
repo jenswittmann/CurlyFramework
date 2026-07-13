@@ -9,6 +9,277 @@
   ],
   "creatorBuild" : "34921",
   "files" : {
+    "\/_config.yml" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/_config.yml",
+      "oF" : 0
+    },
+    "\/_includes\/cooking.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/_includes\/cooking.html",
+      "oF" : 0
+    },
+    "\/_includes\/footer.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/_includes\/footer.html",
+      "oF" : 0
+    },
+    "\/_includes\/header.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/_includes\/header.html",
+      "oF" : 0
+    },
+    "\/_layouts\/default.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/_layouts\/default.html",
+      "oF" : 0
+    },
+    "\/_site\/.htaccess" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/_site\/.htaccess",
+      "oF" : 0
+    },
+    "\/_site\/CNAME" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/_site\/CNAME",
+      "oF" : 0
+    },
+    "\/_site\/demo\/upload.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/_site\/demo\/upload-min.json",
+      "oF" : 0,
+      "oO" : 0,
+      "oS" : 1
+    },
+    "\/_site\/docs\/checklists.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/_site\/docs\/checklists.html",
+      "oF" : 0
+    },
+    "\/_site\/docs\/samples.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/_site\/docs\/samples.html",
+      "oF" : 0
+    },
+    "\/_site\/favicon.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/_site\/favicon.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/_site\/index.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/_site\/index.html",
+      "oF" : 0
+    },
+    "\/_site\/robots.txt" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/_site\/robots.txt",
+      "oF" : 0
+    },
+    "\/_site\/styleguide\/css\/font\/index.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/_site\/styleguide\/css\/font\/index.html",
+      "oF" : 0
+    },
+    "\/_site\/styleguide\/css\/index.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/_site\/styleguide\/css\/index.html",
+      "oF" : 0
+    },
+    "\/_site\/styleguide\/css\/modx.css" : {
+      "aP" : 0,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/_site\/styleguide\/css\/modx-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/_site\/styleguide\/css\/modx.src.css" : {
+      "aP" : 0,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/_site\/styleguide\/css\/modx.src-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/_site\/styleguide\/css\/print.css" : {
+      "aP" : 0,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/_site\/styleguide\/css\/print-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/_site\/styleguide\/css\/print.src.css" : {
+      "aP" : 0,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/_site\/styleguide\/css\/print.src-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/_site\/styleguide\/css\/style.css" : {
+      "aP" : 0,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/_site\/styleguide\/css\/style-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/_site\/styleguide\/css\/style.src.css" : {
+      "aP" : 0,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/_site\/styleguide\/css\/style.src-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/_site\/styleguide\/img\/icons\/checklist.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/_site\/styleguide\/img\/icons\/checklist.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/_site\/styleguide\/img\/icons\/figma-plugin.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/_site\/styleguide\/img\/icons\/figma-plugin.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/_site\/styleguide\/img\/icons\/figma-template.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/_site\/styleguide\/img\/icons\/figma-template.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/_site\/styleguide\/img\/icons\/github.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/_site\/styleguide\/img\/icons\/github.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/_site\/styleguide\/img\/icons\/samples.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/_site\/styleguide\/img\/icons\/samples.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/_site\/styleguide\/img\/index.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/_site\/styleguide\/img\/index.html",
+      "oF" : 0
+    },
+    "\/_site\/styleguide\/js\/index.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/_site\/styleguide\/js\/index.html",
+      "oF" : 0
+    },
+    "\/_site\/styleguide\/js\/script.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/_site\/styleguide\/js\/min\/script-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
     "\/.claude\/settings.local.json" : {
       "ft" : 524288,
       "oA" : 1,
@@ -74,6 +345,20 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/.htaccess",
+      "oF" : 0
+    },
+    "\/.jekyll-cache\/.gitignore" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/.jekyll-cache\/.gitignore",
+      "oF" : 0
+    },
+    "\/.jekyll-cache\/Jekyll\/Cache" : {
+      "ft" : 65536,
+      "oA" : 1,
+      "oAP" : "\/.jekyll-cache\/Jekyll\/Cache",
       "oF" : 0
     },
     "\/.nova\/Configuration.json" : {
@@ -1181,14 +1466,30 @@
       "sC" : 0,
       "tS" : 0
     },
+    "\/docs\/checklists.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/docs\/checklists.html",
+      "oF" : 0
+    },
+    "\/docs\/samples.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/docs\/samples.html",
+      "oF" : 0
+    },
     "\/favicon.svg" : {
       "ft" : 2097152,
       "miP" : 0,
-      "oA" : 2,
+      "oA" : 0,
       "oAP" : "\/favicon.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
+      "oF" : 1,
+      "opt" : 1,
+      "plM" : 52797496090623,
       "prP" : 0
     },
     "\/index.html" : {
@@ -1344,6 +1645,56 @@
       "oF" : 0,
       "pg" : 0
     },
+    "\/styleguide\/img\/icons\/checklist.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 0,
+      "oAP" : "\/styleguide\/img\/icons\/checklist.svg",
+      "oF" : 1,
+      "opt" : 1,
+      "plM" : 52797496090623,
+      "prP" : 0
+    },
+    "\/styleguide\/img\/icons\/figma-plugin.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 0,
+      "oAP" : "\/styleguide\/img\/icons\/figma-plugin.svg",
+      "oF" : 1,
+      "opt" : 1,
+      "plM" : 52797496090623,
+      "prP" : 0
+    },
+    "\/styleguide\/img\/icons\/figma-template.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 0,
+      "oAP" : "\/styleguide\/img\/icons\/figma-template.svg",
+      "oF" : 1,
+      "opt" : 1,
+      "plM" : 52797496090623,
+      "prP" : 0
+    },
+    "\/styleguide\/img\/icons\/github.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 0,
+      "oAP" : "\/styleguide\/img\/icons\/github.svg",
+      "oF" : 1,
+      "opt" : 1,
+      "plM" : 52797496090623,
+      "prP" : 0
+    },
+    "\/styleguide\/img\/icons\/samples.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 0,
+      "oAP" : "\/styleguide\/img\/icons\/samples.svg",
+      "oF" : 1,
+      "opt" : 1,
+      "plM" : 52797496090623,
+      "prP" : 0
+    },
     "\/styleguide\/img\/index.html" : {
       "cB" : 0,
       "ft" : 8192,
@@ -1388,7 +1739,7 @@
   "projectSettings" : {
     "abortBuildOnError" : 1,
     "allowInjectionReloads" : 1,
-    "alwaysUseExternalServer" : 0,
+    "alwaysUseExternalServer" : 1,
     "animateCSSInjections" : 1,
     "autoBuildNewItems" : 1,
     "autoprefixerEnableIEGrid" : 0,
@@ -2381,7 +2732,7 @@
       }
     },
     "esLintSourceType" : 0,
-    "externalServerAddress" : "https:\/\/jenswittmann.dev",
+    "externalServerAddress" : "http:\/\/127.0.0.1:4000\/",
     "gitIgnoreBuildFolder" : 1,
     "hideConfigFile" : 1,
     "jsCheckerReservedNamesString" : "",
