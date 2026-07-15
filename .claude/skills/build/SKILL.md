@@ -25,7 +25,6 @@ SCSS compilation and JS bundling are handled by **CodeKit** (macOS app). Additio
 | `npm run purge` | Remove unused CSS from `style.css` based on `*.html` + JS content |
 | `npm run dev` | Watch CSS + JS + browser-sync hot reload (full dev workflow) |
 | `npm run serve` | Start browser-sync server only (no watching) |
-| `npm run docs` | Serve the Jekyll docs site at `http://127.0.0.1:4000` (no `--livereload` — conflicts with CodeKit's own live-reload broadcaster) |
 | `npx prettier --write .` | Format code |
 | `npm install` | Install dependencies |
 
@@ -61,8 +60,6 @@ Compiled files in `/public/css/` and `/public/js/` should be committed — they 
 - `_form.scss`, `_animation.scss` — component-specific modules
 
 **JS (`resources/js/bundle.js`):** Initializes Alpine.js with plugins: `@alpinejs/collapse`, `@alpinejs/focus`, `@alpinejs/intersect`, `@alpinejs/persist`.
-
-**Docs site:** the repo root is itself a Jekyll site — `index.html` is the homepage (Jekyll front matter: layout, title, description, features), `_layouts/` and `_includes/` hold the layout/partials, and `docs/` holds page content (`samples.html`, `checklists.html`). `_config.yml` excludes `resources` (SCSS sources) from the Jekyll build — keep that in sync if `resources/` is ever renamed again.
 
 ## Coding Conventions
 
@@ -108,33 +105,33 @@ All cumulative (min-width), not exclusive ranges. Example: `dn db-m` = hidden on
 
 ### Spacing Scale (8px baseline)
 
-| Step | Value |
-|------|-------|
-| 0 | 0 |
-| 1 | 0.25rem (4px) |
-| 2 | 0.5rem (8px) |
-| 3 | 1rem (16px) |
-| 4 | 2rem (32px) |
-| 5 | 4rem (64px) |
-| 6 | 8rem (128px) |
-| 7 | 16rem (256px) |
+| Step | CSS Variable | Value |
+|------|--------------|-------|
+| 0 | `var(--spacing-0)` | 0 |
+| 1 | `var(--spacing-1)` | 0.25rem (4px) |
+| 2 | `var(--spacing-2)` | 0.5rem (8px) |
+| 3 | `var(--spacing-3)` | 1rem (16px) |
+| 4 | `var(--spacing-4)` | 2rem (32px) |
+| 5 | `var(--spacing-5)` | 4rem (64px) |
+| 6 | `var(--spacing-6)` | 8rem (128px) |
+| 7 | `var(--spacing-7)` | 16rem (256px) |
 
 Padding: `pa`, `pl`, `pr`, `pt`, `pb`, `pv` (vertical), `ph` (horizontal) + scale number
 Margin: `ma`, `ml`, `mr`, `mt`, `mb`, `mv`, `mh` + scale number
 
 ### Type Scale
 
-| Class | Size (`:root` default) |
-|-------|----------------------|
-| `.f1` | 0.75rem |
-| `.f2` | 0.875rem |
-| `.f3` | 1rem |
-| `.f4` | 1.25rem |
-| `.f5` | 1.25rem |
-| `.f6` | 1.5rem |
-| `.f7` | 2rem |
-| `.f8` | 3rem |
-| `.f9` | 4rem |
+| Class | CSS Variable | `:root` default |
+|-------|--------------|------------------|
+| `.f1` | `var(--typo-1)` | 0.75rem |
+| `.f2` | `var(--typo-2)` | 0.875rem |
+| `.f3` | `var(--typo-3)` | 1rem |
+| `.f4` | `var(--typo-4)` | 1.25rem |
+| `.f5` | `var(--typo-5)` | 1.25rem |
+| `.f6` | `var(--typo-6)` | 1.5rem |
+| `.f7` | `var(--typo-7)` | 2rem |
+| `.f8` | `var(--typo-8)` | 3rem |
+| `.f9` | `var(--typo-9)` | 4rem |
 
 Note: inside `.curlyframework`, `--typo-1`–`--typo-5` are overridden to `1rem`, `1.25rem`, `1.5rem`, `2rem`, `4rem`. The scale also extends to `--typo-12` (12rem).
 
