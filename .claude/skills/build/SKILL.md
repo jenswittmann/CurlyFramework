@@ -4,7 +4,7 @@ description: CurlyFramework full project context — architecture, build pipelin
 allowed-tools: Read, Edit, Bash, Glob, Grep
 ---
 
-You are working on **CurlyFramework**, a lightweight frontend framework for accessibility and sustainability, designed to work with CMS solutions like MODX and Kirby. It combines Tachyons (custom fork) utility-first CSS with Alpine.js reactive components. Published to npm as `curlyframework`.
+You are working on **CurlyFramework**, a lightweight frontend framework for accessibility and sustainability, designed to work with CMS solutions like MODX, Kirby, and Statamic. It combines Tachyons (custom fork) utility-first CSS with Alpine.js reactive components. Published to npm as `curlyframework`.
 
 - Website: https://curlyframe.work
 - GitHub: https://github.com/jenswittmann/CurlyFramework
@@ -77,10 +77,15 @@ Compiled files in `/public/styleguide/css/` and `/public/styleguide/js/` should 
 
 ## Key Constraints
 
-- **Accessibility first:** All components require proper ARIA attributes, keyboard navigation, and screen reader compatibility (WCAG 2.2).
+- **Accessibility first, native-first:** All components require proper ARIA attributes, keyboard navigation, and screen reader compatibility (WCAG 2.2) — but reach for native HTML semantics (`<details>`, `<dialog>`, native form validation) before custom ARIA patterns.
+- **HTML/CSS first:** Solve with semantic HTML and CSS before reaching for JavaScript. Add Alpine.js only when interactivity genuinely requires it.
+- **Check contrast:** Verify color combinations meet WCAG 2.2 AA contrast ratios.
+- **Avoid overlays/sliders where possible:** modals, carousels, and sliders add complexity and accessibility risk for often-marginal UX benefit — use only when the content genuinely needs it.
+- **Avoid fixed-position elements where possible:** they can break or obscure content at high browser zoom levels.
 - **Sustainability:** Minimize bundle size, prefer CSS-only solutions over JS when possible, avoid heavy dependencies.
 - **New dependencies** must align with accessibility and sustainability goals — prefer lightweight, well-maintained packages.
 - **CSS classes:** Only use classes from the compiled styleguide (`public/styleguide/css/`). Do not use Tailwind, Bootstrap, or any other external CSS framework.
+- **Templates:** Match syntax to the target consumer system — Fenom for MODX Revolution, Antlers for Statamic, native Kirby PHP templates/Kirbytext for Kirby.
 
 ## Tachyons CSS Reference
 
@@ -168,6 +173,16 @@ Directional: `br--top`, `br--bottom`, `br--left`, `br--right`
 **Z-index:** `z-0`–`z-5`, `z-999`, `z-9999`, `z-max`
 
 **Hovers:** Prefix any color/bg class with `hover-` (e.g. `hover-bg-blue`, `hover-black`)
+
+## Figma Export Workflow
+
+When asked to export a Figma design into code:
+
+1. Ask first which consumer system it's for (MODX Revolution, Kirby, or Statamic) and which Figma file and frame(s)/page(s) to export.
+2. Ignore the "Checkliste" frame/page — it's a project checklist, not exportable design content.
+3. Group frames sharing a name prefix with a `Mobile`/`Desktop` suffix as responsive variants of the *same* component, not separate components.
+4. Export Figma variables into `resources/css/_vars.scss` as CSS custom properties, matching the existing token structure.
+5. Export to the correct folder/path for the target system — ask if unclear.
 
 ## Component Patterns
 

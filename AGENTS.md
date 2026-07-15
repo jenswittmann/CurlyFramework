@@ -6,12 +6,12 @@
 
 ## Project Overview
 
-**CurlyFramework** — a standalone, lightweight, accessible, sustainable frontend framework combining Tachyons utility-first CSS with Alpine.js reactive components. Distributed via `git clone` or `npm i curlyframework` and consumed by CMS projects (MODX Revolution, Kirby) — this repository does **not** contain a CMS installation itself.
+**CurlyFramework** — a standalone, lightweight, accessible, sustainable frontend framework combining Tachyons utility-first CSS with Alpine.js reactive components. Distributed via `git clone` or `npm i curlyframework` and consumed by CMS projects (MODX Revolution, Kirby, Statamic) — this repository does **not** contain a CMS installation itself.
 
 **Key technology stack:**
 - CSS: **CurlyFramework** (Tachyons fork + custom BEM partials, compiled via Dart Sass + Lightning CSS)
 - JS: **Alpine.js v3** with plugins: focus, intersect, collapse, persist, ajax
-- Consumers (outside this repo): **MODX Revolution** (Fenom templates, ContentBlocks, Gitify) and **Kirby**
+- Consumers (outside this repo): **MODX Revolution** (Fenom templates, ContentBlocks, Gitify), **Kirby**, and **Statamic** (Antlers templates)
 
 ---
 
@@ -199,6 +199,18 @@ ContentBlocks field content is accessed via `$settings` (field settings object) 
 
 ---
 
+## Figma Export Workflow
+
+When asked to export a Figma design into code:
+
+1. **Ask first, before starting:** which consumer system is this for (MODX Revolution, Kirby, or Statamic), and which Figma file and frame(s)/page(s) should be exported.
+2. **Ignore the "Checkliste" frame/page** — it's a project checklist, not exportable design content.
+3. **Group frames by shared name prefix:** frames sharing a common name prefix with a `Mobile`/`Desktop` suffix (or vice versa) are responsive variants of the *same* component — treat them as one component with breakpoint-specific styles, not two separate components.
+4. **Export Figma variables to `resources/css/_vars.scss`:** design tokens (colors, spacing, type scale, breakpoints) defined as Figma variables become CSS custom properties in `_vars.scss`, matching the existing token structure.
+5. **Export to the correct folder/path** for the target system — ask if it's unclear rather than guessing or dropping files at the repo root.
+
+---
+
 ## JavaScript
 
 All interactivity uses **Alpine.js v3**. Do not introduce other JS frameworks or libraries. Entry point: `resources/js/bundle.js`.
@@ -255,9 +267,15 @@ Compiled files in `public/styleguide/css/` and `public/styleguide/js/` are commi
 
 ---
 
-## Accessibility
+## Accessibility & Design Principles
 
-All interactive components require proper ARIA attributes, keyboard navigation, and screen reader compatibility (WCAG 2.2). Accessibility is a first-class constraint — never omit ARIA roles, labels, or keyboard handling.
+- **HTML/CSS first:** Solve with semantic HTML and CSS before reaching for JavaScript. Add Alpine.js only when interactivity genuinely requires it.
+- **Native HTML first:** Prefer native elements (`<details>`, `<dialog>`, native form inputs/validation) over custom-built widgets — native elements ship accessibility, keyboard handling, and browser UI for free. Layer ARIA on top only where native semantics fall short.
+- **Accessibility first, native-first:** All interactive components require proper ARIA attributes, keyboard navigation, and screen reader compatibility (WCAG 2.2) — but reach for native HTML semantics before custom ARIA patterns. Never omit ARIA roles, labels, or keyboard handling when a custom pattern is unavoidable.
+- **Check contrast:** Verify color combinations meet WCAG 2.2 AA contrast ratios before using them.
+- **Avoid overlays/sliders where possible:** Prefer static, in-flow content over modals, carousels, and sliders — they add complexity, accessibility risk, and JS weight for often-marginal UX benefit. Use only when the content genuinely needs it.
+- **Avoid fixed-position elements where possible:** Fixed/sticky elements can break or obscure content at high browser zoom levels. Use sparingly (e.g. skip links, critical navigation), not by default.
+- **Show code examples:** When proposing or documenting a pattern, include a working code example, not just a description.
 
 ---
 
@@ -380,7 +398,7 @@ All interactive components require proper ARIA attributes, keyboard navigation, 
 ## Key Constraints
 
 - **CSS:** Only classes from the compiled styleguide (`public/styleguide/css/style.css`). Never Tailwind, Bootstrap, or external frameworks.
-- **Templates:** Fenom syntax only. Never Blade, Antlers, Twig, or Smarty.
+- **Templates:** Match syntax to the target consumer system — Fenom for MODX Revolution, Antlers for Statamic, native Kirby PHP templates/Kirbytext for Kirby. Never mix syntaxes or use Blade/Twig/Smarty.
 - **JS:** Alpine.js v3 only. No React, Vue, jQuery, or other libraries.
 - **Accessibility first:** WCAG 2.2 — ARIA attributes, keyboard navigation, screen reader support on all interactive components.
 - **Sustainability:** Minimize bundle size, prefer CSS-only solutions over JS where possible.
