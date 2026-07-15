@@ -58,33 +58,33 @@ The MODX-specific concepts referenced below (Fenom templates, ContentBlocks chun
 
 **Spacing scale (8px baseline):**
 
-| Step | Value |
-|------|-------|
-| 0 | 0 |
-| 1 | 0.25rem (4px) |
-| 2 | 0.5rem (8px) |
-| 3 | 1rem (16px) |
-| 4 | 2rem (32px) |
-| 5 | 4rem (64px) |
-| 6 | 8rem (128px) |
-| 7 | 16rem (256px) |
+| Step | CSS Variable | Value |
+|------|--------------|-------|
+| 0 | `var(--spacing-0)` | 0 |
+| 1 | `var(--spacing-1)` | 0.25rem (4px) |
+| 2 | `var(--spacing-2)` | 0.5rem (8px) |
+| 3 | `var(--spacing-3)` | 1rem (16px) |
+| 4 | `var(--spacing-4)` | 2rem (32px) |
+| 5 | `var(--spacing-5)` | 4rem (64px) |
+| 6 | `var(--spacing-6)` | 8rem (128px) |
+| 7 | `var(--spacing-7)` | 16rem (256px) |
 
 - Padding: `pa/pl/pr/pt/pb/pv/ph` + number
 - Margin: `ma/ml/mr/mt/mb/mv/mh` + number
 
 **Type scale:**
 
-| Class | Size |
-|-------|------|
-| `.f1` | 0.75rem |
-| `.f2` | 0.875rem |
-| `.f3` | 1rem |
-| `.f4` | 1.25rem |
-| `.f5` | 1.25rem |
-| `.f6` | 1.5rem |
-| `.f7` | 2rem |
-| `.f8` | 3rem |
-| `.f9` | 4rem |
+| Class | CSS Variable | Size |
+|-------|--------------|------|
+| `.f1` | `var(--typo-1)` | 0.75rem |
+| `.f2` | `var(--typo-2)` | 0.875rem |
+| `.f3` | `var(--typo-3)` | 1rem |
+| `.f4` | `var(--typo-4)` | 1.25rem |
+| `.f5` | `var(--typo-5)` | 1.25rem |
+| `.f6` | `var(--typo-6)` | 1.5rem |
+| `.f7` | `var(--typo-7)` | 2rem |
+| `.f8` | `var(--typo-8)` | 3rem |
+| `.f9` | `var(--typo-9)` | 4rem |
 
 **Colors:** text = class name (`blue`, `dark-gray`), bg = `bg-` prefix, border = `b--` prefix.
 
