@@ -217,6 +217,14 @@
       "oAP" : "\/_jekyll\/_site\/public\/img\/index.html",
       "oF" : 0
     },
+    "\/_jekyll\/_site\/public\/img\/preview.avif" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/_jekyll\/_site\/public\/img\/preview.avif",
+      "oF" : 0
+    },
     "\/_jekyll\/_site\/public\/js\/index.html" : {
       "cB" : 0,
       "ft" : 8192,
@@ -567,6 +575,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/public\/img\/index.html",
+      "oF" : 0
+    },
+    "\/public\/img\/preview.avif" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/public\/img\/preview.avif",
       "oF" : 0
     },
     "\/public\/js\/index.html" : {
