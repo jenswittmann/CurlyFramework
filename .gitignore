@@ -5,4 +5,4 @@
 node_modules/*
 package-lock.json
 public/styleguide/css/*.src.css
-/_site
+/_jekyll/_site

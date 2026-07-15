@@ -1,3 +1,7 @@
+layouts_dir: _jekyll/_layouts
+includes_dir: _jekyll/_includes
+destination: _jekyll/_site
+
 exclude:
   - resources
   - package.json

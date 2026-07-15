@@ -36,7 +36,7 @@
 │   └── js/script.js       # Compiled JS — committed, do not hand-edit
 ├── index.html             # Jekyll homepage (front matter: layout, title, description, features)
 ├── docs/                  # Jekyll page content (samples.html, checklists.html)
-├── _layouts/, _includes/  # Jekyll layouts/includes (repo root, used by docs/ and index.html)
+├── _jekyll/                # Jekyll internals: _layouts/, _includes/ (used by docs/ and index.html), _site/ build output
 ├── demo/                  # Static demo/upload assets
 ├── package.json
 └── readme.md
