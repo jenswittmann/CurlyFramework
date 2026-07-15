@@ -17,113 +17,113 @@
       "oAP" : "\/_config.yml",
       "oF" : 0
     },
-    "\/_includes\/cooking.html" : {
+    "\/_jekyll\/_includes\/cooking.html" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/_includes\/cooking.html",
+      "oAP" : "\/_jekyll\/_includes\/cooking.html",
       "oF" : 0
     },
-    "\/_includes\/footer.html" : {
+    "\/_jekyll\/_includes\/footer.html" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/_includes\/footer.html",
+      "oAP" : "\/_jekyll\/_includes\/footer.html",
       "oF" : 0
     },
-    "\/_includes\/header.html" : {
+    "\/_jekyll\/_includes\/header.html" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/_includes\/header.html",
+      "oAP" : "\/_jekyll\/_includes\/header.html",
       "oF" : 0
     },
-    "\/_layouts\/default.html" : {
+    "\/_jekyll\/_layouts\/default.html" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/_layouts\/default.html",
+      "oAP" : "\/_jekyll\/_layouts\/default.html",
       "oF" : 0
     },
-    "\/_site\/.htaccess" : {
+    "\/_jekyll\/_site\/.htaccess" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/_site\/.htaccess",
+      "oAP" : "\/_jekyll\/_site\/.htaccess",
       "oF" : 0
     },
-    "\/_site\/CNAME" : {
+    "\/_jekyll\/_site\/CNAME" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/_site\/CNAME",
+      "oAP" : "\/_jekyll\/_site\/CNAME",
       "oF" : 0
     },
-    "\/_site\/demo\/upload.json" : {
+    "\/_jekyll\/_site\/demo\/upload.json" : {
       "ft" : 524288,
       "oA" : 1,
-      "oAP" : "\/_site\/demo\/upload-min.json",
+      "oAP" : "\/_jekyll\/_site\/demo\/upload-min.json",
       "oF" : 0,
       "oO" : 0,
       "oS" : 1
     },
-    "\/_site\/docs\/checklists.html" : {
+    "\/_jekyll\/_site\/docs\/checklists.html" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/_site\/docs\/checklists.html",
+      "oAP" : "\/_jekyll\/_site\/docs\/checklists.html",
       "oF" : 0
     },
-    "\/_site\/docs\/samples.html" : {
+    "\/_jekyll\/_site\/docs\/samples.html" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/_site\/docs\/samples.html",
+      "oAP" : "\/_jekyll\/_site\/docs\/samples.html",
       "oF" : 0
     },
-    "\/_site\/favicon.svg" : {
+    "\/_jekyll\/_site\/favicon.svg" : {
       "ft" : 2097152,
       "miP" : 0,
       "oA" : 2,
-      "oAP" : "\/_site\/favicon.svg",
+      "oAP" : "\/_jekyll\/_site\/favicon.svg",
       "oF" : 0,
       "opt" : 0,
       "plM" : 52780316221407,
       "prP" : 0
     },
-    "\/_site\/index.html" : {
+    "\/_jekyll\/_site\/index.html" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/_site\/index.html",
+      "oAP" : "\/_jekyll\/_site\/index.html",
       "oF" : 0
     },
-    "\/_site\/public\/styleguide\/css\/font\/index.html" : {
+    "\/_jekyll\/_site\/public\/css\/font\/index.html" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/_site\/public\/styleguide\/css\/font\/index.html",
+      "oAP" : "\/_jekyll\/_site\/public\/css\/font\/index.html",
       "oF" : 0
     },
-    "\/_site\/public\/styleguide\/css\/index.html" : {
+    "\/_jekyll\/_site\/public\/css\/index.html" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/_site\/public\/styleguide\/css\/index.html",
+      "oAP" : "\/_jekyll\/_site\/public\/css\/index.html",
       "oF" : 0
     },
-    "\/_site\/public\/styleguide\/css\/modx.css" : {
+    "\/_jekyll\/_site\/public\/css\/modx.css" : {
       "aP" : 0,
       "bl" : 0,
       "ci" : 0,
@@ -131,11 +131,11 @@
       "ft" : 16,
       "ma" : 0,
       "oA" : 0,
-      "oAP" : "\/_site\/public\/styleguide\/css\/modx-min.css",
+      "oAP" : "\/_jekyll\/_site\/public\/css\/modx-min.css",
       "oF" : 0,
       "pg" : 0
     },
-    "\/_site\/public\/styleguide\/css\/print.css" : {
+    "\/_jekyll\/_site\/public\/css\/print.css" : {
       "aP" : 0,
       "bl" : 0,
       "ci" : 0,
@@ -143,11 +143,11 @@
       "ft" : 16,
       "ma" : 0,
       "oA" : 0,
-      "oAP" : "\/_site\/public\/styleguide\/css\/print-min.css",
+      "oAP" : "\/_jekyll\/_site\/public\/css\/print-min.css",
       "oF" : 0,
       "pg" : 0
     },
-    "\/_site\/public\/styleguide\/css\/style.css" : {
+    "\/_jekyll\/_site\/public\/css\/style.css" : {
       "aP" : 0,
       "bl" : 0,
       "ci" : 0,
@@ -155,143 +155,93 @@
       "ft" : 16,
       "ma" : 0,
       "oA" : 0,
-      "oAP" : "\/_site\/public\/styleguide\/css\/style-min.css",
+      "oAP" : "\/_jekyll\/_site\/public\/css\/style-min.css",
       "oF" : 0,
       "pg" : 0
     },
-    "\/_site\/public\/styleguide\/img\/icons\/checklist.svg" : {
+    "\/_jekyll\/_site\/public\/img\/icons\/checklist.svg" : {
       "ft" : 2097152,
       "miP" : 0,
       "oA" : 2,
-      "oAP" : "\/_site\/public\/styleguide\/img\/icons\/checklist.svg",
+      "oAP" : "\/_jekyll\/_site\/public\/img\/icons\/checklist.svg",
       "oF" : 0,
       "opt" : 0,
       "plM" : 52780316221407,
       "prP" : 0
     },
-    "\/_site\/public\/styleguide\/img\/icons\/figma-plugin.svg" : {
+    "\/_jekyll\/_site\/public\/img\/icons\/figma-plugin.svg" : {
       "ft" : 2097152,
       "miP" : 0,
       "oA" : 2,
-      "oAP" : "\/_site\/public\/styleguide\/img\/icons\/figma-plugin.svg",
+      "oAP" : "\/_jekyll\/_site\/public\/img\/icons\/figma-plugin.svg",
       "oF" : 0,
       "opt" : 0,
       "plM" : 52780316221407,
       "prP" : 0
     },
-    "\/_site\/public\/styleguide\/img\/icons\/figma-template.svg" : {
+    "\/_jekyll\/_site\/public\/img\/icons\/figma-template.svg" : {
       "ft" : 2097152,
       "miP" : 0,
       "oA" : 2,
-      "oAP" : "\/_site\/public\/styleguide\/img\/icons\/figma-template.svg",
+      "oAP" : "\/_jekyll\/_site\/public\/img\/icons\/figma-template.svg",
       "oF" : 0,
       "opt" : 0,
       "plM" : 52780316221407,
       "prP" : 0
     },
-    "\/_site\/public\/styleguide\/img\/icons\/github.svg" : {
+    "\/_jekyll\/_site\/public\/img\/icons\/github.svg" : {
       "ft" : 2097152,
       "miP" : 0,
       "oA" : 2,
-      "oAP" : "\/_site\/public\/styleguide\/img\/icons\/github.svg",
+      "oAP" : "\/_jekyll\/_site\/public\/img\/icons\/github.svg",
       "oF" : 0,
       "opt" : 0,
       "plM" : 52780316221407,
       "prP" : 0
     },
-    "\/_site\/public\/styleguide\/img\/icons\/samples.svg" : {
+    "\/_jekyll\/_site\/public\/img\/icons\/samples.svg" : {
       "ft" : 2097152,
       "miP" : 0,
       "oA" : 2,
-      "oAP" : "\/_site\/public\/styleguide\/img\/icons\/samples.svg",
+      "oAP" : "\/_jekyll\/_site\/public\/img\/icons\/samples.svg",
       "oF" : 0,
       "opt" : 0,
       "plM" : 52780316221407,
       "prP" : 0
     },
-    "\/_site\/public\/styleguide\/img\/index.html" : {
+    "\/_jekyll\/_site\/public\/img\/index.html" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/_site\/public\/styleguide\/img\/index.html",
+      "oAP" : "\/_jekyll\/_site\/public\/img\/index.html",
       "oF" : 0
     },
-    "\/_site\/public\/styleguide\/js\/index.html" : {
+    "\/_jekyll\/_site\/public\/js\/index.html" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/_site\/public\/styleguide\/js\/index.html",
+      "oAP" : "\/_jekyll\/_site\/public\/js\/index.html",
       "oF" : 0
     },
-    "\/_site\/public\/styleguide\/js\/script.js" : {
+    "\/_jekyll\/_site\/public\/js\/script.js" : {
       "bF" : 0,
       "ft" : 64,
       "ma" : 0,
       "mi" : 1,
       "oA" : 0,
-      "oAP" : "\/_site\/public\/styleguide\/js\/min\/script-min.js",
+      "oAP" : "\/_jekyll\/_site\/public\/js\/min\/script-min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
     },
-    "\/_site\/resources\/css\/modx.scss" : {
-      "aP" : 0,
-      "bl" : 0,
-      "co" : 1,
-      "ec" : 0,
-      "ft" : 4,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/_site\/resources\/css\/modx.css",
-      "oF" : 0,
-      "oS" : 3,
-      "pg" : 0
-    },
-    "\/_site\/resources\/css\/print.scss" : {
-      "aP" : 0,
-      "bl" : 0,
-      "co" : 1,
-      "ec" : 0,
-      "ft" : 4,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/_site\/resources\/css\/print.css",
-      "oF" : 0,
-      "oS" : 3,
-      "pg" : 0
-    },
-    "\/_site\/resources\/css\/style.scss" : {
-      "aP" : 0,
-      "bl" : 0,
-      "co" : 1,
-      "ec" : 0,
-      "ft" : 4,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/_site\/resources\/css\/style.css",
-      "oF" : 0,
-      "oS" : 3,
-      "pg" : 0
-    },
-    "\/_site\/resources\/js\/bundle.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/_site\/resources\/js\/min\/bundle-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
-    "\/_site\/robots.txt" : {
+    "\/_jekyll\/_site\/robots.txt" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/_site\/robots.txt",
+      "oAP" : "\/_jekyll\/_site\/robots.txt",
       "oF" : 0
     },
     "\/.claude\/settings.local.json" : {
@@ -509,23 +459,23 @@
       "oO" : 0,
       "oS" : 1
     },
-    "\/public\/styleguide\/css\/font\/index.html" : {
+    "\/public\/css\/font\/index.html" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/public\/styleguide\/css\/font\/index.html",
+      "oAP" : "\/public\/css\/font\/index.html",
       "oF" : 0
     },
-    "\/public\/styleguide\/css\/index.html" : {
+    "\/public\/css\/index.html" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/public\/styleguide\/css\/index.html",
+      "oAP" : "\/public\/css\/index.html",
       "oF" : 0
     },
-    "\/public\/styleguide\/css\/modx.css" : {
+    "\/public\/css\/modx.css" : {
       "aP" : 0,
       "bl" : 0,
       "ci" : 0,
@@ -533,11 +483,11 @@
       "ft" : 16,
       "ma" : 0,
       "oA" : 0,
-      "oAP" : "\/public\/styleguide\/css\/modx-min.css",
+      "oAP" : "\/public\/css\/modx-min.css",
       "oF" : 0,
       "pg" : 0
     },
-    "\/public\/styleguide\/css\/print.css" : {
+    "\/public\/css\/print.css" : {
       "aP" : 0,
       "bl" : 0,
       "ci" : 0,
@@ -545,11 +495,11 @@
       "ft" : 16,
       "ma" : 0,
       "oA" : 0,
-      "oAP" : "\/public\/styleguide\/css\/print-min.css",
-      "oF" : 0,
+      "oAP" : "\/public\/css\/print.css",
+      "oF" : 2,
       "pg" : 0
     },
-    "\/public\/styleguide\/css\/style.css" : {
+    "\/public\/css\/style.css" : {
       "aP" : 0,
       "bl" : 0,
       "ci" : 0,
@@ -557,85 +507,85 @@
       "ft" : 16,
       "ma" : 0,
       "oA" : 0,
-      "oAP" : "\/public\/styleguide\/css\/style-min.css",
-      "oF" : 0,
+      "oAP" : "\/public\/css\/style.css",
+      "oF" : 2,
       "pg" : 0
     },
-    "\/public\/styleguide\/img\/icons\/checklist.svg" : {
+    "\/public\/img\/icons\/checklist.svg" : {
       "ft" : 2097152,
       "miP" : 0,
       "oA" : 0,
-      "oAP" : "\/public\/styleguide\/img\/icons\/checklist.svg",
+      "oAP" : "\/public\/img\/icons\/checklist.svg",
       "oF" : 1,
       "opt" : 1,
       "plM" : 52797496090623,
       "prP" : 0
     },
-    "\/public\/styleguide\/img\/icons\/figma-plugin.svg" : {
+    "\/public\/img\/icons\/figma-plugin.svg" : {
       "ft" : 2097152,
       "miP" : 0,
       "oA" : 0,
-      "oAP" : "\/public\/styleguide\/img\/icons\/figma-plugin.svg",
+      "oAP" : "\/public\/img\/icons\/figma-plugin.svg",
       "oF" : 1,
       "opt" : 1,
       "plM" : 52797496090623,
       "prP" : 0
     },
-    "\/public\/styleguide\/img\/icons\/figma-template.svg" : {
+    "\/public\/img\/icons\/figma-template.svg" : {
       "ft" : 2097152,
       "miP" : 0,
       "oA" : 0,
-      "oAP" : "\/public\/styleguide\/img\/icons\/figma-template.svg",
+      "oAP" : "\/public\/img\/icons\/figma-template.svg",
       "oF" : 1,
       "opt" : 1,
       "plM" : 52797496090623,
       "prP" : 0
     },
-    "\/public\/styleguide\/img\/icons\/github.svg" : {
+    "\/public\/img\/icons\/github.svg" : {
       "ft" : 2097152,
       "miP" : 0,
       "oA" : 0,
-      "oAP" : "\/public\/styleguide\/img\/icons\/github.svg",
+      "oAP" : "\/public\/img\/icons\/github.svg",
       "oF" : 1,
       "opt" : 1,
       "plM" : 52797496090623,
       "prP" : 0
     },
-    "\/public\/styleguide\/img\/icons\/samples.svg" : {
+    "\/public\/img\/icons\/samples.svg" : {
       "ft" : 2097152,
       "miP" : 0,
       "oA" : 0,
-      "oAP" : "\/public\/styleguide\/img\/icons\/samples.svg",
+      "oAP" : "\/public\/img\/icons\/samples.svg",
       "oF" : 1,
       "opt" : 1,
       "plM" : 52797496090623,
       "prP" : 0
     },
-    "\/public\/styleguide\/img\/index.html" : {
+    "\/public\/img\/index.html" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/public\/styleguide\/img\/index.html",
+      "oAP" : "\/public\/img\/index.html",
       "oF" : 0
     },
-    "\/public\/styleguide\/js\/index.html" : {
+    "\/public\/js\/index.html" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/public\/styleguide\/js\/index.html",
+      "oAP" : "\/public\/js\/index.html",
       "oF" : 0
     },
-    "\/public\/styleguide\/js\/script.js" : {
-      "bF" : 0,
+    "\/public\/js\/script.js" : {
+      "bF" : 4,
       "ft" : 64,
       "ma" : 0,
       "mi" : 1,
       "oA" : 0,
-      "oAP" : "\/public\/styleguide\/js\/min\/script-min.js",
-      "oF" : 0,
-      "sC" : 3,
+      "oAP" : "\/public\/js\/script.js",
+      "oF" : 2,
+      "sC" : 0,
       "tS" : 0
     },
     "\/readme.md" : {

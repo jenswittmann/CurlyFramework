@@ -11,7 +11,7 @@ You are working on **CurlyFramework**, a lightweight frontend framework for acce
 
 ## Build Process
 
-SCSS compilation and JS bundling are handled by **CodeKit** (macOS app). Additionally, npm scripts are available for SCSS compilation (via Dart Sass) and CSS post-processing (via Lightning CSS). Source files live in `/resources`, compiled output goes to `/public/styleguide`.
+SCSS compilation and JS bundling are handled by **CodeKit** (macOS app). Additionally, npm scripts are available for SCSS compilation (via Dart Sass) and CSS post-processing (via Lightning CSS). Source files live in `/resources`, compiled output goes to `/public`.
 
 | Command | What it does |
 |---------|-------------|
@@ -21,7 +21,7 @@ SCSS compilation and JS bundling are handled by **CodeKit** (macOS app). Additio
 | `npm run compile:css` | Run Lightning CSS only on `.src.css` files (no sass step) |
 | `npm run lcss` | Compile SCSS + Lightning CSS with minification (CSS production build) |
 | `npm run bundle:js` | Bundle `resources/js/bundle.js` with esbuild + minify with Terser (full CodeKit JS fallback) |
-| `npm run minify:js` | Minify already-bundled `public/styleguide/js/script.js` with Terser only |
+| `npm run minify:js` | Minify already-bundled `public/js/script.js` with Terser only |
 | `npm run purge` | Remove unused CSS from `style.css` based on `*.html` + JS content |
 | `npm run dev` | Watch CSS + JS + browser-sync hot reload (full dev workflow) |
 | `npm run serve` | Start browser-sync server only (no watching) |
@@ -29,11 +29,11 @@ SCSS compilation and JS bundling are handled by **CodeKit** (macOS app). Additio
 | `npx prettier --write .` | Format code |
 | `npm install` | Install dependencies |
 
-Compiled files in `/public/styleguide/css/` and `/public/styleguide/js/` should be committed — they are the distributed assets.
+Compiled files in `/public/css/` and `/public/js/` should be committed — they are the distributed assets.
 
 ### CSS pipeline details
 
-- **Dart Sass** compiles SCSS from `resources/css/` → `public/styleguide/css/` with `--no-source-map`
+- **Dart Sass** compiles SCSS from `resources/css/` → `public/css/` with `--no-source-map`
 - **Lightning CSS** post-processes in place with `--targets 'defaults' --minify`
 - Watch mode uses `&` between commands to run all three watchers in parallel
 
@@ -47,10 +47,10 @@ Compiled files in `/public/styleguide/css/` and `/public/styleguide/js/` should 
 ## Architecture
 
 **Source → Output mapping:**
-- `resources/css/style.scss` → `public/styleguide/css/style.css` (main stylesheet, ~165KB compiled)
-- `resources/css/print.scss` → `public/styleguide/css/print.css`
-- `resources/css/modx.scss` → `public/styleguide/css/modx.css`
-- `resources/js/bundle.js` → `public/styleguide/js/script.js` (Alpine.js + plugins, ~62KB compiled)
+- `resources/css/style.scss` → `public/css/style.css` (main stylesheet, ~165KB compiled)
+- `resources/css/print.scss` → `public/css/print.css`
+- `resources/css/modx.scss` → `public/css/modx.css`
+- `resources/js/bundle.js` → `public/js/script.js` (Alpine.js + plugins, ~62KB compiled)
 
 **SCSS structure in `resources/css/`:**
 - `_vars.scss` — CSS custom properties, breakpoints (`small: 30em`, `medium: 48em`, `large: 60em`), responsive scaling
@@ -84,7 +84,7 @@ Compiled files in `/public/styleguide/css/` and `/public/styleguide/js/` should 
 - **Avoid fixed-position elements where possible:** they can break or obscure content at high browser zoom levels.
 - **Sustainability:** Minimize bundle size, prefer CSS-only solutions over JS when possible, avoid heavy dependencies.
 - **New dependencies** must align with accessibility and sustainability goals — prefer lightweight, well-maintained packages.
-- **CSS classes:** Only use classes from the compiled styleguide (`public/styleguide/css/`). Do not use Tailwind, Bootstrap, or any other external CSS framework.
+- **CSS classes:** Only use classes from the compiled stylesheet (`public/css/`). Do not use Tailwind, Bootstrap, or any other external CSS framework.
 - **Templates:** Match syntax to the target consumer system — Fenom for MODX Revolution, Antlers for Statamic, native Kirby PHP templates/Kirbytext for Kirby.
 
 ## Tachyons CSS Reference

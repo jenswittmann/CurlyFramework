@@ -1,7 +1,7 @@
 module.exports = {
     server: true,
     https: true,
-    files: ['public/styleguide/css/*.css', 'public/styleguide/js/*.js', '*.html'],
+    files: ['public/css/*.css', 'public/js/*.js', '*.html'],
     notify: false,
     //snippet: false,
     snippetOptions: {

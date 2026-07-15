@@ -31,7 +31,7 @@
 │   └── style.scss         # Main entry point
 ├── resources/js/
 │   └── bundle.js          # Alpine.js entry point
-├── public/styleguide/
+├── public/
 │   ├── css/style.css      # Compiled CSS — committed, do not hand-edit
 │   └── js/script.js       # Compiled JS — committed, do not hand-edit
 ├── index.html             # Jekyll homepage (front matter: layout, title, description, features)
@@ -48,7 +48,7 @@ The MODX-specific concepts referenced below (Fenom templates, ContentBlocks chun
 
 ## CSS Classes
 
-**Only use CSS classes that exist in `public/styleguide/css/style.css`** — the compiled CurlyFramework stylesheet. Do not use Tailwind, Bootstrap, or any other external CSS framework. Do not invent class names.
+**Only use CSS classes that exist in `public/css/style.css`** — the compiled CurlyFramework stylesheet. Do not use Tailwind, Bootstrap, or any other external CSS framework. Do not invent class names.
 
 ### Available Utility Classes (Tachyons)
 
@@ -236,21 +236,21 @@ Run all build commands from the repo root.
 | `npm run scss` | Compile SCSS only |
 | `npm run compile` | Compile SCSS + Lightning CSS without minify (dev use) |
 | `npm run bundle:js` | Bundle JS with esbuild + minify with Terser |
-| `npm run minify:js` | Minify already-bundled `public/styleguide/js/script.js` with Terser |
+| `npm run minify:js` | Minify already-bundled `public/js/script.js` with Terser |
 | `npm run purge` | Remove unused CSS from `style.css` |
 | `npm run serve` | Start browser-sync server only |
 | `npm run docs` | Serve the Jekyll docs site at `http://127.0.0.1:4000` (no `--livereload` — conflicts with CodeKit's own live-reload broadcaster) |
 | `npx prettier --write .` | Format code |
 
-**CSS pipeline:** Dart Sass compiles SCSS from `resources/css/` → `public/styleguide/css/*.src.css`, then Lightning CSS post-processes with `--targets 'defaults' --custom-media --minify`.
+**CSS pipeline:** Dart Sass compiles SCSS from `resources/css/` → `public/css/*.src.css`, then Lightning CSS post-processes with `--targets 'defaults' --custom-media --minify`.
 
 **Source → Output mapping:**
-- `resources/css/style.scss` → `public/styleguide/css/style.css`
-- `resources/css/print.scss` → `public/styleguide/css/print.css`
-- `resources/css/modx.scss` → `public/styleguide/css/modx.css`
-- `resources/js/bundle.js` → `public/styleguide/js/script.js`
+- `resources/css/style.scss` → `public/css/style.css`
+- `resources/css/print.scss` → `public/css/print.css`
+- `resources/css/modx.scss` → `public/css/modx.css`
+- `resources/js/bundle.js` → `public/js/script.js`
 
-Compiled files in `public/styleguide/css/` and `public/styleguide/js/` are committed — they are the distributed assets.
+Compiled files in `public/css/` and `public/js/` are committed — they are the distributed assets.
 
 ---
 
@@ -397,7 +397,7 @@ Compiled files in `public/styleguide/css/` and `public/styleguide/js/` are commi
 
 ## Key Constraints
 
-- **CSS:** Only classes from the compiled styleguide (`public/styleguide/css/style.css`). Never Tailwind, Bootstrap, or external frameworks.
+- **CSS:** Only classes from the compiled styleguide (`public/css/style.css`). Never Tailwind, Bootstrap, or external frameworks.
 - **Templates:** Match syntax to the target consumer system — Fenom for MODX Revolution, Antlers for Statamic, native Kirby PHP templates/Kirbytext for Kirby. Never mix syntaxes or use Blade/Twig/Smarty.
 - **JS:** Alpine.js v3 only. No React, Vue, jQuery, or other libraries.
 - **Accessibility first:** WCAG 2.2 — ARIA attributes, keyboard navigation, screen reader support on all interactive components.

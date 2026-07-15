@@ -4,5 +4,5 @@
 .nova/
 node_modules/*
 package-lock.json
-public/styleguide/css/*.src.css
+public/css/*.src.css
 /_jekyll/_site
