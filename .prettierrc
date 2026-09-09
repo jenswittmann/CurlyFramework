@@ -3,5 +3,13 @@
     "tabWidth": 4,
     "singleQuote": true,
     "bracketSpacing": false,
-    "arrowParens": "always"
+    "arrowParens": "always",
+    "overrides": [
+        {
+            "files": ["*.md", "*.yml"],
+            "options": {
+                "tabWidth": 2
+            }
+        }
+    ]
 }
