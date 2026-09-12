@@ -110,7 +110,7 @@ Border radius: `br0`–`br4`, `br-100`, `br-pill`. Directional: `br--top`, `br--
 
 **Typography:** Weight `fw1`–`fw9`, `b`, `normal`. Alignment `tl`, `tr`, `tc`, `tj`. Transform `ttu`, `ttl`, `ttc`. Decoration `underline`, `no-underline`, `strike`. Line height `lh-solid` (1), `lh-title` (1.25), `lh-copy` (1.5).
 
-**Visibility/opacity:** `o-0`–`o-100`, `v-hidden`, `v-visible`, `clip`.
+**Visibility/opacity:** `o-0`–`o-100`, `v-hidden`, `v-visible`, `clip`, `clip-{s,m,l}` (responsive-only: visually-hidden-but-accessible starting at that breakpoint).
 
 **Z-index:** `z-0`–`z-5`, `z-999`, `z-9999`, `z-max`.
 
@@ -131,6 +131,51 @@ Scoped to `.curlyframework`. Use CSS custom properties for brand values:
 Custom component classes follow BEM naming (`.component__element--modifier`). Key SCSS partials in `resources/css/`:
 
 `_head.scss`, `_btn.scss`, `_form.scss`, `_typo.scss`, `_icons.scss`, `_contentblocks.scss`, `_animation.scss`, `_a11y.scss`, `_styling.scss`, `_mixins.scss`, `_reset.scss`
+
+### Utility class ordering
+
+When writing or editing a `class="..."` attribute, order the classes by category — not alphabetically, not in whatever order they were typed:
+
+```
+class="{component-specific classes} {position} {overflow} {display} {width/height} {font-size} {font-weight} {text color} {padding} {margin} {background color} {border, incl. radius} {transitions} {everything else}"
+```
+
+1. Component-specific / BEM classes — `.btn`, `.btn--rounded`, `.scrollsnap`, `.scrollsnap__item`, `.headline--bullet`, …
+2. Position — `relative`, `absolute`, `top-0`, `z-1`, …
+3. Overflow — `overflow-auto`, `overflow-hidden`, …
+4. Display — `dn`, `flex`, `dg`, `flex-column`, `items-center`, `justify-between`, `cols-3-m`, …
+5. Width/height — `w-100`, `h-100`, `mw8`, `aspect-ratio-16x9`, …
+6. Font size — `f1`–`f9`
+7. Font weight — `fw1`–`fw9`, `b`, `normal`
+8. Text/font color — `blue`, `white`, …
+9. Padding — `p3`, `pl3`, `ph7-m`, …
+10. Margin — `m0`, `mb5`, …
+11. Background color — `bg-white`, `bg-gray-5`, …
+12. Border, incl. radius — `ba`, `bw2`, `b--dark-gray`, `br2`, …
+13. Transitions — `transition-small`, …
+14. Everything else — accessibility/behavioral utilities and anything not covered above
+
+Apply this consistently regardless of the consuming templating language (Fenom, Kirby PHP, Antlers). It keeps class lists scannable and keeps diffs predictable when a class is added or changed. When touching an existing `class` attribute that doesn't follow this order, it's fine to leave unrelated classes alone rather than reordering the whole attribute as a drive-by change — but any classes you add or edit should land in their correct category slot.
+
+### Nesting component modifier classes in SCSS
+
+When a class only ever pairs with one specific component — never used standalone or with anything else — nest it inside that component's own SCSS rule with `&-suffix`, so the class name itself reflects the pairing:
+
+```scss
+.scrollsnap-dots {
+    // ...
+
+    // pairs with .scrollsnap-dots: turns the dots + scroll-marker-group off again
+    // once a slider switches to a static grid at the medium breakpoint (desktop)
+    &-none-m {
+        @media (--breakpoint-medium) {
+            scroll-marker-group: none;
+        }
+    }
+}
+```
+
+`&-none-m` nested inside `.scrollsnap-dots { ... }` compiles to `.scrollsnap-dots-none-m` — the name makes the dependency on `.scrollsnap-dots` explicit, unlike a disconnected top-level name. Apply the same nesting for any new modifier/companion class that only makes sense alongside a specific component class, and update every usage across the consuming project's templates in the same change if you rename one.
 
 ---
 
@@ -208,6 +253,7 @@ When asked to export a Figma design into code:
 3. **Group frames by shared name prefix:** frames sharing a common name prefix with a `Mobile`/`Desktop` suffix (or vice versa) are responsive variants of the *same* component — treat them as one component with breakpoint-specific styles, not two separate components.
 4. **Export Figma variables to `resources/css/_vars.scss`:** design tokens (colors, spacing, type scale, breakpoints) defined as Figma variables become CSS custom properties in `_vars.scss`, matching the existing token structure.
 5. **Export to the correct folder/path** for the target system — ask if it's unclear rather than guessing or dropping files at the repo root.
+6. **Implement plain HTML/CSS only — do not add Alpine.js (or any other JS) interactivity**, even when the design shows something that looks interactive (tabs, filter chips, toggles, …). A static design file doesn't specify behavior; treat every element in it as presentational unless the user separately and explicitly asks for the interaction to be functional. If interactive behavior is genuinely wanted alongside a Figma-derived layout, wait for the user to ask for it as a separate, explicit step rather than assuming it from the visual design.
 
 ---
 
@@ -252,6 +298,24 @@ Run all build commands from the repo root.
 
 Compiled files in `public/css/` and `public/js/` are committed — they are the distributed assets.
 
+**Dependency drift warning:** `package.json` doesn't pin `sass`/`lightningcss` versions. A fresh `npm install` in any consumer project (MODX, Kirby, Statamic) can pull newer releases that produce a different-but-equivalent compiled `public/css/*.css` (extra vendor prefixes, updated browserslist data) — expect a large, cosmetic-only diff the first time this happens, not a bug. Worse case: a `sass` release whose CLI (`node_modules/.bin/sass`) crashes with `Error [ERR_REQUIRE_ESM]`, because its bundled `chokidar` dependency went ESM-only in a newer major version. Prefer a tool that pins/vendors its own compiler (e.g. CodeKit, if the consumer project uses it) over the raw npm scripts for this reason. To verify a change compiles without a working CLI, use `sass`'s programmatic API instead: `node -e "require('fs').writeFileSync('/tmp/out.css', require('sass').compile('resources/css/style.scss').css)"`.
+
+---
+
+## Contributing back to this repo
+
+An agent working in a **consumer project** (MODX Revolution, Kirby, Statamic, …) may find or make a change that's actually generic to CurlyFramework itself — a CSS bug fix, a new utility class, an accessibility improvement — not tied to that consumer's own content/templates.
+
+**Whenever this happens, the agent must proactively flag it and ask whether the change should also be published as a PR here — the developer should not have to think of this or bring it up themselves.** Do this immediately after making (or discovering) such a change, not only if asked. A bug fix or a reusable utility is a good candidate; anything tied to that project's own business logic is not — don't ask about those.
+
+Workflow once the developer agrees:
+
+1. Clone this repo fresh into a scratch/temp location — don't assume a checkout already exists at some fixed path, since that won't hold in another environment.
+2. If working in an existing local checkout instead, `git status` it first — it may already be sitting on an unrelated branch with its own uncommitted work. Never discard or bundle that into the new PR; `git stash push -u -m "..."` it aside so it survives untouched.
+3. Branch off `main` (fetch/pull first), apply the change, `npm install`, and verify it actually compiles before committing — see the dependency drift warning above if the CLI doesn't cooperate.
+4. Show the developer a preview (diff + proposed PR title/description) and get explicit confirmation before pushing or opening the PR — this is a public, shared-state action on an external repository, not a local edit.
+5. Open the PR via `gh pr create` once confirmed.
+
 ---
 
 ## Coding Conventions
@@ -264,6 +328,7 @@ Compiled files in `public/css/` and `public/js/` are committed — they are the 
 - **JS:** camelCase variables/functions, PascalCase classes
 - **CSS custom properties:** kebab-case (`--animation-time-small`)
 - **Commit messages:** Conventional commits — `feat:`, `fix:`, `docs:`, `release:`, `chore:`
+- **Technical identifiers are always English, regardless of the project's editorial language** — filenames, template/component names, field/variable keys used as content accessors. Only user-facing text (Panel/manager labels, help text, rendered content) follows the project's own editorial language(s). E.g. a Kirby blueprint field, a MODX ContentBlocks field name, or a Statamic Antlers variable should all be keyed in English even on a German- or French-language site; the label shown to editors stays in that language.
 
 ---
 
@@ -404,3 +469,7 @@ Compiled files in `public/css/` and `public/js/` are committed — they are the 
 - **Sustainability:** Minimize bundle size, prefer CSS-only solutions over JS where possible.
 - **New dependencies** must align with accessibility and sustainability goals — prefer lightweight, well-maintained packages.
 - **Assets:** Never convert SVG files to PNG. Keep icons/graphics as SVG.
+- **Never hand-edit this framework's own vendored/build-managed files** (`public/css/*.css`, `public/js/script.js` — see Build Process) or a consumer system's own core/vendor directory (e.g. Kirby's `kirby/`, a MODX core install) — fix things in the project's own layer, or via a plugin/hook where the consumer system supports one.
+- **Never commit credentials, sessions, or caches** — consumer-specific paths vary (Kirby's `site/accounts/`, `site/sessions/`, `site/cache/`; MODX/Statamic have their own equivalents) but the rule is universal: check the consumer project's own `.gitignore` covers these, don't force-add them.
+- **A content/data directory must never be directly web-accessible** — verify the consumer project's web server config (Kirby's `content/` `.htaccess` block, or the equivalent for MODX/Statamic) blocks direct requests to raw content files.
+- **Escape all dynamic output** — treat every field value and request parameter as untrusted until escaped or validated, regardless of templating language (Fenom, Kirby PHP, Antlers).
