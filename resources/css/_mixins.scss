@@ -146,6 +146,12 @@
     transform: scaleX(-1);
 }
 
+// vertical text, rotated 90deg
+.text-vertical {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+}
+
 // details
 .details__open--show {
     display: none;
