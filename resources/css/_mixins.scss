@@ -151,7 +151,10 @@
     display: none;
 }
 
-details[open] {
+// scoped to the direct summary child, not just any descendant - otherwise an
+// outer open <details> would force this icon open on every nested <details>
+// inside it too, regardless of that one's own [open] state
+details[open] > summary {
     .details__open--show {
         display: block;
     }
