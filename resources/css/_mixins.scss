@@ -31,6 +31,21 @@
     }
 }
 
+// gradient, transparent to full color
+// override via inline style="--gradient-color: #your-color; --gradient-start: 20%; --gradient-end: 80%; --gradient-direction: to left"
+.gradient {
+    --gradient-color: var(--violet-5);
+    --gradient-start: 0%;
+    --gradient-end: 100%;
+    --gradient-direction: to right;
+
+    background-image: linear-gradient(
+        var(--gradient-direction),
+        transparent var(--gradient-start),
+        var(--gradient-color) var(--gradient-end)
+    );
+}
+
 // pointer events
 .pointer-events-none {
     pointer-events: none;
