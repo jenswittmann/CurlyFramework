@@ -13,35 +13,38 @@
 
 .clip {
   position: fixed !important;
-  _position: absolute !important;
-  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
 }
 
 @media (--breakpoint-small) {
   .clip-s {
     position: fixed !important;
-    _position: absolute !important;
-    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
     clip: rect(1px, 1px, 1px, 1px);
+  }
+  .no-clip-s {
+    position: inherit !important;
+    clip: auto !important;
   }
 }
 
 @media (--breakpoint-medium) {
   .clip-m {
     position: fixed !important;
-    _position: absolute !important;
-    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
     clip: rect(1px, 1px, 1px, 1px);
+  }
+  .no-clip-m {
+    position: inherit !important;
+    clip: auto !important;
   }
 }
 
 @media (--breakpoint-large) {
   .clip-l {
     position: fixed !important;
-    _position: absolute !important;
-    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
     clip: rect(1px, 1px, 1px, 1px);
   }
+  .no-clip-l {
+    position: inherit !important;
+    clip: auto !important;
+  }
 }
-
