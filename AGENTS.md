@@ -318,6 +318,25 @@ Workflow once the developer agrees:
 
 ---
 
+## Screencasts for GitHub Documentation
+
+**Whenever a change here (or in a consumer project) adds or meaningfully changes a user-facing feature, ask the developer whether they want to record a screencast of it for the GitHub documentation (README, PR description, wiki, …) — don't assume either way, ask per change.**
+
+- Screencasts are recorded with **[Recordly](https://recordly.dev/)** (macOS screen recorder), producing `.mp4` files.
+- GitHub attachments (issues, PRs, README, wiki) are capped at **10 MB** per file — a raw Recordly `.mp4` export is usually far larger and needs compressing to `.webm` before it can be attached.
+- **ffmpeg** (`brew install ffmpeg` if not already installed) does the conversion. For a screen-recording-style source (static UI, text-heavy, no audio track), two-pass VP9 encoding hits a reliable target size; scale down from Recordly's native (often very high) resolution to 1080p at the same time:
+
+  ```bash
+  ffmpeg -y -i input.mp4 -vf "scale=1920:-2" -c:v libvpx-vp9 -b:v 900k -minrate 450k -maxrate 1200k \
+    -deadline good -cpu-used 1 -row-mt 1 -an -pass 1 -passlogfile /tmp/ffmpeg2pass -f webm /dev/null
+  ffmpeg -y -i input.mp4 -vf "scale=1920:-2" -c:v libvpx-vp9 -b:v 900k -minrate 450k -maxrate 1200k \
+    -deadline good -cpu-used 1 -row-mt 1 -an -pass 2 -passlogfile /tmp/ffmpeg2pass output.webm
+  ```
+
+  Drop `-an` and add an Opus audio pass (`-c:a libopus -b:a 64k`) if the recording has narration/audio. Adjust `-b:v` (and/or the scale) down if the result is still over 10 MB, up if there's headroom — verify with `ls -la output.webm` after encoding, not just by eye.
+
+---
+
 ## Coding Conventions
 
 - **Indentation:** 4 spaces for CSS, JS, JSON; 2 spaces for Markdown and YAML
