@@ -12,6 +12,9 @@ RewriteRule "/\.|^\.(?!well-known/)" - [F]
 	Require all denied
 </FilesMatch>
 
+# Block dependency folders and uncompiled sources (only public/ is meant to be served)
+RewriteRule ^(vendor|node_modules|resources)/ - [R=404,L]
+
 # Develop locally, use images from production
 #RewriteCond %{REQUEST_URI} ^/upload/[^\/]*/.*$
 #RewriteRule ^(.*)$ https://REMOTE-URL.COM/$1 [QSA,L]
