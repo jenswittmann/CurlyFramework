@@ -1,8 +1,19 @@
+# Disable directory listings
+Options -Indexes
+
 RewriteEngine On
 RewriteBase /
 
 # Prevent dot directories (hidden directories like .git) to be exposed to the public
 RewriteRule "/\.|^\.(?!well-known/)" - [F]
+
+# Block project and meta files (docs, lockfiles, configs) from being accessed directly
+<FilesMatch "(\.(md|lock|ya?ml)|package(-lock)?\.json|composer\.json|bs-config\.js|CNAME|LICENSE)$">
+	Require all denied
+</FilesMatch>
+
+# Block dependency folders and uncompiled sources (only public/ is meant to be served)
+RewriteRule ^(vendor|node_modules|resources)/ - [R=404,L]
 
 # Develop locally, use images from production
 #RewriteCond %{REQUEST_URI} ^/upload/[^\/]*/.*$
@@ -95,45 +106,49 @@ SetEnvIf Authorization "(.+)" HTTP_AUTHORIZATION=$1
 
 # caching
 FileETag MTime Size
-ExpiresActive On
-
-ExpiresByType text/css "access plus 12 months"
-ExpiresByType text/javascript "access plus 12 months"
-
-ExpiresByType image/gif "access plus 12 months"
-ExpiresByType image/jpeg "access plus 12 months"
-ExpiresByType image/png "access plus 12 months"
-ExpiresByType image/webp "access plus 12 months"
-ExpiresByType image/avif "access plus 12 months"
-ExpiresByType image/x-icon "access plus 12 months"
-ExpiresByType video/mp4 "access plus 4 months"
-ExpiresByType video/webm "access plus 4 months"
-
 AddType font/woff2 .woff2
-ExpiresByType font/woff2  "access plus 1 year"
 
-<IfModule mod_expires.c>  
-	ExpiresActive On  
-	<FilesMatch "\.(ico|jpg|jpeg|png|webp|avif|svg|gif|js|css)$">  
+<IfModule mod_expires.c>
+	ExpiresActive On
+
+	ExpiresByType text/css "access plus 12 months"
+	ExpiresByType text/javascript "access plus 12 months"
+
+	ExpiresByType image/gif "access plus 12 months"
+	ExpiresByType image/jpeg "access plus 12 months"
+	ExpiresByType image/png "access plus 12 months"
+	ExpiresByType image/webp "access plus 12 months"
+	ExpiresByType image/avif "access plus 12 months"
+	ExpiresByType image/x-icon "access plus 12 months"
+	ExpiresByType video/mp4 "access plus 4 months"
+	ExpiresByType video/webm "access plus 4 months"
+
+	ExpiresByType font/woff2 "access plus 1 year"
+
+	<FilesMatch "\.(ico|jpg|jpeg|png|webp|avif|svg|gif|js|css)$">
 		ExpiresDefault "access plus 1 year"
-	</FilesMatch>  
-</IfModule> 
+	</FilesMatch>
+</IfModule>
 
 # headers
 <IfModule mod_headers.c>
-    Header set X-Frame-Options "SAMEORIGIN"
-    Header set X-XSS-Protection "1; mode=block"
-    Header set X-Content-Type-Options "nosniff"
-    Header set Referrer-Policy "no-referrer"
-    Header set Feature-Policy "accelerometer 'none'; ambient-light-sensor 'none'; autoplay 'self'; camera 'none'; encrypted-media 'none'; fullscreen; geolocation 'self'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; midi 'none'; payment 'none'; picture-in-picture 'self'; speaker 'none'; usb 'none'; vr 'none'"
-    Header set Permissions-Policy: accelerometer=(none)
-    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-XSS-Protection "0"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "no-referrer"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+    # Browsers ignore HSTS over plain HTTP, so it is safe to send unconditionally (env=HTTPS fails behind proxies)
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+    # Hide PHP version
+    Header unset X-Powered-By
+    Header always unset X-Powered-By
 	
     # CSP strict
-    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; object-src 'none'; frame-src 'self'; worker-src 'self'; connect-src 'self'"
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; object-src 'none'; frame-src 'self'; worker-src 'self'; connect-src 'self'"
     
     # CSP allow sally.js CDN
-    #Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net/combine/gh/ryersondmp/; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net/gh/ryersondmp/; font-src 'self' data:; object-src 'none'; frame-src 'self'; worker-src 'self' blob:; connect-src 'self'"
+    #Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net/combine/gh/ryersondmp/; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net/gh/ryersondmp/; font-src 'self' data:; object-src 'none'; frame-src 'self'; worker-src 'self' blob:; connect-src 'self'"
 </IfModule>
 
 # Block AI bots and scrapers

@@ -395,6 +395,30 @@ Compiled files in `public/css/` and `public/js/` are committed — they are the 
 
 ---
 
+## `.htaccess` (Apache security baseline)
+
+The root `.htaccess` is the security baseline every consumer project copies. It is CMS-agnostic; the Kirby/MODX blocks inside it are commented out and get enabled per project. Consumer projects often keep `.htaccess` out of git and edit it on the server, so the live copy can drift from this one — when updating a project, diff against the **live** file first and keep project-specific lines (e.g. a temporary `X-Robots-Tag: noindex`, a CSP with extra CDN/`blob:` sources, a different `Referrer-Policy`).
+
+What the baseline guarantees, and must keep guaranteeing:
+
+- **No directory listings:** `Options -Indexes`.
+- **No dotfiles:** `RewriteRule "/\.|^\.(?!well-known/)" - [F]` blocks `.git/`, `.env`, `.htpasswd` etc. Keep the `well-known` exception so `/.well-known/security.txt` stays reachable.
+- **No project/meta files:** a `<FilesMatch>` denies `.md`, `.lock`, `.yml`/`.yaml`, `package(-lock).json`, `composer.json`, `bs-config.js`, `CNAME`, `LICENSE`. Extend the pattern rather than adding one-off rules when a new tool adds a config file to the webroot.
+- **No dependency folders or uncompiled sources:** `RewriteRule ^(vendor|node_modules|resources)/ - [R=404,L]`. `vendor/composer/installed.json` in particular lists every package with its exact version. Only `public/` is meant to be served. In a Kirby project, rewrite these to `index.php` instead (same pattern as Kirby's own `content/`/`site/`/`kirby/` rules), and add `docs/` if the project has one; don't add `docs/` here, this repo serves its own Jekyll docs from it.
+- **Headers with `Header always set`**, so they are also sent on error and redirect responses: `X-Frame-Options`, `X-Content-Type-Options: nosniff`, `Referrer-Policy`, `Strict-Transport-Security` (no `env=HTTPS`: that variable is often unset behind proxies, and browsers ignore HSTS over plain HTTP anyway), `Content-Security-Policy`, `Permissions-Policy`. `X-Powered-By` is unset.
+- **Deprecated headers stay out:** `X-XSS-Protection` is `"0"` (never `1; mode=block`); no `Feature-Policy`. `Permissions-Policy` syntax: an empty allowlist is `()`, not `(none)`, and the header name has no colon (`Header always set Permissions-Policy "camera=(), …"`).
+- **Module-dependent directives wrapped in `<IfModule>`** (`mod_expires`, `mod_headers`, `mod_deflate`): a bare `ExpiresActive` on a server without `mod_expires` is a 500 error for the whole site.
+
+Every consumer project should also ship `/.well-known/security.txt` (RFC 9116) as a static file: `Contact:`, `Expires:` (max. one year ahead, renew before it runs out), `Preferred-Languages:`, and `Canonical:` with its own live URL (update it when the domain changes, e.g. staging → production).
+
+### Verifying a change
+
+1. **Syntax + behavior locally**, without touching a real server: macOS ships Apache. Write a throwaway config that loads `mod_rewrite`, `mod_headers`, `mod_authz_core`, `mod_mime`, `mod_setenvif`, `mod_dir`, `mod_unixd` and `mod_mpm_prefork` from `/usr/libexec/apache2/`, points `DocumentRoot` at a checkout with `AllowOverride All`, and `Listen`s on a free local port. Then `httpd -t -f <conf>` (syntax), `httpd -f <conf> -k start`, `curl` the paths below, `httpd -f <conf> -k stop`. Test once with and once without `mod_expires` loaded.
+2. **Live, after uploading:** keep a timestamped backup next to it on the server (`cp .htaccess .htaccess.bak-<date>`; the dotfile rule already blocks it from the web), upload, then immediately check that the homepage still answers 200 and roll back from the backup if not.
+3. **Checklist** (`curl -s -o /dev/null -w "%{http_code}" <url>`): homepage, a subpage, an image and a compiled CSS/JS file → 200; `.git/HEAD`, `.git/config`, `composer.json`, `composer.lock`, `package.json`, `AGENTS.md`, `README.md`, any `.yml` → 403; `vendor/composer/installed.json`, `node_modules/`, `resources/css/style.scss` → 404 (or the CMS error page); `/.well-known/security.txt` → 200. Check the headers with `curl -sI <url>`, and once on a CMS backend URL too, since a strict CSP can break the backend.
+
+---
+
 ## Key Constraints
 
 - **CSS:** Only classes from the compiled styleguide (`public/css/style.css`). Never Tailwind, Bootstrap, or external frameworks.
