@@ -198,6 +198,25 @@ description: >-
                                             position: 'beforebegin',
                                         });
                                     });
+                                    /* Headings typed in capitals only: screen readers may spell
+                                       them out letter by letter. Sa11y's own QA_UPPERCASE needs four
+                                       caps words in a row and ignores umlauts, so a single word like
+                                       PRODUKTIONSFÖRDERUNG slips through. A word of 5+ letters is
+                                       required so acronyms stay unflagged; the typed text counts,
+                                       not CSS text-transform. */
+                                    const capsHeadings = this.sa11y.find('h1, h2, h3, h4, h5, h6, [role=heading]', 'root');
+                                    capsHeadings.forEach((heading) => {
+                                        const text = heading.textContent.trim();
+                                        if (/\p{L}{5,}/u.test(text) && !/\p{Ll}/u.test(text)) {
+                                            this.sa11y.results.push({
+                                                element: heading,
+                                                type: 'warning',
+                                                content: 'Heading in capitals only: screen readers may read it letter by letter, and it is harder to read. Please type it in normal upper and lower case.',
+                                                inline: false,
+                                                position: 'beforebegin',
+                                            });
+                                        }
+                                    });
                                     const allDone = new CustomEvent('sa11y-resume');
                                     document.dispatchEvent(allDone);
                                 });
