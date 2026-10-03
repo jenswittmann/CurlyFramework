@@ -90,6 +90,22 @@ button.c-button:not(.c-button--ghost),
     }
 }
 
+// vertical tabs (SeoSuite)
+.vertical-tabs-panel {
+    background: transparent;
+
+    .vertical-tabs-header {
+        background: transparent !important;
+    }
+}
+
+// vertical tabs: space between tab buttons and content
+@media screen and (min-width: 641px) {
+    .vertical-tabs-panel .x-panel.x-panel-noborder.x-form-label-top {
+        margin-left: 2rem;
+    }
+}
+
 // hide resource buttons
 #modx-abtn-cancel,
 #modx-abtn-help {
