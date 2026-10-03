@@ -1,10 +1,9 @@
-// smooth scrolling
-@media (prefers-reduced-motion: no-preference) {
-    .smooth-scroll {
-        &,
-        * {
-            scroll-behavior: smooth;
-        }
+// smooth scrolling, add class to <html class="smooth-scroll">
+// reduced motion is handled in _a11y.scss
+.smooth-scroll {
+    &,
+    * {
+        scroll-behavior: smooth;
     }
 }
 
