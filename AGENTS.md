@@ -275,6 +275,8 @@ Compiled files in `public/css/` and `public/js/` are committed — they are the 
 - **Check contrast:** Verify color combinations meet WCAG 2.2 AA contrast ratios before using them.
 - **Avoid overlays/sliders where possible:** Prefer static, in-flow content over modals, carousels, and sliders — they add complexity, accessibility risk, and JS weight for often-marginal UX benefit. Use only when the content genuinely needs it.
 - **Avoid fixed-position elements where possible:** Fixed/sticky elements can break or obscure content at high browser zoom levels. Use sparingly (e.g. skip links, critical navigation), not by default.
+- **Reduced motion in one place:** `prefers-reduced-motion` is handled centrally in `resources/css/_a11y.scss` — it disables animations, transitions and smooth scrolling for all elements. Don't repeat `prefers-reduced-motion` queries in other partials or components.
+- **Smooth scrolling as a class on `<html>`:** Enable smooth scrolling by adding the `smooth-scroll` class to `<html>` (e.g. `<html class="scale-content smooth-scroll">`), not with a global `scroll-behavior` rule.
 - **Show code examples:** When proposing or documenting a pattern, include a working code example, not just a description.
 
 ---
