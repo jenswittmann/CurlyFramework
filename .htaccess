@@ -93,6 +93,11 @@ SetEnvIf Authorization "(.+)" HTTP_AUTHORIZATION=$1
 	#mod_gzip_item_exclude mime ^image/.*
 </ifModule>
 
+# mime types
+<IfModule mod_mime.c>
+    AddType text/vtt .vtt
+</IfModule>
+
 # caching
 FileETag MTime Size
 ExpiresActive On
