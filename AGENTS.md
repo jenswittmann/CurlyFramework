@@ -50,6 +50,8 @@ The MODX-specific concepts referenced below (Fenom templates, ContentBlocks chun
 
 **Only use CSS classes that exist in `public/css/style.css`** — the compiled CurlyFramework stylesheet. Do not use Tailwind, Bootstrap, or any other external CSS framework. Do not invent class names.
 
+**Prefer utility classes.** Build layouts and components primarily from the Tachyons utility classes in the markup (e.g. `flex items-center pa3 mt2`). Write a custom BEM class with SCSS only when utilities cannot express it cleanly, e.g. states, pseudo-elements, sibling selectors, repeated complex component structures or values that depend on custom properties. Before adding SCSS, check whether an existing utility or a combination of them does the job. To adjust spacing, alignment or display, change the utility classes in the markup instead of adding an override rule.
+
 ### Available Utility Classes (Tachyons)
 
 **Naming pattern:** `{property}{value}` — e.g. `pa3` = padding all 1rem, `mt2` = margin-top 0.5rem.
@@ -398,6 +400,7 @@ Compiled files in `public/css/` and `public/js/` are committed — they are the 
 ## Key Constraints
 
 - **CSS:** Only classes from the compiled styleguide (`public/css/style.css`). Never Tailwind, Bootstrap, or external frameworks.
+- **Utility classes first:** Compose with the existing utility classes; write custom BEM/SCSS only when utilities are not enough.
 - **Templates:** Match syntax to the target consumer system — Fenom for MODX Revolution, Antlers for Statamic, native Kirby PHP templates/Kirbytext for Kirby. Never mix syntaxes or use Blade/Twig/Smarty.
 - **JS:** Alpine.js v3 only. No React, Vue, jQuery, or other libraries.
 - **Accessibility first:** WCAG 2.2 — ARIA attributes, keyboard navigation, screen reader support on all interactive components.
