@@ -132,6 +132,16 @@ Custom component classes follow BEM naming (`.component__element--modifier`). Ke
 
 `_head.scss`, `_btn.scss`, `_form.scss`, `_typo.scss`, `_icons.scss`, `_contentblocks.scss`, `_animation.scss`, `_a11y.scss`, `_styling.scss`, `_mixins.scss`, `_reset.scss`
 
+### Icons
+
+**Basis: [Phosphor Icons](https://github.com/phosphor-icons/core)** (MIT). Don't draw icons by hand and don't use icon SVGs exported from Figma (fixed sizes, extra padding) — find the matching Phosphor icon by name (a Figma component's description or name usually hints at it, e.g. `PhoneCall` → `phone-call`, hamburger → `list`, close → `x`).
+
+- **Source files:** `raw/regular/<name>.svg` from the `phosphor-icons/core` repo: stroke icons with `stroke="currentColor"`, a 256×256 viewBox and no fixed `width`/`height`. `regular` is the default weight; use other weights (`bold`, `fill`, …) only when the design asks for it and keep **one weight per context** so strokes match.
+- **Location:** `public/img/icons/<name>.svg`, committed as downloaded and never edited by hand (download again instead).
+- **Inline the SVG** with the consuming system's own mechanism (MODX: a snippet that outputs the file, Kirby: `svg()`, Statamic: `{{ svg }}`) so the icon takes the text color, and wrap it in `icon icon-font` (`1em` × `1em`). Set the size with a font-size class (`f3`) on the same element; don't add `width`/`height` to the SVG.
+- **Accessibility:** decorative icons get `aria-hidden="true"`; an icon-only control needs a text alternative (`aria-label` or a `clip` span) — the icon never carries the meaning alone.
+- **Icon swap without JS:** put `details__open--hide` / `details__open--show` on two icons inside a `<summary>` — they toggle with the `<details>` state.
+
 ---
 
 ## Templates (Fenom syntax)
