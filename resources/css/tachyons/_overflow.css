@@ -31,6 +31,9 @@
 .overflow-x-hidden {
     overflow-x: hidden;
 }
+.overflow-x-clip {
+    overflow-x: clip;
+}
 .overflow-x-scroll {
     overflow-x: scroll;
 }
@@ -73,6 +76,9 @@
     }
     .overflow-x-hidden-s {
         overflow-x: hidden;
+    }
+    .overflow-x-clip-s {
+        overflow-x: clip;
     }
     .overflow-x-scroll-s {
         overflow-x: scroll;
@@ -118,6 +124,9 @@
     .overflow-x-hidden-m {
         overflow-x: hidden;
     }
+    .overflow-x-clip-m {
+        overflow-x: clip;
+    }
     .overflow-x-scroll-m {
         overflow-x: scroll;
     }
@@ -161,6 +170,9 @@
     }
     .overflow-x-hidden-l {
         overflow-x: hidden;
+    }
+    .overflow-x-clip-l {
+        overflow-x: clip;
     }
     .overflow-x-scroll-l {
         overflow-x: scroll;
